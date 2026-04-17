@@ -9,12 +9,15 @@
   <link rel="canonical" href="https://peptidesuppliers.org/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="PeptideSuppliers.org | Research Supplier Directory">
-  <meta property="og:description" content="Research-focused supplier reviews, sourcing standards, and peptide buyer education.">
+  <meta property="og:description" content="Research-focused peptide suppliers reviews, sourcing standards, and peptide buyer education.">
   <meta property="og:url" content="https://peptidesuppliers.org/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="https://peptidesuppliers.org/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="PeptideSuppliers.org | Research Supplier Directory">
-  <meta name="twitter:description" content="Research-focused supplier reviews, sourcing standards, and peptide buyer education.">
+  <meta name="twitter:description" content="Research-focused peptide suppliers reviews, sourcing standards, and peptide buyer education.">
+  <meta name="twitter:image" content="https://peptidesuppliers.org/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
   <script type="application/ld+json">
     {
@@ -22,7 +25,12 @@
       "@type": "WebSite",
       "name": "PeptideSuppliers.org",
       "url": "https://peptidesuppliers.org/",
-      "description": "Research supplier directory focused on peptide supplier reviews, transparency, discount codes, and buyer education."
+      "description": "Research supplier directory focused on peptide supplier reviews, transparency, discount codes, and buyer education.",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://peptidesuppliers.org/reviews/",
+        "query-input": "required name=search_term_string"
+      }
     }
   </script>
 </head>
@@ -88,6 +96,38 @@
 
     <section>
       <div class="shell">
+        <div class="lede-grid">
+          <article class="story-card reveal">
+            <div class="kicker">Homepage intro</div>
+            <h2>PeptideSuppliers.org is built for people comparing peptide suppliers seriously.</h2>
+            <p>
+              This site is for research-oriented visitors who want a cleaner way to compare peptide
+              suppliers, read supplier reviews, find discount codes, and understand what quality
+              signals actually matter before clicking through.
+            </p>
+            <p>
+              Our goal is not to list every supplier blindly. We focus on how clearly a supplier
+              presents third-party testing, research-use-only framing, documentation visibility,
+              site clarity, and overall trust signals for first-time buyers.
+            </p>
+          </article>
+
+          <article class="card reveal delay-1">
+            <div class="kicker">How reviews are framed</div>
+            <h3>What we look for when reviewing peptide suppliers</h3>
+            <ul class="checklist">
+              <li>Whether COAs are visible, readable, and appear recent.</li>
+              <li>How clearly the site explains purity, packaging, and product categories.</li>
+              <li>Whether research-use-only boundaries are stated consistently.</li>
+              <li>How useful the overall buyer experience feels for comparison shoppers.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
         <div class="section-head reveal">
           <div>
             <h2>What strong suppliers make obvious</h2>
@@ -122,6 +162,38 @@
               Visible disclaimers help the brand read as organized, deliberate, and serious.
             </p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Featured peptide suppliers</h2>
+            <p>
+              Start with the suppliers people search most often, then expand into deeper supplier
+              pages and educational articles over time.
+            </p>
+          </div>
+        </div>
+
+        <div class="supplier-grid">
+          <a class="card card-link reveal delay-1" href="/suppliers/iron-peptides/">
+            <div class="kicker">Supplier review</div>
+            <h3>Iron Peptides</h3>
+            <p>Best overall fit for visitors who prioritize presentation, packaging, and visible testing.</p>
+          </a>
+          <a class="card card-link reveal delay-2" href="/suppliers/pinnacle-peptide-labs/">
+            <div class="kicker">Supplier review</div>
+            <h3>Pinnacle Peptide Labs</h3>
+            <p>A strong value-oriented option with a broad category fit and third-party COA messaging.</p>
+          </a>
+          <a class="card card-link reveal delay-3" href="/suppliers/amino-club/">
+            <div class="kicker">Supplier review</div>
+            <h3>Amino Club</h3>
+            <p>Beginner-friendly positioning for visitors who want a more approachable first purchase.</p>
+          </a>
         </div>
       </div>
     </section>
@@ -228,7 +300,11 @@
   <footer class="footer">
     <div class="shell footer-row">
       <span>&copy; 2026 PeptideSuppliers.org</span>
-      <span>Static site built for GitHub Pages.</span>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/reviews/">Reviews</a>
+      </div>
     </div>
   </footer>
 </body>

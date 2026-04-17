@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1f3523"/>
+      <stop offset="60%" stop-color="#41542f"/>
+      <stop offset="100%" stop-color="#8a6434"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1030" cy="120" r="80" fill="#ce9a2a" opacity="0.26"/>
+  <circle cx="170" cy="530" r="110" fill="#f1d79e" opacity="0.12"/>
+  <rect x="80" y="88" width="1040" height="454" rx="34" fill="rgba(255,249,238,0.08)" stroke="rgba(255,249,238,0.16)"/>
+  <text x="120" y="200" fill="#f9f3e7" font-family="Georgia, serif" font-size="36" letter-spacing="6">PEPTIDESUPPLIERS.ORG</text>
+  <text x="120" y="310" fill="#ffffff" font-family="Georgia, serif" font-size="84" font-weight="700">Peptide Suppliers</text>
+  <text x="120" y="400" fill="#f9f3e7" font-family="Georgia, serif" font-size="84" font-weight="700">Reviews &amp; Buyer Guides</text>
+  <text x="120" y="488" fill="#f1e9d7" font-family="Georgia, serif" font-size="34">Research-focused supplier reviews, discount codes, and trust signals.</text>
+</svg>
