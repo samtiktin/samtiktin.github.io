@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Verify a Supplier | PeptideSuppliers.org</title>
+  <meta name="description" content="Verify a peptide supplier by scanning visible trust signals like COAs, contact info, policy pages, and research-use-only language.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://peptidesuppliers.org/verify/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Verify a Supplier | PeptideSuppliers.org">
+  <meta property="og:description" content="Paste a supplier URL and review visible trust signals like testing language, policies, and contact information.">
+  <meta property="og:url" content="https://peptidesuppliers.org/verify/">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="https://peptidesuppliers.org/og-image.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Verify a Supplier | PeptideSuppliers.org">
+  <meta name="twitter:description" content="Paste a supplier URL and review visible trust signals like testing language, policies, and contact information.">
+  <meta name="twitter:image" content="https://peptidesuppliers.org/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">PS</span>
+        <span class="brand-copy">
+          <strong>PeptideSuppliers.org</strong>
+          <span>Research supplier discovery and education</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/reviews/">Reviews</a>
+        <a class="active" href="/verify/">Verify</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card">
+          <div class="page-hero-grid">
+            <div class="page-hero-copy reveal">
+              <div class="eyebrow">Trust signal scan</div>
+              <h1 class="page-title">Verify a peptide supplier.</h1>
+              <p>
+                Paste a supplier URL and review visible trust signals like COAs, policy pages,
+                research-use-only language, and basic site credibility markers. This is a structured
+                informational scan, not a certification or safety guarantee.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="verify-layout">
+          <article class="story-card reveal">
+            <div class="kicker">Scanner</div>
+            <h2>Paste a supplier URL to scan visible trust signals.</h2>
+            <form id="verify-form" class="form-stack">
+              <div>
+                <label class="field-label" for="supplier-url">Supplier URL</label>
+                <input class="input" id="supplier-url" name="supplier_url" type="url" placeholder="https://example.com" required>
+              </div>
+              <div>
+                <label class="field-label" for="scan-notes">Optional notes</label>
+                <textarea class="textarea" id="scan-notes" name="scan_notes" placeholder="Examples: focus on COAs, beginner-friendliness, or contact information."></textarea>
+              </div>
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Run Trust Signal Scan</button>
+              </div>
+            </form>
+            <div id="scan-status" class="status-box" hidden></div>
+          </article>
+
+          <article class="card reveal delay-1">
+            <div class="kicker">What it checks</div>
+            <h3>Visible site-level trust signals</h3>
+            <ul class="checklist">
+              <li>COA and third-party testing mentions</li>
+              <li>Research-use-only language</li>
+              <li>Contact information and policy pages</li>
+              <li>Product clarity and category organization</li>
+              <li>Overall site completeness and consistency</li>
+            </ul>
+            <p class="mini-note">
+              This tool can score visible trust signals, but it cannot guarantee product quality,
+              legal compliance, or that lab documents are authentic.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div id="verify-results" hidden>
+          <div class="section-head reveal">
+            <div>
+              <h2>Scan results</h2>
+              <p>Use this as a structured first pass before trusting a supplier site.</p>
+            </div>
+          </div>
+
+          <div class="verify-layout">
+            <article class="score-panel">
+              <div class="kicker">Overall</div>
+              <h3 id="result-label">Mixed signals</h3>
+              <div id="result-score" class="score-big">0/100</div>
+              <div id="result-pill" class="score-pill">Trust signal scan</div>
+              <p id="result-summary" class="mini-note"></p>
+            </article>
+
+            <div class="result-grid">
+              <article class="card">
+                <div class="kicker">Found</div>
+                <h3>Positive signals</h3>
+                <ul id="result-found" class="checklist"></ul>
+              </article>
+              <article class="card">
+                <div class="kicker">Missing</div>
+                <h3>Gaps to investigate</h3>
+                <ul id="result-missing" class="checklist"></ul>
+              </article>
+              <article class="card">
+                <div class="kicker">Notes</div>
+                <h3>Quick observations</h3>
+                <ul id="result-notes" class="checklist"></ul>
+              </article>
+              <article class="card">
+                <div class="kicker">Caution</div>
+                <h3>Important reminder</h3>
+                <p>
+                  This tool scores visible website signals only. It does not verify purity, legal
+                  compliance, batch authenticity, or real-world fulfillment quality.
+                </p>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-row">
+      <span>&copy; 2026 PeptideSuppliers.org</span>
+      <div class="footer-links">
+        <a href="/privacy/">Privacy</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/reviews/">Reviews</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/verify/verify.js"></script>
+</body>
+</html>
