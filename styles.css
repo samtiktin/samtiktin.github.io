@@ -389,6 +389,69 @@ h3 {
   color: var(--muted);
 }
 
+.review-card img {
+  width: 100%;
+  max-width: 220px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: 22px;
+  background: rgba(255, 250, 241, 0.9);
+  border: 1px solid rgba(31, 42, 30, 0.08);
+}
+
+.review-media {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.stars {
+  display: inline-block;
+  margin-left: 8px;
+  color: var(--gold);
+  font-size: 0.95rem;
+  letter-spacing: 0.06em;
+}
+
+.badge {
+  display: inline-flex;
+  margin-top: 12px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(92, 109, 58, 0.1);
+  border: 1px solid rgba(92, 109, 58, 0.14);
+  color: var(--forest);
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.review-list {
+  margin: 16px 0 0;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.review-list li + li {
+  margin-top: 8px;
+}
+
+.copy-btn {
+  cursor: pointer;
+  border: 0;
+  font: inherit;
+  color: #2e2817;
+  background: linear-gradient(135deg, #f1d79e, var(--gold));
+  box-shadow: 0 12px 24px rgba(206, 154, 42, 0.18);
+}
+
+.copy-btn.copied {
+  background: linear-gradient(135deg, #d6ebc1, #8fb26f);
+}
+
+.shop-link {
+  color: var(--forest);
+}
+
 .feature-layout,
 .two-column,
 .contact-layout {
