@@ -10,11 +10,13 @@ Files:
 - `reviews/index.html` - supplier reviews and discounts
 - `verify/index.html` - supplier trust signal scanner frontend
 - `verify/verify.js` - verifier frontend logic
+- `api/verify.js` - Vercel API route for the live verifier
 - `contact/index.html` - contact and submission page
 - `privacy/index.html` - privacy policy
 - `disclosure/index.html` - affiliate disclosure
 - `suppliers/.../index.html` - supplier-specific review pages
-- `verifier-backend/...` - starter backend for Vercel + OpenAI
+- `verifier-backend/...` - optional separate backend starter for Vercel + OpenAI
+- `package.json` - root Vercel dependency/runtime config
 - `about.html`, `faq.html`, `reviews.html`, `contact.html` - redirects to clean URLs
 - `styles.css` - shared site styling
 - `CNAME` - custom domain for GitHub Pages
