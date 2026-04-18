@@ -8,6 +8,8 @@ Files:
 - `about/index.html` - about and standards
 - `faq/index.html` - visitor FAQ
 - `reviews/index.html` - supplier reviews and discounts
+- `best-peptide-suppliers/index.html` - comparison page
+- `guides/evaluate-peptide-suppliers/index.html` - buyer guide
 - `verify/index.html` - supplier trust signal scanner frontend
 - `verify/verify.js` - verifier frontend logic
 - `api/verify.js` - Vercel API route for the live verifier
