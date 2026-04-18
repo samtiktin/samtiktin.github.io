@@ -4,6 +4,15 @@ const client = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY
 });
 
+const cache = globalThis.__supplierScanCache || new Map();
+const rateLimits = globalThis.__supplierRateLimits || new Map();
+globalThis.__supplierScanCache = cache;
+globalThis.__supplierRateLimits = rateLimits;
+
+const CACHE_TTL_MS = 24 * 60 * 60 * 1000;
+const RATE_LIMIT_WINDOW_MS = 60 * 60 * 1000;
+const RATE_LIMIT_MAX = 10;
+
 function extractSignals(html) {
   const lower = html.toLowerCase();
 
@@ -27,6 +36,64 @@ function stripHtml(html) {
     .replace(/\s+/g, " ")
     .trim()
     .slice(0, 12000);
+}
+
+function normalizeUrl(url) {
+  const parsed = new URL(url);
+  parsed.hash = "";
+  return parsed.toString();
+}
+
+function getCacheKey(url) {
+  const parsed = new URL(url);
+  return parsed.hostname.replace(/^www\./, "");
+}
+
+function getClientIp(req) {
+  const forwarded = req.headers["x-forwarded-for"];
+  if (typeof forwarded === "string" && forwarded.length > 0) {
+    return forwarded.split(",")[0].trim();
+  }
+  return "unknown";
+}
+
+function checkRateLimit(ip) {
+  const now = Date.now();
+  const existing = rateLimits.get(ip);
+
+  if (!existing || now > existing.resetAt) {
+    rateLimits.set(ip, { count: 1, resetAt: now + RATE_LIMIT_WINDOW_MS });
+    return { allowed: true, remaining: RATE_LIMIT_MAX - 1 };
+  }
+
+  if (existing.count >= RATE_LIMIT_MAX) {
+    return { allowed: false, retryAfterMs: existing.resetAt - now };
+  }
+
+  existing.count += 1;
+  rateLimits.set(ip, existing);
+  return { allowed: true, remaining: RATE_LIMIT_MAX - existing.count };
+}
+
+function getCachedResult(key) {
+  const entry = cache.get(key);
+  if (!entry) {
+    return null;
+  }
+
+  if (Date.now() > entry.expiresAt) {
+    cache.delete(key);
+    return null;
+  }
+
+  return entry.payload;
+}
+
+function setCachedResult(key, payload) {
+  cache.set(key, {
+    payload,
+    expiresAt: Date.now() + CACHE_TTL_MS
+  });
 }
 
 export default async function handler(req, res) {
@@ -64,7 +131,26 @@ export default async function handler(req, res) {
   }
 
   try {
-    const response = await fetch(url, {
+    const normalizedUrl = normalizeUrl(url);
+    const cacheKey = getCacheKey(normalizedUrl);
+    const cached = getCachedResult(cacheKey);
+    if (cached) {
+      return res.status(200).json({
+        ...cached,
+        cache: "hit"
+      });
+    }
+
+    const ip = getClientIp(req);
+    const rateLimit = checkRateLimit(ip);
+    if (!rateLimit.allowed) {
+      return res.status(429).json({
+        error: "Rate limit exceeded",
+        details: "Too many scans from this IP. Please try again later."
+      });
+    }
+
+    const response = await fetch(normalizedUrl, {
       headers: {
         "User-Agent": "PeptideSuppliersTrustScanner/1.0"
       }
@@ -114,7 +200,13 @@ export default async function handler(req, res) {
       };
     }
 
-    return res.status(200).json(parsed);
+    const payload = {
+      ...parsed,
+      cache: "miss"
+    };
+    setCachedResult(cacheKey, payload);
+
+    return res.status(200).json(payload);
   } catch (error) {
     return res.status(500).json({
       error: "Scan failed",
