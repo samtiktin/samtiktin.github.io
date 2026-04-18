@@ -1,4 +1,6 @@
 (function () {
+  window.VERIFY_API_ENDPOINT = "https://samtiktin-github-io.vercel.app/api/verify";
+
   var form = document.getElementById("verify-form");
   var statusBox = document.getElementById("scan-status");
   var results = document.getElementById("verify-results");
