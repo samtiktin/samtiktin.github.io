@@ -28,12 +28,20 @@ function stripHtml(html) {
 }
 
 export default async function handler(req, res) {
-  res.setHeader("Access-Control-Allow-Origin", "https://peptidesuppliers.org");
+  res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "POST, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   if (req.method === "OPTIONS") {
     return res.status(200).end();
+  }
+
+  if (req.method === "GET") {
+    return res.status(200).json({
+      ok: true,
+      message: "Verifier API is live. Use POST to submit a supplier URL.",
+      hasOpenAIKey: Boolean(process.env.OPENAI_API_KEY)
+    });
   }
 
   if (req.method !== "POST") {
@@ -44,6 +52,13 @@ export default async function handler(req, res) {
 
   if (!url) {
     return res.status(400).json({ error: "URL is required" });
+  }
+
+  if (!process.env.OPENAI_API_KEY) {
+    return res.status(500).json({
+      error: "Missing OPENAI_API_KEY",
+      details: "The Vercel project does not have a readable OPENAI_API_KEY environment variable in the current deployment."
+    });
   }
 
   try {
@@ -101,7 +116,7 @@ export default async function handler(req, res) {
   } catch (error) {
     return res.status(500).json({
       error: "Scan failed",
-      details: error.message
+      details: error.message || "Unknown server error"
     });
   }
 }

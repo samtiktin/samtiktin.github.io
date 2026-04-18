@@ -69,11 +69,18 @@
       })
     });
 
-    if (!response.ok) {
-      throw new Error("Scan request failed");
+    var data = null;
+    try {
+      data = await response.json();
+    } catch (error) {
+      data = null;
     }
 
-    return response.json();
+    if (!response.ok) {
+      throw new Error((data && (data.details || data.error)) || "Scan request failed");
+    }
+
+    return data;
   }
 
   form.addEventListener("submit", async function (event) {
@@ -91,7 +98,7 @@
       setStatus("Scan complete.", false);
     } catch (error) {
       renderResult(buildFallback(url));
-      setStatus("The live scanner API is not connected yet, so the page is showing the setup fallback. Deploy the backend starter next.", true);
+      setStatus("The live scanner returned an error: " + error.message, true);
     }
   });
 })();
