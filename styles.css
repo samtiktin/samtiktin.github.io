@@ -511,6 +511,28 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.score-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.score-box {
+  padding: 20px;
+  border-radius: 22px;
+  background: rgba(255, 250, 241, 0.82);
+  border: 1px solid rgba(31, 42, 30, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.score-box strong {
+  display: block;
+  margin-top: 10px;
+  color: var(--forest);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+
 .table-wrap {
   overflow-x: auto;
   border: 1px solid rgba(31, 42, 30, 0.08);
