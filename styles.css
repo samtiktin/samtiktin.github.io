@@ -293,6 +293,32 @@ h1 {
   width: min(100%, 720px);
 }
 
+.science-banner,
+.science-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.science-banner {
+  grid-template-columns: 1fr;
+}
+
+.science-panel {
+  overflow: hidden;
+  border: 1px solid rgba(39, 70, 45, 0.08);
+  border-radius: 30px;
+  background: rgba(255, 250, 241, 0.92);
+  box-shadow: var(--shadow);
+}
+
+.science-panel img {
+  width: 100%;
+}
+
+.science-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .brand-row {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
@@ -1080,7 +1106,8 @@ h3 {
   .result-grid,
   .finder-meta,
   .award-strip,
-  .hub-badge-grid {
+  .hub-badge-grid,
+  .science-grid {
     grid-template-columns: 1fr;
   }
 

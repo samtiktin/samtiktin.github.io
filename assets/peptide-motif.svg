@@ -1,0 +1,25 @@
+<svg width="920" height="320" viewBox="0 0 920 320" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Peptide motif illustration</title>
+  <desc id="desc">An original peptide-inspired brand graphic with molecular nodes, capsule panels, and research labels.</desc>
+  <rect width="920" height="320" rx="36" fill="#F8F2E7"/>
+  <rect x="24" y="24" width="872" height="272" rx="28" fill="url(#bg)"/>
+  <path d="M98 210C132 179.333 166 148.667 200 118C225.333 94.6667 249.667 87.3333 273 96C292.333 103.333 308.667 119.667 322 145C335.333 171 351.667 189.667 371 201C394.333 215 418.667 214.333 444 199C464.667 186.333 486 164 508 132C525.333 106 543.333 92 562 90C588.667 87.3333 618 109 650 155C677.333 194.333 705.333 214 734 214C769.333 214 804 185 838 127" stroke="#27462D" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="98" cy="210" r="18" fill="#CE9A2A"/>
+  <circle cx="200" cy="118" r="15" fill="#F1D79E"/>
+  <circle cx="322" cy="145" r="17" fill="#B56D42"/>
+  <circle cx="444" cy="199" r="15" fill="#5C6D3A"/>
+  <circle cx="562" cy="90" r="18" fill="#CE9A2A"/>
+  <circle cx="650" cy="155" r="16" fill="#F1D79E"/>
+  <circle cx="838" cy="127" r="18" fill="#B56D42"/>
+  <rect x="86" y="66" width="172" height="42" rx="21" fill="rgba(248,242,231,0.82)"/>
+  <text x="110" y="93" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1.4">PEPTIDE SIGNALS</text>
+  <rect x="620" y="212" width="202" height="48" rx="24" fill="rgba(248,242,231,0.82)"/>
+  <text x="648" y="242" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1.4">TRUST • TESTING • FIT</text>
+  <defs>
+    <linearGradient id="bg" x1="36" y1="28" x2="893" y2="290" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FFF8ED"/>
+      <stop offset="0.55" stop-color="#F2E6CF"/>
+      <stop offset="1" stop-color="#E7DDCB"/>
+    </linearGradient>
+  </defs>
+</svg>
