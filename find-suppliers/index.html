@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Peptide Suppliers | PeptideSuppliers.org</title>
+  <meta name="description" content="Search peptide suppliers by price tier, testing visibility, location, shipping profile, and buyer fit.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://peptidesuppliers.org/find-suppliers/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Find Peptide Suppliers | PeptideSuppliers.org">
+  <meta property="og:description" content="Use the supplier finder to search peptide suppliers by price, purity signals, location, and shipping profile.">
+  <meta property="og:url" content="https://peptidesuppliers.org/find-suppliers/">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="https://peptidesuppliers.org/og-image.svg">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Find Peptide Suppliers | PeptideSuppliers.org">
+  <meta name="twitter:description" content="Search peptide suppliers by price tier, purity signals, location, and shipping profile.">
+  <meta name="twitter:image" content="https://peptidesuppliers.org/og-image.svg">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">PS</span>
+        <span class="brand-copy">
+          <strong>PeptideSuppliers.org</strong>
+          <span>Research supplier discovery and education</span>
+        </span>
+      </a>
+      <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about/">About</a>
+        <a href="/faq/">FAQ</a>
+        <a href="/suppliers/">Suppliers</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/verify/">Verify</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card">
+          <div class="page-hero-grid">
+            <div class="page-hero-copy reveal">
+              <div class="eyebrow">Supplier finder</div>
+              <h1 class="page-title">Search peptide suppliers by the signals people actually compare.</h1>
+              <p>
+                Filter the directory by price posture, testing visibility, location, shipping profile,
+                and buyer fit. This is built for comparison shoppers, not just casual browsing.
+              </p>
+            </div>
+            <div class="hero-art reveal delay-1">
+              <img src="/assets/comparison-banner.svg" alt="Illustrated supplier comparison banner">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="finder-layout">
+          <aside class="filter-panel reveal">
+            <div class="kicker">Filter suppliers</div>
+            <h2>Find the closest match</h2>
+            <form id="supplier-filters" class="filter-form">
+              <label>
+                Supplier or compound
+                <input id="search-input" name="q" type="search" placeholder="BPC-157, Amino Club, GLP-1">
+              </label>
+              <label>
+                Price tier
+                <select id="price-filter" name="price">
+                  <option value="">Any</option>
+                  <option value="budget">Budget</option>
+                  <option value="mid">Mid-range</option>
+                  <option value="premium">Premium</option>
+                </select>
+              </label>
+              <label>
+                Testing / purity visibility
+                <select id="coa-filter" name="coa">
+                  <option value="">Any</option>
+                  <option value="strong">Strong COA visibility</option>
+                  <option value="visible">Visible testing language</option>
+                </select>
+              </label>
+              <label>
+                Location
+                <select id="location-filter" name="location">
+                  <option value="">Any</option>
+                  <option value="US">US-based</option>
+                  <option value="Unspecified">Location not clearly surfaced</option>
+                </select>
+              </label>
+              <label>
+                Shipping profile
+                <select id="shipping-filter" name="shipping">
+                  <option value="">Any</option>
+                  <option value="fast">Fast shipping emphasized</option>
+                  <option value="outside-us">Ships beyond the US</option>
+                </select>
+              </label>
+              <label>
+                Buyer fit
+                <select id="fit-filter" name="fit">
+                  <option value="">Any</option>
+                  <option value="Beginners">Beginners</option>
+                  <option value="Value">Value</option>
+                  <option value="Overall fit">Overall fit</option>
+                  <option value="Premium quality">Premium quality</option>
+                  <option value="Budget-conscious buyers">Budget-conscious buyers</option>
+                </select>
+              </label>
+              <button class="button button-ghost" type="reset">Reset filters</button>
+            </form>
+          </aside>
+
+          <div class="finder-results">
+            <div class="section-head reveal">
+              <div>
+                <h2>Supplier results</h2>
+                <p id="results-summary">Loading supplier directory...</p>
+              </div>
+            </div>
+            <div id="supplier-results" class="finder-results-grid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer-row">
+      <span>&copy; 2026 PeptideSuppliers.org</span>
+      <div class="footer-links">
+        <a href="/suppliers/">Suppliers</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/assets/supplier-directory.js"></script>
+  <script src="/find-suppliers/find-suppliers.js"></script>
+</body>
+</html>
