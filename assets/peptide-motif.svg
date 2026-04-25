@@ -13,8 +13,8 @@
   <circle cx="838" cy="127" r="18" fill="#B56D42"/>
   <rect x="86" y="66" width="172" height="42" rx="21" fill="rgba(248,242,231,0.82)"/>
   <text x="110" y="93" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1.4">PEPTIDE SIGNALS</text>
-  <rect x="620" y="212" width="202" height="48" rx="24" fill="rgba(248,242,231,0.82)"/>
-  <text x="648" y="242" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="1.4">TRUST • TESTING • FIT</text>
+  <rect x="584" y="212" width="274" height="48" rx="24" fill="rgba(248,242,231,0.82)"/>
+  <text x="610" y="242" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="20" letter-spacing="1.2">COAs • 3RD PARTY TESTED • PURITY</text>
   <defs>
     <linearGradient id="bg" x1="36" y1="28" x2="893" y2="290" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFF8ED"/>
