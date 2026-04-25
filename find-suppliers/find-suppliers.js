@@ -73,10 +73,6 @@
       chips.push("Code: " + supplier.discountCode);
     }
 
-    if (supplier.affiliateReady) {
-      chips.push(supplier.affiliateLabel);
-    }
-
     var actions = supplier.reviewUrl
       ? '<a class="button button-ghost" href="' + supplier.reviewUrl + '">Read review</a>'
       : '<span class="finder-note">Directory listing</span>';
