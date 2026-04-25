@@ -117,6 +117,46 @@ window.SUPPLIER_DIRECTORY = [
     discountCode: "",
     affiliateReady: true,
     affiliateLabel: "Public affiliate registration",
-    notes: "Added as a directory listing because the site publicly advertises affiliate registration, quick shipping, and visible lab reports."
+    notes: "A budget-oriented listing with visible lab report links, quick-shipping language, and a clear US-based storefront."
+  },
+  {
+    slug: "peptide-sciences",
+    name: "Peptide Sciences",
+    reviewUrl: "",
+    supplierUrl: "https://www.peptidesciences.com/",
+    location: "US",
+    priceTier: "premium",
+    priceLabel: "Premium leaning",
+    coaLevel: "strong",
+    coaLabel: "COA / HPLC / MS and third-party testing tabs",
+    shippingLabel: "Orders placed after 12 PM PST ship the following business day",
+    locationLabel: "Boca Raton, Florida",
+    shipsOutsideUS: "unknown",
+    bestFor: "Established catalog depth",
+    compounds: ["BPC-157", "IGF-1 LR3", "Tirzepatide"],
+    discountCode: "",
+    affiliateReady: false,
+    affiliateLabel: "",
+    notes: "A popular supplier with a large research catalog, visible testing tabs, and a strong research-use-only presentation."
+  },
+  {
+    slug: "core-peptides",
+    name: "Core Peptides",
+    reviewUrl: "",
+    supplierUrl: "https://www.corepeptides.com/",
+    location: "US",
+    priceTier: "mid",
+    priceLabel: "Mid-range",
+    coaLevel: "visible",
+    coaLabel: "99%+ purity and quality-control messaging",
+    shippingLabel: "Same-business-day shipping before 1 PM PST",
+    locationLabel: "United States",
+    shipsOutsideUS: false,
+    bestFor: "Fast domestic shipping",
+    compounds: ["BPC-157", "Sermorelin", "GHK-Cu"],
+    discountCode: "",
+    affiliateReady: false,
+    affiliateLabel: "",
+    notes: "A well-known US supplier with fast domestic shipping language, a broad catalog, and strong research-only framing."
   }
 ];
