@@ -1,0 +1,20 @@
+<svg width="720" height="180" viewBox="0 0 720 180" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">PeptideSuppliers.org wordmark</title>
+  <desc id="desc">A branded wordmark with a shield monogram and serif site name for PeptideSuppliers.org.</desc>
+  <rect width="720" height="180" rx="36" fill="#F8F2E7"/>
+  <rect x="24" y="24" width="140" height="132" rx="28" fill="url(#paint0_linear)"/>
+  <path d="M59 74C59 59.6406 70.6406 48 85 48H103C133.376 48 158 72.6243 158 103V105.744C158 132.393 136.393 154 109.744 154H85C70.6406 154 59 142.359 59 128V74Z" fill="rgba(248,242,231,0.18)"/>
+  <path d="M83 69H107.757C121.703 69 133 80.2973 133 94.243V94.243C133 108.189 121.703 119.486 107.757 119.486H83V69Z" fill="#F7E7C0"/>
+  <path d="M83 85H101.24C107.735 85 113 90.2652 113 96.7595V96.7595C113 103.254 107.735 108.519 101.24 108.519H83V85Z" fill="#27462D"/>
+  <text x="194" y="78" fill="#27462D" font-family="Georgia, 'Times New Roman', serif" font-size="40" font-weight="700" letter-spacing="4">PEPTIDESUPPLIERS.ORG</text>
+  <text x="194" y="117" fill="#5A6858" font-family="Georgia, 'Times New Roman', serif" font-size="24" letter-spacing="1.5">Research supplier directory and trust-signal reviews</text>
+  <rect x="194" y="132" width="144" height="16" rx="8" fill="#CE9A2A"/>
+  <rect x="348" y="132" width="104" height="16" rx="8" fill="#B56D42"/>
+  <rect x="462" y="132" width="160" height="16" rx="8" fill="#5C6D3A"/>
+  <defs>
+    <linearGradient id="paint0_linear" x1="24" y1="24" x2="164" y2="156" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#27462D"/>
+      <stop offset="1" stop-color="#6C7A3D"/>
+    </linearGradient>
+  </defs>
+</svg>

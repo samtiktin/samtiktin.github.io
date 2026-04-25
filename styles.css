@@ -281,6 +281,109 @@ h1 {
   background: rgba(255, 251, 244, 0.05);
 }
 
+.brand-showcase {
+  padding: 28px;
+  border: 1px solid rgba(39, 70, 45, 0.1);
+  border-radius: 30px;
+  background: linear-gradient(135deg, rgba(255, 250, 241, 0.92), rgba(248, 242, 231, 0.78));
+  box-shadow: var(--shadow);
+}
+
+.brand-showcase img {
+  width: min(100%, 720px);
+}
+
+.brand-row {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 22px;
+  align-items: center;
+}
+
+.brand-points {
+  display: grid;
+  gap: 12px;
+}
+
+.brand-point {
+  padding: 16px 18px;
+  border-radius: 18px;
+  border: 1px solid rgba(39, 70, 45, 0.08);
+  background: rgba(255, 250, 241, 0.88);
+}
+
+.brand-point strong {
+  display: block;
+  margin-bottom: 4px;
+  color: var(--forest);
+}
+
+.award-strip,
+.hub-badge-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.award-strip {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.hub-badge-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.award-card {
+  padding: 22px;
+  border-radius: 26px;
+  border: 1px solid rgba(39, 70, 45, 0.08);
+  background: linear-gradient(180deg, rgba(255, 250, 241, 0.95), rgba(248, 242, 231, 0.84));
+  box-shadow: var(--shadow);
+}
+
+.award-card .kicker {
+  color: var(--clay);
+}
+
+.award-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(39, 70, 45, 0.08);
+  border: 1px solid rgba(39, 70, 45, 0.1);
+  color: var(--forest);
+  font-size: 0.84rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.award-badge::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold), #f1d79e);
+  box-shadow: 0 0 0 4px rgba(206, 154, 42, 0.14);
+}
+
+.award-badge-value::before {
+  background: linear-gradient(135deg, #b56d42, #e2b08b);
+  box-shadow: 0 0 0 4px rgba(181, 109, 66, 0.12);
+}
+
+.award-badge-shipping::before {
+  background: linear-gradient(135deg, #5c6d3a, #aac16c);
+  box-shadow: 0 0 0 4px rgba(92, 109, 58, 0.14);
+}
+
+.brand-note {
+  color: var(--muted);
+  font-size: 0.96rem;
+}
+
 .button-ghost {
   color: var(--forest);
   border: 1px solid rgba(39, 70, 45, 0.16);
@@ -972,9 +1075,12 @@ h3 {
   .resource-grid,
   .supplier-grid,
   .finder-layout,
+  .brand-row,
   .verify-layout,
   .result-grid,
-  .finder-meta {
+  .finder-meta,
+  .award-strip,
+  .hub-badge-grid {
     grid-template-columns: 1fr;
   }
 
