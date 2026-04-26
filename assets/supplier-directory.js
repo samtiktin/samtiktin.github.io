@@ -15,8 +15,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Overall fit",
     compounds: ["BPC-157", "TB-500", "GLP-1 analogs"],
     discountCode: "IRONMAN",
-    affiliateReady: true,
-    affiliateLabel: "Existing referral link",
     notes: "Best for visitors who want a polished storefront and stronger buyer reassurance."
   },
   {
@@ -35,8 +33,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Value",
     compounds: ["BPC-157", "TB-500", "NAD+"],
     discountCode: "PPL15",
-    affiliateReady: true,
-    affiliateLabel: "Public affiliate program",
     notes: "A strong fit for value-oriented shoppers who still want clear testing language."
   },
   {
@@ -55,8 +51,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Beginners",
     compounds: ["GHK-Cu", "BPC-157", "GLP-1 analogs"],
     discountCode: "AMINOSAVE",
-    affiliateReady: true,
-    affiliateLabel: "Public affiliate program",
     notes: "One of the easiest suppliers to position for first-time researchers and price-sensitive shoppers."
   },
   {
@@ -75,8 +69,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Premium quality",
     compounds: ["Glow stacks", "NAD+", "GLP-1 analogs"],
     discountCode: "PEPTIDE10",
-    affiliateReady: true,
-    affiliateLabel: "Public partner program",
     notes: "Best suited for visitors drawn to premium positioning, branded stacks, and US-only fulfillment."
   },
   {
@@ -95,8 +87,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Budget-conscious buyers",
     compounds: ["Ipamorelin", "AOD-9604", "BPC-157"],
     discountCode: "KING15",
-    affiliateReady: true,
-    affiliateLabel: "Existing referral link",
     notes: "A good directory fit for shoppers who care about price posture, traceability, and select-region international shipping."
   },
   {
@@ -115,8 +105,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Fast budget option",
     compounds: ["BPC-157", "TB-500", "GLP compounds"],
     discountCode: "",
-    affiliateReady: true,
-    affiliateLabel: "Public affiliate registration",
     notes: "A budget-oriented listing with visible lab report links, quick-shipping language, and a clear US-based storefront."
   },
   {
@@ -135,8 +123,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Established catalog depth",
     compounds: ["BPC-157", "IGF-1 LR3", "Tirzepatide"],
     discountCode: "",
-    affiliateReady: false,
-    affiliateLabel: "",
     notes: "A popular supplier with a large research catalog, visible testing tabs, and a strong research-use-only presentation."
   },
   {
@@ -155,8 +141,6 @@ window.SUPPLIER_DIRECTORY = [
     bestFor: "Fast domestic shipping",
     compounds: ["BPC-157", "Sermorelin", "GHK-Cu"],
     discountCode: "",
-    affiliateReady: false,
-    affiliateLabel: "",
     notes: "A well-known US supplier with fast domestic shipping language, a broad catalog, and strong research-only framing."
   }
 ];
