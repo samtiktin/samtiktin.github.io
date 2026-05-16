@@ -147,26 +147,26 @@ function Get-PeptideMechanism($slug) {
 
 function Get-PeptideInterest($slug) {
   switch ($slug) {
-    "tirzepatide" { "People usually search Tirzepatide pages because they want a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
-    "semaglutide" { "Semaglutide pages tend to get attention because visitors already know the compound name and want a fast path into the product listing and surrounding trust signals." }
-    "retatrutide" { "Retatrutide gets attention largely because it is treated as a newer multi-pathway metabolic entry and comparison shoppers want to see who visibly lists it." }
-    "cagrilintide" { "Visitors usually land on Cagrilintide pages when they are comparing metabolic compounds that sit adjacent to the more familiar GLP-1 class." }
-    "tesofensine" { "Tesofensine tends to attract comparison shoppers who care about more niche appetite-related catalog entries." }
-    "nad-plus" { "NAD+ often gets searched by visitors who are less interested in peptide classification and more interested in cellular-energy and longevity-style catalog sections." }
-    "aod-9604" { "AOD-9604 tends to draw interest from visitors comparing body-composition focused compounds that appear alongside peptide products." }
-    "5-amino-1mq" { "5-amino 1MQ usually gets looked up by visitors who already know the compound name and want a quick route to the mapped product page." }
-    "mazdutide" { "Mazdutide tends to interest visitors who are scanning for newer metabolic compounds rather than just the best-known GLP-1 names." }
-    default { "Most people use peptide-specific pages because they want a clearer explanation and a quicker route into the mapped supplier pages for that compound." }
+    "tirzepatide" { "You will usually look up Tirzepatide when you want a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
+    "semaglutide" { "You will usually land on Semaglutide pages when you already know the compound name and want a fast path into the product listing and surrounding trust signals." }
+    "retatrutide" { "You will usually look up Retatrutide when you want to compare a newer multi-pathway metabolic compound and see which suppliers visibly list it." }
+    "cagrilintide" { "You will usually land on Cagrilintide when you are comparing metabolic compounds that sit next to the more familiar GLP-1 names." }
+    "tesofensine" { "Tesofensine usually attracts people who are comparing more niche appetite-related catalog entries." }
+    "nad-plus" { "NAD+ often gets searched by people who care more about cellular-energy and longevity-style categories than strict peptide classification." }
+    "aod-9604" { "AOD-9604 usually comes up when you are comparing body-composition focused compounds that appear alongside peptide products." }
+    "5-amino-1mq" { "You will usually look up 5-amino 1MQ when you already know the compound name and want a quick route to the product page." }
+    "mazdutide" { "Mazdutide usually gets attention from people scanning for newer metabolic compounds rather than only the best-known GLP-1 names." }
+    default { "Most people use peptide-specific pages because they want a clearer explanation and a quicker route into the product pages for that compound." }
   }
 }
 
 function Get-PeptideComparisonNote($key) {
   switch ($key) {
-    "metabolic" { "Visitors often compare these compounds side by side with other metabolism-focused entries and look for the clearest supplier pages, the cleanest product presentation, and the most obvious trust signals." }
-    "recovery" { "Visitors often compare these compounds based on how recovery-focused the listing feels, how easy the documentation is to locate, and whether the supplier makes the product category easy to understand." }
-    "growth" { "Visitors often compare these compounds by signaling class, product format, and whether the supplier presents the peptide clearly inside a larger GH or performance-oriented catalog." }
-    "cognitive" { "Visitors often compare these compounds by how clearly the site explains the peptide, how polished the listing feels, and whether the surrounding research framing stays careful and readable." }
-    "specialty" { "Visitors often compare these entries by niche fit, supplier presentation, and how easy it is to understand what makes the product distinct from more common peptide listings." }
+    "metabolic" { "You will usually compare these compounds side by side with other metabolism-focused entries and look for the clearest product pages, the cleanest presentation, and the most obvious trust signals." }
+    "recovery" { "You will usually compare these compounds based on how recovery-focused the listing feels, how easy the documentation is to locate, and whether the product page is easy to understand." }
+    "growth" { "You will usually compare these compounds by signaling class, product format, and whether the peptide is presented clearly inside a larger GH or performance-oriented catalog." }
+    "cognitive" { "You will usually compare these compounds by how clearly the page explains the peptide, how polished the listing feels, and whether the research framing stays careful and readable." }
+    "specialty" { "You will usually compare these entries by niche fit, product presentation, and how easy it is to understand what makes them different from more common peptide listings." }
   }
 }
 
@@ -385,9 +385,9 @@ foreach ($peptide in $peptides) {
     $discountHtml = if ($code) { "<div class=`"discount-note`">Discount code: $code</div>" } else { "" }
 @"
           <article class="peptide-supplier-card reveal">
-            <div class="kicker">Supplier shortcut</div>
+            <div class="kicker">Product route</div>
             <h3>$($supplier.name)</h3>
-            <p>This supplier is one of the mapped directory routes currently connected to the $($peptide.name) listing.</p>
+            <p>This product route is one of the current directory links connected to $($peptide.name).</p>
             <div class="button-row">
               <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="noopener noreferrer">Buy from $($supplier.name)</a>
             </div>
@@ -412,18 +412,18 @@ foreach ($peptide in $peptides) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>$($peptide.name) peptide suppliers and overview | PeptideSuppliers.org</title>
-  <meta name="description" content="Learn more about $($peptide.name), compare mapped supplier shortcuts, and see discount codes and product routes on PeptideSuppliers.org.">
+  <meta name="description" content="Learn more about $($peptide.name), see where it is listed, and check discount codes and product routes on PeptideSuppliers.org.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://peptidesuppliers.org/peptides/$($peptide.slug)/">
   <meta property="og:type" content="article">
   <meta property="og:title" content="$($peptide.name) peptide suppliers and overview | PeptideSuppliers.org">
-  <meta property="og:description" content="Learn more about $($peptide.name) and compare the mapped supplier shortcuts on PeptideSuppliers.org.">
+  <meta property="og:description" content="Learn more about $($peptide.name), see where it is listed, and browse the connected product routes on PeptideSuppliers.org.">
   <meta property="og:url" content="https://peptidesuppliers.org/peptides/$($peptide.slug)/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$($peptide.image)">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="$($peptide.name) peptide suppliers and overview | PeptideSuppliers.org">
-  <meta name="twitter:description" content="Learn more about $($peptide.name) and compare mapped supplier routes.">
+  <meta name="twitter:description" content="Learn more about $($peptide.name), see where it is listed, and browse connected product routes.">
   <meta name="twitter:image" content="$($peptide.image)">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
@@ -433,7 +433,7 @@ foreach ($peptide in $peptides) {
       "@type": "WebPage",
       "name": "$($peptide.name)",
       "url": "https://peptidesuppliers.org/peptides/$($peptide.slug)/",
-      "description": "Learn more about $($peptide.name), compare mapped supplier shortcuts, and see discount codes and product routes."
+      "description": "Learn more about $($peptide.name), see where it is listed, and check discount codes and product routes."
     }
   </script>
 </head>
@@ -497,7 +497,7 @@ foreach ($peptide in $peptides) {
           <div class="jump-links">
             <a href="#overview">Overview</a>
             <a href="#what-to-compare">What to compare</a>
-            <a href="#supplier-shortcuts">Supplier shortcuts</a>
+            <a href="#supplier-shortcuts">Where to find it</a>
           </div>
         </div>
       </div>
@@ -521,9 +521,9 @@ foreach ($peptide in $peptides) {
             <h3>Why people look up $($peptide.name)</h3>
             <ul class="checklist">
               <li>$interest</li>
-              <li>Visitors usually want to compare product clarity, supplier fit, and surrounding trust signals.</li>
-              <li>The mapped discount-code shortcuts make it easier to move from research into the supplier page quickly.</li>
-              <li>The category placement helps visitors understand how the peptide fits into the rest of the directory.</li>
+              <li>You can use this page to understand the compound first and then decide which product page you want to open.</li>
+              <li>The discount-code notes make it easier to see which route may be the most useful for you.</li>
+              <li>The category label helps you find nearby compounds in the directory if you want to compare similar entries.</li>
             </ul>
           </article>
         </div>
@@ -566,7 +566,7 @@ foreach ($peptide in $peptides) {
           <div>
             <h2>Common comparisons for $($peptide.name)</h2>
             <p>
-              Visitors rarely look at a peptide page in isolation. They usually compare it against adjacent compounds, neighboring categories, or alternative supplier listings.
+              Most people do not look at a peptide page in isolation. They usually compare it with nearby compounds, similar categories, or alternative product listings.
             </p>
           </div>
         </div>
@@ -578,13 +578,13 @@ foreach ($peptide in $peptides) {
           </article>
           <article class="card reveal delay-1">
             <div class="kicker">Page reading pattern</div>
-            <h3>How visitors usually browse</h3>
-            <p>Most visitors move between the peptide explainer, the supplier shortcut, and the broader directory section before deciding which supplier page to open next.</p>
+            <h3>How people usually browse</h3>
+            <p>Most people move between the peptide explainer, the product links, and the broader directory section before deciding which page to open next.</p>
           </article>
           <article class="card reveal delay-2">
             <div class="kicker">Next step</div>
             <h3>How to keep researching</h3>
-            <p>Use this page for the peptide overview, then compare the mapped supplier routes, and finally use the supplier hub if you want rankings, broader reviews, or shipping-focused pages.</p>
+            <p>Start with the peptide overview here, then open the product links below, and use the supplier hub afterward if you want rankings, broader reviews, or shipping-focused pages.</p>
           </article>
         </div>
       </div>
@@ -594,9 +594,9 @@ foreach ($peptide in $peptides) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>$($peptide.name) supplier shortcuts</h2>
+            <h2>Where to find $($peptide.name)</h2>
             <p>
-              These are the mapped supplier routes currently connected to this peptide entry in the directory.
+              These are the current product routes connected to this peptide in the directory.
             </p>
           </div>
         </div>
