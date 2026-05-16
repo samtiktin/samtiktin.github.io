@@ -45,6 +45,121 @@ function Get-ResearchNote($key) {
   }
 }
 
+function Get-PeptideOverview($slug) {
+  switch ($slug) {
+    "tirzepatide" { "Tirzepatide is generally described as an incretin-based compound that combines GIP and GLP-1 receptor activity in one molecule." }
+    "semaglutide" { "Semaglutide is generally described as a GLP-1 receptor agonist that is commonly discussed in metabolic and appetite-related research." }
+    "retatrutide" { "Retatrutide is commonly described as a multi-agonist research compound that targets GLP-1, GIP, and glucagon signaling pathways." }
+    "cagrilintide" { "Cagrilintide is usually described as an amylin-analog compound that shows up in appetite and body-weight research discussions." }
+    "tesofensine" { "Tesofensine is generally discussed as a centrally acting compound studied for appetite and body-composition related outcomes." }
+    "nad-plus" { "NAD+ is not a peptide in the narrowest sense, but it is frequently grouped into peptide-adjacent research catalogs because of its role in cellular energy and redox biology." }
+    "aod-9604" { "AOD-9604 is commonly described as a modified fragment of human growth hormone that appears in body-composition and fat-metabolism research conversations." }
+    "5-amino-1mq" { "5-amino 1MQ is usually discussed as an NNMT-related research compound that is often grouped into metabolism-focused product catalogs." }
+    "mazdutide" { "Mazdutide is generally described as a dual-agonist metabolic research compound associated with GLP-1 and glucagon signaling." }
+
+    "bpc-157" { "BPC-157 is a synthetic peptide that is commonly discussed in preclinical research around tissue recovery, gut-related signaling, and repair-oriented models." }
+    "tb-500" { "TB-500 is generally described as a fragment associated with thymosin beta-4 signaling and is frequently discussed in preclinical recovery and repair contexts." }
+    "ghk-cu" { "GHK-Cu is a copper-binding peptide complex that is widely discussed in skin, collagen, wound-healing, and appearance-oriented research." }
+    "mots-c" { "MOTS-c is a mitochondrial-derived peptide that is commonly studied in relation to metabolic stress, exercise signaling, and cellular adaptation." }
+    "glow" { "Glow is best understood as a branded blend-style product entry rather than a single classical peptide, and it is usually positioned around appearance-oriented or restoration-oriented research themes." }
+    "igf-1-des" { "IGF-1 DES is a shorter insulin-like growth factor analog that is commonly discussed in receptor signaling and growth-focused research." }
+
+    "oxytocin" { "Oxytocin is a naturally occurring peptide hormone and neuropeptide that is widely known for its roles in social behavior, uterine contraction, and lactation biology." }
+    "sermorelin" { "Sermorelin is generally described as a growth hormone releasing hormone analog that is used in research around pituitary signaling." }
+    "tesamorelin" { "Tesamorelin is generally described as a GHRH analog that appears in research around growth hormone signaling and body-composition related outcomes." }
+    "ipamorelin" { "Ipamorelin is usually described as a selective growth hormone secretagogue that is often grouped with GH-oriented research products." }
+    "cjc-1295-ipamorelin" { "CJC-1295 / Ipamorelin is a combined product route that pairs two GH-related signaling compounds in one listing." }
+    "cjc-1295" { "CJC-1295 is usually described as a growth hormone releasing hormone analog that appears in signaling and performance-oriented peptide catalogs." }
+    "mk-677" { "MK-677 is not a peptide in the strict sense, but it is commonly grouped into peptide-adjacent research because it is studied as a ghrelin receptor agonist and GH secretagogue." }
+    "igf-1-lr3" { "IGF-1 LR3 is a longer-acting insulin-like growth factor analog that is commonly discussed in growth-signaling research." }
+    "pt-141" { "PT-141, also known as bremelanotide, is generally discussed as a melanocortin-related peptide analog with libido and signaling research interest." }
+    "gonadorelin" { "Gonadorelin is a synthetic GnRH analog used in research around pituitary-gonadal signaling." }
+    "hexarelin" { "Hexarelin is generally described as a GH secretagogue peptide that appears in performance and endocrine-signaling research." }
+    "thymosin-alpha-1" { "Thymosin Alpha-1 is a thymic peptide that is commonly discussed in immune-related and signaling-focused research contexts." }
+    "kisspeptin-10" { "Kisspeptin-10 is a short kisspeptin fragment studied in reproductive hormone signaling and neuroendocrine regulation." }
+
+    "semax" { "Semax is a synthetic peptide analog that is often discussed in nootropic and neurotrophic research circles." }
+    "selank" { "Selank is a synthetic peptide analog frequently grouped into anxiolytic, nootropic, and neuroregulation research discussions." }
+    "cerebrolysin" { "Cerebrolysin is a peptide-rich neurotrophic preparation that is commonly discussed in brain and neuro-support research contexts." }
+    "dsip" { "DSIP, or delta sleep-inducing peptide, is usually discussed in sleep-regulation and neuropeptide research conversations." }
+    "dihexa" { "Dihexa is commonly discussed as a neurotrophic research compound associated with cognition-oriented experimentation." }
+    "epitalon" { "Epitalon is a synthetic tetrapeptide that is often discussed in longevity and cellular aging research." }
+    "foxo4-dri" { "FOXO4-DRI is generally discussed as a senescence-related research peptide designed around FOXO4 and p53 pathway interactions." }
+    "thymalin" { "Thymalin is a thymic peptide preparation that appears in immune and longevity-oriented research discussions." }
+
+    "melanotan-ii" { "Melanotan II is a melanocortin analog commonly discussed in pigmentation and melanocortin-receptor research." }
+    "ara-290" { "ARA-290 is generally described as a small erythropoietin-derived peptide investigated in tissue-protection and signaling research." }
+    "kpv" { "KPV is a short peptide fragment commonly discussed in inflammation and barrier-related research contexts." }
+    "klow" { "KLOW is best treated as a branded specialty listing rather than a classical standalone peptide name, and visitors usually compare it as a niche catalog product." }
+    default { "This page is designed to give a clearer peptide-by-peptide explanation than the directory card alone." }
+  }
+}
+
+function Get-PeptideMechanism($slug) {
+  switch ($slug) {
+    "tirzepatide" { "In research terms, Tirzepatide is usually framed around incretin receptor signaling, especially its combined GIP and GLP-1 activity, which is why it is often compared with other metabolic peptides." }
+    "semaglutide" { "Semaglutide is usually explained through GLP-1 receptor signaling, with research discussions often focusing on appetite regulation, gastric emptying, and glucose-related effects." }
+    "retatrutide" { "Retatrutide is commonly described through its triple-agonist design, which is why it is frequently positioned as a more complex metabolic-signaling entry than standard GLP-1 analogs." }
+    "cagrilintide" { "Cagrilintide is usually explained through amylin-pathway signaling and satiety-related research, which is why it often appears next to GLP-1 compounds in supplier catalogs." }
+    "tesofensine" { "Tesofensine is generally discussed through monoamine-related central nervous system signaling, which is part of why it gets grouped into appetite and body-composition research listings." }
+    "nad-plus" { "NAD+ is usually explained through mitochondrial and cellular energy pathways, redox balance, and enzyme systems such as sirtuins and PARPs." }
+    "aod-9604" { "AOD-9604 is often described through fragment-based growth hormone biology, particularly in relation to lipid metabolism research rather than full-spectrum GH signaling." }
+    "5-amino-1mq" { "5-amino 1MQ is commonly framed around NNMT-related metabolic signaling, which is why it tends to show up in body-composition and energy-oriented research pages." }
+    "mazdutide" { "Mazdutide is usually explained through dual GLP-1 and glucagon receptor activity, making it part of the newer generation of multi-pathway metabolic research compounds." }
+
+    "bpc-157" { "BPC-157 is commonly described in preclinical literature through repair-oriented themes such as angiogenesis, tissue recovery, and gastrointestinal barrier signaling." }
+    "tb-500" { "TB-500 is usually framed around cell migration, actin dynamics, and repair-oriented signaling connected to thymosin beta-4 biology." }
+    "ghk-cu" { "GHK-Cu is often explained through copper-binding activity and downstream effects on collagen-related, skin-related, and repair-oriented signaling pathways." }
+    "mots-c" { "MOTS-c is generally discussed as a mitochondrial signaling peptide involved in metabolic stress responses and exercise-related adaptation research." }
+    "glow" { "Because Glow is a branded blend-style listing, the most useful way to think about it is as a packaged recovery or appearance-oriented route rather than a single mechanism peptide." }
+    "igf-1-des" { "IGF-1 DES is commonly discussed through insulin-like growth factor receptor signaling, especially in research that cares about growth and local tissue-level effects." }
+
+    "oxytocin" { "Oxytocin is usually explained through oxytocin receptor signaling in both the nervous system and peripheral tissues." }
+    "sermorelin" { "Sermorelin is generally described through GHRH receptor signaling and pituitary stimulation of endogenous growth hormone release." }
+    "tesamorelin" { "Tesamorelin is usually explained similarly, with research discussions centered on GHRH analog activity and downstream GH signaling." }
+    "ipamorelin" { "Ipamorelin is generally discussed as a ghrelin receptor agonist and GH secretagogue with relatively selective signaling compared with some older compounds." }
+    "cjc-1295-ipamorelin" { "The combined route is usually explained as pairing a GHRH analog with a ghrelin-pathway secretagogue to create a broader GH-signaling product listing." }
+    "cjc-1295" { "CJC-1295 is commonly framed around GHRH analog signaling and its role in growth-hormone related research." }
+    "mk-677" { "MK-677 is generally explained through ghrelin receptor signaling and stimulation of endogenous GH and IGF-1 pathways, even though it is not a peptide molecule itself." }
+    "igf-1-lr3" { "IGF-1 LR3 is usually described through insulin-like growth factor signaling with a longer-acting profile than some other IGF analogs." }
+    "pt-141" { "PT-141 is generally explained through melanocortin receptor signaling rather than nitric-oxide focused pathways." }
+    "gonadorelin" { "Gonadorelin is usually discussed through GnRH receptor signaling and downstream LH/FSH regulation." }
+    "hexarelin" { "Hexarelin is usually explained through ghrelin receptor activity and GH secretagogue signaling." }
+    "thymosin-alpha-1" { "Thymosin Alpha-1 is generally framed around immune modulation and thymic-peptide signaling." }
+    "kisspeptin-10" { "Kisspeptin-10 is usually explained through kisspeptin receptor biology and its upstream role in reproductive hormone signaling." }
+
+    "semax" { "Semax is often discussed through neurotrophic and neuromodulatory signaling, including research interest around BDNF-related pathways." }
+    "selank" { "Selank is generally framed around neuromodulatory and anxiolytic research, often with discussion of GABA-related or neurochemical regulatory effects." }
+    "cerebrolysin" { "Cerebrolysin is commonly explained through peptide-rich neurotrophic signaling and brain-support oriented research themes." }
+    "dsip" { "DSIP is usually described through sleep-related neuropeptide signaling, though the exact biology is still debated in the literature." }
+    "dihexa" { "Dihexa is often discussed through HGF/c-Met related neurotrophic signaling in cognition-focused research." }
+    "epitalon" { "Epitalon is commonly explained through cellular aging, telomere-related, and longevity-oriented research frameworks." }
+    "foxo4-dri" { "FOXO4-DRI is generally discussed through senescent cell biology and disruption of FOXO4-p53 related interactions." }
+    "thymalin" { "Thymalin is usually explained through thymic peptide signaling and immune-focused research themes." }
+
+    "melanotan-ii" { "Melanotan II is generally described through melanocortin receptor signaling, which is why it shows up in both pigmentation and libido-related discussions." }
+    "ara-290" { "ARA-290 is often explained through tissue-protective receptor signaling derived from erythropoietin pathway research." }
+    "kpv" { "KPV is commonly discussed through anti-inflammatory signaling themes and barrier-related preclinical research." }
+    "klow" { "For KLOW, the practical comparison point is usually the product positioning itself, because branded specialty listings often communicate less about a single clean mechanism than classical peptides do." }
+    default { "This page uses cautious research-oriented language rather than treatment claims." }
+  }
+}
+
+function Get-PeptideInterest($slug) {
+  switch ($slug) {
+    "tirzepatide" { "People usually search Tirzepatide pages because they want a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
+    "semaglutide" { "Semaglutide pages tend to get attention because visitors already know the compound name and want a fast path into the product listing and surrounding trust signals." }
+    "retatrutide" { "Retatrutide gets attention largely because it is treated as a newer multi-pathway metabolic entry and comparison shoppers want to see who visibly lists it." }
+    "cagrilintide" { "Visitors usually land on Cagrilintide pages when they are comparing metabolic compounds that sit adjacent to the more familiar GLP-1 class." }
+    "tesofensine" { "Tesofensine tends to attract comparison shoppers who care about more niche appetite-related catalog entries." }
+    "nad-plus" { "NAD+ often gets searched by visitors who are less interested in peptide classification and more interested in cellular-energy and longevity-style catalog sections." }
+    "aod-9604" { "AOD-9604 tends to draw interest from visitors comparing body-composition focused compounds that appear alongside peptide products." }
+    "5-amino-1mq" { "5-amino 1MQ usually gets looked up by visitors who already know the compound name and want a quick route to the mapped product page." }
+    "mazdutide" { "Mazdutide tends to interest visitors who are scanning for newer metabolic compounds rather than just the best-known GLP-1 names." }
+    default { "Most people use peptide-specific pages because they want a clearer explanation and a quicker route into the mapped supplier pages for that compound." }
+  }
+}
+
 $peptides = @(
   [pscustomobject]@{slug="tirzepatide";name="Tirzepatide";category="metabolic";image="https://peptideskingdom.com/wp-content/uploads/2025/08/tirzepatide-research-peptide-20mg-vial-99-purity-lab-tested-768x768.png";suppliers=@(@{name="Peptides Kingdom";link="https://peptideskingdom.com/product/tirzepatide/?ref=isgicbuw"})},
   [pscustomobject]@{slug="semaglutide";name="Semaglutide";category="metabolic";image="https://ironpeptides.is/wp-content/uploads/2025/05/SEMA-GLP-1-10MG-scaled.webp";suppliers=@(@{name="Iron Peptides";link="https://ironpeptides.is/product/sema-glp-1/?ref=ironman"},@{name="Peptides Kingdom";link="https://peptideskingdom.com/product/semaglutide/?ref=isgicbuw"})},
@@ -250,8 +365,9 @@ foreach ($peptide in $peptides) {
   $folder = Join-Path $peptidesRoot $peptide.slug
   New-Item -ItemType Directory -Force -Path $folder | Out-Null
   $categoryTitle = Get-CategoryTitle $peptide.category
-  $categoryBlurb = Get-CategoryBlurb $peptide.category
-  $researchNote = Get-ResearchNote $peptide.category
+  $overview = Get-PeptideOverview $peptide.slug
+  $mechanism = Get-PeptideMechanism $peptide.slug
+  $interest = Get-PeptideInterest $peptide.slug
 
   $supplierCards = foreach ($supplier in $peptide.suppliers) {
     $code = Get-DiscountCode $supplier.name
@@ -345,10 +461,10 @@ foreach ($peptide in $peptides) {
               <div class="eyebrow">Peptide detail page</div>
               <h1 class="page-title">$($peptide.name)</h1>
               <p>
-                $($peptide.name) is a peptide entry on PeptideSuppliers.org that is currently grouped under $categoryTitle research listings.
+                $overview
               </p>
               <p>
-                $categoryBlurb $researchNote
+                $mechanism
               </p>
               <div class="peptide-meta">
                 $($metaPills -join "`n                ")
@@ -381,22 +497,22 @@ foreach ($peptide in $peptides) {
         <div class="lede-grid">
           <article class="story-card reveal">
             <div class="kicker">Overview</div>
-            <h2>What visitors usually want from the $($peptide.name) page</h2>
+            <h2>What $($peptide.name) is</h2>
             <p>
-              Most visitors who land on a peptide-specific page are trying to skip the broader supplier browsing phase and go straight to the compound they already care about.
+              $overview
             </p>
             <p>
-              For $($peptide.name), that usually means comparing which supplier actually lists the product clearly, how polished the product page feels, and whether the surrounding trust signals match the rest of the site.
+              On this site, the goal is to give that explanation in a research-oriented way and then connect it to the supplier shortcuts already mapped in the directory.
             </p>
           </article>
           <article class="card reveal delay-1">
-            <div class="kicker">Quick frame</div>
-            <h3>How this page is meant to help</h3>
+            <div class="kicker">Research frame</div>
+            <h3>Why people look up $($peptide.name)</h3>
             <ul class="checklist">
-              <li>Give you a direct path into the mapped $($peptide.name) product pages</li>
-              <li>Keep the category context visible so the peptide is easier to place on the site</li>
-              <li>Surface any mapped discount code tied to the supplier shortcut</li>
-              <li>Make it easier to move back into supplier reviews if needed</li>
+              <li>$interest</li>
+              <li>Visitors usually want to compare product clarity, supplier fit, and surrounding trust signals.</li>
+              <li>The mapped discount-code shortcuts make it easier to move from research into the supplier page quickly.</li>
+              <li>The category placement helps visitors understand how the peptide fits into the rest of the directory.</li>
             </ul>
           </article>
         </div>
@@ -407,27 +523,27 @@ foreach ($peptide in $peptides) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>What to compare on $($peptide.name) supplier pages</h2>
+            <h2>How $($peptide.name) is generally described in research</h2>
             <p>
-              These are the practical things visitors usually look at once they click into a specific peptide route.
+              This section stays high-level and research-oriented rather than making treatment claims.
             </p>
           </div>
         </div>
         <div class="cards">
           <article class="card reveal">
-            <div class="kicker">Listing quality</div>
-            <h3>Product clarity</h3>
-            <p>Check whether the supplier makes the product, format, and category fit obvious without making you hunt through the site.</p>
+            <div class="kicker">Mechanism</div>
+            <h3>How it works</h3>
+            <p>$mechanism</p>
           </article>
           <article class="card reveal delay-1">
-            <div class="kicker">Trust signals</div>
-            <h3>Documentation visibility</h3>
-            <p>Look for the same trust-signal basics used elsewhere on the site: clear documentation, consistent framing, and a polished path around the product page.</p>
+            <div class="kicker">Why it matters</div>
+            <h3>Why people research it</h3>
+            <p>$interest</p>
           </article>
           <article class="card reveal delay-2">
-            <div class="kicker">Buying path</div>
-            <h3>Shortcut usefulness</h3>
-            <p>A strong mapped route should feel direct, easy to understand, and compatible with the larger supplier review flow.</p>
+            <div class="kicker">Comparison lens</div>
+            <h3>What to compare on supplier pages</h3>
+            <p>Check whether the product page feels clear, whether the surrounding trust signals match the rest of the supplier site, and whether the listing is easy to contextualize inside the broader catalog.</p>
           </article>
         </div>
       </div>
