@@ -160,6 +160,16 @@ function Get-PeptideInterest($slug) {
   }
 }
 
+function Get-PeptideComparisonNote($key) {
+  switch ($key) {
+    "metabolic" { "Visitors often compare these compounds side by side with other metabolism-focused entries and look for the clearest supplier pages, the cleanest product presentation, and the most obvious trust signals." }
+    "recovery" { "Visitors often compare these compounds based on how recovery-focused the listing feels, how easy the documentation is to locate, and whether the supplier makes the product category easy to understand." }
+    "growth" { "Visitors often compare these compounds by signaling class, product format, and whether the supplier presents the peptide clearly inside a larger GH or performance-oriented catalog." }
+    "cognitive" { "Visitors often compare these compounds by how clearly the site explains the peptide, how polished the listing feels, and whether the surrounding research framing stays careful and readable." }
+    "specialty" { "Visitors often compare these entries by niche fit, supplier presentation, and how easy it is to understand what makes the product distinct from more common peptide listings." }
+  }
+}
+
 $peptides = @(
   [pscustomobject]@{slug="tirzepatide";name="Tirzepatide";category="metabolic";image="https://peptideskingdom.com/wp-content/uploads/2025/08/tirzepatide-research-peptide-20mg-vial-99-purity-lab-tested-768x768.png";suppliers=@(@{name="Peptides Kingdom";link="https://peptideskingdom.com/product/tirzepatide/?ref=isgicbuw"})},
   [pscustomobject]@{slug="semaglutide";name="Semaglutide";category="metabolic";image="https://ironpeptides.is/wp-content/uploads/2025/05/SEMA-GLP-1-10MG-scaled.webp";suppliers=@(@{name="Iron Peptides";link="https://ironpeptides.is/product/sema-glp-1/?ref=ironman"},@{name="Peptides Kingdom";link="https://peptideskingdom.com/product/semaglutide/?ref=isgicbuw"})},
@@ -368,6 +378,7 @@ foreach ($peptide in $peptides) {
   $overview = Get-PeptideOverview $peptide.slug
   $mechanism = Get-PeptideMechanism $peptide.slug
   $interest = Get-PeptideInterest $peptide.slug
+  $comparisonNote = Get-PeptideComparisonNote $peptide.category
 
   $supplierCards = foreach ($supplier in $peptide.suppliers) {
     $code = Get-DiscountCode $supplier.name
@@ -502,7 +513,7 @@ foreach ($peptide in $peptides) {
               $overview
             </p>
             <p>
-              On this site, the goal is to give that explanation in a research-oriented way and then connect it to the supplier shortcuts already mapped in the directory.
+              $comparisonNote
             </p>
           </article>
           <article class="card reveal delay-1">
@@ -544,6 +555,36 @@ foreach ($peptide in $peptides) {
             <div class="kicker">Comparison lens</div>
             <h3>What to compare on supplier pages</h3>
             <p>Check whether the product page feels clear, whether the surrounding trust signals match the rest of the supplier site, and whether the listing is easy to contextualize inside the broader catalog.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Common comparisons for $($peptide.name)</h2>
+            <p>
+              Visitors rarely look at a peptide page in isolation. They usually compare it against adjacent compounds, neighboring categories, or alternative supplier listings.
+            </p>
+          </div>
+        </div>
+        <div class="cards">
+          <article class="card reveal">
+            <div class="kicker">Category context</div>
+            <h3>Where it usually sits</h3>
+            <p>$comparisonNote</p>
+          </article>
+          <article class="card reveal delay-1">
+            <div class="kicker">Page reading pattern</div>
+            <h3>How visitors usually browse</h3>
+            <p>Most visitors move between the peptide explainer, the supplier shortcut, and the broader directory section before deciding which supplier page to open next.</p>
+          </article>
+          <article class="card reveal delay-2">
+            <div class="kicker">Next step</div>
+            <h3>How to keep researching</h3>
+            <p>Use this page for the peptide overview, then compare the mapped supplier routes, and finally use the supplier hub if you want rankings, broader reviews, or shipping-focused pages.</p>
           </article>
         </div>
       </div>
