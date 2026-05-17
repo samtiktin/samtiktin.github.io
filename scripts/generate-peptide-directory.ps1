@@ -363,6 +363,7 @@ $directoryHtml = @"
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
+        <a href="/education/">Education</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/reviews/">Reviews</a>
         <a class="active" href="/peptide-directory/">Directory</a>
@@ -511,6 +512,7 @@ foreach ($peptide in $peptides) {
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
+        <a href="/education/">Education</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/reviews/">Reviews</a>
         <a class="active" href="/peptide-directory/">Directory</a>
