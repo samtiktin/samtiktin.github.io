@@ -15,6 +15,17 @@ function Get-DiscountCode($supplier) {
   }
 }
 
+function Get-DiscountPercent($supplier) {
+  switch ($supplier) {
+    "Iron Peptides" { return "10%" }
+    "Pinnacle Peptide Labs" { return "15%" }
+    "Peptides Kingdom" { return "15%" }
+    "Ascension Peptides" { return "20%" }
+    "Amino Club" { return "20%" }
+    default { return $null }
+  }
+}
+
 function Get-CategoryTitle($key) {
   switch ($key) {
     "metabolic" { "Metabolic & GLP-1" }
@@ -443,7 +454,12 @@ foreach ($peptide in $peptides) {
 
   $supplierCards = foreach ($supplier in $peptide.suppliers) {
     $code = Get-DiscountCode $supplier.name
-    $discountHtml = if ($code) { "<div class=`"discount-note`">Discount code: $code</div>" } else { "" }
+    $percent = Get-DiscountPercent $supplier.name
+    $discountHtml = if ($code -and $percent) {
+      "<div class=`"discount-note`">$percent off with code: $code</div>"
+    } elseif ($code) {
+      "<div class=`"discount-note`">Discount code: $code</div>"
+    } else { "" }
 @"
           <article class="peptide-supplier-card reveal">
             <div class="kicker">Supplier link</div>
@@ -464,6 +480,24 @@ foreach ($peptide in $peptides) {
     if ($code) {
       $metaPills.Add("<span class=`"pill`">$($supplier.name): $code</span>")
     }
+  }
+
+  $heroSupplierLinks = foreach ($supplier in $peptide.suppliers) {
+    $code = Get-DiscountCode $supplier.name
+    $percent = Get-DiscountPercent $supplier.name
+    $discountText = if ($code -and $percent) {
+      "$percent off with code $code"
+    } elseif ($code) {
+      "Code: $code"
+    } else {
+      "See supplier page for current offer details"
+    }
+@"
+              <div class="peptide-quick-link">
+                <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="sponsored nofollow noopener noreferrer">View product at $($supplier.name)</a>
+                <div class="discount-note">$discountText</div>
+              </div>
+"@
   }
 
   $pageHtml = @"
@@ -529,6 +563,9 @@ foreach ($peptide in $peptides) {
           <div class="page-hero-grid peptide-detail-grid">
             <div class="hero-art reveal">
               <img class="peptide-hero-image" src="$($peptide.image)" alt="$($peptide.name) product image">
+              <div class="peptide-quick-links">
+$($heroSupplierLinks -join "`n")
+              </div>
             </div>
             <div class="page-hero-copy reveal delay-1">
               <div class="eyebrow">Peptide detail page</div>

@@ -752,6 +752,31 @@ h3 {
   box-shadow: var(--shadow);
 }
 
+.peptide-quick-links {
+  display: grid;
+  gap: 14px;
+  width: min(100%, 360px);
+  margin: 18px auto 0;
+}
+
+.peptide-quick-link {
+  padding: 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(39, 70, 45, 0.08);
+  background: rgba(255, 251, 244, 0.94);
+  box-shadow: var(--shadow);
+}
+
+.peptide-quick-link .button {
+  width: 100%;
+}
+
+.peptide-quick-link .discount-note {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
 .peptide-supplier-card {
   padding: 22px;
   border-radius: 24px;
