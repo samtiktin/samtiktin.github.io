@@ -482,24 +482,6 @@ foreach ($peptide in $peptides) {
     }
   }
 
-  $heroSupplierLinks = foreach ($supplier in $peptide.suppliers) {
-    $code = Get-DiscountCode $supplier.name
-    $percent = Get-DiscountPercent $supplier.name
-    $discountText = if ($code -and $percent) {
-      "$percent off with code $code"
-    } elseif ($code) {
-      "Code: $code"
-    } else {
-      "See supplier page for current offer details"
-    }
-@"
-              <div class="peptide-quick-link">
-                <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="sponsored nofollow noopener noreferrer">View product at $($supplier.name)</a>
-                <div class="discount-note">$discountText</div>
-              </div>
-"@
-  }
-
   $pageHtml = @"
 <!DOCTYPE html>
 <html lang="en">
@@ -563,9 +545,6 @@ foreach ($peptide in $peptides) {
           <div class="page-hero-grid peptide-detail-grid">
             <div class="hero-art reveal">
               <img class="peptide-hero-image" src="$($peptide.image)" alt="$($peptide.name) product image">
-              <div class="peptide-quick-links">
-$($heroSupplierLinks -join "`n")
-              </div>
             </div>
             <div class="page-hero-copy reveal delay-1">
               <div class="eyebrow">Peptide detail page</div>
@@ -581,7 +560,7 @@ $($heroSupplierLinks -join "`n")
               </div>
               <div class="button-row" style="margin-top:18px;">
                 <a class="button button-primary" href="/peptide-directory/#$($peptide.category)">Back to directory section</a>
-                <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
+                <a class="button button-ghost" href="#supplier-shortcuts">View linked suppliers</a>
               </div>
             </div>
           </div>
@@ -610,6 +589,32 @@ $($heroSupplierLinks -join "`n")
             <a href="#what-to-compare">What to compare</a>
             <a href="#supplier-shortcuts">Where to find it</a>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="supplier-shortcuts">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Where to find $($peptide.name)</h2>
+            <p>
+              These are the current product routes connected to this peptide in the directory.
+            </p>
+          </div>
+        </div>
+        <div class="notice reveal">
+          <div class="kicker">Disclosure</div>
+          <h3>Affiliate and research-use note</h3>
+          <p>
+            Some supplier links on this page may be affiliate links, which means PeptideSuppliers.org may earn a commission if you click through and make a purchase. This page is for educational and research-information purposes only and is not medical advice.
+          </p>
+          <p>
+            For more detail, see the <a href="/disclosure/">affiliate disclosure</a> and <a href="/medical-disclaimer/">medical disclaimer</a>.
+          </p>
+        </div>
+        <div class="cards">
+$($supplierCards -join "`n")
         </div>
       </div>
     </section>
@@ -701,31 +706,6 @@ $($heroSupplierLinks -join "`n")
       </div>
     </section>
 
-    <section id="supplier-shortcuts">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <h2>Where to find $($peptide.name)</h2>
-            <p>
-              These are the current product routes connected to this peptide in the directory.
-            </p>
-          </div>
-        </div>
-        <div class="notice reveal">
-          <div class="kicker">Disclosure</div>
-          <h3>Affiliate and research-use note</h3>
-          <p>
-            Some supplier links on this page may be affiliate links, which means PeptideSuppliers.org may earn a commission if you click through and make a purchase. This page is for educational and research-information purposes only and is not medical advice.
-          </p>
-          <p>
-            For more detail, see the <a href="/disclosure/">affiliate disclosure</a> and <a href="/medical-disclaimer/">medical disclaimer</a>.
-          </p>
-        </div>
-        <div class="cards">
-$($supplierCards -join "`n")
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="footer">
