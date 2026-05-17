@@ -26,6 +26,21 @@ function Get-DiscountPercent($supplier) {
   }
 }
 
+function Get-PubMedSearchUrl($query) {
+  $encoded = [uri]::EscapeDataString($query)
+  return "https://pubmed.ncbi.nlm.nih.gov/?term=$encoded&sort=pubdate"
+}
+
+function Get-PubMedReviewUrl($query) {
+  $encoded = [uri]::EscapeDataString("$query review[pt]")
+  return "https://pubmed.ncbi.nlm.nih.gov/?term=$encoded&sort=pubdate"
+}
+
+function Get-PubMedFreeFullTextUrl($query) {
+  $encoded = [uri]::EscapeDataString("$query AND free full text[sb]")
+  return "https://pubmed.ncbi.nlm.nih.gov/?term=$encoded&sort=pubdate"
+}
+
 function Get-CategoryTitle($key) {
   switch ($key) {
     "metabolic" { "Metabolic & GLP-1" }
@@ -482,6 +497,10 @@ foreach ($peptide in $peptides) {
     }
   }
 
+  $recentResearchUrl = Get-PubMedSearchUrl $peptide.name
+  $reviewResearchUrl = Get-PubMedReviewUrl $peptide.name
+  $freeFullTextUrl = Get-PubMedFreeFullTextUrl $peptide.name
+
   $heroSupplierLinks = foreach ($supplier in $peptide.suppliers) {
     $code = Get-DiscountCode $supplier.name
     $percent = Get-DiscountPercent $supplier.name
@@ -628,13 +647,13 @@ $($heroSupplierLinks -join "`n")
             </p>
           </article>
           <article class="card reveal delay-1">
-            <div class="kicker">Research frame</div>
-            <h3>Why people look up $($peptide.name)</h3>
+            <div class="kicker">Recent research links</div>
+            <h3>Where to keep reading</h3>
             <ul class="checklist">
+              <li><a href="$recentResearchUrl" target="_blank" rel="noopener noreferrer">Latest PubMed results for $($peptide.name)</a></li>
+              <li><a href="$reviewResearchUrl" target="_blank" rel="noopener noreferrer">Recent review articles on PubMed</a></li>
+              <li><a href="$freeFullTextUrl" target="_blank" rel="noopener noreferrer">Free full text results on PubMed</a></li>
               <li>$interest</li>
-              <li>This page gives a quick explanation before the supplier links below.</li>
-              <li>Discount notes make it easier to compare the listed product routes at a glance.</li>
-              <li>The category label links back to nearby compounds in the directory for broader comparison.</li>
             </ul>
           </article>
         </div>
@@ -645,9 +664,9 @@ $($heroSupplierLinks -join "`n")
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>How $($peptide.name) is generally described in research</h2>
+            <h2>How $($peptide.name) is usually described</h2>
             <p>
-              This section stays high-level and research-oriented rather than making treatment claims.
+              This section stays high-level and avoids treatment-style claims.
             </p>
           </div>
         </div>
