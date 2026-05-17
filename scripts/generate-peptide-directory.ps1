@@ -446,11 +446,11 @@ foreach ($peptide in $peptides) {
     $discountHtml = if ($code) { "<div class=`"discount-note`">Discount code: $code</div>" } else { "" }
 @"
           <article class="peptide-supplier-card reveal">
-            <div class="kicker">Product route</div>
+            <div class="kicker">Supplier link</div>
             <h3>$($supplier.name)</h3>
-            <p>This product route is one of the current directory links connected to $($peptide.name).</p>
+            <p>This is one of the current supplier product pages connected to $($peptide.name) in the directory.</p>
             <div class="button-row">
-            <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="sponsored nofollow noopener noreferrer">Buy from $($supplier.name)</a>
+            <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="sponsored nofollow noopener noreferrer">View product at $($supplier.name)</a>
             </div>
             $discountHtml
           </article>
@@ -554,6 +554,18 @@ foreach ($peptide in $peptides) {
 
     <section>
       <div class="shell">
+        <div class="notice reveal">
+          <div class="kicker">Educational disclaimer</div>
+          <h3>Research information only</h3>
+          <p>
+            This page is educational and informational. It summarizes how a compound is commonly described on research-focused supplier sites and is not medical advice, treatment guidance, or a recommendation to purchase.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
         <div class="jump-nav reveal">
           <strong>On this page</strong>
           <div class="jump-links">
@@ -605,12 +617,12 @@ foreach ($peptide in $peptides) {
         <div class="cards">
           <article class="card reveal">
             <div class="kicker">Mechanism</div>
-            <h3>How it works</h3>
+            <h3>How it is usually described</h3>
             <p>$mechanism</p>
           </article>
           <article class="card reveal delay-1">
-            <div class="kicker">Why it matters</div>
-            <h3>Why people research it</h3>
+            <div class="kicker">Search context</div>
+            <h3>Why people look it up</h3>
             <p>$interest</p>
           </article>
           <article class="card reveal delay-2">
