@@ -277,7 +277,7 @@ $peptides = @(
 )
 
 $siteUrls = @(
-  "https://peptidesuppliers.org/","https://peptidesuppliers.org/about/","https://peptidesuppliers.org/faq/","https://peptidesuppliers.org/reviews/","https://peptidesuppliers.org/contact/","https://peptidesuppliers.org/peptide-directory/","https://peptidesuppliers.org/suppliers/","https://peptidesuppliers.org/best-peptide-suppliers/","https://peptidesuppliers.org/cheapest-peptide-suppliers/","https://peptidesuppliers.org/fastest-shipping-suppliers/","https://peptidesuppliers.org/international-shipping-peptide-suppliers/","https://peptidesuppliers.org/peptide-suppliers-canada/","https://peptidesuppliers.org/peptide-suppliers-uk/","https://peptidesuppliers.org/peptide-suppliers-australia/","https://peptidesuppliers.org/find-suppliers/","https://peptidesuppliers.org/guides/evaluate-peptide-suppliers/","https://peptidesuppliers.org/verify/","https://peptidesuppliers.org/how-we-review-suppliers/","https://peptidesuppliers.org/best-bpc-157-suppliers/","https://peptidesuppliers.org/best-tb-500-suppliers/","https://peptidesuppliers.org/best-ghk-cu-suppliers/","https://peptidesuppliers.org/best-glp-1-peptide-suppliers/","https://peptidesuppliers.org/what-is-a-coa/","https://peptidesuppliers.org/submit-a-supplier/","https://peptidesuppliers.org/privacy/","https://peptidesuppliers.org/disclosure/","https://peptidesuppliers.org/suppliers/iron-peptides/","https://peptidesuppliers.org/suppliers/pinnacle-peptide-labs/","https://peptidesuppliers.org/suppliers/amino-club/","https://peptidesuppliers.org/suppliers/ascension-peptides/","https://peptidesuppliers.org/suppliers/peptides-kingdom/"
+  "https://peptidesuppliers.org/","https://peptidesuppliers.org/about/","https://peptidesuppliers.org/faq/","https://peptidesuppliers.org/reviews/","https://peptidesuppliers.org/contact/","https://peptidesuppliers.org/peptide-directory/","https://peptidesuppliers.org/suppliers/","https://peptidesuppliers.org/best-peptide-suppliers/","https://peptidesuppliers.org/cheapest-peptide-suppliers/","https://peptidesuppliers.org/fastest-shipping-suppliers/","https://peptidesuppliers.org/international-shipping-peptide-suppliers/","https://peptidesuppliers.org/peptide-suppliers-canada/","https://peptidesuppliers.org/peptide-suppliers-uk/","https://peptidesuppliers.org/peptide-suppliers-australia/","https://peptidesuppliers.org/find-suppliers/","https://peptidesuppliers.org/guides/evaluate-peptide-suppliers/","https://peptidesuppliers.org/verify/","https://peptidesuppliers.org/how-we-review-suppliers/","https://peptidesuppliers.org/best-bpc-157-suppliers/","https://peptidesuppliers.org/best-tb-500-suppliers/","https://peptidesuppliers.org/best-ghk-cu-suppliers/","https://peptidesuppliers.org/best-glp-1-peptide-suppliers/","https://peptidesuppliers.org/what-is-a-coa/","https://peptidesuppliers.org/submit-a-supplier/","https://peptidesuppliers.org/privacy/","https://peptidesuppliers.org/disclosure/","https://peptidesuppliers.org/medical-disclaimer/","https://peptidesuppliers.org/suppliers/iron-peptides/","https://peptidesuppliers.org/suppliers/pinnacle-peptide-labs/","https://peptidesuppliers.org/suppliers/amino-club/","https://peptidesuppliers.org/suppliers/ascension-peptides/","https://peptidesuppliers.org/suppliers/peptides-kingdom/"
 )
 
 $categoryOrder = @("metabolic","recovery","growth","cognitive","specialty")
@@ -287,7 +287,7 @@ function Render-SupplierButtons($suppliers, $slug) {
   for ($i = 0; $i -lt $suppliers.Count; $i++) {
     $supplier = $suppliers[$i]
     $class = if ($i -eq 0) { "button button-primary" } else { "button button-ghost" }
-    $buttons.Add("<a class=`"$class`" href=`"$($supplier.link)`" target=`"_blank`" rel=`"noopener noreferrer`">$($supplier.name)</a>")
+  $buttons.Add("<a class=`"$class`" href=`"$($supplier.link)`" target=`"_blank`" rel=`"sponsored nofollow noopener noreferrer`">$($supplier.name)</a>")
   }
   $buttons.Add("<a class=`"button button-ghost`" href=`"/peptides/$slug/`">Learn more</a>")
   return ($buttons -join "`n              ")
@@ -449,7 +449,7 @@ foreach ($peptide in $peptides) {
             <h3>$($supplier.name)</h3>
             <p>This product route is one of the current directory links connected to $($peptide.name).</p>
             <div class="button-row">
-              <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="noopener noreferrer">Buy from $($supplier.name)</a>
+            <a class="button button-primary" href="$($supplier.link)" target="_blank" rel="sponsored nofollow noopener noreferrer">Buy from $($supplier.name)</a>
             </div>
             $discountHtml
           </article>
@@ -660,6 +660,16 @@ foreach ($peptide in $peptides) {
             </p>
           </div>
         </div>
+        <div class="notice reveal">
+          <div class="kicker">Disclosure</div>
+          <h3>Affiliate and research-use note</h3>
+          <p>
+            Some supplier links on this page may be affiliate links, which means PeptideSuppliers.org may earn a commission if you click through and make a purchase. This page is for educational and research-information purposes only and is not medical advice.
+          </p>
+          <p>
+            For more detail, see the <a href="/disclosure/">affiliate disclosure</a> and <a href="/medical-disclaimer/">medical disclaimer</a>.
+          </p>
+        </div>
         <div class="cards">
 $($supplierCards -join "`n")
         </div>
@@ -674,6 +684,8 @@ $($supplierCards -join "`n")
         <a href="/peptide-directory/">Peptide Directory</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/medical-disclaimer/">Medical Disclaimer</a>
       </div>
     </div>
   </footer>
