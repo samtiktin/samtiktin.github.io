@@ -48,11 +48,11 @@ function Get-CategoryBlurb($key) {
 
 function Get-ResearchNote($key) {
   switch ($key) {
-    "metabolic" { "Visitors usually compare this type of peptide by supplier clarity, category fit, product format, and whether the site makes trust signals obvious before checkout." }
-    "recovery" { "On this site, recovery-oriented peptides are usually compared by documentation visibility, batch presentation, site clarity, and whether the supplier makes the product easy to contextualize." }
-    "growth" { "Growth and performance compounds often get compared by product format, catalog depth, research-use framing, and how polished the supplier pages feel." }
-    "cognitive" { "Cognitive and longevity entries are usually evaluated by clarity, supplier transparency, formulation visibility, and how confidently the site explains the product without over-claiming." }
-    "specialty" { "Specialty compounds benefit from direct product pages because visitors often want to compare the supplier presentation, product specifics, and trust signals quickly." }
+    "metabolic" { "For metabolic peptides, most people are looking for clear product details, easy-to-spot trust signals, and supplier pages that are simple to compare." }
+    "recovery" { "Recovery-focused peptides are usually judged by how clearly the product is explained, how easy testing or documentation is to find, and how straightforward the listing feels." }
+    "growth" { "Growth and performance entries are often compared by product format, category fit, and how clearly the supplier explains where the peptide belongs in the broader catalog." }
+    "cognitive" { "For cognitive and longevity entries, people usually want clear explanations, careful wording, and supplier pages that feel informative without being overhyped." }
+    "specialty" { "Specialty compounds are easier to browse when the product page clearly explains what makes the listing different and gives you enough detail to compare it with nearby options." }
   }
 }
 
@@ -167,17 +167,17 @@ function Get-PeptideInterest($slug) {
     "aod-9604" { "AOD-9604 usually comes up when you are comparing body-composition focused compounds that appear alongside peptide products." }
     "5-amino-1mq" { "You will usually look up 5-amino 1MQ when you already know the compound name and want a quick route to the product page." }
     "mazdutide" { "Mazdutide usually gets attention from people scanning for newer metabolic compounds rather than only the best-known GLP-1 names." }
-    default { "Most people use peptide-specific pages because they want a clearer explanation and a quicker route into the product pages for that compound." }
+    default { "Most people land on a page like this because they want a quick overview of the peptide and an easy way to see where it is currently listed." }
   }
 }
 
 function Get-PeptideComparisonNote($key) {
   switch ($key) {
-    "metabolic" { "You will usually compare these compounds side by side with other metabolism-focused entries and look for the clearest product pages, the cleanest presentation, and the most obvious trust signals." }
-    "recovery" { "You will usually compare these compounds based on how recovery-focused the listing feels, how easy the documentation is to locate, and whether the product page is easy to understand." }
-    "growth" { "You will usually compare these compounds by signaling class, product format, and whether the peptide is presented clearly inside a larger GH or performance-oriented catalog." }
-    "cognitive" { "You will usually compare these compounds by how clearly the page explains the peptide, how polished the listing feels, and whether the research framing stays careful and readable." }
-    "specialty" { "You will usually compare these entries by niche fit, product presentation, and how easy it is to understand what makes them different from more common peptide listings." }
+    "metabolic" { "People usually compare these entries by page clarity, supplier trust signals, and how easy it is to tell one metabolic listing from the next." }
+    "recovery" { "Most visitors comparing recovery peptides want clear product details, easy-to-find documentation, and a page that explains the compound without much guesswork." }
+    "growth" { "These compounds are usually compared by signaling class, product format, and how clearly the supplier places them inside a GH or performance-focused catalog." }
+    "cognitive" { "For cognitive and longevity entries, the biggest differences are usually how clearly the peptide is explained and how careful the page feels overall." }
+    "specialty" { "Specialty listings are usually compared by niche fit, product presentation, and how clearly the supplier explains what makes them different from more common entries." }
   }
 }
 
@@ -632,9 +632,9 @@ $($heroSupplierLinks -join "`n")
             <h3>Why people look up $($peptide.name)</h3>
             <ul class="checklist">
               <li>$interest</li>
-              <li>You can use this page to understand the compound first and then decide which product page you want to open.</li>
-              <li>The discount-code notes make it easier to see which route may be the most useful for you.</li>
-              <li>The category label helps you find nearby compounds in the directory if you want to compare similar entries.</li>
+              <li>Start here if you want a quick explanation before opening a supplier page.</li>
+              <li>The discount code notes can save you time if you are comparing where to click first.</li>
+              <li>If you want nearby compounds, the category label makes it easy to jump back into the directory.</li>
             </ul>
           </article>
         </div>
