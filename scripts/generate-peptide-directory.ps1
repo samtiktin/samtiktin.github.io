@@ -60,13 +60,13 @@ function Get-PeptideOverview($slug) {
   switch ($slug) {
     "tirzepatide" { "Tirzepatide is generally described as an incretin-based compound that combines GIP and GLP-1 receptor activity in one molecule." }
     "semaglutide" { "Semaglutide is generally described as a GLP-1 receptor agonist that is commonly discussed in metabolic and appetite-related research." }
-    "retatrutide" { "Retatrutide is commonly described as a multi-agonist research compound that targets GLP-1, GIP, and glucagon signaling pathways." }
+    "retatrutide" { "Retatrutide is usually talked about as a newer metabolic research peptide that draws attention because it touches more than one appetite and energy-related pathway." }
     "cagrilintide" { "Cagrilintide is usually described as an amylin-analog compound that shows up in appetite and body-weight research discussions." }
     "tesofensine" { "Tesofensine is generally discussed as a centrally acting compound studied for appetite and body-composition related outcomes." }
-    "nad-plus" { "NAD+ is not a peptide in the narrowest sense, but it is frequently grouped into peptide-adjacent research catalogs because of its role in cellular energy and redox biology." }
+    "nad-plus" { "NAD+ is often grouped into peptide-adjacent catalogs because people associate it with energy, recovery, and longevity-related research themes." }
     "aod-9604" { "AOD-9604 is commonly described as a modified fragment of human growth hormone that appears in body-composition and fat-metabolism research conversations." }
     "5-amino-1mq" { "5-amino 1MQ is usually discussed as an NNMT-related research compound that is often grouped into metabolism-focused product catalogs." }
-    "mazdutide" { "Mazdutide is generally described as a dual-agonist metabolic research compound associated with GLP-1 and glucagon signaling." }
+    "mazdutide" { "Mazdutide is usually presented as a newer metabolic compound that sits in the same broader conversation as GLP-1-related research products." }
 
     "bpc-157" { "BPC-157 is a synthetic peptide that is commonly discussed in preclinical research around tissue recovery, gut-related signaling, and repair-oriented models." }
     "tb-500" { "TB-500 is generally described as a fragment associated with thymosin beta-4 signaling and is frequently discussed in preclinical recovery and repair contexts." }
@@ -93,9 +93,9 @@ function Get-PeptideOverview($slug) {
     "selank" { "Selank is a synthetic peptide analog frequently grouped into anxiolytic, nootropic, and neuroregulation research discussions." }
     "cerebrolysin" { "Cerebrolysin is a peptide-rich neurotrophic preparation that is commonly discussed in brain and neuro-support research contexts." }
     "dsip" { "DSIP, or delta sleep-inducing peptide, is usually discussed in sleep-regulation and neuropeptide research conversations." }
-    "dihexa" { "Dihexa is commonly discussed as a neurotrophic research compound associated with cognition-oriented experimentation." }
-    "epitalon" { "Epitalon is a synthetic tetrapeptide that is often discussed in longevity and cellular aging research." }
-    "foxo4-dri" { "FOXO4-DRI is generally discussed as a senescence-related research peptide designed around FOXO4 and p53 pathway interactions." }
+    "dihexa" { "Dihexa is usually discussed in cognition-focused research conversations and tends to attract people browsing more advanced brain-support categories." }
+    "epitalon" { "Epitalon is usually described as a longevity-focused peptide that keeps showing up in cellular aging and restoration-oriented research discussions." }
+    "foxo4-dri" { "FOXO4-DRI is one of the more advanced longevity-related entries, and people usually come across it when they are exploring senescence and healthy-aging research topics." }
     "thymalin" { "Thymalin is a thymic peptide preparation that appears in immune and longevity-oriented research discussions." }
 
     "melanotan-ii" { "Melanotan II is a melanocortin analog commonly discussed in pigmentation and melanocortin-receptor research." }
@@ -110,13 +110,13 @@ function Get-PeptideMechanism($slug) {
   switch ($slug) {
     "tirzepatide" { "In research terms, Tirzepatide is usually framed around incretin receptor signaling, especially its combined GIP and GLP-1 activity, which is why it is often compared with other metabolic peptides." }
     "semaglutide" { "Semaglutide is usually explained through GLP-1 receptor signaling, with research discussions often focusing on appetite regulation, gastric emptying, and glucose-related effects." }
-    "retatrutide" { "Retatrutide is commonly described through its triple-agonist design, which is why it is frequently positioned as a more complex metabolic-signaling entry than standard GLP-1 analogs." }
+    "retatrutide" { "Most descriptions of Retatrutide focus on the fact that it is broader than a standard GLP-1-style entry, which is why it often gets framed as a more advanced metabolic listing." }
     "cagrilintide" { "Cagrilintide is usually explained through amylin-pathway signaling and satiety-related research, which is why it often appears next to GLP-1 compounds in supplier catalogs." }
     "tesofensine" { "Tesofensine is generally discussed through monoamine-related central nervous system signaling, which is part of why it gets grouped into appetite and body-composition research listings." }
-    "nad-plus" { "NAD+ is usually explained through mitochondrial and cellular energy pathways, redox balance, and enzyme systems such as sirtuins and PARPs." }
+    "nad-plus" { "NAD+ is usually explained through cellular energy, mitochondrial function, and the kinds of repair and aging conversations that show up in longevity-focused research." }
     "aod-9604" { "AOD-9604 is often described through fragment-based growth hormone biology, particularly in relation to lipid metabolism research rather than full-spectrum GH signaling." }
     "5-amino-1mq" { "5-amino 1MQ is commonly framed around NNMT-related metabolic signaling, which is why it tends to show up in body-composition and energy-oriented research pages." }
-    "mazdutide" { "Mazdutide is usually explained through dual GLP-1 and glucagon receptor activity, making it part of the newer generation of multi-pathway metabolic research compounds." }
+    "mazdutide" { "Mazdutide is usually introduced as a newer multi-pathway metabolic entry, so people often compare it with other compounds that sound more familiar or more established." }
 
     "bpc-157" { "BPC-157 is commonly described in preclinical literature through repair-oriented themes such as angiogenesis, tissue recovery, and gastrointestinal barrier signaling." }
     "tb-500" { "TB-500 is usually framed around cell migration, actin dynamics, and repair-oriented signaling connected to thymosin beta-4 biology." }
@@ -143,9 +143,9 @@ function Get-PeptideMechanism($slug) {
     "selank" { "Selank is generally framed around neuromodulatory and anxiolytic research, often with discussion of GABA-related or neurochemical regulatory effects." }
     "cerebrolysin" { "Cerebrolysin is commonly explained through peptide-rich neurotrophic signaling and brain-support oriented research themes." }
     "dsip" { "DSIP is usually described through sleep-related neuropeptide signaling, though the exact biology is still debated in the literature." }
-    "dihexa" { "Dihexa is often discussed through HGF/c-Met related neurotrophic signaling in cognition-focused research." }
-    "epitalon" { "Epitalon is commonly explained through cellular aging, telomere-related, and longevity-oriented research frameworks." }
-    "foxo4-dri" { "FOXO4-DRI is generally discussed through senescent cell biology and disruption of FOXO4-p53 related interactions." }
+    "dihexa" { "Dihexa is usually described in brain-support and cognition research, and many pages present it as a more niche compound rather than a beginner-friendly starting point." }
+    "epitalon" { "Epitalon is usually explained in the context of longevity, cellular aging, and the broader interest in compounds that keep appearing in restoration-focused research." }
+    "foxo4-dri" { "FOXO4-DRI is usually explained in the language of senescent-cell and longevity research, which is why its product pages often sound more technical than other peptide listings." }
     "thymalin" { "Thymalin is usually explained through thymic peptide signaling and immune-focused research themes." }
 
     "melanotan-ii" { "Melanotan II is generally described through melanocortin receptor signaling, which is why it shows up in both pigmentation and libido-related discussions." }
@@ -160,13 +160,13 @@ function Get-PeptideInterest($slug) {
   switch ($slug) {
     "tirzepatide" { "You will usually look up Tirzepatide when you want a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
     "semaglutide" { "You will usually land on Semaglutide pages when you already know the compound name and want a fast path into the product listing and surrounding trust signals." }
-    "retatrutide" { "You will usually look up Retatrutide when you want to compare a newer multi-pathway metabolic compound and see which suppliers visibly list it." }
+    "retatrutide" { "People usually look up Retatrutide when they want to see how a newer metabolic entry compares with the better-known names in the same category." }
     "cagrilintide" { "You will usually land on Cagrilintide when you are comparing metabolic compounds that sit next to the more familiar GLP-1 names." }
     "tesofensine" { "Tesofensine usually attracts people who are comparing more niche appetite-related catalog entries." }
-    "nad-plus" { "NAD+ often gets searched by people who care more about cellular-energy and longevity-style categories than strict peptide classification." }
+    "nad-plus" { "NAD+ usually gets searched by people who are browsing energy, recovery, and longevity categories rather than focusing only on classic peptide names." }
     "aod-9604" { "AOD-9604 usually comes up when you are comparing body-composition focused compounds that appear alongside peptide products." }
     "5-amino-1mq" { "You will usually look up 5-amino 1MQ when you already know the compound name and want a quick route to the product page." }
-    "mazdutide" { "Mazdutide usually gets attention from people scanning for newer metabolic compounds rather than only the best-known GLP-1 names." }
+    "mazdutide" { "Mazdutide usually gets attention from people who want to browse beyond the best-known metabolic names and see what newer listings are showing up." }
     default { "Most people land on a page like this because they want a quick overview of the peptide and an easy way to see where it is currently listed." }
   }
 }
@@ -665,7 +665,7 @@ $($heroSupplierLinks -join "`n")
           <article class="card reveal delay-2">
             <div class="kicker">Comparison lens</div>
             <h3>What to compare on supplier pages</h3>
-            <p>Check whether the product page feels clear, whether the surrounding trust signals match the rest of the supplier site, and whether the listing is easy to contextualize inside the broader catalog.</p>
+            <p>Look for a page that explains the product clearly, makes trust signals easy to spot, and helps you understand where the listing fits in the rest of the supplier catalog.</p>
           </article>
         </div>
       </div>
