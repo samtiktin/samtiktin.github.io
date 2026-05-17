@@ -52,7 +52,7 @@ function Get-ResearchNote($key) {
     "recovery" { "Recovery-focused peptides are usually judged by how clearly the product is explained, how easy testing or documentation is to find, and how straightforward the listing feels." }
     "growth" { "Growth and performance entries are often compared by product format, category fit, and how clearly the supplier explains where the peptide belongs in the broader catalog." }
     "cognitive" { "For cognitive and longevity entries, people usually want clear explanations, careful wording, and supplier pages that feel informative without being overhyped." }
-    "specialty" { "Specialty compounds are easier to browse when the product page clearly explains what makes the listing different and gives you enough detail to compare it with nearby options." }
+    "specialty" { "Specialty compounds are easier to browse when the product page clearly explains what makes the listing different and offers enough detail to compare it with nearby options." }
   }
 }
 
@@ -158,14 +158,14 @@ function Get-PeptideMechanism($slug) {
 
 function Get-PeptideInterest($slug) {
   switch ($slug) {
-    "tirzepatide" { "You will usually look up Tirzepatide when you want a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
-    "semaglutide" { "You will usually land on Semaglutide pages when you already know the compound name and want a fast path into the product listing and surrounding trust signals." }
+    "tirzepatide" { "Tirzepatide usually comes up when someone wants a direct route into a well-known metabolic compound without sorting through broader supplier pages first." }
+    "semaglutide" { "Semaglutide pages usually get opened by people who already know the compound name and want a fast path into the product listing and surrounding trust signals." }
     "retatrutide" { "People usually look up Retatrutide when they want to see how a newer metabolic entry compares with the better-known names in the same category." }
-    "cagrilintide" { "You will usually land on Cagrilintide when you are comparing metabolic compounds that sit next to the more familiar GLP-1 names." }
+    "cagrilintide" { "Cagrilintide usually comes up when people are comparing metabolic compounds that sit next to the more familiar GLP-1 names." }
     "tesofensine" { "Tesofensine usually attracts people who are comparing more niche appetite-related catalog entries." }
     "nad-plus" { "NAD+ usually gets searched by people who are browsing energy, recovery, and longevity categories rather than focusing only on classic peptide names." }
-    "aod-9604" { "AOD-9604 usually comes up when you are comparing body-composition focused compounds that appear alongside peptide products." }
-    "5-amino-1mq" { "You will usually look up 5-amino 1MQ when you already know the compound name and want a quick route to the product page." }
+    "aod-9604" { "AOD-9604 usually comes up when people are comparing body-composition focused compounds that appear alongside peptide products." }
+    "5-amino-1mq" { "5-amino 1MQ usually gets searched by people who already know the compound name and want a quick route to the product page." }
     "mazdutide" { "Mazdutide usually gets attention from people who want to browse beyond the best-known metabolic names and see what newer listings are showing up." }
     default { "Most people land on a page like this because they want a quick overview of the peptide and an easy way to see where it is currently listed." }
   }
@@ -632,9 +632,9 @@ $($heroSupplierLinks -join "`n")
             <h3>Why people look up $($peptide.name)</h3>
             <ul class="checklist">
               <li>$interest</li>
-              <li>Start here if you want a quick explanation before opening a supplier page.</li>
-              <li>The discount code notes can save you time if you are comparing where to click first.</li>
-              <li>If you want nearby compounds, the category label makes it easy to jump back into the directory.</li>
+              <li>This page gives a quick explanation before the supplier links below.</li>
+              <li>Discount notes make it easier to compare the listed product routes at a glance.</li>
+              <li>The category label links back to nearby compounds in the directory for broader comparison.</li>
             </ul>
           </article>
         </div>
@@ -665,7 +665,7 @@ $($heroSupplierLinks -join "`n")
           <article class="card reveal delay-2">
             <div class="kicker">Comparison lens</div>
             <h3>What to compare on supplier pages</h3>
-            <p>Look for a page that explains the product clearly, makes trust signals easy to spot, and helps you understand where the listing fits in the rest of the supplier catalog.</p>
+            <p>A strong supplier page explains the product clearly, makes trust signals easy to spot, and shows where the listing fits in the rest of the catalog.</p>
           </article>
         </div>
       </div>
@@ -675,9 +675,9 @@ $($heroSupplierLinks -join "`n")
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>Possible stack pairings for $($peptide.name)</h2>
+            <h2>Related compounds often browsed with $($peptide.name)</h2>
             <p>
-              These are the compounds people most often look at alongside $($peptide.name) when they are browsing related supplier categories and product pages.
+              These are the entries that most often get opened alongside $($peptide.name) when people are comparing nearby categories and supplier pages.
             </p>
           </div>
         </div>
