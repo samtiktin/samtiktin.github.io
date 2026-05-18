@@ -13,7 +13,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Shorthand metabolic listings are easier to trust when the reference makes naming conventions, batch context, and research-use labeling easy to follow.",
-        "short_educational_description":  "Tirz is used here as a shorthand directory label for tirzepatide-style research listings that are usually discussed in incretin and metabolic research coverage.",
+        "short_educational_description":  "Tirz is a shorthand label often used for tirzepatide-related research listings in metabolic and incretin coverage.",
         "suppliers":  [
                           {
                               "link":  "https://peptideskingdom.com/product/tirzepatide/?ref=isgicbuw",
@@ -35,7 +35,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Category pages built around GLP-1 wording work better when the language stays educational and the documentation trail is easier to verify than the promotional copy.",
-        "short_educational_description":  "GLP-1 is used here as a broader directory label for research compounds that are commonly grouped under GLP-1-related catalog language and educational references.",
+        "short_educational_description":  "GLP-1 is a broader label used for research compounds that are often grouped together in incretin-related catalog and education pages.",
         "suppliers":  [
                           {
                               "link":  "https://ironpeptides.is/product/sema-glp-1/?ref=ironman",
@@ -131,7 +131,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Shorthand endocrine entries stay more credible when the listing explains what the label refers to and keeps documentation language specific and readable.",
-        "short_educational_description":  "Tesamorlin is used here as a directory shorthand for tesamorelin-style growth hormone signaling references that appear in endocrine research listings.",
+        "short_educational_description":  "Tesamorlin is a shorthand label for tesamorelin-style research listings that appear in endocrine and growth hormone signaling coverage.",
         "suppliers":  [
                           {
                               "link":  "https://pinnaclepeptidelabs.com/product/tesamorelin-peptide-5-mg/aff/3/",
@@ -869,7 +869,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Blend-style pages feel more trustworthy when the educational copy explains the label and the transparency notes do more than repeat brand language.",
-        "short_educational_description":  "GLOW is handled here as a named protocol or blend-style research entry that benefits from clear educational framing and stronger documentation notes.",
+        "short_educational_description":  "GLOW is a named blend-style research entry that benefits from clear educational framing and stronger documentation notes.",
         "suppliers":  [
                           {
                               "link":  "https://pinnaclepeptidelabs.com/product/glow-peptide/aff/3/",

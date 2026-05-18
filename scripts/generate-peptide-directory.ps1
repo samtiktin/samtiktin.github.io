@@ -52,6 +52,25 @@ function Get-Bool([string]$value) {
   return $value.Trim().ToLower() -eq "true"
 }
 
+function Get-CardSummary([string]$text) {
+  if ([string]::IsNullOrWhiteSpace($text)) { return "" }
+  $clean = $text.Trim()
+  if ($clean.Length -le 140) { return $clean }
+
+  $sentenceMatch = [regex]::Match($clean, '^.{1,140}?(?:\.)')
+  if ($sentenceMatch.Success -and $sentenceMatch.Value.Length -ge 70) {
+    return $sentenceMatch.Value.Trim()
+  }
+
+  $truncated = $clean.Substring(0, 137).TrimEnd()
+  $lastSpace = $truncated.LastIndexOf(' ')
+  if ($lastSpace -gt 80) {
+    $truncated = $truncated.Substring(0, $lastSpace).TrimEnd()
+  }
+
+  return ($truncated + "...")
+}
+
 function Get-CategoryMeta($key) {
   switch ($key) {
     "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "This section groups compound pages that are usually discussed in metabolic, incretin, and appetite-related research coverage without turning the page into a promotional landing page." } }
@@ -158,6 +177,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
     $anchor = ($category -replace '[^a-z0-9]+', '-')
     $cards = foreach ($peptide in ($peptides | Where-Object { $_.category -eq $category })) {
       $relatedRows = Get-RelatedPeptides $peptide $lookup
+      $cardSummary = Get-CardSummary $peptide.short_educational_description
       $relatedLinks = foreach ($related in $relatedRows) {
         "<a class=`"pill`" href=`"/peptides/$($related.slug)/`">$([string](HtmlEncode($related.name)))</a>"
       }
@@ -181,7 +201,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
             </div>
             <div class="kicker">Research reference</div>
             <h3>$([string](HtmlEncode($peptide.name)))</h3>
-            <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
+            <p>$([string](HtmlEncode($cardSummary)))</p>
             <p class="directory-category-label">$([string](HtmlEncode($meta.title)))</p>
             <div class="pill-row">
 $($relatedLinks -join "`n")
