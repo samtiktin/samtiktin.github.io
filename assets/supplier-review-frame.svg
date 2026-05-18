@@ -1,0 +1,31 @@
+<svg width="960" height="520" viewBox="0 0 960 520" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sr-bg" x1="126" y1="70" x2="842" y2="458" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FBF9"/>
+      <stop offset="1" stop-color="#E3EFE8"/>
+    </linearGradient>
+    <linearGradient id="sr-accent" x1="180" y1="124" x2="770" y2="392" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A1E0BC"/>
+      <stop offset="1" stop-color="#3B9868"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="520" rx="34" fill="url(#sr-bg)"/>
+  <rect x="74" y="76" width="268" height="164" rx="26" fill="#17352A"/>
+  <rect x="374" y="76" width="220" height="164" rx="26" fill="#F8FBF9"/>
+  <rect x="622" y="76" width="264" height="164" rx="26" fill="#EEF7F1"/>
+  <rect x="74" y="278" width="812" height="162" rx="30" fill="#143127"/>
+  <rect x="108" y="316" width="158" height="14" rx="7" fill="#B0D4C0"/>
+  <rect x="108" y="348" width="222" height="18" rx="9" fill="#F6FBF7"/>
+  <rect x="108" y="384" width="176" height="14" rx="7" fill="#A5CEB7"/>
+  <rect x="406" y="112" width="122" height="14" rx="7" fill="#B7D8C5"/>
+  <rect x="406" y="142" width="150" height="18" rx="9" fill="#173529"/>
+  <rect x="406" y="176" width="118" height="14" rx="7" fill="#B7D8C5"/>
+  <rect x="656" y="112" width="136" height="14" rx="7" fill="#9ACFB0"/>
+  <rect x="656" y="144" width="168" height="18" rx="9" fill="#48A06F"/>
+  <rect x="656" y="178" width="122" height="14" rx="7" fill="#9ACFB0"/>
+  <path d="M404 360C458 316 518 294 584 294C648 294 709 315 768 358" stroke="url(#sr-accent)" stroke-width="12" stroke-linecap="round"/>
+  <circle cx="460" cy="320" r="12" fill="#99DDB8"/>
+  <circle cx="584" cy="294" r="14" fill="#59B17F"/>
+  <circle cx="734" cy="338" r="11" fill="#D9F3E5"/>
+  <text x="78" y="48" fill="#183328" font-family="Georgia, 'Times New Roman', serif" font-size="30" font-weight="700">Supplier review standards</text>
+</svg>
