@@ -4,6 +4,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $dataPath = Join-Path $repoRoot "data\locations.csv"
 $locationsRoot = Join-Path $repoRoot "locations"
 $sitemapPath = Join-Path $repoRoot "sitemap.xml"
+$peptidesDataPath = Join-Path $repoRoot "data\peptides.json"
 
 function Get-SiteUrl {
   $cnamePath = Join-Path $repoRoot "CNAME"
@@ -23,6 +24,14 @@ function HtmlEncode([string]$value) {
 
 function JsonText([object]$value) {
   return $value | ConvertTo-Json -Depth 8 -Compress
+}
+
+function Get-StableNumber([string]$value) {
+  $sum = 0
+  foreach ($char in $value.ToCharArray()) {
+    $sum += [int][char]$char
+  }
+  return $sum
 }
 
 function Get-Bool([string]$value) {
@@ -96,18 +105,26 @@ function Build-FaqData($row) {
   return @(
     @{
       "@type" = "Question"
-      "name" = "Why does $($row.city), $($row.state_code) have its own peptide supplier transparency guide?"
+      "name" = "How should this $($row.city) guide be used?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "$($row.city) readers often want a local educational reference that connects regional research context, laboratory documentation habits, and nearby city comparisons instead of relying on a generic national page."
+        "text" = "This page is meant to be a local educational reference that connects regional research context, supplier transparency habits, and related city reading paths."
       }
     },
     @{
       "@type" = "Question"
-      "name" = "What documentation signals matter most on this $($row.city) page?"
+      "name" = "What should stand out on supplier pages linked to this topic?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = "The guide focuses on COA availability, batch testing references, research-use labeling, third-party testing language, and how clearly supplier pages explain fulfillment and documentation details."
+      }
+    },
+    @{
+      "@type" = "Question"
+      "name" = "Where do the featured peptide research links lead?"
+      "acceptedAnswer" = @{
+        "@type" = "Answer"
+        "text" = "The featured peptide section points to internal research reference pages on PeptideSuppliers.org and recent PubMed searches so readers can continue with educational reading."
       }
     },
     @{
@@ -131,7 +148,6 @@ function Build-BreadcrumbData($siteUrl, $row) {
 
 function Build-WhyGuideCopy($row) {
   $sentences = @(
-    "$($row.local_research_anchor)",
     "$($row.local_reader_focus)",
     "$($row.state_policy_note)"
   ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
@@ -159,7 +175,29 @@ function Build-SignalCards($row) {
   )
 }
 
-function New-LocationPage($row, $lookup, $siteUrl) {
+function Get-FeaturedPeptideSlugs($row) {
+  $bundles = @(
+    @("glp-1", "tirz", "retatrutide-glp-3"),
+    @("cagrilintide", "tesofensine", "mazdutide"),
+    @("sermorelin", "ipamorelin", "cjc-1295"),
+    @("bpc-157", "tb-500", "ghk-cu"),
+    @("semax", "selank", "cerebrolysin"),
+    @("nad", "mots-c", "epitalon"),
+    @("thymosin-alpha-1", "thymalin", "gonadorelin"),
+    @("melanotan-ii", "pt-141", "kisspeptin-10"),
+    @("ara-290", "kpv", "foxo4-dri")
+  )
+
+  $index = (Get-StableNumber "$($row.slug)$($row.state_code)") % $bundles.Count
+  return $bundles[$index]
+}
+
+function Get-PubMedUrl([string]$query) {
+  $encoded = [System.Uri]::EscapeDataString($query)
+  return "https://pubmed.ncbi.nlm.nih.gov/?term=$encoded&sort=pubdate"
+}
+
+function New-LocationPage($row, $lookup, $siteUrl, $peptideLookup) {
   $isIndexable = Get-IsIndexable $row $lookup
   $title = Build-PageTitle $row
   $metaDescription = Build-MetaDescription $row
@@ -178,6 +216,22 @@ function New-LocationPage($row, $lookup, $siteUrl) {
               <h3>$([string](HtmlEncode($card.title)))</h3>
               <p>$([string](HtmlEncode($card.body)))</p>
             </article>
+"@
+  }
+
+  $featuredCards = foreach ($slug in (Get-FeaturedPeptideSlugs $row)) {
+    if (-not $peptideLookup.ContainsKey($slug)) { continue }
+    $peptide = $peptideLookup[$slug]
+@"
+          <article class="card reveal">
+            <div class="kicker">Research topic</div>
+            <h3>$([string](HtmlEncode($peptide.name)))</h3>
+            <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
+            <div class="button-row">
+              <a class="button button-primary" href="/peptides/$($peptide.slug)/">Open research reference</a>
+              <a class="button button-ghost" href="$(Get-PubMedUrl $peptide.name)" target="_blank" rel="noopener noreferrer">Recent studies</a>
+            </div>
+          </article>
 "@
   }
 
@@ -287,11 +341,11 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <div class="kicker">Local overview</div>
           <h2>$([string](HtmlEncode("$($row.city), $($row.state_code)"))) research context</h2>
           <p>$([string](HtmlEncode($row.local_research_anchor)))</p>
-          <p>$([string](HtmlEncode($row.news_angle)))</p>
+          <p>$([string](HtmlEncode($row.regional_biotech_context)))</p>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Why this guide exists</div>
-          <h3>Why $([string](HtmlEncode($row.city))) has its own guide</h3>
+          <div class="kicker">Reader context</div>
+          <h3>How this guide helps $([string](HtmlEncode($row.city))) readers</h3>
           <p>$([string](HtmlEncode($whyGuideCopy)))</p>
         </article>
       </div>
@@ -325,7 +379,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <article class="card reveal">
           <div class="kicker">Regional biotech context</div>
           <h2>Local research and biotech context</h2>
-          <p>$([string](HtmlEncode($row.regional_biotech_context)))</p>
+          <p>$([string](HtmlEncode($row.news_angle)))</p>
           <p>$([string](HtmlEncode($row.nearby_research_hubs)))</p>
         </article>
         <article class="card reveal delay-1">
@@ -334,6 +388,24 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <p>$([string](HtmlEncode($row.local_reader_focus)))</p>
           <p>$([string](HtmlEncode($row.state_policy_note)))</p>
         </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Featured peptide research references</h2>
+            <p>These are useful educational reference topics to explore alongside the local guide. Each one links back to the peptide directory and a recent PubMed search.</p>
+          </div>
+        </div>
+        <div class="resource-grid">
+$($featuredCards -join "`n")
+        </div>
+        <div class="button-row" style="margin-top:24px;">
+          <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
+          <a class="button button-ghost" href="/how-to-compare-peptide-suppliers/">Compare supplier pages</a>
+        </div>
       </div>
     </section>
 
@@ -393,14 +465,18 @@ $($signalCards -join "`n")
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>Why does $([string](HtmlEncode($row.city))) need its own page?</h3>
-            <p>$([string](HtmlEncode($row.local_research_anchor)))</p>
+            <h3>How should this guide be used?</h3>
+            <p>$([string](HtmlEncode($row.local_reader_focus)))</p>
           </article>
           <article class="card reveal delay-1">
             <h3>What should stand out on a supplier page?</h3>
             <p>$([string](HtmlEncode($row.documentation_focus)))</p>
           </article>
           <article class="card reveal delay-2">
+            <h3>Where do the featured peptide links go?</h3>
+            <p>They point to internal research reference pages and recent PubMed searches so the page stays useful as an educational reading path.</p>
+          </article>
+          <article class="card reveal">
             <h3>Is this page for educational reading only?</h3>
             <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
           </article>
@@ -599,13 +675,18 @@ function Update-Sitemap($siteUrl) {
 
 $siteUrl = Get-SiteUrl
 $rows = Import-Csv $dataPath | Sort-Object city
+$peptides = Get-Content $peptidesDataPath -Raw | ConvertFrom-Json
 $lookup = @{}
+$peptideLookup = @{}
 foreach ($row in $rows) {
   $lookup[$row.slug] = $row
 }
+foreach ($peptide in $peptides) {
+  $peptideLookup[$peptide.slug] = $peptide
+}
 
 foreach ($row in $rows) {
-  New-LocationPage -row $row -lookup $lookup -siteUrl $siteUrl
+  New-LocationPage -row $row -lookup $lookup -siteUrl $siteUrl -peptideLookup $peptideLookup
 }
 
 $hubHtml = New-LocationsHub -rows $rows -lookup $lookup -siteUrl $siteUrl
