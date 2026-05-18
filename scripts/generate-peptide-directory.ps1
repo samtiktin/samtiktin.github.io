@@ -68,14 +68,14 @@ function Get-CategoryMeta($key) {
 
 function Get-CategoryPrompt($key) {
   switch ($key) {
-    "glp-metabolic" { return "Most readers in this section are comparing how clearly the compound is named, how carefully the listing is framed, and whether the surrounding documentation language stays research-focused." }
+    "glp-metabolic" { return "These pages are easiest to evaluate when the compound naming is clear, the listing stays research-focused, and the documentation language is easy to follow." }
     "growth-secretagogue" { return "For this category, the key reading task is usually separating signaling-class language from generic hype and making sure documentation cues are easy to verify." }
     "repair-tissue" { return "These pages are most useful when they focus on documentation signals, category context, and how clearly the compound is explained in a research setting." }
     "cognitive-neuropeptide" { return "Neuropeptide pages are easier to trust when the wording stays careful, the category fit is clear, and the documentation language is easy to follow." }
     "longevity-cellular" { return "This group benefits from careful language because the category can quickly become repetitive or overly speculative without enough educational context." }
     "cosmetic-pigmentation" { return "These entries work best when the page stays focused on catalog language, laboratory documentation, and category clarity rather than broad appearance claims." }
     "immune-regulatory" { return "Regulatory and thymic peptide pages are easier to compare when the reference focuses on labeling, documentation, and overall transparency." }
-    "blends-protocols" { return "Named blends and shorthand listings need extra context so readers can tell whether a page is educational or simply repackaging a vague catalog label." }
+    "blends-protocols" { return "Named blends and shorthand listings need extra context so the compound name, documentation language, and category fit are easy to understand at a glance." }
     default { return "The main goal is to keep the page educational, specific, and easy to compare with related references." }
   }
 }
@@ -590,7 +590,7 @@ $($checklistItems -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Linked supplier pages</h2>
-            <p>These outbound pages are included as listing references so readers can compare product presentation, laboratory documentation cues, and supplier transparency side by side.</p>
+            <p>These supplier pages can help with comparing listing language, laboratory documentation cues, and overall transparency.</p>
           </div>
         </div>
         <div class="cards">
@@ -606,7 +606,7 @@ $($supplierCards -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Related peptides</h2>
-            <p>Related pages make it easier to compare neighboring compounds without turning the directory into repetitive one-line pages.</p>
+            <p>Nearby reference pages can help when comparing closely related compounds and broader category context.</p>
           </div>
         </div>
         <div class="card reveal">
