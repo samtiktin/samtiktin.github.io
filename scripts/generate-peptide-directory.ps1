@@ -4,6 +4,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $dataPath = Join-Path $repoRoot "data\peptides.json"
 $directoryPath = Join-Path $repoRoot "peptide-directory\index.html"
 $peptidesRoot = Join-Path $repoRoot "peptides"
+$stylesVersion = "20260517b"
 
 function Get-SiteUrl {
   $cnamePath = Join-Path $repoRoot "CNAME"
@@ -252,7 +253,7 @@ $($cards -join "`n")
   <meta name="twitter:description" content="Educational peptide reference pages grouped by category, documentation focus, and related research compounds.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=$stylesVersion">
 </head>
 <body>
   <header class="topbar">
@@ -459,7 +460,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   <meta name="twitter:description" content="$([string](HtmlEncode($metaDescription)))">
   <meta name="twitter:image" content="$([string](HtmlEncode($peptide.image)))">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-  <link rel="stylesheet" href="/styles.css">
+  <link rel="stylesheet" href="/styles.css?v=$stylesVersion">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",

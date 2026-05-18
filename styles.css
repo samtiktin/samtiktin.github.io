@@ -879,6 +879,12 @@ h3 {
   box-shadow: 0 12px 24px rgba(206, 154, 42, 0.18);
 }
 
+.directory-supplier-link .button-secondary:visited,
+.directory-supplier-link .button-secondary:hover,
+.directory-supplier-link .button-secondary:focus-visible {
+  color: #2e2817;
+}
+
 .directory-supplier-link .discount-note {
   margin-top: 0;
 }
