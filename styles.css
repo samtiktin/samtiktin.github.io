@@ -352,9 +352,9 @@ h1 {
 }
 
 .button-secondary {
-  color: var(--cream);
-  border: 1px solid rgba(255, 248, 235, 0.22);
-  background: rgba(255, 251, 244, 0.05);
+  color: #22361f;
+  border: 1px solid rgba(39, 70, 45, 0.18);
+  background: rgba(255, 250, 241, 0.88);
 }
 
 .brand-showcase {

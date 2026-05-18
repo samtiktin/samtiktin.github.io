@@ -208,7 +208,7 @@ $($relatedLinks -join "`n")
             </div>
             <div class="button-row">
 $(if ($supplierButtons) { ($supplierButtons -join "`n") })
-              <a class="button button-primary" href="/peptides/$($peptide.slug)/">View research reference</a>
+              <a class="button button-primary" href="/peptides/$($peptide.slug)/">Learn more</a>
             </div>
           </article>
 "@
