@@ -873,10 +873,10 @@ h3 {
 }
 
 .directory-supplier-link .button-secondary {
-  color: #162715;
-  background: #f6eddc;
-  border-color: rgba(22, 39, 21, 0.2);
-  box-shadow: 0 10px 20px rgba(22, 39, 21, 0.08);
+  color: #2e2817;
+  background: linear-gradient(135deg, #f1d79e, var(--gold));
+  border-color: rgba(206, 154, 42, 0.22);
+  box-shadow: 0 12px 24px rgba(206, 154, 42, 0.18);
 }
 
 .directory-supplier-link .discount-note {
