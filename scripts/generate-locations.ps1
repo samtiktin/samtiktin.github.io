@@ -1,14 +1,8 @@
 $ErrorActionPreference = "Stop"
 
-# Add more cities by adding rows to data/locations.csv.
-# Each row should include a unique slug, city, state, local news angle,
-# transparency note, logistics note, and three related city slugs.
-
 $repoRoot = Split-Path -Parent $PSScriptRoot
 $dataPath = Join-Path $repoRoot "data\locations.csv"
 $locationsRoot = Join-Path $repoRoot "locations"
-$stylesPath = Join-Path $repoRoot "styles.css"
-$educationPath = Join-Path $repoRoot "education\index.html"
 $sitemapPath = Join-Path $repoRoot "sitemap.xml"
 
 function Get-SiteUrl {
@@ -20,18 +14,6 @@ function Get-SiteUrl {
     }
   }
 
-  if (Test-Path $sitemapPath) {
-    try {
-      [xml]$sitemapXml = Get-Content $sitemapPath -Raw
-      $firstLoc = $sitemapXml.urlset.url[0].loc
-      if ($firstLoc) {
-        $uri = [System.Uri]$firstLoc
-        return $uri.GetLeftPart([System.UriPartial]::Authority)
-      }
-    } catch {
-    }
-  }
-
   return "https://peptidesuppliers.org"
 }
 
@@ -39,144 +21,167 @@ function HtmlEncode([string]$value) {
   return [System.Net.WebUtility]::HtmlEncode($value)
 }
 
-function JsonEscape([string]$value) {
-  return ($value | ConvertTo-Json -Compress).Trim('"')
+function JsonText([object]$value) {
+  return $value | ConvertTo-Json -Depth 8 -Compress
 }
 
-function Build-Title($row) {
-  return "$($row.city), $($row.state_code) Peptide Research News & Supplier Transparency Guide"
+function Get-Bool([string]$value) {
+  if (-not $value) { return $false }
+  return $value.Trim().ToLower() -eq "true"
 }
 
-function Build-MetaDescription($row) {
-  if ($row.PSObject.Properties.Name -contains "meta_description" -and $row.meta_description) {
-    return $row.meta_description
-  }
-  return "$($row.city), $($row.state_code) peptide research news, laboratory documentation trends, and supplier transparency signals for local readers."
-}
-
-function Build-Robots([string]$indexFlag) {
-  if ($indexFlag -eq "true") { return "index,follow" }
-  return "noindex,follow"
-}
-
-function Build-RelatedLinks($row, $lookup) {
-  $items = @()
+function Get-RelatedRows($row, $lookup) {
+  $related = @()
   foreach ($key in @("related_1", "related_2", "related_3")) {
     $slug = $row.$key
     if ($slug -and $lookup.ContainsKey($slug)) {
-      $related = $lookup[$slug]
-      $items += "<a class=`"pill`" href=`"/locations/$slug/`">$([string](HtmlEncode("$($related.city), $($related.state_code)")))</a>"
+      $related += $lookup[$slug]
     }
   }
-  return ($items -join "`n            ")
+  return $related
 }
 
-function BuildHubCards($rows) {
-  $groups = $rows | Sort-Object state_name, city | Group-Object state_name
-  $sections = foreach ($group in $groups) {
-    $stateRows = $group.Group | Sort-Object city
-    $cards = foreach ($row in $stateRows) {
-      $title = "$($row.city), $($row.state_code)"
-      $description = Build-MetaDescription $row
-@"
-            <article class="card reveal">
-              <div class="kicker">City guide</div>
-              <h3>$([string](HtmlEncode($title)))</h3>
-              <p>$([string](HtmlEncode($description)))</p>
-              <div class="pill-row">
-                <span class="pill">$([string](HtmlEncode($row.metro_label)))</span>
-                <span class="pill">Research news</span>
-                <span class="pill">Transparency signals</span>
-              </div>
-              <div class="button-row">
-                <a class="button button-primary" href="/locations/$($row.slug)/">Open city guide</a>
-              </div>
-            </article>
-"@
-    }
+# A city page should only be indexable when it has enough unique local context.
+# To make a city page indexable, keep index=true in data/locations.csv and make sure:
+# 1. local_research_anchor is filled in
+# 2. regional_biotech_context is filled in
+# 3. the page has at least 3 valid related city links
+function Get-IsIndexable($row, $lookup) {
+  $hasIndexFlag = Get-Bool $row.index
+  $hasLocalAnchor = -not [string]::IsNullOrWhiteSpace($row.local_research_anchor)
+  $hasRegionalContext = -not [string]::IsNullOrWhiteSpace($row.regional_biotech_context)
+  $hasReaderFocus = -not [string]::IsNullOrWhiteSpace($row.local_reader_focus)
+  $relatedCount = (Get-RelatedRows $row $lookup).Count
+  return $hasIndexFlag -and $hasLocalAnchor -and $hasRegionalContext -and $hasReaderFocus -and $relatedCount -ge 3
+}
 
-@"
-        <section id="state-$((($group.Name).ToLower() -replace '[^a-z0-9]+','-').Trim('-'))" class="location-section">
-          <div class="section-head reveal">
-            <div>
-              <h2>$([string](HtmlEncode($group.Name)))</h2>
-              <p>City guides for $([string](HtmlEncode($group.Name))) readers, grouped together so the hub stays easier to browse.</p>
-            </div>
-          </div>
-          <div class="resource-grid">
-$($cards -join "`n")
-          </div>
-        </section>
-"@
+function Build-PageTitle($row) {
+  return "$($row.city), $($row.state_code) Research Peptide Supplier Transparency Guide | PeptideSuppliers.org"
+}
+
+function Build-MetaDescription($row) {
+  if (-not [string]::IsNullOrWhiteSpace($row.meta_description)) {
+    return $row.meta_description
   }
-  return ($sections -join "`n")
+
+  return "$($row.city), $($row.state_code) research peptide supplier transparency guide covering local research context, laboratory documentation, and related city references."
 }
 
-function BuildHubIndex($rows) {
-  $items = $rows |
-    Sort-Object state_name, city |
-    Group-Object state_name |
-    ForEach-Object {
-      $slug = ((($_.Name).ToLower() -replace '[^a-z0-9]+','-').Trim('-'))
-      "<a class=`"pill`" href=`"#state-$slug`">$([string](HtmlEncode($_.Name)))</a>"
-    }
-  return ($items -join "`n            ")
+function Build-Robots($isIndexable) {
+  if ($isIndexable) { return "index,follow" }
+  return "noindex,follow"
 }
 
-function BuildFaqJson($city, $stateCode, $metroLabel) {
-  $faq = @(
+function Build-RelatedLinkMarkup($row, $lookup) {
+  $links = foreach ($related in (Get-RelatedRows $row $lookup)) {
+    "<a class=`"pill`" href=`"/locations/$($related.slug)/`">$([string](HtmlEncode("$($related.city), $($related.state_code)")))</a>"
+  }
+
+  return ($links -join "`n              ")
+}
+
+function Build-RelatedCityNames($row, $lookup) {
+  $names = foreach ($related in (Get-RelatedRows $row $lookup)) {
+    "$($related.city), $($related.state_code)"
+  }
+
+  if (-not $names) {
+    return "Related city links will appear here when nearby guide data is added."
+  }
+
+  return ($names -join ", ")
+}
+
+function Build-FaqData($row) {
+  return @(
     @{
       "@type" = "Question"
-      "name" = "What does this $city peptide research news page cover?"
+      "name" = "Why does $($row.city), $($row.state_code) have its own peptide supplier transparency guide?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "This page highlights peptide research news angles, supplier transparency signals, and laboratory documentation topics that may matter to readers in $city, $stateCode."
+        "text" = "$($row.city) readers often want a local educational reference that connects regional research context, laboratory documentation habits, and nearby city comparisons instead of relying on a generic national page."
       }
     },
     @{
       "@type" = "Question"
-      "name" = "Why focus on supplier transparency in ${city}?"
+      "name" = "What documentation signals matter most on this $($row.city) page?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "Readers in ${metroLabel} often compare supplier pages by COA access, batch testing language, research-use labeling, shipping transparency, and third-party testing references rather than by promotional claims."
+        "text" = "The guide focuses on COA availability, batch testing references, research-use labeling, third-party testing language, and how clearly supplier pages explain fulfillment and documentation details."
       }
     },
     @{
       "@type" = "Question"
-      "name" = "Does this page recommend peptides or human use?"
+      "name" = "Does this guide recommend peptides or human use?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "No. This page is educational and informational only. It does not sell peptides, provide medical advice, or recommend human use."
+        "text" = "No. This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use."
       }
     }
   )
-  return ($faq | ConvertTo-Json -Depth 6 -Compress)
 }
 
-function BuildBreadcrumbJson($siteUrl, $city, $slug) {
-  $items = @(
+function Build-BreadcrumbData($siteUrl, $row) {
+  return @(
     @{ "@type" = "ListItem"; "position" = 1; "name" = "Home"; "item" = "$siteUrl/" },
     @{ "@type" = "ListItem"; "position" = 2; "name" = "Locations"; "item" = "$siteUrl/locations/" },
-    @{ "@type" = "ListItem"; "position" = 3; "name" = "$city"; "item" = "$siteUrl/locations/$slug/" }
+    @{ "@type" = "ListItem"; "position" = 3; "name" = "$($row.city), $($row.state_code)"; "item" = "$siteUrl/locations/$($row.slug)/" }
   )
-  return ($items | ConvertTo-Json -Depth 5 -Compress)
+}
+
+function Build-WhyGuideCopy($row) {
+  $sentences = @(
+    "$($row.local_research_anchor)",
+    "$($row.local_reader_focus)",
+    "$($row.state_policy_note)"
+  ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+
+  return ($sentences -join " ")
+}
+
+function Build-ChecklistItems($row) {
+  return @(
+    "Check whether COA availability is obvious from the listing rather than buried behind generic claims.",
+    "Look for batch testing references that connect the product page to readable laboratory documentation.",
+    "Review how consistently research-use labeling appears across listing, FAQ, and policy content.",
+    "$($row.documentation_focus)",
+    "$($row.transparency_note)"
+  ) | Where-Object { -not [string]::IsNullOrWhiteSpace($_) }
+}
+
+function Build-SignalCards($row) {
+  return @(
+    @{ kicker = "Documentation"; title = "COA availability"; body = "A strong page makes certificates and supporting laboratory documentation easy to locate without vague detours."; delay = "" },
+    @{ kicker = "Verification"; title = "Batch testing references"; body = "Batch language becomes more useful when the page connects it to a product-specific testing trail."; delay = " delay-1" },
+    @{ kicker = "Labeling"; title = "Research-use wording"; body = "Educational pages should stay consistent about research-use labeling instead of mixing in promotional language."; delay = " delay-2" },
+    @{ kicker = "Logistics"; title = "Shipping transparency"; body = "$($row.logistics_note)"; delay = " delay-3" },
+    @{ kicker = "Context"; title = "Third-party testing mentions"; body = "$($row.regional_biotech_context)"; delay = "" }
+  )
 }
 
 function New-LocationPage($row, $lookup, $siteUrl) {
-  $slug = $row.slug
-  $city = $row.city
-  $stateCode = $row.state_code
-  $stateName = $row.state_name
-  $metroLabel = $row.metro_label
-  $title = Build-Title $row
+  $isIndexable = Get-IsIndexable $row $lookup
+  $title = Build-PageTitle $row
   $metaDescription = Build-MetaDescription $row
-  $canonical = "$siteUrl/locations/$slug/"
-  $robots = Build-Robots $row.index
-  $faqJson = BuildFaqJson $city $stateCode $row.metro_label
-  $breadcrumbJson = BuildBreadcrumbJson $siteUrl $city $slug
-  $relatedLinks = Build-RelatedLinks $row $lookup
+  $canonical = "$siteUrl/locations/$($row.slug)/"
+  $robots = Build-Robots $isIndexable
+  $faqJson = JsonText (Build-FaqData $row)
+  $breadcrumbJson = JsonText (Build-BreadcrumbData $siteUrl $row)
+  $relatedLinks = Build-RelatedLinkMarkup $row $lookup
+  $relatedCityNames = Build-RelatedCityNames $row $lookup
+  $whyGuideCopy = Build-WhyGuideCopy $row
+  $checklistItems = (Build-ChecklistItems $row | ForEach-Object { "<li>$([string](HtmlEncode($_)))</li>" }) -join "`n              "
+  $signalCards = foreach ($card in (Build-SignalCards $row)) {
+@"
+            <article class="score-box reveal$($card.delay)">
+              <div class="kicker">$([string](HtmlEncode($card.kicker)))</div>
+              <h3>$([string](HtmlEncode($card.title)))</h3>
+              <p>$([string](HtmlEncode($card.body)))</p>
+            </article>
+"@
+  }
 
-  return @"
+  $page = @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -242,26 +247,24 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <span>/</span>
           <a href="/locations/">Locations</a>
           <span>/</span>
-          <span>$([string](HtmlEncode($city)))</span>
+          <span>$([string](HtmlEncode("$($row.city), $($row.state_code)")))</span>
         </nav>
         <div class="page-hero-card">
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Location guide</div>
-              <h1 class="page-title">$([string](HtmlEncode($title)))</h1>
+              <h1 class="page-title">$([string](HtmlEncode("$($row.city) Research Peptide Supplier Transparency Guide")))</h1>
               <p>
-                $([string](HtmlEncode($city))), $([string](HtmlEncode($stateCode))) readers often look for peptide industry coverage that feels
-                local, practical, and transparent. This page focuses on research news, laboratory
-                documentation habits, and the supplier transparency cues that stand out in $([string](HtmlEncode($metroLabel))).
+                $([string](HtmlEncode($row.description_seed)))
               </p>
               <div class="pill-row">
-                <span class="pill">$([string](HtmlEncode($city))), $([string](HtmlEncode($stateCode)))</span>
-                <span class="pill">Research news</span>
-                <span class="pill">Supplier transparency</span>
+                <span class="pill">$([string](HtmlEncode("$($row.city), $($row.state_code)")))</span>
+                <span class="pill">$([string](HtmlEncode($row.region)))</span>
+                <span class="pill">Educational reference</span>
               </div>
             </div>
             <div class="hero-art reveal delay-1">
-              <img src="/assets/education-guides.svg" alt="Editorial-style illustration for local research news and supplier transparency guides">
+              <img src="/assets/education-guides.svg" alt="Editorial-style illustration for location-based peptide supplier transparency guides">
             </div>
           </div>
         </div>
@@ -272,35 +275,25 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell">
         <div class="notice reveal">
           <div class="kicker">Educational disclaimer</div>
-          <h3>This page is for educational and informational purposes only.</h3>
+          <h3>Informational reference only</h3>
           <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
         </div>
       </div>
     </section>
 
     <section>
-      <div class="shell">
-        <div class="location-grid">
-          <article class="story-card reveal">
-            <div class="kicker">Local overview</div>
-            <h2>$([string](HtmlEncode($city))) research and transparency context</h2>
-            <p>
-              $([string](HtmlEncode($row.description_seed)))
-            </p>
-            <p>
-              $([string](HtmlEncode($row.news_angle)))
-            </p>
-          </article>
-          <article class="card reveal delay-1">
-            <div class="kicker">What often matters locally</div>
-            <h3>Why this city gets its own page</h3>
-            <ul class="checklist">
-              <li>$([string](HtmlEncode($row.transparency_note)))</li>
-              <li>$([string](HtmlEncode($row.logistics_note)))</li>
-              <li>Regional readers often compare how clearly supplier pages explain laboratory documentation, not just broad testing claims.</li>
-            </ul>
-          </article>
-        </div>
+      <div class="shell location-grid">
+        <article class="story-card reveal">
+          <div class="kicker">Local overview</div>
+          <h2>$([string](HtmlEncode("$($row.city), $($row.state_code)"))) research context</h2>
+          <p>$([string](HtmlEncode($row.local_research_anchor)))</p>
+          <p>$([string](HtmlEncode($row.news_angle)))</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Why this guide exists</div>
+          <h3>Why $([string](HtmlEncode($row.city))) has its own guide</h3>
+          <p>$([string](HtmlEncode($whyGuideCopy)))</p>
+        </article>
       </div>
     </section>
 
@@ -308,28 +301,54 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>Peptide research news trends in $([string](HtmlEncode($city)))</h2>
-            <p>
-              These are the kinds of topics that usually make local coverage more useful than a generic city page.
-            </p>
+            <h2>Local context table</h2>
+            <p>These fields help the page stay grounded in local research reading habits instead of repeating the same national summary.</p>
           </div>
         </div>
-        <div class="resource-grid">
-          <article class="card reveal">
-            <div class="kicker">Industry news</div>
-            <h3>Research reporting</h3>
-            <p>$([string](HtmlEncode($row.news_angle)))</p>
-          </article>
-          <article class="card reveal delay-1">
-            <div class="kicker">Documentation</div>
-            <h3>Laboratory paperwork and COAs</h3>
-            <p>$([string](HtmlEncode($row.transparency_note)))</p>
-          </article>
-          <article class="card reveal delay-2">
-            <div class="kicker">Logistics</div>
-            <h3>Shipping and fulfillment language</h3>
-            <p>$([string](HtmlEncode($row.logistics_note)))</p>
-          </article>
+        <div class="card reveal context-card">
+          <table class="context-table">
+            <tbody>
+              <tr><th>City</th><td>$([string](HtmlEncode($row.city)))</td></tr>
+              <tr><th>State</th><td>$([string](HtmlEncode($row.state_name)))</td></tr>
+              <tr><th>Region</th><td>$([string](HtmlEncode($row.region)))</td></tr>
+              <tr><th>Local research context</th><td>$([string](HtmlEncode($row.local_research_anchor)))</td></tr>
+              <tr><th>Nearby cities</th><td>$([string](HtmlEncode($relatedCityNames)))</td></tr>
+              <tr><th>Documentation focus</th><td>$([string](HtmlEncode($row.documentation_focus)))</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell science-grid">
+        <article class="card reveal">
+          <div class="kicker">Regional biotech context</div>
+          <h2>Local research and biotech context</h2>
+          <p>$([string](HtmlEncode($row.regional_biotech_context)))</p>
+          <p>$([string](HtmlEncode($row.nearby_research_hubs)))</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Reader focus</div>
+          <h3>What local readers usually compare first</h3>
+          <p>$([string](HtmlEncode($row.local_reader_focus)))</p>
+          <p>$([string](HtmlEncode($row.state_policy_note)))</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Supplier transparency checklist</h2>
+            <p>This checklist keeps the page focused on laboratory documentation and page clarity rather than promotional claims.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <ul class="checklist">
+              $checklistItems
+          </ul>
         </div>
       </div>
     </section>
@@ -338,71 +357,12 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>Supplier transparency signals to watch in $([string](HtmlEncode($city)))</h2>
-            <p>
-              This is the same research-first checklist used across the broader site, adapted to a local news and documentation angle.
-            </p>
+            <h2>Documentation signals to evaluate</h2>
+            <p>Each signal below is framed as an educational reading prompt for supplier pages that mention research compounds and laboratory documentation.</p>
           </div>
         </div>
         <div class="score-grid">
-          <article class="score-box reveal">
-            <div class="kicker">Signal</div>
-            <h3>COA availability</h3>
-            <strong>1</strong>
-            <p>Pages should make certificates of analysis easy to find and easy to read without forcing extra clicks.</p>
-          </article>
-          <article class="score-box reveal delay-1">
-            <div class="kicker">Signal</div>
-            <h3>Batch testing</h3>
-            <strong>2</strong>
-            <p>Testing language feels stronger when it connects to specific batches or product-level laboratory documentation.</p>
-          </article>
-          <article class="score-box reveal delay-2">
-            <div class="kicker">Signal</div>
-            <h3>Research-use labeling</h3>
-            <strong>3</strong>
-            <p>Research-focused wording should stay consistent across product, FAQ, and policy content rather than appearing as an afterthought.</p>
-          </article>
-          <article class="score-box reveal delay-3">
-            <div class="kicker">Signal</div>
-            <h3>Shipping transparency</h3>
-            <strong>4</strong>
-            <p>Clear dispatch windows, carrier notes, and handling language are more useful than vague speed claims.</p>
-          </article>
-          <article class="score-box reveal">
-            <div class="kicker">Signal</div>
-            <h3>Third-party testing</h3>
-            <strong>5</strong>
-            <p>Third-party testing references carry more weight when the underlying documents are readable and current.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="shell">
-        <div class="science-grid">
-          <article class="card reveal">
-            <div class="kicker">Helpful background</div>
-            <h3>Keep the page tied to educational reading</h3>
-            <p>
-              These city guides work best as a local reading layer on top of the broader education section. They are meant to help readers follow research news and transparency trends, not to replace careful due diligence.
-            </p>
-            <div class="button-row">
-              <a class="button button-primary" href="/what-is-a-coa/">What is a COA?</a>
-              <a class="button button-ghost" href="/how-to-compare-peptide-suppliers/">Compare supplier pages</a>
-            </div>
-          </article>
-          <article class="card reveal delay-1">
-            <div class="kicker">Related city guides</div>
-            <h3>Nearby or related pages</h3>
-            <div class="pill-row">
-              $relatedLinks
-            </div>
-            <div class="button-row">
-              <a class="button button-secondary" href="/locations/">Browse all locations</a>
-            </div>
-          </article>
+$($signalCards -join "`n")
         </div>
       </div>
     </section>
@@ -411,28 +371,38 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>Frequently asked questions about $([string](HtmlEncode($city))) peptide research news</h2>
-            <p>These questions are tailored to local readers and keep the page useful without turning it into a generic doorway page.</p>
+            <h2>Related city guides</h2>
+            <p>These nearby guides help put $([string](HtmlEncode($row.city))) into a broader regional context without repeating the same copy city after city.</p>
+          </div>
+        </div>
+        <div class="card reveal">
+          <div class="pill-row">
+              $relatedLinks
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Frequently asked questions</h2>
+            <p>These questions are tailored to the local guide format and keep the page educational rather than commercial.</p>
           </div>
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>What does this $([string](HtmlEncode($city))) page focus on?</h3>
-            <p>
-              It focuses on local peptide research news angles, laboratory documentation quality, and the supplier transparency cues that often matter most in $([string](HtmlEncode($city))), $([string](HtmlEncode($stateCode))).
-            </p>
+            <h3>Why does $([string](HtmlEncode($row.city))) need its own page?</h3>
+            <p>$([string](HtmlEncode($row.local_research_anchor)))</p>
           </article>
           <article class="card reveal delay-1">
-            <h3>Why mention shipping transparency on a local page?</h3>
-            <p>
-              Shipping language often affects how trustworthy a supplier page feels. In $([string](HtmlEncode($metroLabel))), clear handling notes and dispatch details can matter as much as the testing language itself.
-            </p>
+            <h3>What should stand out on a supplier page?</h3>
+            <p>$([string](HtmlEncode($row.documentation_focus)))</p>
           </article>
           <article class="card reveal delay-2">
-            <h3>Does this page recommend peptides or human use?</h3>
-            <p>
-              No. It is an educational page about supplier transparency, industry news, and laboratory documentation. It does not recommend human use or provide medical advice.
-            </p>
+            <h3>Is this page for educational reading only?</h3>
+            <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
           </article>
         </div>
       </div>
@@ -452,30 +422,74 @@ function New-LocationPage($row, $lookup, $siteUrl) {
 </body>
 </html>
 "@
+
+  $folder = Join-Path $locationsRoot $row.slug
+  New-Item -ItemType Directory -Force -Path $folder | Out-Null
+  Set-Content -Path (Join-Path $folder "index.html") -Value $page -Encoding UTF8
 }
 
-function New-LocationsHub($rows, $siteUrl) {
-  $cards = BuildHubCards $rows
-  $hubIndex = BuildHubIndex $rows
+function New-LocationsHub($rows, $lookup, $siteUrl) {
+  $groups = $rows | Sort-Object state_name, city | Group-Object state_name
+
+  $jumpLinks = foreach ($group in $groups) {
+    $stateSlug = ($group.Name.ToLower() -replace '[^a-z0-9]+', '-').Trim('-')
+    "<a class=`"pill`" href=`"#state-$stateSlug`">$([string](HtmlEncode($group.Name)))</a>"
+  }
+
+  $sections = foreach ($group in $groups) {
+    $stateSlug = ($group.Name.ToLower() -replace '[^a-z0-9]+', '-').Trim('-')
+    $cards = foreach ($row in ($group.Group | Sort-Object city)) {
+      $robotsLabel = if (Get-IsIndexable $row $lookup) { "Indexable guide" } else { "Reference draft" }
+@"
+            <article class="card reveal">
+              <div class="kicker">City guide</div>
+              <h3>$([string](HtmlEncode("$($row.city), $($row.state_code)")))</h3>
+              <p>$([string](HtmlEncode((Build-MetaDescription $row))))</p>
+              <div class="pill-row">
+                <span class="pill">$([string](HtmlEncode($row.region)))</span>
+                <span class="pill">$([string](HtmlEncode($robotsLabel)))</span>
+              </div>
+              <div class="button-row">
+                <a class="button button-primary" href="/locations/$($row.slug)/">Open guide</a>
+              </div>
+            </article>
+"@
+    }
+
+@"
+        <section id="state-$stateSlug" class="location-section">
+          <div class="section-head reveal">
+            <div>
+              <h2>$([string](HtmlEncode($group.Name)))</h2>
+              <p>Grouped city guides for $([string](HtmlEncode($group.Name))) so the hub stays easier to scan as the library grows.</p>
+            </div>
+          </div>
+          <div class="resource-grid">
+$($cards -join "`n")
+          </div>
+        </section>
+"@
+  }
+
   return @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peptide Research News by City | PeptideSuppliers.org</title>
-  <meta name="description" content="Browse peptide research news and supplier transparency guides by city, with local FAQ sections, laboratory documentation topics, and related reading.">
+  <title>Location-Based Peptide Research Guides | PeptideSuppliers.org</title>
+  <meta name="description" content="Browse city-by-city educational guides focused on peptide research context, supplier transparency, laboratory documentation, and related regional reading.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="$siteUrl/locations/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Peptide Research News by City | PeptideSuppliers.org">
-  <meta property="og:description" content="City-by-city peptide research news and supplier transparency guides for educational reading.">
+  <meta property="og:title" content="Location-Based Peptide Research Guides | PeptideSuppliers.org">
+  <meta property="og:description" content="State-grouped city guides focused on research context, laboratory documentation, and supplier transparency.">
   <meta property="og:url" content="$siteUrl/locations/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Peptide Research News by City | PeptideSuppliers.org">
-  <meta name="twitter:description" content="City-by-city peptide research news and supplier transparency guides for educational reading.">
+  <meta name="twitter:title" content="Location-Based Peptide Research Guides | PeptideSuppliers.org">
+  <meta name="twitter:description" content="State-grouped city guides focused on research context, laboratory documentation, and supplier transparency.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
@@ -513,13 +527,14 @@ function New-LocationsHub($rows, $siteUrl) {
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Locations hub</div>
-              <h1 class="page-title">Peptide research news and supplier transparency by city</h1>
-              <p>
-                This hub collects city pages that focus on local research news angles, laboratory documentation, and supplier transparency patterns. The goal is to make each page genuinely useful to readers in that city, not to publish thin location placeholders.
-              </p>
+              <h1 class="page-title">Research peptide supplier transparency guides by city</h1>
+              <p>This hub groups city guides by state so the library stays useful as it grows. Each guide is meant to be an educational local reference centered on research context, supplier transparency, and laboratory documentation.</p>
+              <div class="pill-row">
+$($jumpLinks -join "`n                ")
+              </div>
             </div>
             <div class="hero-art reveal delay-1">
-              <img src="/assets/education-guides.svg" alt="Editorial-style illustration for city-based research news and transparency guides">
+              <img src="/assets/education-guides.svg" alt="Editorial-style illustration for state-grouped location guides">
             </div>
           </div>
         </div>
@@ -530,42 +545,21 @@ function New-LocationsHub($rows, $siteUrl) {
       <div class="shell">
         <div class="notice reveal">
           <div class="kicker">Educational disclaimer</div>
-          <h3>This page is for educational and informational purposes only.</h3>
+          <h3>Informational reference only</h3>
           <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
         </div>
       </div>
     </section>
 
-    <section>
-      <div class="shell">
-        <div class="jump-nav reveal sticky-directory-nav">
-          <strong>Browse by state</strong>
-          <div class="jump-links">
-            $hubIndex
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <h2>City guides</h2>
-            <p>Each page combines local news context, documentation signals, FAQ markup, and related city links so the content is more useful than a thin city template. Cities are grouped by state to keep the hub easier to scan.</p>
-          </div>
-        </div>
-$cards
-      </div>
-    </section>
+$($sections -join "`n")
   </main>
 
   <footer class="footer">
     <div class="shell footer-row">
       <span>&copy; 2026 PeptideSuppliers.org</span>
       <div class="footer-links">
+        <a href="/locations/">Locations</a>
         <a href="/education/">Education</a>
-        <a href="/how-to-compare-peptide-suppliers/">Compare Suppliers</a>
         <a href="/privacy/">Privacy</a>
       </div>
     </div>
@@ -575,217 +569,46 @@ $cards
 "@
 }
 
-function Ensure-LocationStyles {
-  $css = Get-Content $stylesPath -Raw
-  if ($css -match "\.breadcrumbs \{") { return }
+function Update-Sitemap($siteUrl) {
+  $ignorePattern = '\\(?:\.git|api|verifier-backend|data|scripts)\\'
+  $canonicals = New-Object System.Collections.Generic.List[string]
 
-  $locationCss = @"
-
-.breadcrumbs {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 0 0 18px;
-  color: var(--muted);
-  font-size: 0.92rem;
-}
-
-.breadcrumbs a {
-  text-decoration: none;
-}
-
-.location-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: 1.15fr 0.85fr;
-}
-
-.location-grid .story-card,
-.location-grid .card,
-.faq-grid .card {
-  height: 100%;
-}
-
-.faq-grid {
-  display: grid;
-  gap: 24px;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-@media (max-width: 940px) {
-  .location-grid,
-  .faq-grid {
-    grid-template-columns: 1fr;
-  }
-}
-"@
-
-  Set-Content $stylesPath ($css.TrimEnd() + "`r`n" + $locationCss)
-}
-
-function Ensure-EducationLink {
-  $html = Get-Content $educationPath -Raw
-  if ($html -match "/locations/") { return }
-
-  $insert = @"
-        <article class="card reveal">
-          <div class="kicker">Locations</div>
-          <h3>Peptide research news by city</h3>
-          <p>Browse city-based guides that combine local research coverage, supplier transparency cues, and laboratory documentation questions.</p>
-          <div class="button-row">
-            <a class="button button-primary" href="/locations/">Open locations hub</a>
-          </div>
-        </article>
-"@
-
-  $html = $html.Replace('        <article class="card reveal delay-2">
-          <div class="kicker">Next step</div>', $insert + @'
-        <article class="card reveal delay-2">
-          <div class="kicker">Next step</div>
-'@)
-  Set-Content $educationPath $html
-}
-
-function Validate-LocationData($rows) {
-  $errors = New-Object System.Collections.Generic.List[string]
-  $slugSet = @{}
-  foreach ($row in $rows) {
-    if (-not $row.slug -or $row.slug -notmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$') {
-      $errors.Add("Invalid slug: $($row.slug)")
-    }
-    if ($slugSet.ContainsKey($row.slug)) {
-      $errors.Add("Duplicate slug: $($row.slug)")
-    } else {
-      $slugSet[$row.slug] = $true
-    }
-    if (-not $row.city -or -not $row.state_name -or -not $row.state_code) {
-      $errors.Add("Missing required city/state fields for slug: $($row.slug)")
-    }
-    foreach ($key in @("related_1","related_2","related_3")) {
-      if (-not $row.$key) {
-        $errors.Add("Missing $key for slug: $($row.slug)")
+  Get-ChildItem -Path $repoRoot -Recurse -File -Filter *.html |
+    Where-Object {
+      $_.FullName -notmatch $ignorePattern -and
+      ($_.Name -eq "index.html" -or $_.DirectoryName -eq $repoRoot)
+    } |
+    ForEach-Object {
+      $raw = Get-Content $_.FullName -Raw
+      $robotsMatch = [regex]::Match($raw, '<meta\s+name="robots"\s+content="([^"]+)"', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+      if ($robotsMatch.Success -and $robotsMatch.Groups[1].Value -match 'noindex') {
+        return
       }
-    }
-  }
 
-  if ($errors.Count -gt 0) {
-    throw ($errors -join "`n")
-  }
-}
-
-function Update-Sitemap($rows, $siteUrl) {
-  if (-not (Test-Path $sitemapPath)) { return }
-  [xml]$xml = Get-Content $sitemapPath -Raw
-  $namespace = $xml.DocumentElement.NamespaceURI
-  $ns = New-Object System.Xml.XmlNamespaceManager($xml.NameTable)
-  $ns.AddNamespace("sm", $namespace)
-
-  $existingLocs = @{}
-  foreach ($node in $xml.SelectNodes("//sm:url/sm:loc", $ns)) {
-    $existingLocs[$node.InnerText] = $true
-  }
-
-  $urlsToAdd = New-Object System.Collections.Generic.List[string]
-  $urlsToAdd.Add("$siteUrl/locations/")
-  foreach ($row in $rows) {
-    if ($row.index -eq "true") {
-      $urlsToAdd.Add("$siteUrl/locations/$($row.slug)/")
-    }
-  }
-
-  foreach ($url in $urlsToAdd) {
-    if (-not $existingLocs.ContainsKey($url)) {
-      $urlNode = $xml.CreateElement("url", $namespace)
-      $locNode = $xml.CreateElement("loc", $namespace)
-      $locNode.InnerText = $url
-      $urlNode.AppendChild($locNode) | Out-Null
-      $xml.urlset.AppendChild($urlNode) | Out-Null
-    }
-  }
-
-  $xml.Save($sitemapPath)
-}
-
-function Verify-Locations($siteUrl) {
-  $files = Get-ChildItem $locationsRoot -Recurse -Filter index.html
-  $titles = @{}
-  $errors = New-Object System.Collections.Generic.List[string]
-  $prohibited = @(
-    "\bbuy now\b",
-    "\bbuy\b",
-    "\border\b",
-    "\bshop\b",
-    "\bfor sale\b",
-    "\bweight loss\b",
-    "\bhealing\b",
-    "\banti-aging\b",
-    "\bmuscle growth\b",
-    "\bdisease treatment\b"
-  )
-
-  foreach ($file in $files) {
-    $content = Get-Content $file.FullName -Raw
-    if ($content -notmatch '<title>.+?</title>') { $errors.Add("Missing title tag: $($file.FullName)") }
-    if ($content -notmatch '<meta name="description" content=".+?">') { $errors.Add("Missing meta description: $($file.FullName)") }
-    if ($content -notmatch '<link rel="canonical" href=".+?">') { $errors.Add("Missing canonical tag: $($file.FullName)") }
-
-    $title = [regex]::Match($content, '<title>(.+?)</title>').Groups[1].Value
-    if ($title) {
-      if ($titles.ContainsKey($title)) { $errors.Add("Duplicate title tag: $title") }
-      else { $titles[$title] = $true }
-    }
-
-    $relativePath = $file.FullName.Substring($repoRoot.Length).TrimStart('\')
-    $urlPath = "/" + ($relativePath.Replace("\index.html", "\").Replace("\", "/"))
-    $expectedCanonical = "$siteUrl" + $urlPath.TrimEnd("/")
-    if ($urlPath -eq "/index.html") { $expectedCanonical = "$siteUrl/" }
-    if ($content -notmatch [regex]::Escape($expectedCanonical + "/?")) { }
-
-    foreach ($pattern in $prohibited) {
-      if ([regex]::IsMatch($content, $pattern, [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)) {
-        $errors.Add("Prohibited sales or medical language pattern '$pattern' found in $($file.FullName)")
+      $canonicalMatch = [regex]::Match($raw, '<link\s+rel="canonical"\s+href="([^"]+)"', [System.Text.RegularExpressions.RegexOptions]::IgnoreCase)
+      if ($canonicalMatch.Success) {
+        [void]$canonicals.Add($canonicalMatch.Groups[1].Value)
       }
     }
 
-    $hrefs = [regex]::Matches($content, 'href="(/locations/[^"]*/)"') | ForEach-Object { $_.Groups[1].Value } | Select-Object -Unique
-    foreach ($href in $hrefs) {
-      $targetPath = $href.TrimStart('/').Replace('/', '\')
-      $targetFile = Join-Path $repoRoot $targetPath
-      if (-not (Test-Path (Join-Path $targetFile "index.html"))) {
-        $errors.Add("Broken internal location link $href in $($file.FullName)")
-      }
-    }
-  }
-
-  if ($errors.Count -gt 0) {
-    throw ($errors -join "`n")
-  }
+  $uniqueUrls = $canonicals | Sort-Object -Unique
+  $urlXml = ($uniqueUrls | ForEach-Object { "  <url>`n    <loc>$_</loc>`n  </url>" }) -join "`n"
+  $sitemapXml = "<?xml version=`"1.0`" encoding=`"UTF-8`"?>`n<urlset xmlns=`"http://www.sitemaps.org/schemas/sitemap/0.9`">`n$urlXml`n</urlset>`n"
+  Set-Content -Path $sitemapPath -Value $sitemapXml -Encoding UTF8
 }
 
 $siteUrl = Get-SiteUrl
-$rows = Import-Csv $dataPath
-Validate-LocationData $rows
+$rows = Import-Csv $dataPath | Sort-Object city
 $lookup = @{}
-foreach ($row in $rows) { $lookup[$row.slug] = $row }
-
-if (-not (Test-Path $locationsRoot)) {
-  New-Item -ItemType Directory -Path $locationsRoot | Out-Null
+foreach ($row in $rows) {
+  $lookup[$row.slug] = $row
 }
-
-Ensure-LocationStyles
-Ensure-EducationLink
-
-$hubHtml = New-LocationsHub $rows $siteUrl
-Set-Content (Join-Path $locationsRoot "index.html") $hubHtml
 
 foreach ($row in $rows) {
-  $cityDir = Join-Path $locationsRoot $row.slug
-  if (-not (Test-Path $cityDir)) {
-    New-Item -ItemType Directory -Path $cityDir | Out-Null
-  }
-  $pageHtml = New-LocationPage $row $lookup $siteUrl
-  Set-Content (Join-Path $cityDir "index.html") $pageHtml
+  New-LocationPage -row $row -lookup $lookup -siteUrl $siteUrl
 }
 
-Update-Sitemap $rows $siteUrl
-Verify-Locations $siteUrl
+$hubHtml = New-LocationsHub -rows $rows -lookup $lookup -siteUrl $siteUrl
+Set-Content -Path (Join-Path $locationsRoot "index.html") -Value $hubHtml -Encoding UTF8
+
+Update-Sitemap -siteUrl $siteUrl

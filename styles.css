@@ -553,6 +553,25 @@ section {
   z-index: 12;
 }
 
+.directory-search {
+  margin-top: 16px;
+}
+
+.directory-search input {
+  width: 100%;
+  min-height: 52px;
+  padding: 0 16px;
+  border: 1px solid rgba(39, 70, 45, 0.14);
+  border-radius: 18px;
+  background: rgba(255, 250, 241, 0.96);
+  color: var(--ink);
+  font: inherit;
+}
+
+.directory-search input::placeholder {
+  color: var(--muted);
+}
+
 .jump-nav strong {
   display: block;
   margin-bottom: 12px;
@@ -798,6 +817,40 @@ h3 {
 
 .peptide-supplier-card h3 {
   margin-bottom: 8px;
+}
+
+.directory-category-label {
+  color: var(--forest);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.context-card {
+  overflow: hidden;
+}
+
+.context-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.context-table th,
+.context-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid rgba(39, 70, 45, 0.1);
+  vertical-align: top;
+  text-align: left;
+}
+
+.context-table th {
+  width: 220px;
+  color: var(--forest);
+  font-size: 0.92rem;
+}
+
+.context-table tr:last-child th,
+.context-table tr:last-child td {
+  border-bottom: 0;
 }
 
 .discount-note {
@@ -1485,5 +1538,23 @@ h3 {
   .location-grid,
   .faq-grid {
     grid-template-columns: 1fr;
+  }
+
+  .context-table,
+  .context-table tbody,
+  .context-table tr,
+  .context-table th,
+  .context-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .context-table th {
+    padding-bottom: 6px;
+    border-bottom: 0;
+  }
+
+  .context-table td {
+    padding-top: 0;
   }
 }

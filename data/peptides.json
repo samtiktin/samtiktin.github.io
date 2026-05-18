@@ -1,0 +1,642 @@
+﻿[
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "tirz",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "Check whether the page clearly identifies the shorthand label, explains the underlying compound family, and keeps laboratory documentation easy to locate.",
+        "related_peptides":  [
+                                 "glp-1",
+                                 "retatrutide-glp-3",
+                                 "cagrilintide"
+                             ],
+        "name":  "Tirz",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Shorthand metabolic listings are easier to trust when the reference makes naming conventions, batch context, and research-use labeling easy to follow.",
+        "short_educational_description":  "Tirz is used here as a shorthand directory label for tirzepatide-style research listings that are usually discussed in incretin and metabolic research coverage."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "glp-1",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "A useful page should clarify whether GLP-1 is being used as a family label or a specific listing and should point to readable laboratory documentation.",
+        "related_peptides":  [
+                                 "tirz",
+                                 "retatrutide-glp-3",
+                                 "cagrilintide"
+                             ],
+        "name":  "GLP-1",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Category pages built around GLP-1 wording work better when the language stays educational and the documentation trail is easier to verify than the promotional copy.",
+        "short_educational_description":  "GLP-1 is used here as a broader directory label for research compounds that are commonly grouped under GLP-1-related catalog language and educational references."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "retatrutide-glp-3",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "Look for pages that explain the naming clearly, keep research-use labeling consistent, and connect the listing to readable batch documentation.",
+        "related_peptides":  [
+                                 "tirz",
+                                 "glp-1",
+                                 "mazdutide"
+                             ],
+        "name":  "Retatrutide (GLP-3)",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Because this entry is newer and sometimes described in different ways, transparency matters most when the page avoids vague shorthand and supports the listing with clear documentation language.",
+        "short_educational_description":  "Retatrutide (GLP-3) is presented as a newer metabolic research entry that often appears beside other incretin-style listings in educational directory pages."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "oxytocin",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "A strong reference explains the signaling context, keeps labeling precise, and makes documentation notes visible without overstating what the listing means.",
+        "related_peptides":  [
+                                 "pt-141",
+                                 "selank",
+                                 "dsip"
+                             ],
+        "name":  "Oxytocin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Oxytocin pages read more clearly when the reference avoids lifestyle claims and instead focuses on category fit, documentation access, and research-use wording.",
+        "short_educational_description":  "Oxytocin is a neuropeptide research reference that often appears in broader signaling discussions and is best framed with careful, non-promotional language."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "sermorelin",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "Look for a page that explains the signaling family, keeps batch-testing language readable, and avoids vague wording about what the listing is for.",
+        "related_peptides":  [
+                                 "tesamorlin",
+                                 "ipamorelin",
+                                 "cjc-1295"
+                             ],
+        "name":  "Sermorelin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This category is easier to evaluate when the reference makes endocrine context and laboratory documentation more visible than generic category claims.",
+        "short_educational_description":  "Sermorelin is commonly listed in growth hormone secretagogue and endocrine-signaling research categories, where naming precision matters more than hype."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "tesamorlin",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "The page should clarify the naming, show category context, and make documentation notes easy to review alongside the listing language.",
+        "related_peptides":  [
+                                 "sermorelin",
+                                 "ipamorelin",
+                                 "cjc-1295"
+                             ],
+        "name":  "Tesamorlin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Shorthand endocrine entries stay more credible when the listing explains what the label refers to and keeps documentation language specific and readable.",
+        "short_educational_description":  "Tesamorlin is used here as a directory shorthand for tesamorelin-style growth hormone signaling references that appear in endocrine research listings."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "bpc-157",
+        "category":  "repair-tissue",
+        "documentation_focus":  "The strongest pages explain the repair-oriented category clearly and make laboratory documentation or batch references easy to find.",
+        "related_peptides":  [
+                                 "tb-500",
+                                 "ghk-cu",
+                                 "kpv"
+                             ],
+        "name":  "BPC-157",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Because BPC-157 appears on many catalogs, supplier transparency matters most when the page goes beyond generic copy and shows consistent documentation signals.",
+        "short_educational_description":  "BPC-157 is a widely recognized repair-oriented research compound that is often grouped into tissue and barrier-related educational references."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "ghk-cu",
+        "category":  "cosmetic-pigmentation",
+        "documentation_focus":  "A useful reference should explain the copper-peptide context, identify the listing clearly, and keep documentation cues visible on the page.",
+        "related_peptides":  [
+                                 "bpc-157",
+                                 "tb-500",
+                                 "glow"
+                             ],
+        "name":  "GHK-Cu",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "GHK-Cu pages feel stronger when they focus on labeling clarity, laboratory documentation, and category fit instead of broad appearance promises.",
+        "short_educational_description":  "GHK-Cu is usually placed in appearance-oriented, copper-peptide, and skin-related research categories that benefit from careful educational framing."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "ipamorelin",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "Look for a page that separates secretagogue language from broader GH category labels and keeps documentation references easy to review.",
+        "related_peptides":  [
+                                 "sermorelin",
+                                 "tesamorlin",
+                                 "cjc-1295-ipamorelin"
+                             ],
+        "name":  "Ipamorelin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This category reads better when the reference explains how the listing fits into the secretagogue family and avoids generic catalog filler.",
+        "short_educational_description":  "Ipamorelin is a growth hormone secretagogue research compound that often appears alongside GHRH analog references in endocrine-focused directories."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "cagrilintide",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "A solid reference explains the category in plain research terms and shows how to verify labeling, batch language, and related documentation.",
+        "related_peptides":  [
+                                 "glp-1",
+                                 "tirz",
+                                 "retatrutide-glp-3"
+                             ],
+        "name":  "Cagrilintide",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This kind of page stays more useful when the listing is easy to distinguish from neighboring metabolic entries and the documentation signals are not hidden behind vague copy.",
+        "short_educational_description":  "Cagrilintide is usually discussed in metabolic and appetite-related research coverage, often beside broader incretin-style directory entries."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "tesofensine",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "Look for a reference that explains the category, keeps naming precise, and supports the listing with readable laboratory documentation notes.",
+        "related_peptides":  [
+                                 "cagrilintide",
+                                 "mazdutide",
+                                 "glp-1"
+                             ],
+        "name":  "Tesofensine",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This page type is more trustworthy when it explains why the entry appears in a metabolic directory and keeps the transparency cues consistent across the page.",
+        "short_educational_description":  "Tesofensine is often grouped into metabolic research directories as a niche catalog entry that needs clearer educational framing than a simple product label."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "mots-c",
+        "category":  "longevity-cellular",
+        "documentation_focus":  "A good reference explains the mitochondrial angle, keeps documentation access visible, and avoids overpromising what the listing means.",
+        "related_peptides":  [
+                                 "nad",
+                                 "epitalon",
+                                 "foxo4-dri"
+                             ],
+        "name":  "MOTS-c",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "MOTS-c pages stay useful when the transparency notes focus on labeling, documentation access, and how the listing fits into cellular research categories.",
+        "short_educational_description":  "MOTS-c is commonly described in mitochondrial and cellular adaptation research coverage, where category context matters more than broad wellness language."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "semax",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "A strong page should explain the neuropeptide category clearly, keep naming consistent, and make documentation language easy to review.",
+        "related_peptides":  [
+                                 "selank",
+                                 "dsip",
+                                 "cerebrolysin"
+                             ],
+        "name":  "Semax",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Semax references are easier to trust when the page stays careful, avoids dramatic claims, and keeps laboratory documentation cues visible.",
+        "short_educational_description":  "Semax is a cognitive and neuropeptide research reference that is often grouped with other nootropic-style entries in educational directories."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "pt-141",
+        "category":  "immune-regulatory",
+        "documentation_focus":  "The most helpful references explain the signaling family, keep the listing context clear, and make documentation notes easy to spot.",
+        "related_peptides":  [
+                                 "oxytocin",
+                                 "melanotan-ii",
+                                 "kisspeptin-10"
+                             ],
+        "name":  "PT-141",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "PT-141 pages are stronger when they emphasize naming clarity, research-use labeling, and batch-testing references instead of lifestyle-style language.",
+        "short_educational_description":  "PT-141 is a melanocortin-related signaling entry that fits best in a cautious educational directory rather than a promotional landing page."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "cjc-1295-ipamorelin",
+        "category":  "blends-protocols",
+        "documentation_focus":  "Look for a page that identifies both components clearly and explains how the combined label is being used in the catalog or directory.",
+        "related_peptides":  [
+                                 "cjc-1295",
+                                 "ipamorelin",
+                                 "sermorelin"
+                             ],
+        "name":  "CJC-1295 / Ipamorelin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Combined labels are more readable when the reference spells out each compound, keeps the documentation cues clear, and avoids vague bundled language.",
+        "short_educational_description":  "CJC-1295 / Ipamorelin is a combined shorthand listing that benefits from extra context so readers can tell it apart from the single-compound reference pages."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "cjc-1295",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "A useful page should explain where CJC-1295 sits in the category and make batch or laboratory documentation cues simple to review.",
+        "related_peptides":  [
+                                 "ipamorelin",
+                                 "cjc-1295-ipamorelin",
+                                 "sermorelin"
+                             ],
+        "name":  "CJC-1295",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This reference is more trustworthy when the wording stays precise about the signaling family and the documentation does more than repeat a generic testing claim.",
+        "short_educational_description":  "CJC-1295 is commonly listed in growth hormone signaling directories, where a clear explanation of the compound family helps the page feel less repetitive."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "mk-677",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "The page should explain why the listing appears in the directory and keep documentation notes visible enough to compare with neighboring entries.",
+        "related_peptides":  [
+                                 "ipamorelin",
+                                 "cjc-1295",
+                                 "igf-1-lr3"
+                             ],
+        "name":  "MK-677",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "MK-677 pages read better when they acknowledge the peptide-adjacent labeling and focus on category clarity, batch context, and research-use wording.",
+        "short_educational_description":  "MK-677 is often grouped into peptide-adjacent growth signaling directories even though it is usually discussed as a separate research compound class."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "selank",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "A strong page explains the neuropeptide context and keeps documentation notes readable without drifting into performance-style language.",
+        "related_peptides":  [
+                                 "semax",
+                                 "dsip",
+                                 "dihexa"
+                             ],
+        "name":  "Selank",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Selank references are easier to evaluate when the wording stays measured and the page keeps naming, category fit, and testing language consistent.",
+        "short_educational_description":  "Selank is usually grouped with neuropeptide and cognition-related research references that benefit from careful educational copy and clear documentation cues."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "tb-500",
+        "category":  "repair-tissue",
+        "documentation_focus":  "The page should explain the repair category clearly and surface laboratory documentation or batch references without forcing extra searching.",
+        "related_peptides":  [
+                                 "bpc-157",
+                                 "ghk-cu",
+                                 "ara-290"
+                             ],
+        "name":  "TB-500",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "TB-500 listings feel stronger when the reference focuses on labeling, testing context, and readability instead of repeating the same repair language over and over.",
+        "short_educational_description":  "TB-500 is a repair-oriented research compound that often appears in tissue and restoration categories where documentation clarity matters a great deal."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "cerebrolysin",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "Look for a reference that explains the preparation clearly, keeps documentation language visible, and avoids vague category shortcuts.",
+        "related_peptides":  [
+                                 "semax",
+                                 "selank",
+                                 "dihexa"
+                             ],
+        "name":  "Cerebrolysin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This page type works better when the wording explains what the listing represents and the documentation notes are easier to compare with neighboring neuropeptide entries.",
+        "short_educational_description":  "Cerebrolysin is commonly discussed as a peptide-rich neuro-support research reference that needs careful explanation and neutral educational wording."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "gonadorelin",
+        "category":  "immune-regulatory",
+        "documentation_focus":  "A useful reference explains the endocrine category, keeps the naming precise, and makes laboratory documentation cues easy to review.",
+        "related_peptides":  [
+                                 "kisspeptin-10",
+                                 "thymosin-alpha-1",
+                                 "pt-141"
+                             ],
+        "name":  "Gonadorelin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Gonadorelin pages are stronger when they avoid generic hormone language and instead show clear category context and readable documentation notes.",
+        "short_educational_description":  "Gonadorelin is an endocrine-signaling research reference that fits best on pages focused on regulation, labeling clarity, and educational context."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "igf-1-lr3",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "A good page should explain the signaling family, identify the variant clearly, and keep laboratory documentation references easy to locate.",
+        "related_peptides":  [
+                                 "igf-1-des",
+                                 "mk-677",
+                                 "cjc-1295"
+                             ],
+        "name":  "IGF-1 LR3",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This listing becomes more useful when the reference differentiates it from other IGF entries and keeps the documentation language specific rather than repetitive.",
+        "short_educational_description":  "IGF-1 LR3 is usually grouped into growth signaling research directories where readers need category context and clearer documentation cues."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "aod-9604",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "Look for a page that explains the fragment label clearly and keeps the laboratory documentation notes more visible than the headline copy.",
+        "related_peptides":  [
+                                 "tesofensine",
+                                 "glp-1",
+                                 "mazdutide"
+                             ],
+        "name":  "AOD-9604",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "AOD-9604 references feel more credible when they keep the category explanation short, clear, and supported by transparent documentation language.",
+        "short_educational_description":  "AOD-9604 is a body-composition and metabolic research listing that benefits from cautious directory copy and clear documentation framing."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "nad",
+        "category":  "longevity-cellular",
+        "documentation_focus":  "A strong page should explain why the entry sits in the directory and should keep documentation language easier to verify than the surrounding copy.",
+        "related_peptides":  [
+                                 "mots-c",
+                                 "epitalon",
+                                 "foxo4-dri"
+                             ],
+        "name":  "NAD+",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "NAD+ pages read better when the reference focuses on labeling, batch references, and category context rather than broad longevity language.",
+        "short_educational_description":  "NAD+ is often treated as a cellular and mitochondrial research reference inside peptide-adjacent directories, where category clarity is especially important."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "dsip",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "A useful page should explain the category in plain terms, keep the listing context readable, and make any documentation notes easy to spot.",
+        "related_peptides":  [
+                                 "selank",
+                                 "semax",
+                                 "oxytocin"
+                             ],
+        "name":  "DSIP",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "DSIP references are stronger when they avoid broad sleep promises and keep the transparency notes focused on labeling and documentation access.",
+        "short_educational_description":  "DSIP is a neuropeptide and sleep-related research reference that is easier to understand when the page stays educational and tightly documented."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "dihexa",
+        "category":  "cognitive-neuropeptide",
+        "documentation_focus":  "Look for a reference that explains the category carefully and makes testing or documentation cues easy to compare with nearby neuropeptide entries.",
+        "related_peptides":  [
+                                 "semax",
+                                 "selank",
+                                 "cerebrolysin"
+                             ],
+        "name":  "Dihexa",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Dihexa pages feel more credible when the wording stays careful and the page explains the listing without leaning on dramatic or outcome-based language.",
+        "short_educational_description":  "Dihexa is often treated as a more technical cognition-oriented research reference, so the page needs extra clarity and a calm educational tone."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "5-amino-mq",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "A strong page should clarify the shorthand label, keep documentation references visible, and explain the broader metabolic category without filler.",
+        "related_peptides":  [
+                                 "tesofensine",
+                                 "aod-9604",
+                                 "mazdutide"
+                             ],
+        "name":  "5-amino mq",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This type of listing stays more useful when the page identifies the compound carefully and supports the label with better transparency cues than a one-line catalog blurb.",
+        "short_educational_description":  "5-amino mq is a niche metabolic research compound that usually appears as a shorthand catalog entry and needs clear educational framing."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "epitalon",
+        "category":  "longevity-cellular",
+        "documentation_focus":  "Look for a reference that explains the longevity category calmly, keeps the listing context readable, and surfaces documentation cues without hype.",
+        "related_peptides":  [
+                                 "nad",
+                                 "mots-c",
+                                 "foxo4-dri"
+                             ],
+        "name":  "Epitalon",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Epitalon pages work better when the focus stays on educational context, COA availability, and documentation language instead of broad age-related promises.",
+        "short_educational_description":  "Epitalon is usually grouped into longevity and cellular research references, where the page benefits from careful language and clearer documentation notes."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "mazdutide",
+        "category":  "glp-metabolic",
+        "documentation_focus":  "A solid page should explain the naming, show how the entry fits into the category, and keep laboratory documentation notes readable.",
+        "related_peptides":  [
+                                 "retatrutide-glp-3",
+                                 "tirz",
+                                 "glp-1"
+                             ],
+        "name":  "Mazdutide",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Mazdutide references are easier to trust when the page acknowledges the newer naming and supports it with transparent research-use and batch-context language.",
+        "short_educational_description":  "Mazdutide is a newer metabolic directory entry that is usually compared with other incretin-style references and needs clearer local context than a simple catalog label."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "hexarelin",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "Look for a reference that clearly places Hexarelin in the secretagogue category and keeps documentation notes easier to verify than the headline language.",
+        "related_peptides":  [
+                                 "ipamorelin",
+                                 "cjc-1295",
+                                 "mk-677"
+                             ],
+        "name":  "Hexarelin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Hexarelin pages feel stronger when they explain the category fit, keep testing language readable, and avoid generic performance wording.",
+        "short_educational_description":  "Hexarelin is a growth hormone secretagogue research compound that usually appears in endocrine-signaling directories beside more familiar GH entries."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "melanotan-ii",
+        "category":  "cosmetic-pigmentation",
+        "documentation_focus":  "A useful page should explain the melanocortin context and make documentation notes or batch references easy to review.",
+        "related_peptides":  [
+                                 "pt-141",
+                                 "ghk-cu",
+                                 "glow"
+                             ],
+        "name":  "Melanotan II",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Melanotan II pages are easier to compare when the wording stays focused on catalog context, labeling clarity, and readable transparency signals.",
+        "short_educational_description":  "Melanotan II is typically grouped into pigmentation and melanocortin-related research references that need careful educational wording."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "ara-290",
+        "category":  "repair-tissue",
+        "documentation_focus":  "The page should explain why the listing sits in the repair category and should make laboratory documentation cues easy to review at a glance.",
+        "related_peptides":  [
+                                 "tb-500",
+                                 "bpc-157",
+                                 "kpv"
+                             ],
+        "name":  "Ara-290",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Ara-290 pages feel stronger when they focus on naming clarity, batch references, and transparency rather than leaning on broad restorative language.",
+        "short_educational_description":  "Ara-290 is a niche repair-oriented research reference that benefits from clearer educational context than a short catalog sentence can provide."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "thymosin-alpha-1",
+        "category":  "immune-regulatory",
+        "documentation_focus":  "A strong reference should explain the thymic peptide context, keep the naming precise, and make documentation access easy to evaluate.",
+        "related_peptides":  [
+                                 "thymalin",
+                                 "gonadorelin",
+                                 "kisspeptin-10"
+                             ],
+        "name":  "Thymosin Alpha-1",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "This page type stays more useful when the wording emphasizes transparency, labeling consistency, and laboratory documentation rather than broad immune narratives.",
+        "short_educational_description":  "Thymosin Alpha-1 is usually filed under immune and regulatory research references where careful category framing matters more than dramatic copy."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "kisspeptin-10",
+        "category":  "immune-regulatory",
+        "documentation_focus":  "Look for a page that identifies the signaling family clearly and makes documentation notes visible enough to compare with neighboring regulatory entries.",
+        "related_peptides":  [
+                                 "gonadorelin",
+                                 "pt-141",
+                                 "thymosin-alpha-1"
+                             ],
+        "name":  "Kisspeptin-10",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Kisspeptin-10 pages are stronger when they explain the category fit and support the listing with readable laboratory documentation language.",
+        "short_educational_description":  "Kisspeptin-10 is an endocrine and regulatory signaling reference that needs clearer educational context than most one-line directory labels provide."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "foxo4-dri",
+        "category":  "longevity-cellular",
+        "documentation_focus":  "A useful page should explain the technical label, keep the category context readable, and make documentation references easier to compare.",
+        "related_peptides":  [
+                                 "epitalon",
+                                 "nad",
+                                 "mots-c"
+                             ],
+        "name":  "FOXO4-DRI",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "FOXO4-DRI pages are more credible when they rely on careful wording, category clarity, and laboratory documentation instead of futuristic or outcome-based language.",
+        "short_educational_description":  "FOXO4-DRI is a technical longevity-related research reference that benefits from a calm explanatory page and stronger documentation notes."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "thymalin",
+        "category":  "immune-regulatory",
+        "documentation_focus":  "The page should explain the thymic peptide category clearly and keep any documentation notes easier to verify than the headline claims.",
+        "related_peptides":  [
+                                 "thymosin-alpha-1",
+                                 "epitalon",
+                                 "gonadorelin"
+                             ],
+        "name":  "Thymalin",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Thymalin pages read better when they focus on labeling, batch references, and research-use wording rather than broad longevity or wellness language.",
+        "short_educational_description":  "Thymalin is a thymic and regulatory research reference that appears in immune-oriented directories where clarity and restraint are especially important."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "kpv",
+        "category":  "repair-tissue",
+        "documentation_focus":  "Look for a page that explains the fragment clearly, identifies the category fit, and keeps documentation references simple to review.",
+        "related_peptides":  [
+                                 "bpc-157",
+                                 "ara-290",
+                                 "tb-500"
+                             ],
+        "name":  "KPV",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "KPV references are easier to trust when they avoid broad restorative language and keep the transparency notes centered on labeling and documentation.",
+        "short_educational_description":  "KPV is a short repair-oriented research compound that usually appears in barrier and tissue-support directories where documentation clarity helps a lot."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "klow",
+        "category":  "blends-protocols",
+        "documentation_focus":  "A useful page should clarify whether KLOW is a blend, shorthand, or named protocol and should keep supporting documentation notes easy to compare.",
+        "related_peptides":  [
+                                 "glow",
+                                 "cjc-1295-ipamorelin",
+                                 "ghk-cu"
+                             ],
+        "name":  "KLOW",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Named protocol pages are more useful when they explain the label carefully and make transparency cues more visible than the branding itself.",
+        "short_educational_description":  "KLOW is treated here as a named protocol or branded shorthand entry that needs more context than a generic product-style card can provide."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "glow",
+        "category":  "blends-protocols",
+        "documentation_focus":  "Look for a page that explains what the named protocol label refers to and keeps laboratory documentation or ingredient context easy to review.",
+        "related_peptides":  [
+                                 "ghk-cu",
+                                 "klow",
+                                 "melanotan-ii"
+                             ],
+        "name":  "GLOW",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "Blend-style pages feel more trustworthy when the educational copy explains the label and the transparency notes do more than repeat brand language.",
+        "short_educational_description":  "GLOW is handled here as a named protocol or blend-style research entry that benefits from clear educational framing and stronger documentation notes."
+    },
+    {
+        "image":  "/assets/peptide-vial.svg",
+        "slug":  "igf-1-des",
+        "category":  "growth-secretagogue",
+        "documentation_focus":  "A strong page should identify the variant precisely, keep the growth-signaling context readable, and make documentation notes easy to compare.",
+        "related_peptides":  [
+                                 "igf-1-lr3",
+                                 "mk-677",
+                                 "cjc-1295"
+                             ],
+        "name":  "IGF-1 DES",
+        "index":  "true",
+        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes":  "IGF-1 DES pages stay more useful when they differentiate the listing from related IGF references and keep the transparency cues more specific than the category headline.",
+        "short_educational_description":  "IGF-1 DES is a growth signaling research reference that is easier to evaluate when the page explains the variant clearly and stays documentation-focused."
+    }
+]
