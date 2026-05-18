@@ -25,6 +25,28 @@ function JsonText([object]$value) {
   return $value | ConvertTo-Json -Depth 8 -Compress
 }
 
+function Get-DiscountCode([string]$supplier) {
+  switch ($supplier) {
+    "Iron Peptides" { return "IRONMAN" }
+    "Pinnacle Peptide Labs" { return "PPL15" }
+    "Peptides Kingdom" { return "KING15" }
+    "Ascension Peptides" { return "PEPTIDE10" }
+    "Amino Club" { return "AMINOSAVE" }
+    default { return $null }
+  }
+}
+
+function Get-DiscountPercent([string]$supplier) {
+  switch ($supplier) {
+    "Iron Peptides" { return "10%" }
+    "Pinnacle Peptide Labs" { return "15%" }
+    "Peptides Kingdom" { return "15%" }
+    "Ascension Peptides" { return "20%" }
+    "Amino Club" { return "20%" }
+    default { return $null }
+  }
+}
+
 function Get-Bool([string]$value) {
   if (-not $value) { return $false }
   return $value.Trim().ToLower() -eq "true"
@@ -139,6 +161,18 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
       $relatedLinks = foreach ($related in $relatedRows) {
         "<a class=`"pill`" href=`"/peptides/$($related.slug)/`">$([string](HtmlEncode($related.name)))</a>"
       }
+      $supplierButtons = foreach ($supplier in @($peptide.suppliers)) {
+        if (-not $supplier) { continue }
+        $percent = Get-DiscountPercent $supplier.name
+        $code = Get-DiscountCode $supplier.name
+        $discountLabel = if ($percent -and $code) { "$percent code: $code" } elseif ($percent) { "$percent discount available" } else { $null }
+@"
+              <div class="directory-supplier-link">
+                <a class="button button-secondary" href="$([string](HtmlEncode($supplier.link)))" target="_blank" rel="sponsored nofollow noopener noreferrer">View supplier listing</a>
+                $(if ($discountLabel) { "<span class=`"discount-note`">$([string](HtmlEncode($discountLabel)))</span>" })
+              </div>
+"@
+      }
 
 @"
           <article class="card reveal directory-card" data-name="$([string](HtmlEncode($peptide.name.ToLower())))" data-category="$([string](HtmlEncode($meta.title.ToLower())))" data-description="$([string](HtmlEncode($peptide.short_educational_description.ToLower())))">
@@ -153,6 +187,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
 $($relatedLinks -join "`n")
             </div>
             <div class="button-row">
+$(if ($supplierButtons) { ($supplierButtons -join "`n") })
               <a class="button button-primary" href="/peptides/$($peptide.slug)/">View research reference</a>
             </div>
           </article>
@@ -334,10 +369,40 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $metaDescription = "$($peptide.name) research reference covering educational context, documentation focus, supplier transparency notes, and related compound links."
   $faqJson = JsonText (Build-FaqData $peptide $categoryMeta.title)
   $breadcrumbJson = JsonText (Build-BreadcrumbData $siteUrl $peptide)
+  $heroSupplierLinks = foreach ($supplier in @($peptide.suppliers)) {
+    if (-not $supplier) { continue }
+    $percent = Get-DiscountPercent $supplier.name
+    $code = Get-DiscountCode $supplier.name
+    $discountLabel = if ($percent -and $code) { "$percent off with code $code" } elseif ($percent) { "$percent discount available" } else { $null }
+@"
+              <div class="peptide-quick-link">
+                <a class="button button-secondary" href="$([string](HtmlEncode($supplier.link)))" target="_blank" rel="sponsored nofollow noopener noreferrer">View supplier listing</a>
+                $(if ($discountLabel) { "<span class=`"discount-note`">$([string](HtmlEncode($discountLabel)))</span>" })
+              </div>
+"@
+  }
 
   $relatedLinks = foreach ($related in $relatedRows) {
 @"
           <a class="pill" href="/peptides/$($related.slug)/">$([string](HtmlEncode($related.name)))</a>
+"@
+  }
+
+  $supplierCards = foreach ($supplier in @($peptide.suppliers)) {
+    if (-not $supplier) { continue }
+    $percent = Get-DiscountPercent $supplier.name
+    $code = Get-DiscountCode $supplier.name
+    $discountLabel = if ($percent -and $code) { "$percent off with code $code" } elseif ($percent) { "$percent discount available" } else { $null }
+@"
+          <article class="peptide-supplier-card reveal">
+            <div class="kicker">Supplier listing</div>
+            <h3>$([string](HtmlEncode($supplier.name)))</h3>
+            <p>Use this supplier page as a reference point for listing language, laboratory documentation cues, and how clearly the compound is presented.</p>
+            <div class="button-row">
+              <a class="button button-primary" href="$([string](HtmlEncode($supplier.link)))" target="_blank" rel="sponsored nofollow noopener noreferrer">View supplier listing</a>
+            </div>
+            $(if ($discountLabel) { "<span class=`"discount-note`">$([string](HtmlEncode($discountLabel)))</span>" })
+          </article>
 "@
   }
 
@@ -424,6 +489,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
           <div class="page-hero-grid peptide-detail-grid">
             <div class="hero-art reveal">
               <img class="peptide-hero-image" src="$([string](HtmlEncode($peptide.image)))" alt="$([string](HtmlEncode($peptide.name))) reference image">
+              $(if ($heroSupplierLinks) { "<div class=`"peptide-quick-links`">`n$($heroSupplierLinks -join "`n")`n              </div>" })
             </div>
             <div class="page-hero-copy reveal delay-1">
               <div class="eyebrow">Research reference</div>
@@ -516,6 +582,24 @@ $($checklistItems -join "`n")
         </article>
       </div>
     </section>
+
+    $(if ($supplierCards) {
+@"
+    <section>
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <h2>Linked supplier pages</h2>
+            <p>These outbound pages are included as listing references so readers can compare product presentation, laboratory documentation cues, and supplier transparency side by side.</p>
+          </div>
+        </div>
+        <div class="cards">
+$($supplierCards -join "`n")
+        </div>
+      </div>
+    </section>
+"@
+    })
 
     <section>
       <div class="shell">
