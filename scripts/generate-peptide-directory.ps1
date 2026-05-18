@@ -500,6 +500,7 @@ foreach ($peptide in $peptides) {
   $recentResearchUrl = Get-PubMedSearchUrl $peptide.name
   $reviewResearchUrl = Get-PubMedReviewUrl $peptide.name
   $freeFullTextUrl = Get-PubMedFreeFullTextUrl $peptide.name
+  $lastUpdated = "May 17, 2026"
 
   $heroSupplierLinks = foreach ($supplier in $peptide.suppliers) {
     $code = Get-DiscountCode $supplier.name
@@ -598,9 +599,10 @@ $($heroSupplierLinks -join "`n")
               <div class="peptide-meta">
                 $($metaPills -join "`n                ")
               </div>
+              <p class="brand-note" style="margin-top: 14px;">Last updated: $lastUpdated</p>
               <div class="button-row" style="margin-top:18px;">
                 <a class="button button-primary" href="/peptide-directory/#$($peptide.category)">Back to directory section</a>
-                <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
+                <a class="button button-ghost" href="/how-to-compare-peptide-suppliers/">Compare supplier pages</a>
               </div>
             </div>
           </div>
@@ -743,6 +745,25 @@ $($heroSupplierLinks -join "`n")
         <div class="cards">
 $($supplierCards -join "`n")
         </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell resource-grid">
+        <article class="card reveal">
+          <div class="kicker">Keep exploring</div>
+          <h3>Use this page as a starting point</h3>
+          <p>After the product routes, the next useful step is usually comparing supplier pages side by side or jumping back into the directory for nearby compounds.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Useful links</div>
+          <h3>Next pages to open</h3>
+          <div class="button-row">
+            <a class="button button-primary" href="/how-to-compare-peptide-suppliers/">How to compare suppliers</a>
+            <a class="button button-ghost" href="/how-we-review-suppliers/">How we review suppliers</a>
+            <a class="button button-ghost" href="/peptide-directory/#$($peptide.category)">Back to directory</a>
+          </div>
+        </article>
       </div>
     </section>
 
