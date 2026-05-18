@@ -32,7 +32,7 @@ function Get-SiteUrl {
     }
   }
 
-  return "https://peptide-news.com"
+  return "https://peptidesuppliers.org"
 }
 
 function HtmlEncode([string]$value) {
@@ -43,11 +43,14 @@ function JsonEscape([string]$value) {
   return ($value | ConvertTo-Json -Compress).Trim('"')
 }
 
-function Build-Title([string]$city) {
-  return "$city Peptide Research News & Supplier Transparency Guide"
+function Build-Title($row) {
+  return "$($row.city), $($row.state_code) Peptide Research News & Supplier Transparency Guide"
 }
 
 function Build-MetaDescription($row) {
+  if ($row.PSObject.Properties.Name -contains "meta_description" -and $row.meta_description) {
+    return $row.meta_description
+  }
   return "$($row.city), $($row.state_code) peptide research news, laboratory documentation trends, and supplier transparency signals for local readers."
 }
 
@@ -69,26 +72,55 @@ function Build-RelatedLinks($row, $lookup) {
 }
 
 function BuildHubCards($rows) {
-  $cards = foreach ($row in $rows) {
-    $title = "$($row.city), $($row.state_code)"
-    $description = Build-MetaDescription $row
+  $groups = $rows | Sort-Object state_name, city | Group-Object state_name
+  $sections = foreach ($group in $groups) {
+    $stateRows = $group.Group | Sort-Object city
+    $cards = foreach ($row in $stateRows) {
+      $title = "$($row.city), $($row.state_code)"
+      $description = Build-MetaDescription $row
 @"
-          <article class="card reveal">
-            <div class="kicker">City guide</div>
-            <h3>$([string](HtmlEncode($title)))</h3>
-            <p>$([string](HtmlEncode($description)))</p>
-            <div class="pill-row">
-              <span class="pill">$([string](HtmlEncode($row.metro_label)))</span>
-              <span class="pill">Research news</span>
-              <span class="pill">Transparency signals</span>
+            <article class="card reveal">
+              <div class="kicker">City guide</div>
+              <h3>$([string](HtmlEncode($title)))</h3>
+              <p>$([string](HtmlEncode($description)))</p>
+              <div class="pill-row">
+                <span class="pill">$([string](HtmlEncode($row.metro_label)))</span>
+                <span class="pill">Research news</span>
+                <span class="pill">Transparency signals</span>
+              </div>
+              <div class="button-row">
+                <a class="button button-primary" href="/locations/$($row.slug)/">Open city guide</a>
+              </div>
+            </article>
+"@
+    }
+
+@"
+        <section id="state-$((($group.Name).ToLower() -replace '[^a-z0-9]+','-').Trim('-'))" class="location-section">
+          <div class="section-head reveal">
+            <div>
+              <h2>$([string](HtmlEncode($group.Name)))</h2>
+              <p>City guides for $([string](HtmlEncode($group.Name))) readers, grouped together so the hub stays easier to browse.</p>
             </div>
-            <div class="button-row">
-              <a class="button button-primary" href="/locations/$($row.slug)/">Open city guide</a>
-            </div>
-          </article>
+          </div>
+          <div class="resource-grid">
+$($cards -join "`n")
+          </div>
+        </section>
 "@
   }
-  return ($cards -join "`n")
+  return ($sections -join "`n")
+}
+
+function BuildHubIndex($rows) {
+  $items = $rows |
+    Sort-Object state_name, city |
+    Group-Object state_name |
+    ForEach-Object {
+      $slug = ((($_.Name).ToLower() -replace '[^a-z0-9]+','-').Trim('-'))
+      "<a class=`"pill`" href=`"#state-$slug`">$([string](HtmlEncode($_.Name)))</a>"
+    }
+  return ($items -join "`n            ")
 }
 
 function BuildFaqJson($city, $stateCode, $metroLabel) {
@@ -136,7 +168,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $stateCode = $row.state_code
   $stateName = $row.state_name
   $metroLabel = $row.metro_label
-  $title = Build-Title $city
+  $title = Build-Title $row
   $metaDescription = Build-MetaDescription $row
   $canonical = "$siteUrl/locations/$slug/"
   $robots = Build-Robots $row.index
@@ -158,7 +190,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   <meta property="og:title" content="$([string](HtmlEncode($title)))">
   <meta property="og:description" content="$([string](HtmlEncode($metaDescription)))">
   <meta property="og:url" content="$canonical">
-  <meta property="og:site_name" content="Peptide News">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="$([string](HtmlEncode($title)))">
@@ -185,10 +217,10 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="/">
-        <span class="brand-mark">PN</span>
+        <span class="brand-mark">PS</span>
         <span class="brand-copy">
-          <strong>Peptide News</strong>
-          <span>Research news, supplier transparency, and laboratory documentation</span>
+          <strong>PeptideSuppliers.org</strong>
+          <span>Research supplier discovery, transparency, and laboratory documentation</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -241,7 +273,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <div class="notice reveal">
           <div class="kicker">Educational disclaimer</div>
           <h3>This page is for educational and informational purposes only.</h3>
-          <p>This page is for educational and informational purposes only. Peptide News does not sell peptides, provide medical advice, or recommend human use.</p>
+          <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
         </div>
       </div>
     </section>
@@ -409,7 +441,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
 
   <footer class="footer">
     <div class="shell footer-row">
-      <span>&copy; 2026 Peptide News</span>
+      <span>&copy; 2026 PeptideSuppliers.org</span>
       <div class="footer-links">
         <a href="/locations/">Locations</a>
         <a href="/education/">Education</a>
@@ -424,24 +456,25 @@ function New-LocationPage($row, $lookup, $siteUrl) {
 
 function New-LocationsHub($rows, $siteUrl) {
   $cards = BuildHubCards $rows
+  $hubIndex = BuildHubIndex $rows
   return @"
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peptide Research News by City | Peptide News</title>
+  <title>Peptide Research News by City | PeptideSuppliers.org</title>
   <meta name="description" content="Browse peptide research news and supplier transparency guides by city, with local FAQ sections, laboratory documentation topics, and related reading.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="$siteUrl/locations/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Peptide Research News by City | Peptide News">
+  <meta property="og:title" content="Peptide Research News by City | PeptideSuppliers.org">
   <meta property="og:description" content="City-by-city peptide research news and supplier transparency guides for educational reading.">
   <meta property="og:url" content="$siteUrl/locations/">
-  <meta property="og:site_name" content="Peptide News">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Peptide Research News by City | Peptide News">
+  <meta name="twitter:title" content="Peptide Research News by City | PeptideSuppliers.org">
   <meta name="twitter:description" content="City-by-city peptide research news and supplier transparency guides for educational reading.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -451,10 +484,10 @@ function New-LocationsHub($rows, $siteUrl) {
   <header class="topbar">
     <div class="shell topbar-inner">
       <a class="brand" href="/">
-        <span class="brand-mark">PN</span>
+        <span class="brand-mark">PS</span>
         <span class="brand-copy">
-          <strong>Peptide News</strong>
-          <span>Research news, supplier transparency, and laboratory documentation</span>
+          <strong>PeptideSuppliers.org</strong>
+          <span>Research supplier discovery, transparency, and laboratory documentation</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -498,7 +531,18 @@ function New-LocationsHub($rows, $siteUrl) {
         <div class="notice reveal">
           <div class="kicker">Educational disclaimer</div>
           <h3>This page is for educational and informational purposes only.</h3>
-          <p>This page is for educational and informational purposes only. Peptide News does not sell peptides, provide medical advice, or recommend human use.</p>
+          <p>This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="jump-nav reveal sticky-directory-nav">
+          <strong>Browse by state</strong>
+          <div class="jump-links">
+            $hubIndex
+          </div>
         </div>
       </div>
     </section>
@@ -508,19 +552,17 @@ function New-LocationsHub($rows, $siteUrl) {
         <div class="section-head reveal">
           <div>
             <h2>City guides</h2>
-            <p>Each page combines local news context, documentation signals, FAQ markup, and related city links so the content is more useful than a thin city template.</p>
+            <p>Each page combines local news context, documentation signals, FAQ markup, and related city links so the content is more useful than a thin city template. Cities are grouped by state to keep the hub easier to scan.</p>
           </div>
         </div>
-        <div class="resource-grid">
 $cards
-        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
     <div class="shell footer-row">
-      <span>&copy; 2026 Peptide News</span>
+      <span>&copy; 2026 PeptideSuppliers.org</span>
       <div class="footer-links">
         <a href="/education/">Education</a>
         <a href="/how-to-compare-peptide-suppliers/">Compare Suppliers</a>
@@ -602,6 +644,33 @@ function Ensure-EducationLink {
           <div class="kicker">Next step</div>
 '@)
   Set-Content $educationPath $html
+}
+
+function Validate-LocationData($rows) {
+  $errors = New-Object System.Collections.Generic.List[string]
+  $slugSet = @{}
+  foreach ($row in $rows) {
+    if (-not $row.slug -or $row.slug -notmatch '^[a-z0-9]+(?:-[a-z0-9]+)*$') {
+      $errors.Add("Invalid slug: $($row.slug)")
+    }
+    if ($slugSet.ContainsKey($row.slug)) {
+      $errors.Add("Duplicate slug: $($row.slug)")
+    } else {
+      $slugSet[$row.slug] = $true
+    }
+    if (-not $row.city -or -not $row.state_name -or -not $row.state_code) {
+      $errors.Add("Missing required city/state fields for slug: $($row.slug)")
+    }
+    foreach ($key in @("related_1","related_2","related_3")) {
+      if (-not $row.$key) {
+        $errors.Add("Missing $key for slug: $($row.slug)")
+      }
+    }
+  }
+
+  if ($errors.Count -gt 0) {
+    throw ($errors -join "`n")
+  }
 }
 
 function Update-Sitemap($rows, $siteUrl) {
@@ -695,6 +764,7 @@ function Verify-Locations($siteUrl) {
 
 $siteUrl = Get-SiteUrl
 $rows = Import-Csv $dataPath
+Validate-LocationData $rows
 $lookup = @{}
 foreach ($row in $rows) { $lookup[$row.slug] = $row }
 
