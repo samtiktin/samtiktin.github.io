@@ -872,6 +872,13 @@ h3 {
   gap: 6px;
 }
 
+.directory-supplier-link .button-secondary {
+  color: #162715;
+  background: #f6eddc;
+  border-color: rgba(22, 39, 21, 0.2);
+  box-shadow: 0 10px 20px rgba(22, 39, 21, 0.08);
+}
+
 .directory-supplier-link .discount-note {
   margin-top: 0;
 }
