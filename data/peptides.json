@@ -25,7 +25,7 @@
         "image":  "https://ironpeptides.is/wp-content/uploads/2025/05/SEMA-GLP-1-10MG-scaled.webp",
         "slug":  "glp-1",
         "category":  "glp-metabolic",
-        "documentation_focus":  "A useful page should clarify whether GLP-1 is being used as a family label or a specific listing and should point to readable laboratory documentation.",
+        "documentation_focus":  "The page should make it clear whether GLP-1 is being used as a family label or a specific listing, with laboratory documentation that is easy to review.",
         "related_peptides":  [
                                  "tirz",
                                  "retatrutide-glp-3",
@@ -34,7 +34,7 @@
         "name":  "GLP-1",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Category pages built around GLP-1 wording work better when the language stays educational and the documentation trail is easier to verify than the promotional copy.",
+        "supplier_transparency_notes":  "GLP-1 pages read better when the naming stays precise and the documentation is easier to verify than the marketing language around it.",
         "short_educational_description":  "GLP-1 is a broader label used for research compounds that are often grouped together in incretin-related catalog and education pages.",
         "suppliers":  [
                           {
@@ -152,8 +152,8 @@
         "name":  "BPC-157",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Because BPC-157 appears on many catalogs, supplier transparency matters most when the page goes beyond generic copy and shows consistent documentation signals.",
-        "short_educational_description":  "BPC-157 is a widely recognized repair-oriented research compound that is often grouped into tissue and barrier-related educational references.",
+        "supplier_transparency_notes":  "Because BPC-157 appears on many catalogs, the strongest pages go beyond generic copy and show consistent documentation.",
+        "short_educational_description":  "BPC-157 is a widely recognized repair-oriented research compound that often appears in tissue and barrier-related pages.",
         "suppliers":  [
                           {
                               "link":  "https://pinnaclepeptidelabs.com/product/bpc-157/aff/3/",
@@ -165,7 +165,7 @@
         "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/09/ghk-cu-50mg.png",
         "slug":  "ghk-cu",
         "category":  "cosmetic-pigmentation",
-        "documentation_focus":  "A useful reference should explain the copper-peptide context, identify the listing clearly, and keep documentation cues visible on the page.",
+        "documentation_focus":  "A useful reference should explain the copper-peptide context, identify the listing clearly, and keep documentation easy to review on the page.",
         "related_peptides":  [
                                  "bpc-157",
                                  "tb-500",
@@ -223,7 +223,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "This kind of page stays more useful when the listing is easy to distinguish from neighboring metabolic entries and the documentation signals are not hidden behind vague copy.",
-        "short_educational_description":  "Cagrilintide is usually discussed in metabolic and appetite-related research coverage, often beside broader incretin-style directory entries.",
+        "short_educational_description":  "Cagrilintide is commonly listed beside incretin-related compounds in metabolic research coverage.",
         "suppliers":  [
                           {
                               "link":  "https://ironpeptides.is/product/cagrilintide-10mg/?ref=ironman",
@@ -244,7 +244,7 @@
         "name":  "Tesofensine",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This page type is more trustworthy when it explains why the entry appears in a metabolic directory and keeps the transparency cues consistent across the page.",
+        "supplier_transparency_notes":  "The strongest pages explain where the entry fits, keep the naming precise, and make supporting documentation easy to follow.",
         "short_educational_description":  "Tesofensine is often grouped into metabolic research directories as a niche catalog entry that needs clearer educational framing than a simple product label.",
         "suppliers":  [
                           {
@@ -288,7 +288,7 @@
         "name":  "Semax",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Semax references are easier to trust when the page stays careful, avoids dramatic claims, and keeps laboratory documentation cues visible.",
+        "supplier_transparency_notes":  "Semax pages read better when the wording stays measured, avoids dramatic claims, and keeps laboratory documentation easy to review.",
         "short_educational_description":  "Semax is a cognitive and neuropeptide research topic that is often grouped with other nootropic-style entries in educational directories.",
         "suppliers":  [
                           {
@@ -332,7 +332,7 @@
         "name":  "CJC-1295 / Ipamorelin",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Combined labels are more readable when the reference spells out each compound, keeps the documentation cues clear, and avoids vague bundled language.",
+        "supplier_transparency_notes":  "Combined labels are more readable when the page spells out each compound, keeps the documentation clear, and avoids vague bundled language.",
         "short_educational_description":  "CJC-1295 / Ipamorelin is a combined shorthand listing that benefits from extra context so readers can tell it apart from the single-compound pages.",
         "suppliers":  [
                           {
@@ -345,7 +345,7 @@
         "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/cjc-1295-without-dac-research-peptide-2mg-vial-99-purity-lab-tested-768x768.png",
         "slug":  "cjc-1295",
         "category":  "growth-secretagogue",
-        "documentation_focus":  "A useful page should explain where CJC-1295 sits in the category and make batch or laboratory documentation cues simple to review.",
+        "documentation_focus":  "The page should explain where CJC-1295 sits in the category and make batch or laboratory documentation simple to review.",
         "related_peptides":  [
                                  "ipamorelin",
                                  "cjc-1295-ipamorelin",
@@ -377,7 +377,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "MK-677 pages read better when they acknowledge the peptide-adjacent labeling and focus on category clarity, batch context, and research-use wording.",
-        "short_educational_description":  "MK-677 is often grouped into peptide-adjacent growth signaling directories even though it is usually discussed as a separate research compound class.",
+        "short_educational_description":  "MK-677 often appears beside growth signaling compounds even though it is generally treated as its own research compound class.",
         "suppliers":  [
                           {
                               "link":  "https://ironpeptides.is/product/mk-677-12-5mg-60-capsules/?ref=ironman",
@@ -399,7 +399,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Selank references are easier to evaluate when the wording stays measured and the page keeps naming, category fit, and testing language consistent.",
-        "short_educational_description":  "Selank is usually grouped with neuropeptide and cognition-related research topics that benefit from careful educational copy and clear documentation cues.",
+        "short_educational_description":  "Selank is often listed with neuropeptide and cognition-related research topics where clear labeling and documentation matter.",
         "suppliers":  [
                           {
                               "link":  "https://pinnaclepeptidelabs.com/product/selank-peptide-10-mg/aff/3/",
@@ -421,7 +421,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "TB-500 listings feel stronger when the reference focuses on labeling, testing context, and readability instead of repeating the same repair language over and over.",
-        "short_educational_description":  "TB-500 is a repair-oriented research compound that often appears in tissue and restoration categories where documentation clarity matters a great deal.",
+        "short_educational_description":  "TB-500 is a repair-oriented research compound that often appears in tissue and restoration categories where clear documentation matters.",
         "suppliers":  [
                           {
                               "link":  "https://pinnaclepeptidelabs.com/product/tb-500-peptide-5-mg/aff/3/",
@@ -455,7 +455,7 @@
         "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/Gonadorelin-2mg-scaled.webp",
         "slug":  "gonadorelin",
         "category":  "immune-regulatory",
-        "documentation_focus":  "A useful reference explains the endocrine category, keeps the naming precise, and makes laboratory documentation cues easy to review.",
+        "documentation_focus":  "A useful reference explains the endocrine category, keeps the naming precise, and makes laboratory documentation easy to review.",
         "related_peptides":  [
                                  "kisspeptin-10",
                                  "thymosin-alpha-1",
@@ -487,7 +487,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "This listing becomes more useful when the reference differentiates it from other IGF entries and keeps the documentation language specific rather than repetitive.",
-        "short_educational_description":  "IGF-1 LR3 is usually grouped into growth signaling research directories where readers need category context and clearer documentation cues.",
+        "short_educational_description":  "IGF-1 LR3 is often listed in growth signaling research directories where category context and clear documentation matter.",
         "suppliers":  [
                           {
                               "link":  "https://peptideskingdom.com/product/igf-1-lr3/?ref=isgicbuw",
@@ -543,7 +543,7 @@
         "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/06/ChatGPT-Image-Sep-12-2025-08_11_31-PM.png?fit=1024%2C1024\u0026ssl=1",
         "slug":  "dsip",
         "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "A useful page should explain the category in plain terms, keep the listing context readable, and make any documentation notes easy to spot.",
+        "documentation_focus":  "The page should explain the category in plain terms, keep the listing context readable, and make any documentation notes easy to spot.",
         "related_peptides":  [
                                  "selank",
                                  "semax",
@@ -565,7 +565,7 @@
         "image":  "https://ironpeptides.is/wp-content/uploads/2026/02/Untitled-design-3.png",
         "slug":  "dihexa",
         "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "Look for a reference that explains the category carefully and makes testing or documentation cues easy to compare with nearby neuropeptide entries.",
+        "documentation_focus":  "Look for a reference that explains the category carefully and makes testing or documentation easy to compare with nearby neuropeptide entries.",
         "related_peptides":  [
                                  "semax",
                                  "selank",
@@ -596,7 +596,7 @@
         "name":  "5-amino mq",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This type of listing stays more useful when the page identifies the compound carefully and supports the label with better transparency cues than a one-line catalog blurb.",
+        "supplier_transparency_notes":  "The strongest pages identify the compound clearly and support the label with more than a one-line catalog blurb.",
         "short_educational_description":  "5-amino mq is a niche metabolic research compound that usually appears as a shorthand catalog entry and needs clear educational framing.",
         "suppliers":  [
                           {
@@ -609,7 +609,7 @@
         "image":  "https://ascensionpeptides.com/wp-content/uploads/2024/02/Ascension-Epitalon-10mg-600x600.jpg",
         "slug":  "epitalon",
         "category":  "longevity-cellular",
-        "documentation_focus":  "Look for a reference that explains the longevity category calmly, keeps the listing context readable, and surfaces documentation cues without hype.",
+        "documentation_focus":  "Look for a reference that explains the longevity category calmly, keeps the listing context readable, and surfaces documentation without hype.",
         "related_peptides":  [
                                  "nad",
                                  "mots-c",
@@ -619,7 +619,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "Epitalon pages work better when the focus stays on educational context, COA availability, and documentation language instead of broad age-related promises.",
-        "short_educational_description":  "Epitalon is usually grouped into longevity and cellular research topics, where the page benefits from careful language and clearer documentation notes.",
+        "short_educational_description":  "Epitalon often appears in longevity and cellular research topics, where careful language and clear documentation matter.",
         "suppliers":  [
                           {
                               "link":  "https://ascensionpeptides.com/ref/PEPTIDE10/?s=epitalon",
@@ -679,7 +679,7 @@
         "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/ChatGPT-Image-Sep-23-2025-08_09_24-PM.png?fit=1024%2C1024\u0026ssl=1",
         "slug":  "melanotan-ii",
         "category":  "cosmetic-pigmentation",
-        "documentation_focus":  "A useful page should explain the melanocortin context and make documentation notes or batch references easy to review.",
+        "documentation_focus":  "The page should explain the melanocortin context and make documentation notes or batch references easy to review.",
         "related_peptides":  [
                                  "pt-141",
                                  "ghk-cu",
@@ -705,7 +705,7 @@
         "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2026/02/ARA-290-Vial.png?fit=1024%2C1024\u0026ssl=1",
         "slug":  "ara-290",
         "category":  "repair-tissue",
-        "documentation_focus":  "The page should explain why the listing sits in the repair category and should make laboratory documentation cues easy to review at a glance.",
+        "documentation_focus":  "The page should explain why the listing sits in the repair category and make laboratory documentation easy to review at a glance.",
         "related_peptides":  [
                                  "tb-500",
                                  "bpc-157",
@@ -771,7 +771,7 @@
         "image":  "https://ironpeptides.is/wp-content/uploads/2025/07/FOXO4-DRI-D-Retro-Inverso-10mg-scaled.webp",
         "slug":  "foxo4-dri",
         "category":  "longevity-cellular",
-        "documentation_focus":  "A useful page should explain the technical label, keep the category context readable, and make documentation references easier to compare.",
+        "documentation_focus":  "The page should explain the technical label, keep the category context readable, and make documentation references easier to compare.",
         "related_peptides":  [
                                  "epitalon",
                                  "nad",
@@ -825,7 +825,7 @@
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
         "supplier_transparency_notes":  "KPV references are easier to trust when they avoid broad restorative language and keep the transparency notes centered on labeling and documentation.",
-        "short_educational_description":  "KPV is a short repair-oriented research compound that usually appears in barrier and tissue-support directories where documentation clarity helps a lot.",
+        "short_educational_description":  "KPV is a short repair-oriented research compound that often appears in barrier and tissue-support directories where clear documentation helps.",
         "suppliers":  [
                           {
                               "link":  "https://ironpeptides.is/product/kpv/?ref=ironman",
@@ -837,7 +837,7 @@
         "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/KLOW-%E2%80%93-80-mg-scaled.webp",
         "slug":  "klow",
         "category":  "blends-protocols",
-        "documentation_focus":  "A useful page should clarify whether KLOW is a blend, shorthand, or named protocol and should keep supporting documentation notes easy to compare.",
+        "documentation_focus":  "The page should clarify whether KLOW is a blend, shorthand, or named protocol and keep supporting documentation notes easy to compare.",
         "related_peptides":  [
                                  "glow",
                                  "cjc-1295-ipamorelin",
@@ -846,7 +846,7 @@
         "name":  "KLOW",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Named protocol pages are more useful when they explain the label carefully and make transparency cues more visible than the branding itself.",
+        "supplier_transparency_notes":  "Named protocol pages work best when the label is spelled out clearly and the supporting notes do more than repeat the branding.",
         "short_educational_description":  "KLOW is treated here as a named protocol or branded shorthand entry that needs more context than a generic product-style card can provide.",
         "suppliers":  [
                           {
@@ -890,7 +890,7 @@
         "name":  "IGF-1 DES",
         "index":  "true",
         "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "IGF-1 DES pages stay more useful when they differentiate the listing from related IGF references and keep the transparency cues more specific than the category headline.",
+        "supplier_transparency_notes":  "IGF-1 DES pages work better when they distinguish the variant clearly and keep the supporting notes more specific than the category headline.",
         "short_educational_description":  "IGF-1 DES is a growth signaling research topic that is easier to evaluate when the page explains the variant clearly and stays documentation-focused.",
         "suppliers":  [
                           {

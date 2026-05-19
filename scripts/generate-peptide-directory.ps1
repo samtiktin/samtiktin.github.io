@@ -74,29 +74,29 @@ function Get-CardSummary([string]$text) {
 
 function Get-CategoryMeta($key) {
   switch ($key) {
-    "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "This section groups compound pages that are usually discussed in metabolic, incretin, and appetite-related research coverage without turning the page into a promotional landing page." } }
-    "growth-secretagogue" { return @{ title = "Growth hormone secretagogue research compounds"; blurb = "These entries are commonly organized around endocrine signaling, secretagogue language, and broader growth-hormone research context." } }
-    "repair-tissue" { return @{ title = "Repair and tissue research compounds"; blurb = "These pages focus on how repair-oriented compounds are described in educational references and how supplier documentation can be evaluated more carefully." } }
-    "cognitive-neuropeptide" { return @{ title = "Cognitive and neuropeptide research compounds"; blurb = "These references stay focused on neuropeptide, cognition, and signaling language rather than overstated performance or wellness claims." } }
-    "longevity-cellular" { return @{ title = "Longevity and cellular research compounds"; blurb = "This group collects entries that usually appear in cellular, mitochondrial, or longevity-oriented research discussions." } }
-    "cosmetic-pigmentation" { return @{ title = "Cosmetic and pigmentation research compounds"; blurb = "These pages look at appearance-oriented or pigmentation-related catalog language in a research and documentation context." } }
-    "immune-regulatory" { return @{ title = "Immune and regulatory research compounds"; blurb = "These entries are organized around regulatory signaling, thymic peptides, and other immune-focused research topics." } }
-    "blends-protocols" { return @{ title = "Blends and named protocols"; blurb = "These pages cover branded combinations, named protocols, or shorthand listings that need extra context to stay understandable." } }
-    default { return @{ title = "Research compounds"; blurb = "Educational compound references grouped into one place." } }
+    "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "Research compounds commonly referenced in metabolic and incretin science." } }
+    "growth-secretagogue" { return @{ title = "Growth hormone secretagogue research compounds"; blurb = "Compounds commonly filed under growth hormone signaling and secretagogue research." } }
+    "repair-tissue" { return @{ title = "Repair and tissue research compounds"; blurb = "Pages centered on repair, recovery, and tissue-focused research compounds." } }
+    "cognitive-neuropeptide" { return @{ title = "Cognitive and neuropeptide research compounds"; blurb = "Neuropeptide and cognition-focused compounds that appear across signaling and neurobiology coverage." } }
+    "longevity-cellular" { return @{ title = "Longevity and cellular research compounds"; blurb = "Compounds commonly referenced in cellular, mitochondrial, and longevity research." } }
+    "cosmetic-pigmentation" { return @{ title = "Cosmetic and pigmentation research compounds"; blurb = "Compounds tied to pigmentation, appearance-focused, and melanocortin-related research." } }
+    "immune-regulatory" { return @{ title = "Immune and regulatory research compounds"; blurb = "Compounds associated with immune signaling, regulatory pathways, and thymic peptide research." } }
+    "blends-protocols" { return @{ title = "Blends and named protocols"; blurb = "Named blends, shorthand listings, and multi-compound pages that need added context." } }
+    default { return @{ title = "Research compounds"; blurb = "Compound pages gathered in one place." } }
   }
 }
 
 function Get-CategoryPrompt($key) {
   switch ($key) {
-    "glp-metabolic" { return "These pages are easiest to evaluate when the compound naming is clear, the listing stays research-focused, and the documentation language is easy to follow." }
-    "growth-secretagogue" { return "For this category, the key reading task is usually separating signaling-class language from generic hype and making sure documentation cues are easy to verify." }
-    "repair-tissue" { return "These pages are most useful when they focus on documentation signals, category context, and how clearly the compound is explained in a research setting." }
-    "cognitive-neuropeptide" { return "Neuropeptide pages are easier to trust when the wording stays careful, the category fit is clear, and the documentation language is easy to follow." }
-    "longevity-cellular" { return "This group benefits from careful language because the category can quickly become repetitive or overly speculative without enough educational context." }
-    "cosmetic-pigmentation" { return "These entries work best when the page stays focused on catalog language, laboratory documentation, and category clarity rather than broad appearance claims." }
-    "immune-regulatory" { return "Regulatory and thymic peptide pages are easier to compare when the reference focuses on labeling, documentation, and overall transparency." }
-    "blends-protocols" { return "Named blends and shorthand listings need extra context so the compound name, documentation language, and category fit are easy to understand at a glance." }
-    default { return "The main goal is to keep the page educational, specific, and easy to compare with related references." }
+    "glp-metabolic" { return "Clear naming matters here. The strongest pages show the compound family plainly and keep documentation easy to find." }
+    "growth-secretagogue" { return "These pages should separate signaling terminology from sales language and keep testing notes easy to verify." }
+    "repair-tissue" { return "The strongest pages explain the compound plainly and make documentation easier to review than the surrounding marketing." }
+    "cognitive-neuropeptide" { return "These pages work best when the wording stays precise and the category fit is easy to follow." }
+    "longevity-cellular" { return "These compounds need careful labeling, clear context, and documentation that is easier to verify than the headline copy." }
+    "cosmetic-pigmentation" { return "Clear category labels and readable documentation matter more than dramatic appearance language." }
+    "immune-regulatory" { return "These pages should make labeling, testing notes, and category fit easy to follow." }
+    "blends-protocols" { return "Named blends and shorthand labels should be spelled out clearly, with supporting notes close at hand." }
+    default { return "The strongest pages stay specific, readable, and easy to compare with related compounds." }
   }
 }
 
@@ -122,10 +122,10 @@ function Build-FaqData($peptide, $categoryTitle) {
   return @(
     @{
       "@type" = "Question"
-      "name" = "What does this $($peptide.name) page cover?"
+      "name" = "How is $($peptide.name) usually described in research listings?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "This page covers $($peptide.name) as part of the $categoryTitle category, with an emphasis on documentation and supplier transparency."
+        "text" = "$($peptide.name) appears here in the $categoryTitle category, with context on labeling, documentation, and related compounds."
       }
     },
     @{
@@ -138,10 +138,10 @@ function Build-FaqData($peptide, $categoryTitle) {
     },
     @{
       "@type" = "Question"
-      "name" = "Does this page recommend human use?"
+      "name" = "What else is worth checking before opening a listing?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "No. This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use."
+        "text" = "Check whether the compound name is clear, the documentation notes are readable, and the related pages line up with the label on the listing."
       }
     }
   )
@@ -239,18 +239,18 @@ $($cards -join "`n")
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Peptide Directory | PeptideSuppliers.org</title>
-  <meta name="description" content="Browse a searchable peptide directory organized around educational compound pages, documentation focus, supplier transparency notes, and related links.">
+  <meta name="description" content="Browse a searchable peptide directory with compound pages, documentation notes, related compounds, and linked supplier listings.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="$siteUrl/peptide-directory/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Peptide Directory | PeptideSuppliers.org">
-  <meta property="og:description" content="Educational peptide pages grouped by category, documentation focus, and related compounds.">
+  <meta property="og:description" content="Peptide pages grouped by category, documentation notes, and related compounds.">
   <meta property="og:url" content="$siteUrl/peptide-directory/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Peptide Directory | PeptideSuppliers.org">
-  <meta name="twitter:description" content="Educational peptide pages grouped by category, documentation focus, and related compounds.">
+  <meta name="twitter:description" content="Peptide pages grouped by category, documentation notes, and related compounds.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css?v=$stylesVersion">
@@ -285,10 +285,10 @@ $($cards -join "`n")
         <div class="page-hero-card">
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
-              <div class="eyebrow">Peptide reference</div>
+              <div class="eyebrow">Peptide directory</div>
               <h1 class="page-title">Peptide Directory</h1>
               <p>
-                This directory is designed as an educational reference for research compounds, laboratory documentation cues, and related reading paths. It stays focused on category context and supplier transparency rather than commercial language.
+                Browse compound pages, compare related entries, and open linked supplier listings from one directory.
               </p>
               <div class="button-row">
                 <a class="button button-primary" href="#directory-search">Search the directory</a>
@@ -386,8 +386,8 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $isIndexable = Get-PeptideIndexable $peptide
   $robots = if ($isIndexable) { "index,follow" } else { "noindex,follow" }
   $canonical = "$siteUrl/peptides/$($peptide.slug)/"
-  $title = "$($peptide.name) Peptide Guide & Supplier Transparency Notes | PeptideSuppliers.org"
-  $metaDescription = "$($peptide.name) page covering educational context, documentation focus, supplier transparency notes, and related compound links."
+  $title = "$($peptide.name) Peptide Guide & Supplier Listing Notes | PeptideSuppliers.org"
+  $metaDescription = "$($peptide.name) page covering documentation notes, related compounds, and linked supplier listings."
   $faqJson = JsonText (Build-FaqData $peptide $categoryMeta.title)
   $breadcrumbJson = JsonText (Build-BreadcrumbData $siteUrl $peptide)
   $heroSupplierLinks = foreach ($supplier in @($peptide.suppliers)) {
@@ -418,7 +418,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
           <article class="peptide-supplier-card reveal">
             <div class="kicker">Supplier listing</div>
             <h3>$([string](HtmlEncode($supplier.name)))</h3>
-            <p>This listing can help with comparing wording, laboratory documentation cues, and how clearly the compound is presented.</p>
+            <p>This listing is useful for checking naming, documentation access, and overall page clarity.</p>
             <div class="button-row">
               <a class="button button-primary" href="$([string](HtmlEncode($supplier.link)))" target="_blank" rel="sponsored nofollow noopener noreferrer">View supplier listing</a>
             </div>
@@ -514,7 +514,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
             </div>
             <div class="page-hero-copy reveal delay-1">
               <div class="eyebrow">Peptide guide</div>
-              <h1 class="page-title">$([string](HtmlEncode("$($peptide.name) Peptide Guide & Supplier Transparency Notes")))</h1>
+              <h1 class="page-title">$([string](HtmlEncode("$($peptide.name) Peptide Guide & Supplier Listing Notes")))</h1>
               <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
               <p>$([string](HtmlEncode($categoryPrompt)))</p>
               <div class="peptide-meta">
@@ -565,7 +565,7 @@ $($checklistItems -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>COA and batch-testing signals</h2>
-            <p>These signals help keep the page focused on laboratory documentation rather than promotional wording.</p>
+            <p>These checks make it easier to judge how clearly a listing is documented.</p>
           </div>
         </div>
         <div class="cards">
@@ -611,7 +611,7 @@ $($checklistItems -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Linked supplier pages</h2>
-            <p>These supplier pages can help with comparing listing language, laboratory documentation cues, and overall transparency.</p>
+            <p>Use these pages to compare naming, documentation access, and overall page clarity.</p>
           </div>
         </div>
         <div class="cards">
@@ -627,7 +627,7 @@ $($supplierCards -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Related peptides</h2>
-            <p>Nearby pages can help when comparing closely related compounds and broader category context.</p>
+            <p>Related pages help with side-by-side category comparisons.</p>
           </div>
         </div>
         <div class="card reveal">
@@ -643,12 +643,12 @@ $($relatedLinks -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Frequently asked questions</h2>
-            <p>These FAQ entries keep the page educational, research-focused, and easier to understand at a glance.</p>
+            <p>Quick answers to the main questions that come up on this page.</p>
           </div>
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>What does this $([string](HtmlEncode($peptide.name))) page cover?</h3>
+            <h3>How is $([string](HtmlEncode($peptide.name))) usually described in research listings?</h3>
             <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
           </article>
           <article class="card reveal delay-1">
@@ -656,8 +656,8 @@ $($relatedLinks -join "`n")
             <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
           </article>
           <article class="card reveal delay-2">
-            <h3>Is this page for educational reading only?</h3>
-            <p>$([string](HtmlEncode($peptide.research_use_disclaimer)))</p>
+            <h3>What else is worth checking before opening a listing?</h3>
+            <p>Check whether the compound name is clear, the documentation notes are readable, and the related pages line up with the label on the listing.</p>
           </article>
         </div>
       </div>

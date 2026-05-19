@@ -41,21 +41,18 @@ function Escape-RegexLiteral([string]$value) {
 
 function Get-HeroIntro($row) {
   $city = Clean $row.city
-  $region = Clean $row.region
   $anchor = Clean $row.local_research_anchor
-  return "$anchor is one of the clearest local research anchors for $city, which makes it a useful starting point for reading supplier documentation and broader industry coverage in $region."
+  return "$anchor gives this $city guide a local starting point for comparing research disclosures, testing records, and supplier documentation."
 }
 
 function Get-OverviewCopy($row) {
   $state = Clean $row.state
-  return "This page focuses on local context, documentation signals, and nearby city coverage so supplier transparency is easier to compare across $state."
+  return "Use this guide to compare documentation standards, testing visibility, and research disclosures across $state supplier pages."
 }
 
 function Get-ResearchContextCopy($row) {
-  $city = Clean $row.city
-  $region = Clean $row.region
   $anchor = Clean $row.local_research_anchor
-  return "$anchor provides the local anchor here, while the broader $region context helps with comparing documentation standards, research-use labeling, and transparency language across supplier pages."
+  return "$anchor helps frame how research pages, testing records, and disclosure language are presented in this area."
 }
 
 function Get-SupplierCopy($row) {
@@ -69,7 +66,7 @@ function Get-LogisticsCopy($row) {
 
 function Get-FaqOneAnswer($row) {
   $anchor = Clean $row.local_research_anchor
-  return "It connects $anchor with supplier transparency, documentation quality, and nearby city coverage that adds more regional context."
+  return "It uses $anchor as a local reference point for comparing documentation quality, testing visibility, and disclosure language."
 }
 
 function Get-FaqTwoAnswer($row) {
@@ -120,7 +117,7 @@ function Get-PageTitle($row) {
 function Get-MetaDescription($row) {
   $meta = Clean $row.meta_description
   if ($meta) { return $meta }
-  return "$(Clean $row.city), $(Clean $row.state_code) educational guide to research peptide supplier transparency, laboratory documentation, and related city reading."
+  return "$(Clean $row.city), $(Clean $row.state_code) guide to research peptide supplier pages, documentation standards, and nearby city comparisons."
 }
 
 function Get-CanonicalUrl($row, $siteUrl) {
@@ -177,7 +174,7 @@ function Get-FaqData($row) {
   return @(
     @{
       "@type" = "Question"
-      "name" = "Why does this page focus on ${city}?"
+      "name" = "Why use the ${city} guide?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqOneAnswer $row
@@ -193,10 +190,10 @@ function Get-FaqData($row) {
     },
     @{
       "@type" = "Question"
-      "name" = Clean $row.faq_3_question
+      "name" = "What else is worth comparing in nearby city guides?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = Clean $row.faq_3_answer
+        "text" = "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides."
       }
     }
   )
@@ -227,8 +224,10 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $supplierCopy = Get-SupplierCopy $row
   $logisticsCopy = Get-LogisticsCopy $row
   $focusLine = "$(Clean $row.documentation_focus) is often the first thing worth checking, followed by COA access, batch details, and policy consistency."
-  $faqOneQuestion = "Why does this page focus on $(Clean $row.city)?"
+  $faqOneQuestion = "Why use the $(Clean $row.city) guide?"
   $faqTwoQuestion = "Which documentation details are worth checking first?"
+  $faqThreeQuestion = "What else is worth comparing in nearby city guides?"
+  $faqThreeAnswer = "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides."
 
   $page = @"
 <!DOCTYPE html>
@@ -310,7 +309,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
               </div>
             </div>
             <div class="hero-art reveal delay-1">
-              <img src="/assets/education-guides.svg" alt="Editorial-style illustration for city-specific research and supplier transparency guides">
+              <img src="/assets/education-guides.svg" alt="Graphic for city-specific research and supplier documentation guides">
             </div>
           </div>
         </div>
@@ -410,7 +409,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <div class="section-head reveal">
           <div>
             <h2>Related city guides</h2>
-            <p>These nearby guides can help with comparing regional documentation habits and supplier transparency language.</p>
+            <p>Use nearby guides to compare documentation standards and disclosure language across the region.</p>
           </div>
         </div>
         <div class="resource-grid">
@@ -437,8 +436,8 @@ $relatedCards
             <p>$([string](HtmlEncode((Get-FaqTwoAnswer $row))))</p>
           </article>
           <article class="card reveal delay-2">
-            <h3>$([string](HtmlEncode((Clean $row.faq_3_question))))</h3>
-            <p>$([string](HtmlEncode((Clean $row.faq_3_answer))))</p>
+            <h3>$([string](HtmlEncode($faqThreeQuestion)))</h3>
+            <p>$([string](HtmlEncode($faqThreeAnswer)))</p>
           </article>
         </div>
       </div>
@@ -498,7 +497,7 @@ function New-LocationsHub($rows, $lookup, $siteUrl) {
           <div class="section-head reveal">
             <div>
               <h2>$([string](HtmlEncode($group.Name)))</h2>
-              <p>City guides for $([string](HtmlEncode($group.Name))) with local context, documentation cues, and related reading paths.</p>
+              <p>City guides for $([string](HtmlEncode($group.Name))) with local context, documentation standards, and related reading paths.</p>
             </div>
           </div>
           <div class="resource-grid">
@@ -515,18 +514,18 @@ $($cards -join "`n")
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Location-Based Peptide Research Guides | PeptideSuppliers.org</title>
-  <meta name="description" content="Browse city-by-city educational guides focused on research context, supplier transparency, laboratory documentation, and related regional reading.">
+  <meta name="description" content="Browse city-by-city guides focused on research context, documentation standards, and supplier-page comparisons.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="$siteUrl/locations/">
   <meta property="og:type" content="website">
   <meta property="og:title" content="Location-Based Peptide Research Guides | PeptideSuppliers.org">
-  <meta property="og:description" content="State-grouped city guides focused on local context, supplier transparency, and laboratory documentation.">
+  <meta property="og:description" content="State-grouped city guides focused on local context, documentation standards, and supplier-page comparisons.">
   <meta property="og:url" content="$siteUrl/locations/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Location-Based Peptide Research Guides | PeptideSuppliers.org">
-  <meta name="twitter:description" content="State-grouped city guides focused on local context, supplier transparency, and laboratory documentation.">
+  <meta name="twitter:description" content="State-grouped city guides focused on local context, documentation standards, and supplier-page comparisons.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
@@ -564,8 +563,8 @@ $($cards -join "`n")
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Locations hub</div>
-              <h1 class="page-title">Research peptide supplier transparency guides by city</h1>
-              <p>This hub groups city guides by state and keeps the focus on local research context, supplier transparency, and laboratory documentation.</p>
+              <h1 class="page-title">Research peptide supplier guides by city</h1>
+              <p>Browse city guides by state to compare local research context, documentation standards, and supplier-page disclosures.</p>
               <div class="button-row">
                 <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
                 <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
