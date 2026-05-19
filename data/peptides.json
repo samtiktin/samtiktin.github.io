@@ -1,903 +1,1182 @@
-﻿[
+[
     {
-        "image":  "https://peptideskingdom.com/wp-content/uploads/2025/08/tirzepatide-research-peptide-20mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "tirz",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "Check whether the page clearly identifies the shorthand label, explains the underlying compound family, and keeps laboratory documentation easy to locate.",
-        "related_peptides":  [
-                                 "glp-1",
-                                 "retatrutide-glp-3",
-                                 "cagrilintide"
-                             ],
-        "name":  "Tirz",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Shorthand metabolic listings are easier to trust when the reference makes naming conventions, batch context, and research-use labeling easy to follow.",
-        "short_educational_description":  "Tirz is a shorthand label often used for tirzepatide-related research listings in metabolic and incretin coverage.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/tirzepatide/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://peptideskingdom.com/wp-content/uploads/2025/08/tirzepatide-research-peptide-20mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "tirz",
+        "category": "glp-metabolic",
+        "documentation_focus": "Check whether the page clearly identifies the shorthand label, explains the underlying compound family, and keeps laboratory documentation easy to locate.",
+        "related_peptides": [
+            "glp-1",
+            "retatrutide-glp-3",
+            "cagrilintide"
+        ],
+        "name": "Tirz",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Shorthand metabolic listings are easier to trust when the reference makes naming conventions, batch context, and research-use labeling easy to follow.",
+        "short_educational_description": "Tirz is a shorthand label often used for tirzepatide-related research listings in metabolic and incretin coverage.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/tirzepatide/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Dual GIP/GLP-1 receptor agonist peptide",
+        "research_areas": "Metabolic disease, obesity, type 2 diabetes, cardiometabolic risk",
+        "evidence_stage": "Extensive human clinical research; approved drug forms exist in several regions",
+        "concise_research_overview": "Strong randomized-trial evidence for glucose lowering and weight-loss outcomes; research also examines sleep apnea, fatty liver disease, and cardiovascular outcomes.",
+        "seo_compliance_notes": "Differentiate approved pharmaceutical research from unapproved compounded or research-use products.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tirzepatide%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Tirzepatide"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/05/SEMA-GLP-1-10MG-scaled.webp",
-        "slug":  "glp-1",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "The page should make it clear whether GLP-1 is being used as a family label or a specific listing, with laboratory documentation that is easy to review.",
-        "related_peptides":  [
-                                 "tirz",
-                                 "retatrutide-glp-3",
-                                 "cagrilintide"
-                             ],
-        "name":  "GLP-1",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "GLP-1 pages read better when the naming stays precise and the documentation is easier to verify than the marketing language around it.",
-        "short_educational_description":  "GLP-1 is a broader label used for research compounds that are often grouped together in incretin-related catalog and education pages.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/sema-glp-1/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          },
-                          {
-                              "link":  "https://peptideskingdom.com/product/semaglutide/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/05/SEMA-GLP-1-10MG-scaled.webp",
+        "slug": "glp-1",
+        "category": "glp-metabolic",
+        "documentation_focus": "The page should make it clear whether GLP-1 is being used as a family label or a specific listing, with laboratory documentation that is easy to review.",
+        "related_peptides": [
+            "tirz",
+            "retatrutide-glp-3",
+            "cagrilintide"
+        ],
+        "name": "GLP-1",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "GLP-1 pages read better when the naming stays precise and the documentation is easier to verify than the marketing language around it.",
+        "short_educational_description": "GLP-1 is a broader label used for research compounds that are often grouped together in incretin-related catalog and education pages.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/sema-glp-1/?ref=ironman",
+                "name": "Iron Peptides"
+            },
+            {
+                "link": "https://peptideskingdom.com/product/semaglutide/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "GLP-1 receptor agonist peptide",
+        "research_areas": "Type 2 diabetes, obesity, cardiovascular and kidney outcomes",
+        "evidence_stage": "Extensive human clinical research; approved drug forms exist in several regions",
+        "concise_research_overview": "Large human trials evaluate glycemic control, weight reduction, cardiovascular risk reduction, kidney outcomes, and obesity-related complications.",
+        "seo_compliance_notes": "Use non-promotional language; avoid suggesting off-label personal use.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Semaglutide%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Semaglutide"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-12-2025-08_55_03-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "retatrutide-glp-3",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "Look for pages that explain the naming clearly, keep research-use labeling consistent, and connect the listing to readable batch documentation.",
-        "related_peptides":  [
-                                 "tirz",
-                                 "glp-1",
-                                 "mazdutide"
-                             ],
-        "name":  "Retatrutide (GLP-3)",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Because this entry is newer and sometimes described in different ways, transparency matters most when the page avoids vague shorthand and supports the listing with clear documentation language.",
-        "short_educational_description":  "Retatrutide (GLP-3) is presented as a newer metabolic research entry that often appears beside other incretin-style listings in educational directory pages.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/glp-3rt-peptide/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          },
-                          {
-                              "link":  "https://ironpeptides.is/product/glp-3/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-12-2025-08_55_03-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "retatrutide-glp-3",
+        "category": "glp-metabolic",
+        "documentation_focus": "Look for pages that explain the naming clearly, keep research-use labeling consistent, and connect the listing to readable batch documentation.",
+        "related_peptides": [
+            "tirz",
+            "glp-1",
+            "mazdutide"
+        ],
+        "name": "Retatrutide (GLP-3)",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Because this entry is newer and sometimes described in different ways, transparency matters most when the page avoids vague shorthand and supports the listing with clear documentation language.",
+        "short_educational_description": "Retatrutide (GLP-3) is presented as a newer metabolic research entry that often appears beside other incretin-style listings in educational directory pages.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/glp-3rt-peptide/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            },
+            {
+                "link": "https://ironpeptides.is/product/glp-3/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Triple GIP/GLP-1/glucagon receptor agonist peptide",
+        "research_areas": "Obesity, type 2 diabetes, fatty liver/metabolic dysfunction research",
+        "evidence_stage": "Mid-to-late-stage clinical research",
+        "concise_research_overview": "Human trials suggest large weight-loss effects under investigation; long-term safety and approval status remain under study.",
+        "seo_compliance_notes": "Clearly describe as investigational unless referencing specific completed trials.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Retatrutide%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Retatrutide"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/Oxytocin-5mg-scaled.webp",
-        "slug":  "oxytocin",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "A strong reference explains the signaling context, keeps labeling precise, and makes documentation notes visible without overstating what the listing means.",
-        "related_peptides":  [
-                                 "pt-141",
-                                 "selank",
-                                 "dsip"
-                             ],
-        "name":  "Oxytocin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Oxytocin pages read more clearly when the reference avoids lifestyle claims and instead focuses on category fit, documentation access, and research-use wording.",
-        "short_educational_description":  "Oxytocin is a neuropeptide research topic that often appears in broader signaling discussions and is best framed with careful, non-promotional language.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/oxytocin-5mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/10/Oxytocin-5mg-scaled.webp",
+        "slug": "oxytocin",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "A strong reference explains the signaling context, keeps labeling precise, and makes documentation notes visible without overstating what the listing means.",
+        "related_peptides": [
+            "pt-141",
+            "selank",
+            "dsip"
+        ],
+        "name": "Oxytocin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Oxytocin pages read more clearly when the reference avoids lifestyle claims and instead focuses on category fit, documentation access, and research-use wording.",
+        "short_educational_description": "Oxytocin is a neuropeptide research topic that often appears in broader signaling discussions and is best framed with careful, non-promotional language.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/oxytocin-5mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Endogenous nonapeptide hormone",
+        "research_areas": "Labor and lactation pharmacology; social behavior, stress, autism-spectrum, appetite research",
+        "evidence_stage": "Approved medical uses plus broad experimental research",
+        "concise_research_overview": "Well-established obstetric uses; neuroscience and behavioral studies are mixed and context-dependent.",
+        "seo_compliance_notes": "Do not overstate social/behavioral benefits; effects depend heavily on dose, context, route, and population.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Oxytocin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Oxytocin"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2026/03/Sermorelin-research-peptides-10mg-768x768.png",
-        "slug":  "sermorelin",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "Look for a page that explains the signaling family, keeps batch-testing language readable, and avoids vague wording about what the listing is for.",
-        "related_peptides":  [
-                                 "tesamorlin",
-                                 "ipamorelin",
-                                 "cjc-1295"
-                             ],
-        "name":  "Sermorelin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This category is easier to evaluate when the reference makes endocrine context and laboratory documentation more visible than generic category claims.",
-        "short_educational_description":  "Sermorelin is commonly listed in growth hormone secretagogue and endocrine-signaling research categories, where naming precision matters more than hype.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/sermorelin/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2026/03/Sermorelin-research-peptides-10mg-768x768.png",
+        "slug": "sermorelin",
+        "category": "growth-secretagogue",
+        "documentation_focus": "Look for a page that explains the signaling family, keeps batch-testing language readable, and avoids vague wording about what the listing is for.",
+        "related_peptides": [
+            "tesamorlin",
+            "ipamorelin",
+            "cjc-1295"
+        ],
+        "name": "Sermorelin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This category is easier to evaluate when the reference makes endocrine context and laboratory documentation more visible than generic category claims.",
+        "short_educational_description": "Sermorelin is commonly listed in growth hormone secretagogue and endocrine-signaling research categories, where naming precision matters more than hype.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/sermorelin/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "GHRH analog",
+        "research_areas": "Growth hormone axis testing and GH secretagogue research",
+        "evidence_stage": "Human clinical/research history; limited modern therapeutic use",
+        "concise_research_overview": "Stimulates pituitary GH release; studied in GH deficiency diagnostics and age-related GH-axis research.",
+        "seo_compliance_notes": "Not equivalent to exogenous growth hormone; response depends on intact pituitary function.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Sermorelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Sermorelin"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/06/ChatGPT-Image-Sep-23-2025-09_06_10-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "tesamorlin",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "The page should clarify the naming, show category context, and make documentation notes easy to review alongside the listing language.",
-        "related_peptides":  [
-                                 "sermorelin",
-                                 "ipamorelin",
-                                 "cjc-1295"
-                             ],
-        "name":  "Tesamorlin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Shorthand endocrine entries stay more credible when the listing explains what the label refers to and keeps documentation language specific and readable.",
-        "short_educational_description":  "Tesamorlin is a shorthand label for tesamorelin-style research listings that appear in endocrine and growth hormone signaling coverage.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/tesamorelin-peptide-5-mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/06/ChatGPT-Image-Sep-23-2025-09_06_10-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "tesamorlin",
+        "category": "growth-secretagogue",
+        "documentation_focus": "The page should clarify the naming, show category context, and make documentation notes easy to review alongside the listing language.",
+        "related_peptides": [
+            "sermorelin",
+            "ipamorelin",
+            "cjc-1295"
+        ],
+        "name": "Tesamorlin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Shorthand endocrine entries stay more credible when the listing explains what the label refers to and keeps documentation language specific and readable.",
+        "short_educational_description": "Tesamorlin is a shorthand label for tesamorelin-style research listings that appear in endocrine and growth hormone signaling coverage.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/tesamorelin-peptide-5-mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Stabilized GHRH analog",
+        "research_areas": "HIV-associated lipodystrophy, visceral adipose tissue, liver fat research",
+        "evidence_stage": "Human clinical research; approved drug form exists for HIV lipodystrophy in U.S.",
+        "concise_research_overview": "Clinical studies show effects on visceral adipose tissue; research also explores hepatic fat and metabolic markers.",
+        "seo_compliance_notes": "Keep claims specific to studied populations and endpoints.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tesamorelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Tesamorelin"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-11-2025-08_41_35-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "bpc-157",
-        "category":  "repair-tissue",
-        "documentation_focus":  "The strongest pages explain the repair-oriented category clearly and make laboratory documentation or batch references easy to find.",
-        "related_peptides":  [
-                                 "tb-500",
-                                 "ghk-cu",
-                                 "kpv"
-                             ],
-        "name":  "BPC-157",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Because BPC-157 appears on many catalogs, the strongest pages go beyond generic copy and show consistent documentation.",
-        "short_educational_description":  "BPC-157 is a widely recognized repair-oriented research compound that often appears in tissue and barrier-related pages.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/bpc-157/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-11-2025-08_41_35-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "bpc-157",
+        "category": "repair-tissue",
+        "documentation_focus": "The strongest pages explain the repair-oriented category clearly and make laboratory documentation or batch references easy to find.",
+        "related_peptides": [
+            "tb-500",
+            "ghk-cu",
+            "kpv"
+        ],
+        "name": "BPC-157",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Because BPC-157 appears on many catalogs, the strongest pages go beyond generic copy and show consistent documentation.",
+        "short_educational_description": "BPC-157 is a widely recognized repair-oriented research compound that often appears in tissue and barrier-related pages.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/bpc-157/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Synthetic peptide fragment related to gastric juice protein sequence",
+        "research_areas": "Preclinical tissue repair, tendon/ligament, GI injury, angiogenesis models",
+        "evidence_stage": "Mostly preclinical; limited/no high-quality human clinical trial evidence",
+        "concise_research_overview": "Animal and cell studies report wound-healing and cytoprotective signals, but human safety/efficacy remains unproven.",
+        "seo_compliance_notes": "Flag as not FDA-approved and not supported by robust human clinical evidence.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22BPC-157%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=BPC-157"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/09/ghk-cu-50mg.png",
-        "slug":  "ghk-cu",
-        "category":  "cosmetic-pigmentation",
-        "documentation_focus":  "A useful reference should explain the copper-peptide context, identify the listing clearly, and keep documentation easy to review on the page.",
-        "related_peptides":  [
-                                 "bpc-157",
-                                 "tb-500",
-                                 "glow"
-                             ],
-        "name":  "GHK-Cu",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "GHK-Cu pages feel stronger when they focus on labeling clarity, laboratory documentation, and category fit instead of broad appearance promises.",
-        "short_educational_description":  "GHK-Cu is usually placed in appearance-oriented, copper-peptide, and skin-related research categories that benefit from careful educational framing.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/ghk-cu-copper-peptide/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          },
-                          {
-                              "link":  "https://aminoclub.com?utm_source=affiliate_marketing\u0026code=AMINOSAVE",
-                              "name":  "Amino Club"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/09/ghk-cu-50mg.png",
+        "slug": "ghk-cu",
+        "category": "cosmetic-pigmentation",
+        "documentation_focus": "A useful reference should explain the copper-peptide context, identify the listing clearly, and keep documentation easy to review on the page.",
+        "related_peptides": [
+            "bpc-157",
+            "tb-500",
+            "glow"
+        ],
+        "name": "GHK-Cu",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "GHK-Cu pages feel stronger when they focus on labeling clarity, laboratory documentation, and category fit instead of broad appearance promises.",
+        "short_educational_description": "GHK-Cu is usually placed in appearance-oriented, copper-peptide, and skin-related research categories that benefit from careful educational framing.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/ghk-cu-copper-peptide/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            },
+            {
+                "link": "https://aminoclub.com?utm_source=affiliate_marketing&code=AMINOSAVE",
+                "name": "Amino Club"
+            }
+        ],
+        "what_it_is": "Copper-binding tripeptide",
+        "research_areas": "Skin repair, extracellular matrix, wound healing, hair/skin aging research",
+        "evidence_stage": "Cell, animal, and cosmetic/dermatology-oriented research; limited clinical depth",
+        "concise_research_overview": "Studied for collagen/extracellular matrix signaling, skin remodeling, wound-healing markers, and copper delivery biology.",
+        "seo_compliance_notes": "Separate cosmetic ingredient literature from therapeutic claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GHK-Cu%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=GHK-Cu"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/ipamorelin-research-peptide-5mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "ipamorelin",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "Look for a page that separates secretagogue language from broader GH category labels and keeps documentation references easy to review.",
-        "related_peptides":  [
-                                 "sermorelin",
-                                 "tesamorlin",
-                                 "cjc-1295-ipamorelin"
-                             ],
-        "name":  "Ipamorelin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This category reads better when the reference explains how the listing fits into the secretagogue family and avoids generic catalog filler.",
-        "short_educational_description":  "Ipamorelin is a growth hormone secretagogue research compound that often appears alongside GHRH analog references in endocrine-focused directories.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/ipamorelin/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/ipamorelin-research-peptide-5mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "ipamorelin",
+        "category": "growth-secretagogue",
+        "documentation_focus": "Look for a page that separates secretagogue language from broader GH category labels and keeps documentation references easy to review.",
+        "related_peptides": [
+            "sermorelin",
+            "tesamorlin",
+            "cjc-1295-ipamorelin"
+        ],
+        "name": "Ipamorelin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This category reads better when the reference explains how the listing fits into the secretagogue family and avoids generic catalog filler.",
+        "short_educational_description": "Ipamorelin is a growth hormone secretagogue research compound that often appears alongside GHRH analog references in endocrine-focused directories.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/ipamorelin/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Ghrelin receptor/GH secretagogue peptide",
+        "research_areas": "GH release, endocrine physiology, body composition models",
+        "evidence_stage": "Limited human research; more preclinical/early clinical pharmacology",
+        "concise_research_overview": "Selectively stimulates GH release in studies with less cortisol/prolactin activity than some older GHRPs.",
+        "seo_compliance_notes": "Do not imply proven anti-aging, fat-loss, or muscle-building outcomes in humans.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Ipamorelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Ipamorelin"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/Cagrilintide-scaled.webp",
-        "slug":  "cagrilintide",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "A solid reference explains the category in plain research terms and shows how to verify labeling, batch language, and related documentation.",
-        "related_peptides":  [
-                                 "glp-1",
-                                 "tirz",
-                                 "retatrutide-glp-3"
-                             ],
-        "name":  "Cagrilintide",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This kind of page stays more useful when the listing is easy to distinguish from neighboring metabolic entries and the documentation signals are not hidden behind vague copy.",
-        "short_educational_description":  "Cagrilintide is commonly listed beside incretin-related compounds in metabolic research coverage.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/cagrilintide-10mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/10/Cagrilintide-scaled.webp",
+        "slug": "cagrilintide",
+        "category": "glp-metabolic",
+        "documentation_focus": "A solid reference explains the category in plain research terms and shows how to verify labeling, batch language, and related documentation.",
+        "related_peptides": [
+            "glp-1",
+            "tirz",
+            "retatrutide-glp-3"
+        ],
+        "name": "Cagrilintide",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This kind of page stays more useful when the listing is easy to distinguish from neighboring metabolic entries and the documentation signals are not hidden behind vague copy.",
+        "short_educational_description": "Cagrilintide is commonly listed beside incretin-related compounds in metabolic research coverage.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/cagrilintide-10mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Long-acting amylin analog",
+        "research_areas": "Obesity, appetite regulation, combination with semaglutide",
+        "evidence_stage": "Clinical research, including combination therapy trials",
+        "concise_research_overview": "Research focuses on satiety/weight management; combination regimens with semaglutide are under active development.",
+        "seo_compliance_notes": "Investigational in many contexts; distinguish from approved agents.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Cagrilintide%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Cagrilintide"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/05/500MCG-100-CAPSULES.png",
-        "slug":  "tesofensine",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "Look for a reference that explains the category, keeps naming precise, and supports the listing with readable laboratory documentation notes.",
-        "related_peptides":  [
-                                 "cagrilintide",
-                                 "mazdutide",
-                                 "glp-1"
-                             ],
-        "name":  "Tesofensine",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "The strongest pages explain where the entry fits, keep the naming precise, and make supporting documentation easy to follow.",
-        "short_educational_description":  "Tesofensine is often grouped into metabolic research directories as a niche catalog entry that needs clearer educational framing than a simple product label.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/tesofensine-500mcg-100-capsules/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/05/500MCG-100-CAPSULES.png",
+        "slug": "tesofensine",
+        "category": "glp-metabolic",
+        "documentation_focus": "Look for a reference that explains the category, keeps naming precise, and supports the listing with readable laboratory documentation notes.",
+        "related_peptides": [
+            "cagrilintide",
+            "mazdutide",
+            "glp-1"
+        ],
+        "name": "Tesofensine",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "The strongest pages explain where the entry fits, keep the naming precise, and make supporting documentation easy to follow.",
+        "short_educational_description": "Tesofensine is often grouped into metabolic research directories as a niche catalog entry that needs clearer educational framing than a simple product label.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/tesofensine-500mcg-100-capsules/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Monoamine reuptake inhibitor; not a peptide",
+        "research_areas": "Obesity, appetite, Parkinson/Alzheimer exploratory history",
+        "evidence_stage": "Clinical research; not peptide-based",
+        "concise_research_overview": "Originally studied in neurodegenerative disease; later obesity trials examined weight loss but cardiovascular/tolerability issues require attention.",
+        "seo_compliance_notes": "Mark as non-peptide if included in peptide catalog.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Tesofensine%22+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Tesofensine"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/IMG_8347.jpeg?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "mots-c",
-        "category":  "longevity-cellular",
-        "documentation_focus":  "A good reference explains the mitochondrial angle, keeps documentation access visible, and avoids overpromising what the listing means.",
-        "related_peptides":  [
-                                 "nad",
-                                 "epitalon",
-                                 "foxo4-dri"
-                             ],
-        "name":  "MOTS-c",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "MOTS-c pages stay useful when the transparency notes focus on labeling, documentation access, and how the listing fits into cellular research categories.",
-        "short_educational_description":  "MOTS-c is commonly described in mitochondrial and cellular adaptation research coverage, where category context matters more than broad wellness language.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/mots-c-peptide-10-mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/IMG_8347.jpeg?fit=1024%2C1024&ssl=1",
+        "slug": "mots-c",
+        "category": "longevity-cellular",
+        "documentation_focus": "A good reference explains the mitochondrial angle, keeps documentation access visible, and avoids overpromising what the listing means.",
+        "related_peptides": [
+            "nad",
+            "epitalon",
+            "foxo4-dri"
+        ],
+        "name": "MOTS-c",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "MOTS-c pages stay useful when the transparency notes focus on labeling, documentation access, and how the listing fits into cellular research categories.",
+        "short_educational_description": "MOTS-c is commonly described in mitochondrial and cellular adaptation research coverage, where category context matters more than broad wellness language.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/mots-c-peptide-10-mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Mitochondrial-derived peptide",
+        "research_areas": "Metabolism, insulin sensitivity, exercise physiology, aging biology",
+        "evidence_stage": "Preclinical and early translational research",
+        "concise_research_overview": "Animal/cell studies suggest metabolic signaling roles; human evidence is early and not therapeutic-grade.",
+        "seo_compliance_notes": "Avoid claiming proven metabolic or longevity benefits.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22MOTS-c%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=MOTS-c"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/semax-research-peptide-5mg-vial-99-purity-lab-tested-2-768x768.png",
-        "slug":  "semax",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "A strong page should explain the neuropeptide category clearly, keep naming consistent, and make documentation language easy to review.",
-        "related_peptides":  [
-                                 "selank",
-                                 "dsip",
-                                 "cerebrolysin"
-                             ],
-        "name":  "Semax",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Semax pages read better when the wording stays measured, avoids dramatic claims, and keeps laboratory documentation easy to review.",
-        "short_educational_description":  "Semax is a cognitive and neuropeptide research topic that is often grouped with other nootropic-style entries in educational directories.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/semax/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/semax-research-peptide-5mg-vial-99-purity-lab-tested-2-768x768.png",
+        "slug": "semax",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "A strong page should explain the neuropeptide category clearly, keep naming consistent, and make documentation language easy to review.",
+        "related_peptides": [
+            "selank",
+            "dsip",
+            "cerebrolysin"
+        ],
+        "name": "Semax",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Semax pages read better when the wording stays measured, avoids dramatic claims, and keeps laboratory documentation easy to review.",
+        "short_educational_description": "Semax is a cognitive and neuropeptide research topic that is often grouped with other nootropic-style entries in educational directories.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/semax/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "ACTH(4-10) analog neuropeptide",
+        "research_areas": "Neuroprotection, cognition, stroke/ischemia models, nasal peptide pharmacology",
+        "evidence_stage": "Regional clinical use/research; limited Western RCT evidence",
+        "concise_research_overview": "Studied mainly in Russian/Eastern European literature for neurological applications and neurotrophic signaling.",
+        "seo_compliance_notes": "Note evidence geography and publication limitations.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Semax%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Semax"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/05/PT-141-render_0605.jpg",
-        "slug":  "pt-141",
-        "category":  "immune-regulatory",
-        "documentation_focus":  "The most helpful references explain the signaling family, keep the listing context clear, and make documentation notes easy to spot.",
-        "related_peptides":  [
-                                 "oxytocin",
-                                 "melanotan-ii",
-                                 "kisspeptin-10"
-                             ],
-        "name":  "PT-141",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "PT-141 pages are stronger when they emphasize naming clarity, research-use labeling, and batch-testing references instead of lifestyle-style language.",
-        "short_educational_description":  "PT-141 is a melanocortin-related signaling entry that fits best in a cautious educational directory rather than a promotional landing page.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/pt-141-10mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/05/PT-141-render_0605.jpg",
+        "slug": "pt-141",
+        "category": "immune-regulatory",
+        "documentation_focus": "The most helpful references explain the signaling family, keep the listing context clear, and make documentation notes easy to spot.",
+        "related_peptides": [
+            "oxytocin",
+            "melanotan-ii",
+            "kisspeptin-10"
+        ],
+        "name": "PT-141",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "PT-141 pages are stronger when they emphasize naming clarity, research-use labeling, and batch-testing references instead of lifestyle-style language.",
+        "short_educational_description": "PT-141 is a melanocortin-related signaling entry that fits best in a cautious educational directory rather than a promotional landing page.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/pt-141-10mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Bremelanotide; melanocortin receptor agonist peptide",
+        "research_areas": "Sexual desire/arousal pharmacology; melanocortin pathway research",
+        "evidence_stage": "Human clinical research; approved drug form exists for acquired generalized HSDD in premenopausal women in U.S.",
+        "concise_research_overview": "Activates melanocortin receptors; clinical endpoint is sexual desire/distress in specific studied population.",
+        "seo_compliance_notes": "Avoid broad sexual-performance claims outside approved/studied indications.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22PT-141%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=PT-141"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/08/Ipamorelin-CJC-1295-No-Dac-10mg-600x522.webp",
-        "slug":  "cjc-1295-ipamorelin",
-        "category":  "blends-protocols",
-        "documentation_focus":  "Look for a page that identifies both components clearly and explains how the combined label is being used in the catalog or directory.",
-        "related_peptides":  [
-                                 "cjc-1295",
-                                 "ipamorelin",
-                                 "sermorelin"
-                             ],
-        "name":  "CJC-1295 / Ipamorelin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Combined labels are more readable when the page spells out each compound, keeps the documentation clear, and avoids vague bundled language.",
-        "short_educational_description":  "CJC-1295 / Ipamorelin is a combined shorthand listing that benefits from extra context so readers can tell it apart from the single-compound pages.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/ipamorelin-cjc-1295-no-dac/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/08/Ipamorelin-CJC-1295-No-Dac-10mg-600x522.webp",
+        "slug": "cjc-1295-ipamorelin",
+        "category": "blends-protocols",
+        "documentation_focus": "Look for a page that identifies both components clearly and explains how the combined label is being used in the catalog or directory.",
+        "related_peptides": [
+            "cjc-1295",
+            "ipamorelin",
+            "sermorelin"
+        ],
+        "name": "CJC-1295 / Ipamorelin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Combined labels are more readable when the page spells out each compound, keeps the documentation clear, and avoids vague bundled language.",
+        "short_educational_description": "CJC-1295 / Ipamorelin is a combined shorthand listing that benefits from extra context so readers can tell it apart from the single-compound pages.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/ipamorelin-cjc-1295-no-dac/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Combination of GHRH analog and GH secretagogue",
+        "research_areas": "GH-axis stimulation and endocrine physiology",
+        "evidence_stage": "Limited combination-specific human evidence",
+        "concise_research_overview": "Rationale is dual stimulation of GH axis through GHRH and ghrelin pathways; combination claims often extrapolate from individual compounds.",
+        "seo_compliance_notes": "Flag as combination; cite individual-compound evidence separately.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22CJC-1295+%2F+Ipamorelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=CJC-1295+Ipamorelin"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/cjc-1295-without-dac-research-peptide-2mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "cjc-1295",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "The page should explain where CJC-1295 sits in the category and make batch or laboratory documentation simple to review.",
-        "related_peptides":  [
-                                 "ipamorelin",
-                                 "cjc-1295-ipamorelin",
-                                 "sermorelin"
-                             ],
-        "name":  "CJC-1295",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This reference is more trustworthy when the wording stays precise about the signaling family and the documentation does more than repeat a generic testing claim.",
-        "short_educational_description":  "CJC-1295 is commonly listed in growth hormone signaling directories, where a clear explanation of the compound family helps the page feel less repetitive.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/cjc-1295-without-dac-mod-grf-1-29/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/cjc-1295-without-dac-research-peptide-2mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "cjc-1295",
+        "category": "growth-secretagogue",
+        "documentation_focus": "The page should explain where CJC-1295 sits in the category and make batch or laboratory documentation simple to review.",
+        "related_peptides": [
+            "ipamorelin",
+            "cjc-1295-ipamorelin",
+            "sermorelin"
+        ],
+        "name": "CJC-1295",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This reference is more trustworthy when the wording stays precise about the signaling family and the documentation does more than repeat a generic testing claim.",
+        "short_educational_description": "CJC-1295 is commonly listed in growth hormone signaling directories, where a clear explanation of the compound family helps the page feel less repetitive.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/cjc-1295-without-dac-mod-grf-1-29/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Long-acting GHRH analog, often DAC-modified",
+        "research_areas": "GH/IGF-1 axis pharmacology",
+        "evidence_stage": "Early human pharmacology and preclinical research",
+        "concise_research_overview": "DAC-conjugated versions prolong half-life and increase GH/IGF-1 signaling markers in small studies.",
+        "seo_compliance_notes": "Clarify whether DAC or no-DAC version is being discussed.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22CJC-1295%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=CJC-1295"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/07/MK-677-12.5MG-60-CAPSULES.png",
-        "slug":  "mk-677",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "The page should explain why the listing appears in the directory and keep documentation notes visible enough to compare with neighboring entries.",
-        "related_peptides":  [
-                                 "ipamorelin",
-                                 "cjc-1295",
-                                 "igf-1-lr3"
-                             ],
-        "name":  "MK-677",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "MK-677 pages read better when they acknowledge the peptide-adjacent labeling and focus on category clarity, batch context, and research-use wording.",
-        "short_educational_description":  "MK-677 often appears beside growth signaling compounds even though it is generally treated as its own research compound class.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/mk-677-12-5mg-60-capsules/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/07/MK-677-12.5MG-60-CAPSULES.png",
+        "slug": "mk-677",
+        "category": "growth-secretagogue",
+        "documentation_focus": "The page should explain why the listing appears in the directory and keep documentation notes visible enough to compare with neighboring entries.",
+        "related_peptides": [
+            "ipamorelin",
+            "cjc-1295",
+            "igf-1-lr3"
+        ],
+        "name": "MK-677",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "MK-677 pages read better when they acknowledge the peptide-adjacent labeling and focus on category clarity, batch context, and research-use wording.",
+        "short_educational_description": "MK-677 often appears beside growth signaling compounds even though it is generally treated as its own research compound class.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/mk-677-12-5mg-60-capsules/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Ibutamoren; oral ghrelin receptor agonist, not a peptide",
+        "research_areas": "GH/IGF-1 axis, frailty, sleep, body composition research",
+        "evidence_stage": "Human clinical research; investigational, non-peptide",
+        "concise_research_overview": "Raises GH and IGF-1 in studies; examined for frailty and body composition, but edema, insulin resistance, and appetite effects matter.",
+        "seo_compliance_notes": "Mark as non-peptide small molecule.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22MK-677%22+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=MK-677"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/09/ChatGPT-Image-Sep-12-2025-10_19_26-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "selank",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "A strong page explains the neuropeptide context and keeps documentation notes readable without drifting into performance-style language.",
-        "related_peptides":  [
-                                 "semax",
-                                 "dsip",
-                                 "dihexa"
-                             ],
-        "name":  "Selank",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Selank references are easier to evaluate when the wording stays measured and the page keeps naming, category fit, and testing language consistent.",
-        "short_educational_description":  "Selank is often listed with neuropeptide and cognition-related research topics where clear labeling and documentation matter.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/selank-peptide-10-mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/09/ChatGPT-Image-Sep-12-2025-10_19_26-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "selank",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "A strong page explains the neuropeptide context and keeps documentation notes readable without drifting into performance-style language.",
+        "related_peptides": [
+            "semax",
+            "dsip",
+            "dihexa"
+        ],
+        "name": "Selank",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Selank references are easier to evaluate when the wording stays measured and the page keeps naming, category fit, and testing language consistent.",
+        "short_educational_description": "Selank is often listed with neuropeptide and cognition-related research topics where clear labeling and documentation matter.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/selank-peptide-10-mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Tuftsin-derived synthetic heptapeptide",
+        "research_areas": "Anxiety, cognition, neuroimmune signaling",
+        "evidence_stage": "Regional clinical/research use; limited Western RCT evidence",
+        "concise_research_overview": "Studied largely in Russian literature for anxiolytic and neuropsychological endpoints.",
+        "seo_compliance_notes": "Use cautious wording because evidence base is regionally concentrated.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Selank%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Selank"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/ChatGPT-Image-Sep-26-2025-09_25_30-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "tb-500",
-        "category":  "repair-tissue",
-        "documentation_focus":  "The page should explain the repair category clearly and surface laboratory documentation or batch references without forcing extra searching.",
-        "related_peptides":  [
-                                 "bpc-157",
-                                 "ghk-cu",
-                                 "ara-290"
-                             ],
-        "name":  "TB-500",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "TB-500 listings feel stronger when the reference focuses on labeling, testing context, and readability instead of repeating the same repair language over and over.",
-        "short_educational_description":  "TB-500 is a repair-oriented research compound that often appears in tissue and restoration categories where clear documentation matters.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/tb-500-peptide-5-mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/ChatGPT-Image-Sep-26-2025-09_25_30-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "tb-500",
+        "category": "repair-tissue",
+        "documentation_focus": "The page should explain the repair category clearly and surface laboratory documentation or batch references without forcing extra searching.",
+        "related_peptides": [
+            "bpc-157",
+            "ghk-cu",
+            "ara-290"
+        ],
+        "name": "TB-500",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "TB-500 listings feel stronger when the reference focuses on labeling, testing context, and readability instead of repeating the same repair language over and over.",
+        "short_educational_description": "TB-500 is a repair-oriented research compound that often appears in tissue and restoration categories where clear documentation matters.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/tb-500-peptide-5-mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Synthetic fragment associated with thymosin beta-4 sequence",
+        "research_areas": "Actin binding, wound repair, angiogenesis, injury models",
+        "evidence_stage": "Mostly preclinical; limited direct human clinical evidence for TB-500",
+        "concise_research_overview": "Thymosin beta-4 biology is widely studied; TB-500 product claims often extrapolate from Tβ4 data.",
+        "seo_compliance_notes": "Do not treat TB-500 as equivalent to all thymosin beta-4 clinical research.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22TB-500%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=TB-500"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/11/Cerebrolysin-60MG-scaled.webp",
-        "slug":  "cerebrolysin",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "Look for a reference that explains the preparation clearly, keeps documentation language visible, and avoids vague category shortcuts.",
-        "related_peptides":  [
-                                 "semax",
-                                 "selank",
-                                 "dihexa"
-                             ],
-        "name":  "Cerebrolysin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This page type works better when the wording explains what the listing represents and the documentation notes are easier to compare with neighboring neuropeptide entries.",
-        "short_educational_description":  "Cerebrolysin is commonly discussed as a peptide-rich neuro-support research topic that needs careful explanation and neutral educational wording.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/cerebrolysin-60mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/11/Cerebrolysin-60MG-scaled.webp",
+        "slug": "cerebrolysin",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "Look for a reference that explains the preparation clearly, keeps documentation language visible, and avoids vague category shortcuts.",
+        "related_peptides": [
+            "semax",
+            "selank",
+            "dihexa"
+        ],
+        "name": "Cerebrolysin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This page type works better when the wording explains what the listing represents and the documentation notes are easier to compare with neighboring neuropeptide entries.",
+        "short_educational_description": "Cerebrolysin is commonly discussed as a peptide-rich neuro-support research topic that needs careful explanation and neutral educational wording.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/cerebrolysin-60mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Porcine brain-derived peptide mixture",
+        "research_areas": "Stroke, traumatic brain injury, dementia, neurorecovery",
+        "evidence_stage": "Human clinical studies and meta-analyses; mixed conclusions",
+        "concise_research_overview": "Studied as neurotrophic peptide mixture; trial results vary by indication and study quality.",
+        "seo_compliance_notes": "Note mixture composition and jurisdiction-specific availability.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Cerebrolysin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Cerebrolysin"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/Gonadorelin-2mg-scaled.webp",
-        "slug":  "gonadorelin",
-        "category":  "immune-regulatory",
-        "documentation_focus":  "A useful reference explains the endocrine category, keeps the naming precise, and makes laboratory documentation easy to review.",
-        "related_peptides":  [
-                                 "kisspeptin-10",
-                                 "thymosin-alpha-1",
-                                 "pt-141"
-                             ],
-        "name":  "Gonadorelin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Gonadorelin pages are stronger when they avoid generic hormone language and instead show clear category context and readable documentation notes.",
-        "short_educational_description":  "Gonadorelin is an endocrine-signaling research topic that fits best on pages focused on regulation, labeling clarity, and educational context.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/gonadorelin/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/10/Gonadorelin-2mg-scaled.webp",
+        "slug": "gonadorelin",
+        "category": "immune-regulatory",
+        "documentation_focus": "A useful reference explains the endocrine category, keeps the naming precise, and makes laboratory documentation easy to review.",
+        "related_peptides": [
+            "kisspeptin-10",
+            "thymosin-alpha-1",
+            "pt-141"
+        ],
+        "name": "Gonadorelin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Gonadorelin pages are stronger when they avoid generic hormone language and instead show clear category context and readable documentation notes.",
+        "short_educational_description": "Gonadorelin is an endocrine-signaling research topic that fits best on pages focused on regulation, labeling clarity, and educational context.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/gonadorelin/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "GnRH peptide",
+        "research_areas": "Pituitary-gonadal axis testing, ovulation induction, hypothalamic amenorrhea research",
+        "evidence_stage": "Established endocrine research and clinical use",
+        "concise_research_overview": "Pulsatile GnRH can stimulate LH/FSH release; continuous exposure can suppress axis via receptor downregulation.",
+        "seo_compliance_notes": "Route and pulse pattern are central to biological effect.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Gonadorelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Gonadorelin"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/igf-1-research-peptide-1mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "igf-1-lr3",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "A good page should explain the signaling family, identify the variant clearly, and keep laboratory documentation references easy to locate.",
-        "related_peptides":  [
-                                 "igf-1-des",
-                                 "mk-677",
-                                 "cjc-1295"
-                             ],
-        "name":  "IGF-1 LR3",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This listing becomes more useful when the reference differentiates it from other IGF entries and keeps the documentation language specific rather than repetitive.",
-        "short_educational_description":  "IGF-1 LR3 is often listed in growth signaling research directories where category context and clear documentation matter.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/igf-1-lr3/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/igf-1-research-peptide-1mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "igf-1-lr3",
+        "category": "growth-secretagogue",
+        "documentation_focus": "A good page should explain the signaling family, identify the variant clearly, and keep laboratory documentation references easy to locate.",
+        "related_peptides": [
+            "igf-1-des",
+            "mk-677",
+            "cjc-1295"
+        ],
+        "name": "IGF-1 LR3",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This listing becomes more useful when the reference differentiates it from other IGF entries and keeps the documentation language specific rather than repetitive.",
+        "short_educational_description": "IGF-1 LR3 is often listed in growth signaling research directories where category context and clear documentation matter.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/igf-1-lr3/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Long-acting IGF-1 analog",
+        "research_areas": "IGF signaling, growth/metabolism cell culture and animal models",
+        "evidence_stage": "Mostly preclinical/research reagent use",
+        "concise_research_overview": "Modified IGF-1 has reduced binding to IGF binding proteins and prolonged activity in models.",
+        "seo_compliance_notes": "High-risk growth-factor biology; avoid human performance or body-composition claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22IGF-1+LR3%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=IGF-1+LR3"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-11-2025-09_11_13-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "aod-9604",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "Look for a page that explains the fragment label clearly and keeps the laboratory documentation notes more visible than the headline copy.",
-        "related_peptides":  [
-                                 "tesofensine",
-                                 "glp-1",
-                                 "mazdutide"
-                             ],
-        "name":  "AOD-9604",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "AOD-9604 references feel more credible when they keep the category explanation short, clear, and supported by transparent documentation language.",
-        "short_educational_description":  "AOD-9604 is a body-composition and metabolic research listing that benefits from cautious directory copy and clear documentation framing.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/aod-9604/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/08/ChatGPT-Image-Sep-11-2025-09_11_13-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "aod-9604",
+        "category": "glp-metabolic",
+        "documentation_focus": "Look for a page that explains the fragment label clearly and keeps the laboratory documentation notes more visible than the headline copy.",
+        "related_peptides": [
+            "tesofensine",
+            "glp-1",
+            "mazdutide"
+        ],
+        "name": "AOD-9604",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "AOD-9604 references feel more credible when they keep the category explanation short, clear, and supported by transparent documentation language.",
+        "short_educational_description": "AOD-9604 is a body-composition and metabolic research listing that benefits from cautious directory copy and clear documentation framing.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/aod-9604/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Modified fragment of human GH 176-191",
+        "research_areas": "Lipolysis/obesity research",
+        "evidence_stage": "Early human obesity research with limited efficacy evidence; not approved drug",
+        "concise_research_overview": "Designed to investigate fat-metabolism effects without full GH activity; clinical evidence has not established therapeutic benefit.",
+        "seo_compliance_notes": "Be explicit that evidence is limited and regulatory status is not as a mainstream drug.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22AOD-9604%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=AOD-9604"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/nad-research-peptide-500mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "nad",
-        "category":  "longevity-cellular",
-        "documentation_focus":  "A strong page should explain why the entry sits in the directory and should keep documentation language easier to verify than the surrounding copy.",
-        "related_peptides":  [
-                                 "mots-c",
-                                 "epitalon",
-                                 "foxo4-dri"
-                             ],
-        "name":  "NAD+",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "NAD+ pages read better when the reference focuses on labeling, batch references, and category context rather than broad longevity language.",
-        "short_educational_description":  "NAD+ is often treated as a cellular and mitochondrial research topic inside peptide-adjacent directories, where category clarity is especially important.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/nad/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/nad-research-peptide-500mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "nad",
+        "category": "longevity-cellular",
+        "documentation_focus": "A strong page should explain why the entry sits in the directory and should keep documentation language easier to verify than the surrounding copy.",
+        "related_peptides": [
+            "mots-c",
+            "epitalon",
+            "foxo4-dri"
+        ],
+        "name": "NAD+",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "NAD+ pages read better when the reference focuses on labeling, batch references, and category context rather than broad longevity language.",
+        "short_educational_description": "NAD+ is often treated as a cellular and mitochondrial research topic inside peptide-adjacent directories, where category clarity is especially important.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/nad/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Endogenous nicotinamide adenine dinucleotide; not a peptide",
+        "research_areas": "Cellular redox biology, aging, metabolism, mitochondrial function",
+        "evidence_stage": "Extensive biology; supplementation/intervention evidence varies by precursor/route",
+        "concise_research_overview": "NAD+ is a coenzyme central to redox and sirtuin/PARP biology; direct NAD+ product claims should be separated from precursor research.",
+        "seo_compliance_notes": "Not a peptide; IV/oral claims require careful evidence separation.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22NAD%2B%22+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=NAD%2B"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/06/ChatGPT-Image-Sep-12-2025-08_11_31-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "dsip",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "The page should explain the category in plain terms, keep the listing context readable, and make any documentation notes easy to spot.",
-        "related_peptides":  [
-                                 "selank",
-                                 "semax",
-                                 "oxytocin"
-                             ],
-        "name":  "DSIP",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "DSIP references are stronger when they avoid broad sleep promises and keep the transparency notes focused on labeling and documentation access.",
-        "short_educational_description":  "DSIP is a neuropeptide and sleep-related research topic that is easier to understand when the page stays educational and tightly documented.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/dsip/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/06/ChatGPT-Image-Sep-12-2025-08_11_31-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "dsip",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "The page should explain the category in plain terms, keep the listing context readable, and make any documentation notes easy to spot.",
+        "related_peptides": [
+            "selank",
+            "semax",
+            "oxytocin"
+        ],
+        "name": "DSIP",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "DSIP references are stronger when they avoid broad sleep promises and keep the transparency notes focused on labeling and documentation access.",
+        "short_educational_description": "DSIP is a neuropeptide and sleep-related research topic that is easier to understand when the page stays educational and tightly documented.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/dsip/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Delta sleep-inducing peptide",
+        "research_areas": "Sleep physiology, stress, pain, endocrine effects",
+        "evidence_stage": "Older mixed/limited human and animal research",
+        "concise_research_overview": "Despite the name, sleep effects have been inconsistent across studies; literature is older and heterogeneous.",
+        "seo_compliance_notes": "Avoid strong sleep-treatment claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22DSIP%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=DSIP"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2026/02/Untitled-design-3.png",
-        "slug":  "dihexa",
-        "category":  "cognitive-neuropeptide",
-        "documentation_focus":  "Look for a reference that explains the category carefully and makes testing or documentation easy to compare with nearby neuropeptide entries.",
-        "related_peptides":  [
-                                 "semax",
-                                 "selank",
-                                 "cerebrolysin"
-                             ],
-        "name":  "Dihexa",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Dihexa pages feel more credible when the wording stays careful and the page explains the listing without leaning on dramatic or outcome-based language.",
-        "short_educational_description":  "Dihexa is often treated as a more technical cognition-oriented research topic, so the page needs extra clarity and a calm educational tone.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/dihexa/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2026/02/Untitled-design-3.png",
+        "slug": "dihexa",
+        "category": "cognitive-neuropeptide",
+        "documentation_focus": "Look for a reference that explains the category carefully and makes testing or documentation easy to compare with nearby neuropeptide entries.",
+        "related_peptides": [
+            "semax",
+            "selank",
+            "cerebrolysin"
+        ],
+        "name": "Dihexa",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Dihexa pages feel more credible when the wording stays careful and the page explains the listing without leaning on dramatic or outcome-based language.",
+        "short_educational_description": "Dihexa is often treated as a more technical cognition-oriented research topic, so the page needs extra clarity and a calm educational tone.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/dihexa/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Angiotensin IV-derived small peptide analog",
+        "research_areas": "Hepatocyte growth factor/c-Met signaling, cognition/neurodegeneration models",
+        "evidence_stage": "Primarily preclinical",
+        "concise_research_overview": "Animal and cell work explores synaptogenic/cognitive effects through HGF-related pathways.",
+        "seo_compliance_notes": "No established human clinical efficacy or safety profile.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Dihexa%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Dihexa"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/11/5-amino-1mq-cap-scaled.webp",
-        "slug":  "5-amino-mq",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "A strong page should clarify the shorthand label, keep documentation references visible, and explain the broader metabolic category without filler.",
-        "related_peptides":  [
-                                 "tesofensine",
-                                 "aod-9604",
-                                 "mazdutide"
-                             ],
-        "name":  "5-amino mq",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "The strongest pages identify the compound clearly and support the label with more than a one-line catalog blurb.",
-        "short_educational_description":  "5-amino mq is a niche metabolic research compound that usually appears as a shorthand catalog entry and needs clear educational framing.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/5-amino-1mq-capsules/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/11/5-amino-1mq-cap-scaled.webp",
+        "slug": "5-amino-mq",
+        "category": "glp-metabolic",
+        "documentation_focus": "A strong page should clarify the shorthand label, keep documentation references visible, and explain the broader metabolic category without filler.",
+        "related_peptides": [
+            "tesofensine",
+            "aod-9604",
+            "mazdutide"
+        ],
+        "name": "5-amino mq",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "The strongest pages identify the compound clearly and support the label with more than a one-line catalog blurb.",
+        "short_educational_description": "5-amino mq is a niche metabolic research compound that usually appears as a shorthand catalog entry and needs clear educational framing.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/5-amino-1mq-capsules/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "NNMT inhibitor small molecule; not a peptide",
+        "research_areas": "Metabolism, adiposity, insulin sensitivity, cancer metabolism models",
+        "evidence_stage": "Preclinical research",
+        "concise_research_overview": "Studied as an NNMT inhibitor in animal/cell models, including adipose tissue and metabolic phenotypes.",
+        "seo_compliance_notes": "Mark as non-peptide; human evidence is limited.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%225-amino-1MQ%22+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=5-amino-1MQ"
     },
     {
-        "image":  "https://ascensionpeptides.com/wp-content/uploads/2024/02/Ascension-Epitalon-10mg-600x600.jpg",
-        "slug":  "epitalon",
-        "category":  "longevity-cellular",
-        "documentation_focus":  "Look for a reference that explains the longevity category calmly, keeps the listing context readable, and surfaces documentation without hype.",
-        "related_peptides":  [
-                                 "nad",
-                                 "mots-c",
-                                 "foxo4-dri"
-                             ],
-        "name":  "Epitalon",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Epitalon pages work better when the focus stays on educational context, COA availability, and documentation language instead of broad age-related promises.",
-        "short_educational_description":  "Epitalon often appears in longevity and cellular research topics, where careful language and clear documentation matter.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ascensionpeptides.com/ref/PEPTIDE10/?s=epitalon",
-                              "name":  "Ascension Peptides"
-                          },
-                          {
-                              "link":  "https://ironpeptides.is/product/epitalon/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ascensionpeptides.com/wp-content/uploads/2024/02/Ascension-Epitalon-10mg-600x600.jpg",
+        "slug": "epitalon",
+        "category": "longevity-cellular",
+        "documentation_focus": "Look for a reference that explains the longevity category calmly, keeps the listing context readable, and surfaces documentation without hype.",
+        "related_peptides": [
+            "nad",
+            "mots-c",
+            "foxo4-dri"
+        ],
+        "name": "Epitalon",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Epitalon pages work better when the focus stays on educational context, COA availability, and documentation language instead of broad age-related promises.",
+        "short_educational_description": "Epitalon often appears in longevity and cellular research topics, where careful language and clear documentation matter.",
+        "suppliers": [
+            {
+                "link": "https://ascensionpeptides.com/ref/PEPTIDE10/?s=epitalon",
+                "name": "Ascension Peptides"
+            },
+            {
+                "link": "https://ironpeptides.is/product/epitalon/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Tetrapeptide based on epithalamin research",
+        "research_areas": "Aging biology, telomerase, circadian/pineal research",
+        "evidence_stage": "Preclinical and regional/limited human literature",
+        "concise_research_overview": "Often discussed in telomerase and geroprotection contexts, but high-quality modern human evidence is limited.",
+        "seo_compliance_notes": "Avoid longevity claims; evidence is not sufficient for therapeutic conclusions.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Epitalon%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Epitalon"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2026/01/Mazdutide-10MG-scaled.webp",
-        "slug":  "mazdutide",
-        "category":  "glp-metabolic",
-        "documentation_focus":  "A solid page should explain the naming, show how the entry fits into the category, and keep laboratory documentation notes readable.",
-        "related_peptides":  [
-                                 "retatrutide-glp-3",
-                                 "tirz",
-                                 "glp-1"
-                             ],
-        "name":  "Mazdutide",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Mazdutide references are easier to trust when the page acknowledges the newer naming and supports it with transparent research-use and batch-context language.",
-        "short_educational_description":  "Mazdutide is a newer metabolic directory entry that is usually compared with other incretin-style references and needs clearer local context than a simple catalog label.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/mazdutide-10mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2026/01/Mazdutide-10MG-scaled.webp",
+        "slug": "mazdutide",
+        "category": "glp-metabolic",
+        "documentation_focus": "A solid page should explain the naming, show how the entry fits into the category, and keep laboratory documentation notes readable.",
+        "related_peptides": [
+            "retatrutide-glp-3",
+            "tirz",
+            "glp-1"
+        ],
+        "name": "Mazdutide",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Mazdutide references are easier to trust when the page acknowledges the newer naming and supports it with transparent research-use and batch-context language.",
+        "short_educational_description": "Mazdutide is a newer metabolic directory entry that is usually compared with other incretin-style references and needs clearer local context than a simple catalog label.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/mazdutide-10mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Dual GLP-1/glucagon receptor agonist peptide",
+        "research_areas": "Obesity, type 2 diabetes, metabolic dysfunction-associated liver disease",
+        "evidence_stage": "Clinical research; approved/late-stage status may vary by region",
+        "concise_research_overview": "Human trials evaluate weight loss, glycemic effects, and metabolic outcomes via GLP-1/glucagon co-agonism.",
+        "seo_compliance_notes": "Check jurisdiction/current approval before making market claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Mazdutide%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Mazdutide"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-5-2025-05_53_10-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "hexarelin",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "Look for a reference that clearly places Hexarelin in the secretagogue category and keeps documentation notes easier to verify than the headline language.",
-        "related_peptides":  [
-                                 "ipamorelin",
-                                 "cjc-1295",
-                                 "mk-677"
-                             ],
-        "name":  "Hexarelin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Hexarelin pages feel stronger when they explain the category fit, keep testing language readable, and avoid generic performance wording.",
-        "short_educational_description":  "Hexarelin is a growth hormone secretagogue research compound that usually appears in endocrine-signaling directories beside more familiar GH entries.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/hexarelin-5mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/12/ChatGPT-Image-Dec-5-2025-05_53_10-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "hexarelin",
+        "category": "growth-secretagogue",
+        "documentation_focus": "Look for a reference that clearly places Hexarelin in the secretagogue category and keeps documentation notes easier to verify than the headline language.",
+        "related_peptides": [
+            "ipamorelin",
+            "cjc-1295",
+            "mk-677"
+        ],
+        "name": "Hexarelin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Hexarelin pages feel stronger when they explain the category fit, keep testing language readable, and avoid generic performance wording.",
+        "short_educational_description": "Hexarelin is a growth hormone secretagogue research compound that usually appears in endocrine-signaling directories beside more familiar GH entries.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/hexarelin-5mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Growth hormone-releasing peptide/GHSR agonist",
+        "research_areas": "GH release, cardiac and endocrine research",
+        "evidence_stage": "Human pharmacology plus preclinical studies",
+        "concise_research_overview": "Potent GH secretagogue; research also examines cardiovascular/cardioprotective signaling, with endocrine side effects possible.",
+        "seo_compliance_notes": "Cortisol/prolactin and desensitization considerations should be noted.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Hexarelin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Hexarelin"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/ChatGPT-Image-Sep-23-2025-08_09_24-PM.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "melanotan-ii",
-        "category":  "cosmetic-pigmentation",
-        "documentation_focus":  "The page should explain the melanocortin context and make documentation notes or batch references easy to review.",
-        "related_peptides":  [
-                                 "pt-141",
-                                 "ghk-cu",
-                                 "glow"
-                             ],
-        "name":  "Melanotan II",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Melanotan II pages are easier to compare when the wording stays focused on catalog context, labeling clarity, and readable transparency signals.",
-        "short_educational_description":  "Melanotan II is typically grouped into pigmentation and melanocortin-related research topics that need careful educational wording.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/melanotan/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          },
-                          {
-                              "link":  "https://peptideskingdom.com/product/melanotan-ii-mt-2-10mg-nasal-spray-5ml/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/ChatGPT-Image-Sep-23-2025-08_09_24-PM.png?fit=1024%2C1024&ssl=1",
+        "slug": "melanotan-ii",
+        "category": "cosmetic-pigmentation",
+        "documentation_focus": "The page should explain the melanocortin context and make documentation notes or batch references easy to review.",
+        "related_peptides": [
+            "pt-141",
+            "ghk-cu",
+            "glow"
+        ],
+        "name": "Melanotan II",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Melanotan II pages are easier to compare when the wording stays focused on catalog context, labeling clarity, and readable transparency signals.",
+        "short_educational_description": "Melanotan II is typically grouped into pigmentation and melanocortin-related research topics that need careful educational wording.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/melanotan/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            },
+            {
+                "link": "https://peptideskingdom.com/product/melanotan-ii-mt-2-10mg-nasal-spray-5ml/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Synthetic melanocortin receptor agonist peptide",
+        "research_areas": "Pigmentation/tanning biology, appetite/sexual function side effects",
+        "evidence_stage": "Human exposure reports and small studies; unapproved for tanning",
+        "concise_research_overview": "Stimulates melanocortin receptors and increases pigmentation; safety concerns include nausea, flushing, blood pressure changes, and lesion-monitoring issues.",
+        "seo_compliance_notes": "Avoid promoting tanning use; regulatory warnings exist in multiple jurisdictions.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Melanotan+II%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Melanotan+II"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2026/02/ARA-290-Vial.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "ara-290",
-        "category":  "repair-tissue",
-        "documentation_focus":  "The page should explain why the listing sits in the repair category and make laboratory documentation easy to review at a glance.",
-        "related_peptides":  [
-                                 "tb-500",
-                                 "bpc-157",
-                                 "kpv"
-                             ],
-        "name":  "Ara-290",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Ara-290 pages feel stronger when they focus on naming clarity, batch references, and transparency rather than leaning on broad restorative language.",
-        "short_educational_description":  "Ara-290 is a niche repair-oriented research topic that benefits from clearer educational context than a short catalog sentence can provide.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/ara-290-10mg/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2026/02/ARA-290-Vial.png?fit=1024%2C1024&ssl=1",
+        "slug": "ara-290",
+        "category": "repair-tissue",
+        "documentation_focus": "The page should explain why the listing sits in the repair category and make laboratory documentation easy to review at a glance.",
+        "related_peptides": [
+            "tb-500",
+            "bpc-157",
+            "kpv"
+        ],
+        "name": "Ara-290",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Ara-290 pages feel stronger when they focus on naming clarity, batch references, and transparency rather than leaning on broad restorative language.",
+        "short_educational_description": "Ara-290 is a niche repair-oriented research topic that benefits from clearer educational context than a short catalog sentence can provide.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/ara-290-10mg/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Cibinetide; erythropoietin-derived innate repair receptor peptide",
+        "research_areas": "Neuropathic pain, sarcoidosis, small fiber neuropathy, tissue protection",
+        "evidence_stage": "Clinical research; investigational",
+        "concise_research_overview": "Designed to activate tissue-protective pathways without erythropoiesis; studied in neuropathy and inflammatory disorders.",
+        "seo_compliance_notes": "Investigational; summarize endpoints by indication.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Ara-290%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Ara-290"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/10/thymosin-alpha-1-research-peptide.jpg.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "thymosin-alpha-1",
-        "category":  "immune-regulatory",
-        "documentation_focus":  "A strong reference should explain the thymic peptide context, keep the naming precise, and make documentation access easy to evaluate.",
-        "related_peptides":  [
-                                 "thymalin",
-                                 "gonadorelin",
-                                 "kisspeptin-10"
-                             ],
-        "name":  "Thymosin Alpha-1",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "This page type stays more useful when the wording emphasizes transparency, labeling consistency, and laboratory documentation rather than broad immune narratives.",
-        "short_educational_description":  "Thymosin Alpha-1 is usually filed under immune and regulatory research topics where careful category framing matters more than dramatic copy.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/thymosin-alpha-1/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/10/thymosin-alpha-1-research-peptide.jpg.png?fit=1024%2C1024&ssl=1",
+        "slug": "thymosin-alpha-1",
+        "category": "immune-regulatory",
+        "documentation_focus": "A strong reference should explain the thymic peptide context, keep the naming precise, and make documentation access easy to evaluate.",
+        "related_peptides": [
+            "thymalin",
+            "gonadorelin",
+            "kisspeptin-10"
+        ],
+        "name": "Thymosin Alpha-1",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "This page type stays more useful when the wording emphasizes transparency, labeling consistency, and laboratory documentation rather than broad immune narratives.",
+        "short_educational_description": "Thymosin Alpha-1 is usually filed under immune and regulatory research topics where careful category framing matters more than dramatic copy.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/thymosin-alpha-1/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "28-amino-acid thymic peptide",
+        "research_areas": "Immune modulation, viral infections, hepatitis, sepsis, cancer adjunct research",
+        "evidence_stage": "Human clinical research; approval varies by country",
+        "concise_research_overview": "Studied for T-cell and innate immune modulation across infectious disease and oncology adjunct settings.",
+        "seo_compliance_notes": "Avoid implying broad immune boosting; context and indication matter.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Thymosin+Alpha-1%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Thymosin+Alpha-1"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/09/Kisspeptin-10-10mg-scaled.webp",
-        "slug":  "kisspeptin-10",
-        "category":  "immune-regulatory",
-        "documentation_focus":  "Look for a page that identifies the signaling family clearly and makes documentation notes visible enough to compare with neighboring regulatory entries.",
-        "related_peptides":  [
-                                 "gonadorelin",
-                                 "pt-141",
-                                 "thymosin-alpha-1"
-                             ],
-        "name":  "Kisspeptin-10",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Kisspeptin-10 pages are stronger when they explain the category fit and support the listing with readable laboratory documentation language.",
-        "short_educational_description":  "Kisspeptin-10 is an endocrine and regulatory signaling reference that needs clearer educational context than most one-line directory labels provide.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/kisspeptin-10/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/09/Kisspeptin-10-10mg-scaled.webp",
+        "slug": "kisspeptin-10",
+        "category": "immune-regulatory",
+        "documentation_focus": "Look for a page that identifies the signaling family clearly and makes documentation notes visible enough to compare with neighboring regulatory entries.",
+        "related_peptides": [
+            "gonadorelin",
+            "pt-141",
+            "thymosin-alpha-1"
+        ],
+        "name": "Kisspeptin-10",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Kisspeptin-10 pages are stronger when they explain the category fit and support the listing with readable laboratory documentation language.",
+        "short_educational_description": "Kisspeptin-10 is an endocrine and regulatory signaling reference that needs clearer educational context than most one-line directory labels provide.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/kisspeptin-10/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Kisspeptin receptor agonist decapeptide",
+        "research_areas": "Reproductive endocrinology, LH/FSH stimulation, puberty/fertility research",
+        "evidence_stage": "Human endocrine challenge studies and translational research",
+        "concise_research_overview": "Stimulates GnRH/LH release; used in studies of hypothalamic reproductive axis and ovulation triggering research.",
+        "seo_compliance_notes": "Effects differ by sex, hormonal state, and dosing pattern.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Kisspeptin-10%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Kisspeptin-10"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/07/FOXO4-DRI-D-Retro-Inverso-10mg-scaled.webp",
-        "slug":  "foxo4-dri",
-        "category":  "longevity-cellular",
-        "documentation_focus":  "The page should explain the technical label, keep the category context readable, and make documentation references easier to compare.",
-        "related_peptides":  [
-                                 "epitalon",
-                                 "nad",
-                                 "mots-c"
-                             ],
-        "name":  "FOXO4-DRI",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "FOXO4-DRI pages are more credible when they rely on careful wording, category clarity, and laboratory documentation instead of futuristic or outcome-based language.",
-        "short_educational_description":  "FOXO4-DRI is a technical longevity-related research topic that benefits from a calm explanatory page and stronger documentation notes.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/foxo4-dri-d-retro-inverso-10mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/07/FOXO4-DRI-D-Retro-Inverso-10mg-scaled.webp",
+        "slug": "foxo4-dri",
+        "category": "longevity-cellular",
+        "documentation_focus": "The page should explain the technical label, keep the category context readable, and make documentation references easier to compare.",
+        "related_peptides": [
+            "epitalon",
+            "nad",
+            "mots-c"
+        ],
+        "name": "FOXO4-DRI",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "FOXO4-DRI pages are more credible when they rely on careful wording, category clarity, and laboratory documentation instead of futuristic or outcome-based language.",
+        "short_educational_description": "FOXO4-DRI is a technical longevity-related research topic that benefits from a calm explanatory page and stronger documentation notes.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/foxo4-dri-d-retro-inverso-10mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Cell-penetrating peptide designed to disrupt FOXO4-p53 interaction",
+        "research_areas": "Cellular senescence, aging biology, apoptosis of senescent cells",
+        "evidence_stage": "Preclinical mouse/cell research",
+        "concise_research_overview": "Reported to clear senescent cells in mouse models; human safety/efficacy is unestablished.",
+        "seo_compliance_notes": "High caution: senolytic claims are preclinical.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22FOXO4-DRI%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=FOXO4-DRI"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/11/Thymalin-10mg-scaled.webp",
-        "slug":  "thymalin",
-        "category":  "immune-regulatory",
-        "documentation_focus":  "The page should explain the thymic peptide category clearly and keep any documentation notes easier to verify than the headline claims.",
-        "related_peptides":  [
-                                 "thymosin-alpha-1",
-                                 "epitalon",
-                                 "gonadorelin"
-                             ],
-        "name":  "Thymalin",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Thymalin pages read better when they focus on labeling, batch references, and research-use wording rather than broad longevity or wellness language.",
-        "short_educational_description":  "Thymalin is a thymic and regulatory research topic that appears in immune-oriented directories where clarity and restraint are especially important.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/thymalin/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/11/Thymalin-10mg-scaled.webp",
+        "slug": "thymalin",
+        "category": "immune-regulatory",
+        "documentation_focus": "The page should explain the thymic peptide category clearly and keep any documentation notes easier to verify than the headline claims.",
+        "related_peptides": [
+            "thymosin-alpha-1",
+            "epitalon",
+            "gonadorelin"
+        ],
+        "name": "Thymalin",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Thymalin pages read better when they focus on labeling, batch references, and research-use wording rather than broad longevity or wellness language.",
+        "short_educational_description": "Thymalin is a thymic and regulatory research topic that appears in immune-oriented directories where clarity and restraint are especially important.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/thymalin/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Thymus-derived peptide preparation",
+        "research_areas": "Immune aging, thymic peptides, infection/gerontology research",
+        "evidence_stage": "Regional/older human literature; composition and standardization issues",
+        "concise_research_overview": "Discussed as thymic peptide bioregulator; evidence base varies by preparation and region.",
+        "seo_compliance_notes": "Clarify product composition and avoid broad anti-aging claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22Thymalin%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=Thymalin"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/KPV-10MG-scaled.webp",
-        "slug":  "kpv",
-        "category":  "repair-tissue",
-        "documentation_focus":  "Look for a page that explains the fragment clearly, identifies the category fit, and keeps documentation references simple to review.",
-        "related_peptides":  [
-                                 "bpc-157",
-                                 "ara-290",
-                                 "tb-500"
-                             ],
-        "name":  "KPV",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "KPV references are easier to trust when they avoid broad restorative language and keep the transparency notes centered on labeling and documentation.",
-        "short_educational_description":  "KPV is a short repair-oriented research compound that often appears in barrier and tissue-support directories where clear documentation helps.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/kpv/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/10/KPV-10MG-scaled.webp",
+        "slug": "kpv",
+        "category": "repair-tissue",
+        "documentation_focus": "Look for a page that explains the fragment clearly, identifies the category fit, and keeps documentation references simple to review.",
+        "related_peptides": [
+            "bpc-157",
+            "ara-290",
+            "tb-500"
+        ],
+        "name": "KPV",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "KPV references are easier to trust when they avoid broad restorative language and keep the transparency notes centered on labeling and documentation.",
+        "short_educational_description": "KPV is a short repair-oriented research compound that often appears in barrier and tissue-support directories where clear documentation helps.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/kpv/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Tripeptide Lys-Pro-Val derived from alpha-MSH sequence",
+        "research_areas": "Inflammation, skin/gut barrier, antimicrobial and immune signaling models",
+        "evidence_stage": "Mostly preclinical with some dermatology/translational interest",
+        "concise_research_overview": "Studied for anti-inflammatory signaling related to melanocortin pathways and epithelial barrier models.",
+        "seo_compliance_notes": "Do not claim proven treatment for IBD, skin disease, or infections.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22KPV%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=KPV"
     },
     {
-        "image":  "https://ironpeptides.is/wp-content/uploads/2025/10/KLOW-%E2%80%93-80-mg-scaled.webp",
-        "slug":  "klow",
-        "category":  "blends-protocols",
-        "documentation_focus":  "The page should clarify whether KLOW is a blend, shorthand, or named protocol and keep supporting documentation notes easy to compare.",
-        "related_peptides":  [
-                                 "glow",
-                                 "cjc-1295-ipamorelin",
-                                 "ghk-cu"
-                             ],
-        "name":  "KLOW",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Named protocol pages work best when the label is spelled out clearly and the supporting notes do more than repeat the branding.",
-        "short_educational_description":  "KLOW is treated here as a named protocol or branded shorthand entry that needs more context than a generic product-style card can provide.",
-        "suppliers":  [
-                          {
-                              "link":  "https://ironpeptides.is/product/klow-80mg/?ref=ironman",
-                              "name":  "Iron Peptides"
-                          }
-                      ]
+        "image": "https://ironpeptides.is/wp-content/uploads/2025/10/KLOW-%E2%80%93-80-mg-scaled.webp",
+        "slug": "klow",
+        "category": "blends-protocols",
+        "documentation_focus": "The page should clarify whether KLOW is a blend, shorthand, or named protocol and keep supporting documentation notes easy to compare.",
+        "related_peptides": [
+            "glow",
+            "cjc-1295-ipamorelin",
+            "ghk-cu"
+        ],
+        "name": "KLOW",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Named protocol pages work best when the label is spelled out clearly and the supporting notes do more than repeat the branding.",
+        "short_educational_description": "KLOW is treated here as a named protocol or branded shorthand entry that needs more context than a generic product-style card can provide.",
+        "suppliers": [
+            {
+                "link": "https://ironpeptides.is/product/klow-80mg/?ref=ironman",
+                "name": "Iron Peptides"
+            }
+        ],
+        "what_it_is": "Likely branded/proprietary peptide blend; exact composition unclear",
+        "research_areas": "Depends on blend ingredients",
+        "evidence_stage": "Unknown without formula",
+        "concise_research_overview": "Could not determine a standardized research compound named KLOW from mainstream literature; overview should list the actual ingredients if available.",
+        "seo_compliance_notes": "Ask supplier/vendor for exact components before publishing research claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22KLOW%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=KLOW"
     },
     {
-        "image":  "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/GLOW-70mg-vial.png?fit=1024%2C1024\u0026ssl=1",
-        "slug":  "glow",
-        "category":  "blends-protocols",
-        "documentation_focus":  "Look for a page that explains what the named protocol label refers to and keeps laboratory documentation or ingredient context easy to review.",
-        "related_peptides":  [
-                                 "ghk-cu",
-                                 "klow",
-                                 "melanotan-ii"
-                             ],
-        "name":  "GLOW",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "Blend-style pages feel more trustworthy when the educational copy explains the label and the transparency notes do more than repeat brand language.",
-        "short_educational_description":  "GLOW is a named blend-style research entry that benefits from clear educational framing and stronger documentation notes.",
-        "suppliers":  [
-                          {
-                              "link":  "https://pinnaclepeptidelabs.com/product/glow-peptide/aff/3/",
-                              "name":  "Pinnacle Peptide Labs"
-                          }
-                      ]
+        "image": "https://i0.wp.com/pinnaclepeptidelabs.com/wp-content/uploads/2025/07/GLOW-70mg-vial.png?fit=1024%2C1024&ssl=1",
+        "slug": "glow",
+        "category": "blends-protocols",
+        "documentation_focus": "Look for a page that explains what the named protocol label refers to and keeps laboratory documentation or ingredient context easy to review.",
+        "related_peptides": [
+            "ghk-cu",
+            "klow",
+            "melanotan-ii"
+        ],
+        "name": "GLOW",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "Blend-style pages feel more trustworthy when the educational copy explains the label and the transparency notes do more than repeat brand language.",
+        "short_educational_description": "GLOW is a named blend-style research entry that benefits from clear educational framing and stronger documentation notes.",
+        "suppliers": [
+            {
+                "link": "https://pinnaclepeptidelabs.com/product/glow-peptide/aff/3/",
+                "name": "Pinnacle Peptide Labs"
+            }
+        ],
+        "what_it_is": "Likely branded/proprietary peptide blend; exact composition unclear",
+        "research_areas": "Depends on blend ingredients",
+        "evidence_stage": "Unknown without formula",
+        "concise_research_overview": "Could not determine a standardized research compound named GLOW from mainstream literature; often used as a marketing name for skin/wellness blends.",
+        "seo_compliance_notes": "Ask supplier/vendor for exact components before publishing research claims.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22GLOW%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=GLOW"
     },
     {
-        "image":  "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/igf-1-research-peptide-1mg-vial-99-purity-lab-tested-768x768.png",
-        "slug":  "igf-1-des",
-        "category":  "growth-secretagogue",
-        "documentation_focus":  "A strong page should identify the variant precisely, keep the growth-signaling context readable, and make documentation notes easy to compare.",
-        "related_peptides":  [
-                                 "igf-1-lr3",
-                                 "mk-677",
-                                 "cjc-1295"
-                             ],
-        "name":  "IGF-1 DES",
-        "index":  "true",
-        "research_use_disclaimer":  "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
-        "supplier_transparency_notes":  "IGF-1 DES pages work better when they distinguish the variant clearly and keep the supporting notes more specific than the category headline.",
-        "short_educational_description":  "IGF-1 DES is a growth signaling research topic that is easier to evaluate when the page explains the variant clearly and stays documentation-focused.",
-        "suppliers":  [
-                          {
-                              "link":  "https://peptideskingdom.com/product/igf-1-des/?ref=isgicbuw",
-                              "name":  "Peptides Kingdom"
-                          }
-                      ]
+        "image": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/peptideskingdom.com/wp-content/uploads/2025/08/igf-1-research-peptide-1mg-vial-99-purity-lab-tested-768x768.png",
+        "slug": "igf-1-des",
+        "category": "growth-secretagogue",
+        "documentation_focus": "A strong page should identify the variant precisely, keep the growth-signaling context readable, and make documentation notes easy to compare.",
+        "related_peptides": [
+            "igf-1-lr3",
+            "mk-677",
+            "cjc-1295"
+        ],
+        "name": "IGF-1 DES",
+        "index": "true",
+        "research_use_disclaimer": "This page is for educational and informational purposes only. PeptideSuppliers.org does not sell peptides, provide medical advice, or recommend human use.",
+        "supplier_transparency_notes": "IGF-1 DES pages work better when they distinguish the variant clearly and keep the supporting notes more specific than the category headline.",
+        "short_educational_description": "IGF-1 DES is a growth signaling research topic that is easier to evaluate when the page explains the variant clearly and stays documentation-focused.",
+        "suppliers": [
+            {
+                "link": "https://peptideskingdom.com/product/igf-1-des/?ref=isgicbuw",
+                "name": "Peptides Kingdom"
+            }
+        ],
+        "what_it_is": "Truncated IGF-1 analog lacking N-terminal tripeptide",
+        "research_areas": "IGF signaling, muscle/growth-factor cell and animal models",
+        "evidence_stage": "Mostly preclinical/research reagent use",
+        "concise_research_overview": "Shorter IGF-1 analog has altered receptor/binding behavior and potent local signaling in models.",
+        "seo_compliance_notes": "High-risk growth-factor biology; not established as safe/effective in humans.",
+        "pubmed_search_url": "https://pubmed.ncbi.nlm.nih.gov/?term=%22IGF-1+DES%22+peptide+research",
+        "clinical_trials_search_url": "https://clinicaltrials.gov/search?term=IGF-1+DES"
     }
 ]
-

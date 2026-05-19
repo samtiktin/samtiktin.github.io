@@ -72,6 +72,20 @@ function Get-CardSummary([string]$text) {
   return ($truncated + "...")
 }
 
+function Get-WhatItIs($peptide) {
+  if (-not [string]::IsNullOrWhiteSpace($peptide.what_it_is)) {
+    return [string]$peptide.what_it_is
+  }
+  return [string]$peptide.short_educational_description
+}
+
+function Get-ResearchOverview($peptide, [string]$fallback) {
+  if (-not [string]::IsNullOrWhiteSpace($peptide.concise_research_overview)) {
+    return [string]$peptide.concise_research_overview
+  }
+  return $fallback
+}
+
 function Get-CategoryMeta($key) {
   switch ($key) {
     "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "Research compounds commonly referenced in metabolic and incretin science." } }
@@ -125,7 +139,7 @@ function Build-FaqData($peptide, $categoryTitle) {
       "name" = "How is $($peptide.name) usually described in research listings?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "$($peptide.name) appears here in the $categoryTitle category, with context on labeling, documentation, and related compounds."
+        "text" = (Get-WhatItIs $peptide)
       }
     },
     @{
@@ -178,7 +192,8 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
     $anchor = ($category -replace '[^a-z0-9]+', '-')
     $cards = foreach ($peptide in ($peptides | Where-Object { $_.category -eq $category })) {
       $relatedRows = Get-RelatedPeptides $peptide $lookup
-      $cardSummary = Get-CardSummary $peptide.short_educational_description
+      $whatItIs = Get-WhatItIs $peptide
+      $cardSummary = Get-CardSummary $whatItIs
       $relatedLinks = foreach ($related in $relatedRows) {
         "<a class=`"pill`" href=`"/peptides/$($related.slug)/`">$([string](HtmlEncode($related.name)))</a>"
       }
@@ -196,7 +211,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
       }
 
 @"
-          <article class="card reveal directory-card" data-name="$([string](HtmlEncode($peptide.name.ToLower())))" data-category="$([string](HtmlEncode($meta.title.ToLower())))" data-description="$([string](HtmlEncode($peptide.short_educational_description.ToLower())))">
+          <article class="card reveal directory-card" data-name="$([string](HtmlEncode($peptide.name.ToLower())))" data-category="$([string](HtmlEncode($meta.title.ToLower())))" data-description="$([string](HtmlEncode($whatItIs.ToLower())))">
             <div class="review-media">
               <img class="directory-image" src="$([string](HtmlEncode($peptide.image)))" alt="$([string](HtmlEncode($peptide.name))) reference image" loading="lazy">
             </div>
@@ -382,6 +397,8 @@ $($sections -join "`n")
 function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $categoryMeta = Get-CategoryMeta $peptide.category
   $categoryPrompt = Get-CategoryPrompt $peptide.category
+  $whatItIs = Get-WhatItIs $peptide
+  $researchOverview = Get-ResearchOverview $peptide $categoryPrompt
   $relatedRows = Get-RelatedPeptides $peptide $lookup
   $isIndexable = Get-PeptideIndexable $peptide
   $robots = if ($isIndexable) { "index,follow" } else { "noindex,follow" }
@@ -515,8 +532,8 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
             <div class="page-hero-copy reveal delay-1">
               <div class="eyebrow">Peptide guide</div>
               <h1 class="page-title">$([string](HtmlEncode("$($peptide.name) Peptide Guide & Supplier Listing Notes")))</h1>
-              <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
-              <p>$([string](HtmlEncode($categoryPrompt)))</p>
+              <p>$([string](HtmlEncode($whatItIs)))</p>
+              <p>$([string](HtmlEncode($researchOverview)))</p>
               <div class="peptide-meta">
                 <span class="pill">$([string](HtmlEncode($categoryMeta.title)))</span>
                 <span class="pill">Educational guide</span>
@@ -547,8 +564,8 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
         <article class="story-card reveal">
           <div class="kicker">Educational overview</div>
           <h2>How this page frames $([string](HtmlEncode($peptide.name)))</h2>
-          <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
-          <p>$([string](HtmlEncode($categoryPrompt)))</p>
+          <p>$([string](HtmlEncode($whatItIs)))</p>
+          <p>$([string](HtmlEncode($researchOverview)))</p>
         </article>
         <article class="card reveal delay-1">
           <div class="kicker">Research documentation checklist</div>
@@ -597,9 +614,10 @@ $($checklistItems -join "`n")
           <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Category context</div>
-          <h3>Where it fits in the category</h3>
-          <p>$([string](HtmlEncode($categoryMeta.blurb)))</p>
+          <div class="kicker">Research context</div>
+          <h3>Where it fits in current research</h3>
+          <p>$([string](HtmlEncode($(if ($peptide.research_areas) { $peptide.research_areas } else { $categoryMeta.blurb }))))</p>
+          $(if ($peptide.evidence_stage) { "<p>$([string](HtmlEncode($peptide.evidence_stage)))</p>" })
         </article>
       </div>
     </section>
@@ -649,7 +667,7 @@ $($relatedLinks -join "`n")
         <div class="faq-grid">
           <article class="card reveal">
             <h3>How is $([string](HtmlEncode($peptide.name))) usually described in research listings?</h3>
-            <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
+            <p>$([string](HtmlEncode($whatItIs)))</p>
           </article>
           <article class="card reveal delay-1">
             <h3>What documentation signals matter most?</h3>
