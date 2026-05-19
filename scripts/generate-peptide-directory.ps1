@@ -199,7 +199,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
       $relatedLinks = foreach ($related in $relatedRows) {
         "<a class=`"pill`" href=`"/peptides/$($related.slug)/`">$([string](HtmlEncode($related.name)))</a>"
       }
-      $supplierButtons = foreach ($supplier in @($peptide.suppliers)) {
+      $supplierButtons = foreach ($supplier in @($peptide.suppliers | Select-Object -First 1)) {
         if (-not $supplier) { continue }
         $percent = Get-DiscountPercent $supplier.name
         $code = Get-DiscountCode $supplier.name

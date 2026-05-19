@@ -906,16 +906,16 @@ h3 {
 }
 
 .directory-supplier-link .button-secondary {
-  color: #2e2817;
-  background: linear-gradient(135deg, #f1d79e, var(--gold));
-  border-color: rgba(206, 154, 42, 0.22);
-  box-shadow: 0 12px 24px rgba(206, 154, 42, 0.18);
+  color: #f8f4eb;
+  background: linear-gradient(135deg, #31533a, #436c4d);
+  border-color: rgba(39, 70, 45, 0.24);
+  box-shadow: 0 12px 24px rgba(39, 70, 45, 0.18);
 }
 
 .directory-supplier-link .button-secondary:visited,
 .directory-supplier-link .button-secondary:hover,
 .directory-supplier-link .button-secondary:focus-visible {
-  color: #2e2817;
+  color: #f8f4eb;
 }
 
 .directory-supplier-link .discount-note {
