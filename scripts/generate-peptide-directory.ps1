@@ -133,10 +133,12 @@ function Get-RelatedPeptides($peptide, $lookup) {
 }
 
 function Build-FaqData($peptide, $categoryTitle) {
+  $researchAreas = if ($peptide.research_areas) { [string]$peptide.research_areas } else { $categoryTitle }
+  $evidenceStage = if ($peptide.evidence_stage) { " " + [string]$peptide.evidence_stage } else { "" }
   return @(
     @{
       "@type" = "Question"
-      "name" = "How is $($peptide.name) usually described in research listings?"
+      "name" = "What is $($peptide.name)?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = (Get-WhatItIs $peptide)
@@ -144,18 +146,18 @@ function Build-FaqData($peptide, $categoryTitle) {
     },
     @{
       "@type" = "Question"
-      "name" = "What should stand out on this $($peptide.name) page?"
+      "name" = "What research areas is $($peptide.name) linked to?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "$($peptide.documentation_focus) $($peptide.supplier_transparency_notes)"
+        "text" = "$researchAreas$evidenceStage"
       }
     },
     @{
       "@type" = "Question"
-      "name" = "What else is worth checking before opening a listing?"
+      "name" = "What should stand out when comparing supplier pages?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "Check whether the compound name is clear, the documentation notes are readable, and the related pages line up with the label on the listing."
+        "text" = "$($peptide.documentation_focus) $($peptide.supplier_transparency_notes)"
       }
     }
   )
@@ -407,6 +409,10 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $metaDescription = "$($peptide.name) page covering documentation notes, related compounds, and linked supplier listings."
   $faqJson = JsonText (Build-FaqData $peptide $categoryMeta.title)
   $breadcrumbJson = JsonText (Build-BreadcrumbData $siteUrl $peptide)
+  $researchAreas = if ($peptide.research_areas) { [string]$peptide.research_areas } else { [string]$categoryMeta.blurb }
+  $evidenceStage = if ($peptide.evidence_stage) { [string]$peptide.evidence_stage } else { "" }
+  $pubmedUrl = if ($peptide.pubmed_search_url) { [string]$peptide.pubmed_search_url } else { $null }
+  $trialsUrl = if ($peptide.clinical_trials_search_url) { [string]$peptide.clinical_trials_search_url } else { $null }
   $heroSupplierLinks = foreach ($supplier in @($peptide.suppliers)) {
     if (-not $supplier) { continue }
     $percent = Get-DiscountPercent $supplier.name
@@ -562,17 +568,16 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
     <section>
       <div class="shell lede-grid">
         <article class="story-card reveal">
-          <div class="kicker">Educational overview</div>
-          <h2>How this page frames $([string](HtmlEncode($peptide.name)))</h2>
+          <div class="kicker">What it is</div>
+          <h2>$([string](HtmlEncode($peptide.name))) at a glance</h2>
           <p>$([string](HtmlEncode($whatItIs)))</p>
           <p>$([string](HtmlEncode($researchOverview)))</p>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Research documentation checklist</div>
-          <h3>What to evaluate on the page</h3>
-          <ul class="checklist">
-$($checklistItems -join "`n")
-          </ul>
+          <div class="kicker">Research context</div>
+          <h3>Where current research places it</h3>
+          <p>$([string](HtmlEncode($researchAreas)))</p>
+          $(if ($evidenceStage) { "<p>$([string](HtmlEncode($evidenceStage)))</p>" })
         </article>
       </div>
     </section>
@@ -581,25 +586,28 @@ $($checklistItems -join "`n")
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>COA and batch-testing signals</h2>
-            <p>These checks make it easier to judge how clearly a listing is documented.</p>
+            <h2>Research overview</h2>
+            <p>Use the linked literature searches for current papers and trial records.</p>
           </div>
         </div>
         <div class="cards">
           <article class="card reveal">
-            <div class="kicker">COA availability</div>
-            <h3>Documentation should be easy to locate</h3>
-            <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
+            <div class="kicker">Current summary</div>
+            <h3>What research has looked at</h3>
+            <p>$([string](HtmlEncode($researchOverview)))</p>
           </article>
           <article class="card reveal delay-1">
-            <div class="kicker">Batch context</div>
-            <h3>Look for batch-specific references</h3>
-            <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
+            <div class="kicker">Evidence stage</div>
+            <h3>How mature the research is</h3>
+            <p>$([string](HtmlEncode($(if ($evidenceStage) { $evidenceStage } else { "Research stage varies by compound and by the sources being referenced." }))))</p>
           </article>
           <article class="card reveal delay-2">
-            <div class="kicker">Research-use wording</div>
-            <h3>Keep the language consistent</h3>
-            <p>Listings read more clearly when research-use labeling, laboratory references, and category wording all point in the same direction.</p>
+            <div class="kicker">Source links</div>
+            <h3>Open current literature searches</h3>
+            <div class="button-row">
+              $(if ($pubmedUrl) { "<a class=`"button button-primary`" href=`"$([string](HtmlEncode($pubmedUrl)))`" target=`"_blank`" rel=`"noopener noreferrer`">Search PubMed</a>" })
+              $(if ($trialsUrl) { "<a class=`"button button-ghost`" href=`"$([string](HtmlEncode($trialsUrl)))`" target=`"_blank`" rel=`"noopener noreferrer`">Search ClinicalTrials.gov</a>" })
+            </div>
           </article>
         </div>
       </div>
@@ -608,16 +616,17 @@ $($checklistItems -join "`n")
     <section>
       <div class="shell science-grid">
         <article class="card reveal">
-          <div class="kicker">Supplier transparency notes</div>
-          <h2>What stands out on this page</h2>
-          <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
+          <div class="kicker">Choosing a supplier page</div>
+          <h2>What to look for when comparing listings</h2>
           <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
+          <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Research context</div>
-          <h3>Where it fits in current research</h3>
-          <p>$([string](HtmlEncode($(if ($peptide.research_areas) { $peptide.research_areas } else { $categoryMeta.blurb }))))</p>
-          $(if ($peptide.evidence_stage) { "<p>$([string](HtmlEncode($peptide.evidence_stage)))</p>" })
+          <div class="kicker">Checklist</div>
+          <h3>What to evaluate on the page</h3>
+          <ul class="checklist">
+$($checklistItems -join "`n")
+          </ul>
         </article>
       </div>
     </section>
@@ -645,7 +654,7 @@ $($supplierCards -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Related peptides</h2>
-            <p>Related pages help with side-by-side category comparisons.</p>
+            <p>Use related pages to compare nearby compounds and adjacent research categories.</p>
           </div>
         </div>
         <div class="card reveal">
@@ -666,16 +675,17 @@ $($relatedLinks -join "`n")
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>How is $([string](HtmlEncode($peptide.name))) usually described in research listings?</h3>
+            <h3>What is $([string](HtmlEncode($peptide.name)))?</h3>
             <p>$([string](HtmlEncode($whatItIs)))</p>
           </article>
           <article class="card reveal delay-1">
-            <h3>What documentation signals matter most?</h3>
-            <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
+            <h3>What research areas is it linked to?</h3>
+            <p>$([string](HtmlEncode($researchAreas)))</p>
+            $(if ($evidenceStage) { "<p>$([string](HtmlEncode($evidenceStage)))</p>" })
           </article>
           <article class="card reveal delay-2">
-            <h3>What else is worth checking before opening a listing?</h3>
-            <p>Check whether the compound name is clear, the documentation notes are readable, and the related pages line up with the label on the listing.</p>
+            <h3>What should stand out when comparing supplier pages?</h3>
+            <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
           </article>
         </div>
       </div>
