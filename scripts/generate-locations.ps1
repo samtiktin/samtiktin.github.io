@@ -155,11 +155,13 @@ function Get-RelatedLinksMarkup($row, $lookup) {
 
 function Get-RelatedCardsMarkup($row, $lookup) {
   $cards = foreach ($related in (Get-RelatedRows $row $lookup)) {
+    $relatedAnchor = Clean $related.local_research_anchor
+    $relatedFocus = Clean $related.documentation_focus
 @"
           <article class="card reveal">
             <div class="kicker">Related city guide</div>
             <h3>$([string](HtmlEncode("$(Clean $related.city), $(Clean $related.state_code)")))</h3>
-            <p>$([string](HtmlEncode((Get-MetaDescription $related))))</p>
+            <p>$([string](HtmlEncode("Local angle: $relatedAnchor. Documentation focus: $relatedFocus.")))</p>
             <div class="button-row">
               <a class="button button-primary" href="/locations/$($related.slug)/">Open city guide</a>
             </div>
@@ -175,7 +177,7 @@ function Get-FaqData($row) {
   return @(
     @{
       "@type" = "Question"
-      "name" = "Why does this page focus on $city?"
+      "name" = "Why does this page focus on ${city}?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqOneAnswer $row
@@ -473,11 +475,13 @@ function New-LocationsHub($rows, $lookup, $siteUrl) {
   $sections = foreach ($group in $groups) {
     $stateSlug = ($group.Name.ToLower() -replace '[^a-z0-9]+', '-').Trim('-')
     $cards = foreach ($row in ($group.Group | Sort-Object city)) {
+      $anchor = Clean $row.local_research_anchor
+      $focus = Clean $row.documentation_focus
 @"
             <article class="card reveal">
               <div class="kicker">City guide</div>
               <h3>$([string](HtmlEncode("$(Clean $row.city), $(Clean $row.state_code)")))</h3>
-              <p>$([string](HtmlEncode((Get-MetaDescription $row))))</p>
+              <p>$([string](HtmlEncode("Local angle: $anchor. Documentation focus: $focus.")))</p>
               <div class="pill-row">
                 <span class="pill">$([string](HtmlEncode((Clean $row.region))))</span>
                 <span class="pill">$([string](HtmlEncode((Clean $row.local_research_anchor))))</span>

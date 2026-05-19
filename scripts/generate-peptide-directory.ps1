@@ -418,7 +418,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
           <article class="peptide-supplier-card reveal">
             <div class="kicker">Supplier listing</div>
             <h3>$([string](HtmlEncode($supplier.name)))</h3>
-            <p>Use this supplier page as a reference point for listing language, laboratory documentation cues, and how clearly the compound is presented.</p>
+            <p>This listing can help with comparing wording, laboratory documentation cues, and how clearly the compound is presented.</p>
             <div class="button-row">
               <a class="button button-primary" href="$([string](HtmlEncode($supplier.link)))" target="_blank" rel="sponsored nofollow noopener noreferrer">View supplier listing</a>
             </div>
