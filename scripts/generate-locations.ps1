@@ -47,9 +47,8 @@ function Get-HeroIntro($row) {
 }
 
 function Get-OverviewCopy($row) {
-  $city = Clean $row.city
   $state = Clean $row.state
-  return "This guide brings together local context, nearby city links, and documentation signals so $city readers can compare supplier transparency in a more grounded $state context."
+  return "This page focuses on local context, documentation signals, and nearby city coverage so supplier transparency is easier to compare across $state."
 }
 
 function Get-ResearchContextCopy($row) {
@@ -60,20 +59,17 @@ function Get-ResearchContextCopy($row) {
 }
 
 function Get-SupplierCopy($row) {
-  $city = Clean $row.city
   $focus = Clean $row.documentation_focus
-  return "For $city readers, a close comparison usually starts with $focus, then moves into COA access, batch details, research-use labeling, and overall policy clarity."
+  return "A close comparison usually starts with $focus, then moves into COA access, batch details, research-use labeling, and overall policy clarity."
 }
 
 function Get-LogisticsCopy($row) {
-  $city = Clean $row.city
-  return "Clear dispatch language, carrier visibility, and straightforward handling notes are useful trust signals for $city readers."
+  return "Clear dispatch language, carrier visibility, and straightforward handling notes are useful signs that a listing is easier to verify."
 }
 
 function Get-FaqOneAnswer($row) {
   $anchor = Clean $row.local_research_anchor
-  $city = Clean $row.city
-  return "It connects $anchor with supplier transparency, documentation quality, and nearby city reading paths in a way that is more useful for $city readers."
+  return "It connects $anchor with supplier transparency, documentation quality, and nearby city coverage that adds more regional context."
 }
 
 function Get-FaqTwoAnswer($row) {
@@ -175,10 +171,11 @@ function Get-RelatedCardsMarkup($row, $lookup) {
 }
 
 function Get-FaqData($row) {
+  $city = Clean $row.city
   return @(
     @{
       "@type" = "Question"
-      "name" = Clean $row.faq_1_question
+      "name" = "Why does this page focus on $city?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqOneAnswer $row
@@ -186,7 +183,7 @@ function Get-FaqData($row) {
     },
     @{
       "@type" = "Question"
-      "name" = Clean $row.faq_2_question
+      "name" = "Which documentation details are worth checking first?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqTwoAnswer $row
@@ -227,7 +224,9 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $researchContextCopy = Get-ResearchContextCopy $row
   $supplierCopy = Get-SupplierCopy $row
   $logisticsCopy = Get-LogisticsCopy $row
-  $focusLine = "A close read in $(Clean $row.city) usually starts with $(Clean $row.documentation_focus), then moves into COA access, batch details, and policy consistency."
+  $focusLine = "$(Clean $row.documentation_focus) is often the first thing worth checking, followed by COA access, batch details, and policy consistency."
+  $faqOneQuestion = "Why does this page focus on $(Clean $row.city)?"
+  $faqTwoQuestion = "Which documentation details are worth checking first?"
 
   $page = @"
 <!DOCTYPE html>
@@ -428,11 +427,11 @@ $relatedCards
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>$([string](HtmlEncode((Clean $row.faq_1_question))))</h3>
+            <h3>$([string](HtmlEncode($faqOneQuestion)))</h3>
             <p>$([string](HtmlEncode((Get-FaqOneAnswer $row))))</p>
           </article>
           <article class="card reveal delay-1">
-            <h3>$([string](HtmlEncode((Clean $row.faq_2_question))))</h3>
+            <h3>$([string](HtmlEncode($faqTwoQuestion)))</h3>
             <p>$([string](HtmlEncode((Get-FaqTwoAnswer $row))))</p>
           </article>
           <article class="card reveal delay-2">

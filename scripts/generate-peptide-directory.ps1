@@ -4,7 +4,7 @@ $repoRoot = Split-Path -Parent $PSScriptRoot
 $dataPath = Join-Path $repoRoot "data\peptides.json"
 $directoryPath = Join-Path $repoRoot "peptide-directory\index.html"
 $peptidesRoot = Join-Path $repoRoot "peptides"
-$stylesVersion = "20260517b"
+$stylesVersion = "20260518a"
 
 function Get-SiteUrl {
   $cnamePath = Join-Path $repoRoot "CNAME"
@@ -80,7 +80,7 @@ function Get-CategoryMeta($key) {
     "cognitive-neuropeptide" { return @{ title = "Cognitive and neuropeptide research compounds"; blurb = "These references stay focused on neuropeptide, cognition, and signaling language rather than overstated performance or wellness claims." } }
     "longevity-cellular" { return @{ title = "Longevity and cellular research compounds"; blurb = "This group collects entries that usually appear in cellular, mitochondrial, or longevity-oriented research discussions." } }
     "cosmetic-pigmentation" { return @{ title = "Cosmetic and pigmentation research compounds"; blurb = "These pages look at appearance-oriented or pigmentation-related catalog language in a research and documentation context." } }
-    "immune-regulatory" { return @{ title = "Immune and regulatory research compounds"; blurb = "These entries are organized around regulatory signaling, thymic peptides, and other immune-focused research references." } }
+    "immune-regulatory" { return @{ title = "Immune and regulatory research compounds"; blurb = "These entries are organized around regulatory signaling, thymic peptides, and other immune-focused research topics." } }
     "blends-protocols" { return @{ title = "Blends and named protocols"; blurb = "These pages cover branded combinations, named protocols, or shorthand listings that need extra context to stay understandable." } }
     default { return @{ title = "Research compounds"; blurb = "Educational compound references grouped into one place." } }
   }
@@ -122,15 +122,15 @@ function Build-FaqData($peptide, $categoryTitle) {
   return @(
     @{
       "@type" = "Question"
-      "name" = "What is $($peptide.name) in this directory?"
+      "name" = "What does this $($peptide.name) page cover?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "$($peptide.name) is presented here as an educational research reference inside the $categoryTitle category."
+        "text" = "This page covers $($peptide.name) as part of the $categoryTitle category, with an emphasis on documentation and supplier transparency."
       }
     },
     @{
       "@type" = "Question"
-      "name" = "What should stand out on $($peptide.name) reference pages?"
+      "name" = "What should stand out on this $($peptide.name) page?"
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = "$($peptide.documentation_focus) $($peptide.supplier_transparency_notes)"
@@ -200,7 +200,7 @@ function New-DirectoryPage($peptides, $lookup, $siteUrl) {
             <div class="review-media">
               <img class="directory-image" src="$([string](HtmlEncode($peptide.image)))" alt="$([string](HtmlEncode($peptide.name))) reference image" loading="lazy">
             </div>
-            <div class="kicker">Research reference</div>
+          <div class="kicker">Peptide page</div>
             <h3>$([string](HtmlEncode($peptide.name)))</h3>
             <p>$([string](HtmlEncode($cardSummary)))</p>
             <p class="directory-category-label">$([string](HtmlEncode($meta.title)))</p>
@@ -238,19 +238,19 @@ $($cards -join "`n")
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peptide Directory Research Reference | PeptideSuppliers.org</title>
-  <meta name="description" content="Browse a searchable peptide directory organized as educational research references with documentation focus, supplier transparency notes, and related compound links.">
+  <title>Peptide Directory | PeptideSuppliers.org</title>
+  <meta name="description" content="Browse a searchable peptide directory organized around educational compound pages, documentation focus, supplier transparency notes, and related links.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="$siteUrl/peptide-directory/">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Peptide Directory Research Reference | PeptideSuppliers.org">
-  <meta property="og:description" content="Educational peptide reference pages grouped by category, documentation focus, and related research compounds.">
+  <meta property="og:title" content="Peptide Directory | PeptideSuppliers.org">
+  <meta property="og:description" content="Educational peptide pages grouped by category, documentation focus, and related compounds.">
   <meta property="og:url" content="$siteUrl/peptide-directory/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
   <meta property="og:image" content="$siteUrl/og-image.svg">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Peptide Directory Research Reference | PeptideSuppliers.org">
-  <meta name="twitter:description" content="Educational peptide reference pages grouped by category, documentation focus, and related research compounds.">
+  <meta name="twitter:title" content="Peptide Directory | PeptideSuppliers.org">
+  <meta name="twitter:description" content="Educational peptide pages grouped by category, documentation focus, and related compounds.">
   <meta name="twitter:image" content="$siteUrl/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css?v=$stylesVersion">
@@ -296,7 +296,7 @@ $($cards -join "`n")
               </div>
             </div>
             <div class="hero-art reveal delay-1">
-              <img src="/assets/directory-compounds.svg" alt="Editorial illustration representing grouped peptide research references">
+              <img src="/assets/directory-compounds.svg" alt="Editorial illustration representing grouped peptide categories">
             </div>
           </div>
         </div>
@@ -386,8 +386,8 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $isIndexable = Get-PeptideIndexable $peptide
   $robots = if ($isIndexable) { "index,follow" } else { "noindex,follow" }
   $canonical = "$siteUrl/peptides/$($peptide.slug)/"
-  $title = "$($peptide.name) Research Reference & Supplier Transparency Guide | PeptideSuppliers.org"
-  $metaDescription = "$($peptide.name) research reference covering educational context, documentation focus, supplier transparency notes, and related compound links."
+  $title = "$($peptide.name) Peptide Guide & Supplier Transparency Notes | PeptideSuppliers.org"
+  $metaDescription = "$($peptide.name) page covering educational context, documentation focus, supplier transparency notes, and related compound links."
   $faqJson = JsonText (Build-FaqData $peptide $categoryMeta.title)
   $breadcrumbJson = JsonText (Build-BreadcrumbData $siteUrl $peptide)
   $heroSupplierLinks = foreach ($supplier in @($peptide.suppliers)) {
@@ -513,13 +513,13 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
               $(if ($heroSupplierLinks) { "<div class=`"peptide-quick-links`">`n$($heroSupplierLinks -join "`n")`n              </div>" })
             </div>
             <div class="page-hero-copy reveal delay-1">
-              <div class="eyebrow">Research reference</div>
-              <h1 class="page-title">$([string](HtmlEncode("$($peptide.name) Research Reference & Supplier Transparency Guide")))</h1>
+              <div class="eyebrow">Peptide guide</div>
+              <h1 class="page-title">$([string](HtmlEncode("$($peptide.name) Peptide Guide & Supplier Transparency Notes")))</h1>
               <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
               <p>$([string](HtmlEncode($categoryPrompt)))</p>
               <div class="peptide-meta">
                 <span class="pill">$([string](HtmlEncode($categoryMeta.title)))</span>
-                <span class="pill">Educational reference</span>
+                <span class="pill">Educational guide</span>
                 <span class="pill">Supplier transparency</span>
               </div>
               <div class="button-row" style="margin-top:18px;">
@@ -552,7 +552,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
         </article>
         <article class="card reveal delay-1">
           <div class="kicker">Research documentation checklist</div>
-          <h3>What to evaluate on a reference page</h3>
+          <h3>What to evaluate on the page</h3>
           <ul class="checklist">
 $($checklistItems -join "`n")
           </ul>
@@ -592,13 +592,13 @@ $($checklistItems -join "`n")
       <div class="shell science-grid">
         <article class="card reveal">
           <div class="kicker">Supplier transparency notes</div>
-          <h2>What makes this page easier to trust</h2>
+          <h2>What stands out on this page</h2>
           <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
           <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
         </article>
         <article class="card reveal delay-1">
           <div class="kicker">Category context</div>
-          <h3>Where this page fits in the directory</h3>
+          <h3>Where it fits in the category</h3>
           <p>$([string](HtmlEncode($categoryMeta.blurb)))</p>
         </article>
       </div>
@@ -627,7 +627,7 @@ $($supplierCards -join "`n")
         <div class="section-head reveal">
           <div>
             <h2>Related peptides</h2>
-            <p>Nearby reference pages can help when comparing closely related compounds and broader category context.</p>
+            <p>Nearby pages can help when comparing closely related compounds and broader category context.</p>
           </div>
         </div>
         <div class="card reveal">
@@ -648,7 +648,7 @@ $($relatedLinks -join "`n")
         </div>
         <div class="faq-grid">
           <article class="card reveal">
-            <h3>What is $([string](HtmlEncode($peptide.name))) in this directory?</h3>
+            <h3>What does this $([string](HtmlEncode($peptide.name))) page cover?</h3>
             <p>$([string](HtmlEncode($peptide.short_educational_description)))</p>
           </article>
           <article class="card reveal delay-1">
