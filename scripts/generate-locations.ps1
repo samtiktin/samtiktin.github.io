@@ -228,6 +228,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $supplierCopy = Get-SupplierCopy $row
   $logisticsCopy = Get-LogisticsCopy $row
   $focusLine = "Start with $(Clean $row.documentation_focus), then compare COA access, batch details, research-use labeling, and policy consistency."
+  $cityState = "$(Clean $row.city), $(Clean $row.state_code)"
   $faqOneQuestion = "Why use the $(Clean $row.city) guide?"
   $faqTwoQuestion = "Which documentation details are worth checking first?"
   $faqThreeQuestion = "What else is worth comparing in nearby city guides?"
@@ -404,6 +405,27 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <h3>Compare nearby cities</h3>
           <div class="pill-row">
               $relatedLinks
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell location-grid">
+        <article class="story-card reveal">
+          <div class="kicker">Peptides in $([string](HtmlEncode($cityState)))</div>
+          <h2>$([string](HtmlEncode("Research compounds commonly referenced in $cityState")))</h2>
+          <p>$([string](HtmlEncode("Use the peptide directory to explore compound pages, research summaries, and related categories that readers in $cityState may want to compare alongside supplier-page documentation.")))</p>
+          <div class="button-row">
+            <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
+          </div>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Peptide suppliers in $([string](HtmlEncode($cityState)))</div>
+          <h3>Where supplier-page comparisons fit</h3>
+          <p>$([string](HtmlEncode("Supplier pages tied to $cityState are most useful when COAs, batch details, shipping language, and research-use labeling are easy to review without hunting through multiple sections.")))</p>
+          <div class="button-row">
+            <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
           </div>
         </article>
       </div>
