@@ -35,6 +35,52 @@ function Clean([object]$value) {
   return $value.ToString().Trim()
 }
 
+function Escape-RegexLiteral([string]$value) {
+  return [regex]::Escape($value)
+}
+
+function Get-HeroIntro($row) {
+  $city = Clean $row.city
+  $region = Clean $row.region
+  $anchor = Clean $row.local_research_anchor
+  return "$anchor is one of the clearest local research anchors for $city, which makes it a useful starting point for reading supplier documentation and broader industry coverage in $region."
+}
+
+function Get-OverviewCopy($row) {
+  $city = Clean $row.city
+  $state = Clean $row.state
+  return "This guide brings together local context, nearby city links, and documentation signals so $city readers can compare supplier transparency in a more grounded $state context."
+}
+
+function Get-ResearchContextCopy($row) {
+  $city = Clean $row.city
+  $region = Clean $row.region
+  $anchor = Clean $row.local_research_anchor
+  return "$anchor provides the local anchor here, while the broader $region context helps with comparing documentation standards, research-use labeling, and transparency language across supplier pages."
+}
+
+function Get-SupplierCopy($row) {
+  $city = Clean $row.city
+  $focus = Clean $row.documentation_focus
+  return "For $city readers, a close comparison usually starts with $focus, then moves into COA access, batch details, research-use labeling, and overall policy clarity."
+}
+
+function Get-LogisticsCopy($row) {
+  $city = Clean $row.city
+  return "Clear dispatch language, carrier visibility, and straightforward handling notes are useful trust signals for $city readers."
+}
+
+function Get-FaqOneAnswer($row) {
+  $anchor = Clean $row.local_research_anchor
+  $city = Clean $row.city
+  return "It connects $anchor with supplier transparency, documentation quality, and nearby city reading paths in a way that is more useful for $city readers."
+}
+
+function Get-FaqTwoAnswer($row) {
+  $focus = Clean $row.documentation_focus
+  return "Start with $focus. Then review COA access, batch identifiers, lab report dates, research-use labeling, and overall policy consistency."
+}
+
 function Get-RelatedRows($row, $lookup) {
   $rows = @()
   foreach ($key in @("related_slug_1", "related_slug_2", "related_slug_3")) {
@@ -135,7 +181,7 @@ function Get-FaqData($row) {
       "name" = Clean $row.faq_1_question
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = Clean $row.faq_1_answer
+        "text" = Get-FaqOneAnswer $row
       }
     },
     @{
@@ -143,7 +189,7 @@ function Get-FaqData($row) {
       "name" = Clean $row.faq_2_question
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = Clean $row.faq_2_answer
+        "text" = Get-FaqTwoAnswer $row
       }
     },
     @{
@@ -176,6 +222,12 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $relatedLinks = Get-RelatedLinksMarkup $row $lookup
   $relatedCards = Get-RelatedCardsMarkup $row $lookup
   $checklistMarkup = Get-ChecklistMarkup (Clean $row.documentation_checklist)
+  $heroIntro = Get-HeroIntro $row
+  $overviewCopy = Get-OverviewCopy $row
+  $researchContextCopy = Get-ResearchContextCopy $row
+  $supplierCopy = Get-SupplierCopy $row
+  $logisticsCopy = Get-LogisticsCopy $row
+  $focusLine = "A close read in $(Clean $row.city) usually starts with $(Clean $row.documentation_focus), then moves into COA access, batch details, and policy consistency."
 
   $page = @"
 <!DOCTYPE html>
@@ -250,7 +302,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
             <div class="page-hero-copy reveal">
               <div class="eyebrow">$([string](HtmlEncode((Clean $row.region))))</div>
               <h1 class="page-title">$([string](HtmlEncode((Clean $row.h1))))</h1>
-              <p>$([string](HtmlEncode((Clean $row.local_intro))))</p>
+              <p>$([string](HtmlEncode($heroIntro)))</p>
               <div class="button-row">
                 <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
                 <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
@@ -279,8 +331,8 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <article class="story-card reveal">
           <div class="kicker">Local overview</div>
           <h2>$([string](HtmlEncode("What stands out in $(Clean $row.city)")))</h2>
-          <p>$([string](HtmlEncode((Clean $row.why_this_city_has_guide))))</p>
-          <p>$([string](HtmlEncode((Clean $row.content_angle))))</p>
+          <p>$([string](HtmlEncode($overviewCopy)))</p>
+          <p>$([string](HtmlEncode($focusLine)))</p>
         </article>
         <article class="card context-card reveal delay-1">
           <div class="kicker">Local context</div>
@@ -322,13 +374,13 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <article class="story-card reveal">
           <div class="kicker">Local research and biotech context</div>
           <h2>$([string](HtmlEncode("Research context in $(Clean $row.city)")))</h2>
-          <p>$([string](HtmlEncode((Clean $row.regional_research_context))))</p>
+          <p>$([string](HtmlEncode($researchContextCopy)))</p>
         </article>
         <article class="card reveal delay-1">
           <div class="kicker">Supplier transparency</div>
           <h3>What to look for on supplier pages</h3>
-          <p>$([string](HtmlEncode((Clean $row.supplier_transparency_paragraph))))</p>
-          <p>$([string](HtmlEncode((Clean $row.local_logistics_note))))</p>
+          <p>$([string](HtmlEncode($supplierCopy)))</p>
+          <p>$([string](HtmlEncode($logisticsCopy)))</p>
         </article>
       </div>
     </section>
@@ -377,11 +429,11 @@ $relatedCards
         <div class="faq-grid">
           <article class="card reveal">
             <h3>$([string](HtmlEncode((Clean $row.faq_1_question))))</h3>
-            <p>$([string](HtmlEncode((Clean $row.faq_1_answer))))</p>
+            <p>$([string](HtmlEncode((Get-FaqOneAnswer $row))))</p>
           </article>
           <article class="card reveal delay-1">
             <h3>$([string](HtmlEncode((Clean $row.faq_2_question))))</h3>
-            <p>$([string](HtmlEncode((Clean $row.faq_2_answer))))</p>
+            <p>$([string](HtmlEncode((Get-FaqTwoAnswer $row))))</p>
           </article>
           <article class="card reveal delay-2">
             <h3>$([string](HtmlEncode((Clean $row.faq_3_question))))</h3>
