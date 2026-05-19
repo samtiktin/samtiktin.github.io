@@ -42,26 +42,30 @@ function Escape-RegexLiteral([string]$value) {
 function Get-HeroIntro($row) {
   $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
-  return "$anchor gives this $city guide a local starting point for comparing research disclosures, testing records, and supplier documentation."
+  return "$anchor is one of the clearest local reference points for understanding how $city supplier pages present testing, documentation, and research-use labeling."
 }
 
 function Get-OverviewCopy($row) {
-  $state = Clean $row.state
-  return "Use this guide to compare documentation standards, testing visibility, and research disclosures across $state supplier pages."
+  $anchor = Clean $row.local_research_anchor
+  $region = Clean $row.region
+  return "This guide uses $anchor and the broader $region context to compare documentation standards, testing visibility, and supplier-page language."
 }
 
 function Get-ResearchContextCopy($row) {
+  $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
-  return "$anchor helps frame how research pages, testing records, and disclosure language are presented in this area."
+  $region = Clean $row.region
+  return "In $city, $anchor helps explain why documentation standards and disclosure language may stand out more than generic catalog copy across the wider $region region."
 }
 
 function Get-SupplierCopy($row) {
+  $city = Clean $row.city
   $focus = Clean $row.documentation_focus
-  return "A close comparison usually starts with $focus, then moves into COA access, batch details, research-use labeling, and overall policy clarity."
+  return "When comparing supplier pages in $city, start with $focus, then check COA access, batch details, research-use labeling, and overall policy language."
 }
 
 function Get-LogisticsCopy($row) {
-  return "Clear dispatch language, carrier visibility, and straightforward handling notes are useful signs that a listing is easier to verify."
+  return "Shipping notes are most useful when dispatch language, carrier visibility, and handling details are easy to verify on the page."
 }
 
 function Get-FaqOneAnswer($row) {
@@ -223,7 +227,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $researchContextCopy = Get-ResearchContextCopy $row
   $supplierCopy = Get-SupplierCopy $row
   $logisticsCopy = Get-LogisticsCopy $row
-  $focusLine = "$(Clean $row.documentation_focus) is often the first thing worth checking, followed by COA access, batch details, and policy consistency."
+  $focusLine = "Start with $(Clean $row.documentation_focus), then compare COA access, batch details, research-use labeling, and policy consistency."
   $faqOneQuestion = "Why use the $(Clean $row.city) guide?"
   $faqTwoQuestion = "Which documentation details are worth checking first?"
   $faqThreeQuestion = "What else is worth comparing in nearby city guides?"
@@ -330,9 +334,9 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell location-grid">
         <article class="story-card reveal">
           <div class="kicker">Local overview</div>
-          <h2>$([string](HtmlEncode("What stands out in $(Clean $row.city)")))</h2>
+          <h2>$([string](HtmlEncode("How this guide frames $(Clean $row.city)")))</h2>
+          <p>$([string](HtmlEncode($heroIntro)))</p>
           <p>$([string](HtmlEncode($overviewCopy)))</p>
-          <p>$([string](HtmlEncode($focusLine)))</p>
         </article>
         <article class="card context-card reveal delay-1">
           <div class="kicker">Local context</div>
@@ -372,13 +376,13 @@ function New-LocationPage($row, $lookup, $siteUrl) {
     <section>
       <div class="shell location-grid">
         <article class="story-card reveal">
-          <div class="kicker">Local research and biotech context</div>
-          <h2>$([string](HtmlEncode("Research context in $(Clean $row.city)")))</h2>
+          <div class="kicker">Research context</div>
+          <h2>$([string](HtmlEncode("What shapes the $(Clean $row.city) view")))</h2>
           <p>$([string](HtmlEncode($researchContextCopy)))</p>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Supplier transparency</div>
-          <h3>What to look for on supplier pages</h3>
+          <div class="kicker">Choosing a supplier page</div>
+          <h3>What to compare first</h3>
           <p>$([string](HtmlEncode($supplierCopy)))</p>
           <p>$([string](HtmlEncode($logisticsCopy)))</p>
         </article>
@@ -388,15 +392,16 @@ function New-LocationPage($row, $lookup, $siteUrl) {
     <section>
       <div class="shell location-grid">
         <article class="story-card reveal">
-          <div class="kicker">Documentation signals to evaluate</div>
-          <h2>Checklist for city-specific reading</h2>
+          <div class="kicker">Documentation checklist</div>
+          <h2>What to look for on supplier pages</h2>
+          <p>$([string](HtmlEncode($focusLine)))</p>
           <ul class="checklist">
               $checklistMarkup
           </ul>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Related city guides</div>
-          <h3>Continue with nearby reading</h3>
+          <div class="kicker">Read other guides</div>
+          <h3>Compare nearby cities</h3>
           <div class="pill-row">
               $relatedLinks
           </div>
@@ -408,8 +413,8 @@ function New-LocationPage($row, $lookup, $siteUrl) {
       <div class="shell">
         <div class="section-head reveal">
           <div>
-            <h2>Related city guides</h2>
-            <p>Use nearby guides to compare documentation standards and disclosure language across the region.</p>
+            <h2>Read other guides</h2>
+            <p>Use nearby guides to compare documentation standards and supplier-page differences across the region.</p>
           </div>
         </div>
         <div class="resource-grid">
