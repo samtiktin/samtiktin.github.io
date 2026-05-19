@@ -162,6 +162,10 @@ p {
 }
 
 .nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 0 6px;
   text-decoration: none;
   color: var(--muted);
   font-size: 0.95rem;
@@ -343,6 +347,14 @@ h1 {
 .button:hover,
 .button:focus-visible {
   transform: translateY(-1px);
+}
+
+.button:focus-visible,
+.nav a:focus-visible,
+.jump-links a:focus-visible,
+.card-link:focus-visible {
+  outline: 2px solid rgba(206, 154, 42, 0.7);
+  outline-offset: 3px;
 }
 
 .button-primary {
@@ -638,6 +650,14 @@ h3 {
 .card-link {
   text-decoration: none;
   display: block;
+  height: 100%;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.card-link:hover,
+.card-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(39, 70, 45, 0.16);
 }
 
 .kicker {
@@ -701,6 +721,13 @@ h3 {
   border: 1px solid rgba(39, 70, 45, 0.08);
   background: linear-gradient(180deg, rgba(255, 252, 246, 0.96), rgba(248, 242, 231, 0.92));
   box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.mini-directory-card:hover,
+.mini-directory-card:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(39, 70, 45, 0.16);
 }
 
 .mini-directory-card img {
@@ -730,6 +757,12 @@ h3 {
   border: 1px solid rgba(39, 70, 45, 0.08);
   background: linear-gradient(180deg, rgba(255, 251, 244, 0.96), rgba(246, 239, 228, 0.92));
   box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.focus-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(39, 70, 45, 0.16);
 }
 
 .focus-card h3 {
