@@ -699,6 +699,8 @@ h3 {
 }
 
 .directory-image {
+  position: relative;
+  overflow: hidden;
   width: min(100%, 180px);
   max-height: 180px;
   aspect-ratio: 1 / 1;
@@ -716,6 +718,14 @@ h3 {
   -webkit-backdrop-filter: blur(22px) saturate(120%);
 }
 
+.directory-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.58) 0%, rgba(255, 255, 255, 0.18) 28%, rgba(255, 255, 255, 0.03) 56%);
+  pointer-events: none;
+}
+
 .mini-directory-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -723,6 +733,8 @@ h3 {
 }
 
 .mini-directory-card {
+  position: relative;
+  overflow: hidden;
   padding: 20px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.62);
@@ -735,6 +747,14 @@ h3 {
   backdrop-filter: blur(24px) saturate(130%);
   -webkit-backdrop-filter: blur(24px) saturate(130%);
   transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.mini-directory-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.46) 0%, rgba(255, 255, 255, 0.14) 24%, rgba(255, 255, 255, 0.03) 52%);
+  pointer-events: none;
 }
 
 .mini-directory-card:hover,
@@ -808,6 +828,8 @@ h3 {
 }
 
 .peptide-hero-image {
+  position: relative;
+  overflow: hidden;
   width: min(100%, 320px);
   max-height: 320px;
   margin: 0 auto;
@@ -824,6 +846,14 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.62);
   backdrop-filter: blur(24px) saturate(125%);
   -webkit-backdrop-filter: blur(24px) saturate(125%);
+}
+
+.peptide-hero-image::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.54) 0%, rgba(255, 255, 255, 0.16) 28%, rgba(255, 255, 255, 0.03) 58%);
+  pointer-events: none;
 }
 
 .peptide-quick-links {
@@ -863,6 +893,8 @@ h3 {
 }
 
 .peptide-supplier-card {
+  position: relative;
+  overflow: hidden;
   padding: 22px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.6);
@@ -874,6 +906,14 @@ h3 {
     inset 0 1px 0 rgba(255, 255, 255, 0.56);
   backdrop-filter: blur(22px) saturate(125%);
   -webkit-backdrop-filter: blur(22px) saturate(125%);
+}
+
+.peptide-supplier-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.42) 0%, rgba(255, 255, 255, 0.12) 24%, rgba(255, 255, 255, 0.03) 52%);
+  pointer-events: none;
 }
 
 .peptide-supplier-card h3 {
@@ -919,11 +959,12 @@ h3 {
   margin-top: 14px;
   padding: 8px 12px;
   border-radius: 999px;
-  background: rgba(206, 154, 42, 0.12);
-  border: 1px solid rgba(206, 154, 42, 0.18);
-  color: var(--forest);
+  background: rgba(255, 248, 229, 0.96);
+  border: 1px solid rgba(154, 108, 20, 0.28);
+  color: #4b3205;
   font-size: 0.9rem;
   font-weight: 700;
+  box-shadow: 0 10px 20px rgba(90, 66, 18, 0.08);
 }
 
 .directory-supplier-link {
