@@ -40,18 +40,27 @@ function Escape-RegexLiteral([string]$value) {
 }
 
 function Get-HeroIntro($row) {
+  $intro = Clean $row.local_intro
+  if ($intro) { return $intro }
+
   $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
   return "$anchor is one of the clearest local reference points for understanding how $city supplier pages present testing, documentation, and research-use labeling."
 }
 
 function Get-OverviewCopy($row) {
+  $copy = Clean $row.why_this_city_has_guide
+  if ($copy) { return $copy }
+
   $anchor = Clean $row.local_research_anchor
   $region = Clean $row.region
   return "This guide uses $anchor and the broader $region context to compare documentation standards, testing visibility, and supplier-page language."
 }
 
 function Get-ResearchContextCopy($row) {
+  $copy = Clean $row.regional_research_context
+  if ($copy) { return $copy }
+
   $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
   $region = Clean $row.region
@@ -59,21 +68,33 @@ function Get-ResearchContextCopy($row) {
 }
 
 function Get-SupplierCopy($row) {
+  $copy = Clean $row.supplier_transparency_paragraph
+  if ($copy) { return $copy }
+
   $city = Clean $row.city
   $focus = Clean $row.documentation_focus
   return "When comparing supplier pages in $city, start with $focus, then check COA access, batch details, research-use labeling, and overall policy language."
 }
 
 function Get-LogisticsCopy($row) {
+  $note = Clean $row.local_logistics_note
+  if ($note) { return $note }
+
   return "Shipping notes are most useful when dispatch language, carrier visibility, and handling details are easy to verify on the page."
 }
 
 function Get-FaqOneAnswer($row) {
+  $answer = Clean $row.faq_1_answer
+  if ($answer) { return $answer }
+
   $anchor = Clean $row.local_research_anchor
   return "It uses $anchor as a local reference point for comparing documentation quality, testing visibility, and disclosure language."
 }
 
 function Get-FaqTwoAnswer($row) {
+  $answer = Clean $row.faq_2_answer
+  if ($answer) { return $answer }
+
   $focus = Clean $row.documentation_focus
   return "Start with $focus. Then review COA access, batch identifiers, lab report dates, research-use labeling, and overall policy consistency."
 }
@@ -175,10 +196,14 @@ function Get-RelatedCardsMarkup($row, $lookup) {
 
 function Get-FaqData($row) {
   $city = Clean $row.city
+  $faqOneQuestion = if (Clean $row.faq_1_question) { Clean $row.faq_1_question } else { "Why use the ${city} guide?" }
+  $faqTwoQuestion = if (Clean $row.faq_2_question) { Clean $row.faq_2_question } else { "Which documentation details are worth checking first?" }
+  $faqThreeQuestion = if (Clean $row.faq_3_question) { Clean $row.faq_3_question } else { "What else is worth comparing in nearby city guides?" }
+  $faqThreeAnswer = if (Clean $row.faq_3_answer) { Clean $row.faq_3_answer } else { "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides." }
   return @(
     @{
       "@type" = "Question"
-      "name" = "Why use the ${city} guide?"
+      "name" = $faqOneQuestion
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqOneAnswer $row
@@ -186,7 +211,7 @@ function Get-FaqData($row) {
     },
     @{
       "@type" = "Question"
-      "name" = "Which documentation details are worth checking first?"
+      "name" = $faqTwoQuestion
       "acceptedAnswer" = @{
         "@type" = "Answer"
         "text" = Get-FaqTwoAnswer $row
@@ -194,10 +219,10 @@ function Get-FaqData($row) {
     },
     @{
       "@type" = "Question"
-      "name" = "What else is worth comparing in nearby city guides?"
+      "name" = $faqThreeQuestion
       "acceptedAnswer" = @{
         "@type" = "Answer"
-        "text" = "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides."
+        "text" = $faqThreeAnswer
       }
     }
   )
@@ -229,10 +254,10 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $logisticsCopy = Get-LogisticsCopy $row
   $focusLine = "Start with $(Clean $row.documentation_focus), then compare COA access, batch details, research-use labeling, and policy consistency."
   $cityState = "$(Clean $row.city), $(Clean $row.state_code)"
-  $faqOneQuestion = "Why use the $(Clean $row.city) guide?"
-  $faqTwoQuestion = "Which documentation details are worth checking first?"
-  $faqThreeQuestion = "What else is worth comparing in nearby city guides?"
-  $faqThreeAnswer = "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides."
+  $faqOneQuestion = if (Clean $row.faq_1_question) { Clean $row.faq_1_question } else { "Why use the $(Clean $row.city) guide?" }
+  $faqTwoQuestion = if (Clean $row.faq_2_question) { Clean $row.faq_2_question } else { "Which documentation details are worth checking first?" }
+  $faqThreeQuestion = if (Clean $row.faq_3_question) { Clean $row.faq_3_question } else { "What else is worth comparing in nearby city guides?" }
+  $faqThreeAnswer = if (Clean $row.faq_3_answer) { Clean $row.faq_3_answer } else { "Compare documentation access, batch details, research-use language, and shipping notes across the nearby guides." }
 
   $page = @"
 <!DOCTYPE html>
