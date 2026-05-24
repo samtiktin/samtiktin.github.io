@@ -132,6 +132,8 @@ function Get-PageTitle($row) {
     $base = "$(Clean $row.city) Research Peptide Supplier Transparency Guide"
   }
 
+  $base = $base -replace '\s+Supplier Transparency Guide', ' Supplier Guide'
+
   if ($base -like "*PeptideSuppliers.org*") {
     return $base
   }
@@ -143,6 +145,15 @@ function Get-MetaDescription($row) {
   $meta = Clean $row.meta_description
   if ($meta) { return $meta }
   return "$(Clean $row.city), $(Clean $row.state_code) guide to research peptide supplier pages, documentation standards, and nearby city comparisons."
+}
+
+function Get-PageHeading($row) {
+  $heading = Clean $row.h1
+  if (-not $heading) {
+    $heading = "$(Clean $row.city) Research Peptide Supplier Guide"
+  }
+
+  return ($heading -replace '\s+Supplier Transparency Guide', ' Supplier Guide')
 }
 
 function Get-CanonicalUrl($row, $siteUrl) {
@@ -254,6 +265,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $logisticsCopy = Get-LogisticsCopy $row
   $focusLine = "Start with $(Clean $row.documentation_focus), then compare COA access, batch details, research-use labeling, and policy consistency."
   $cityState = "$(Clean $row.city), $(Clean $row.state_code)"
+  $supplierButtonLabel = "Browse suppliers in $cityState"
   $faqOneQuestion = if (Clean $row.faq_1_question) { Clean $row.faq_1_question } else { "Why use the $(Clean $row.city) guide?" }
   $faqTwoQuestion = if (Clean $row.faq_2_question) { Clean $row.faq_2_question } else { "Which documentation details are worth checking first?" }
   $faqThreeQuestion = if (Clean $row.faq_3_question) { Clean $row.faq_3_question } else { "What else is worth comparing in nearby city guides?" }
@@ -331,11 +343,11 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">$([string](HtmlEncode((Clean $row.region))))</div>
-              <h1 class="page-title">$([string](HtmlEncode((Clean $row.h1))))</h1>
+              <h1 class="page-title">$([string](HtmlEncode((Get-PageHeading $row))))</h1>
               <p>$([string](HtmlEncode($heroIntro)))</p>
               <div class="button-row">
                 <a class="button button-primary" href="/peptide-directory/">$([string](HtmlEncode("Peptides in $cityState")))</a>
-                <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
+                <a class="button button-ghost" href="/suppliers/">$([string](HtmlEncode($supplierButtonLabel)))</a>
               </div>
             </div>
             <div class="hero-art reveal delay-1">
@@ -450,7 +462,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <h3>Where supplier-page comparisons fit</h3>
           <p>$([string](HtmlEncode("Supplier pages tied to $cityState are most useful when COAs, batch details, shipping language, and research-use labeling are easy to review without hunting through multiple sections.")))</p>
           <div class="button-row">
-            <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
+            <a class="button button-ghost" href="/suppliers/">$([string](HtmlEncode($supplierButtonLabel)))</a>
           </div>
         </article>
       </div>
