@@ -86,6 +86,29 @@ function Get-ResearchOverview($peptide, [string]$fallback) {
   return $fallback
 }
 
+function Get-StorageLead($peptide) {
+  switch ([string]$peptide.category) {
+    "glp-metabolic" { return "Listings in this category should make the compound format clear and keep storage language consistent with the label, the documentation, and the product page itself." }
+    "growth-secretagogue" { return "These pages are easier to trust when storage notes are easy to find, the format is clearly labeled, and batch documentation stays close to the listing." }
+    "repair-tissue" { return "Storage details matter more when shorthand names appear across different listings. Clear handling language and lot-specific documentation help keep those pages readable." }
+    "cognitive-neuropeptide" { return "Neuropeptide pages should keep storage expectations, product format, and documentation notes straightforward instead of scattering them across the page." }
+    "longevity-cellular" { return "This category benefits from precise storage language, clear batch references, and product pages that separate documentation from headline copy." }
+    "cosmetic-pigmentation" { return "These pages should state format, storage conditions, and documentation access clearly, especially when the same compound appears in more than one style of listing." }
+    "immune-regulatory" { return "Immune and regulatory peptide pages read better when storage notes, labeling, and laboratory documentation are all easy to verify in one place." }
+    "blends-protocols" { return "Named blends and shorthand listings need especially clear storage language so the page does not leave the compound format or handling notes open to guesswork." }
+    default { return "The strongest pages keep storage language, format details, and documentation access easy to verify." }
+  }
+}
+
+function Get-StorageChecklistItems($peptide) {
+  return @(
+    "Check whether the page clearly states the compound format being referenced."
+    "Look for storage language that matches the label and any linked laboratory documentation."
+    "Compare whether lot, batch, or COA references remain easy to access after the product details."
+    "Note whether the page explains container, seal, or light-protection details in plain language."
+  )
+}
+
 function Get-CategoryMeta($key) {
   switch ($key) {
     "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "Research compounds commonly referenced in metabolic and incretin science." } }
@@ -616,17 +639,21 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
     <section>
       <div class="shell science-grid">
         <article class="card reveal">
-          <div class="kicker">Choosing a supplier page</div>
-          <h2>What to look for when comparing listings</h2>
-          <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
-          <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
+          <div class="kicker">Storage and handling notes</div>
+          <h2>What the page should explain clearly</h2>
+          <p>$([string](HtmlEncode((Get-StorageLead $peptide))))</p>
+          <ul class="checklist">
+$(((Get-StorageChecklistItems $peptide) | ForEach-Object { "            <li>$([string](HtmlEncode($_)))</li>" }) -join "`n")
+          </ul>
         </article>
         <article class="card reveal delay-1">
-          <div class="kicker">Checklist</div>
-          <h3>What to evaluate on the page</h3>
-          <ul class="checklist">
-$($checklistItems -join "`n")
-          </ul>
+          <div class="kicker">Choosing a supplier page</div>
+          <h3>What to compare when opening listings</h3>
+          <p>$([string](HtmlEncode($peptide.documentation_focus)))</p>
+          <p>$([string](HtmlEncode($peptide.supplier_transparency_notes)))</p>
+          <div class="button-row" style="margin-top:18px;">
+            <a class="button button-primary" href="/peptide-directory/">Find this compound in the directory</a>
+          </div>
         </article>
       </div>
     </section>
