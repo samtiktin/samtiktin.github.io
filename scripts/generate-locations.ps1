@@ -309,7 +309,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
               <h1 class="page-title">$([string](HtmlEncode((Clean $row.h1))))</h1>
               <p>$([string](HtmlEncode($heroIntro)))</p>
               <div class="button-row">
-                <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
+                <a class="button button-primary" href="/peptide-directory/">$([string](HtmlEncode("Peptides in $cityState")))</a>
                 <a class="button button-ghost" href="/suppliers/">Browse suppliers</a>
               </div>
             </div>
@@ -417,7 +417,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <h2>$([string](HtmlEncode("Research compounds commonly referenced in $cityState")))</h2>
           <p>$([string](HtmlEncode("Use the peptide directory to explore compound pages, research summaries, and related categories that readers in $cityState may want to compare alongside supplier-page documentation.")))</p>
           <div class="button-row">
-            <a class="button button-primary" href="/peptide-directory/">Open peptide directory</a>
+    <a class="button button-primary" href="/peptide-directory/">$([string](HtmlEncode("Peptides in $cityState")))</a>
           </div>
         </article>
         <article class="card reveal delay-1">
