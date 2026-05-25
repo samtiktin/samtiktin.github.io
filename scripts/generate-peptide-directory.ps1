@@ -109,6 +109,67 @@ function Get-StorageChecklistItems($peptide) {
   )
 }
 
+function Get-FeaturedInsightsData($peptide) {
+  switch ([string]$peptide.slug) {
+    "glp-1" {
+      return @{
+        title = "Key research themes"
+        lead = "Most GLP-1 coverage revolves around a few consistent themes that show up across trial summaries, news coverage, and supplier listings."
+        items = @(
+          "How clearly the page distinguishes a broad GLP-1 label from a specific semaglutide-style listing.",
+          "Whether cardiovascular, kidney, and metabolic research are described with enough context to stay readable.",
+          "How consistently the listing handles trial-heavy terminology without drifting into vague shorthand."
+        )
+      }
+    }
+    "tirz" {
+      return @{
+        title = "Key research themes"
+        lead = "Tirz pages are strongest when they help readers place the shorthand inside the larger incretin category instead of assuming the label explains itself."
+        items = @(
+          "Whether the page explains the dual GIP and GLP-1 signaling context in plain language.",
+          "How the listing separates research discussion from generic weight-management headlines.",
+          "Whether documentation and naming stay precise once the reader moves past the hero section."
+        )
+      }
+    }
+    "bpc-157" {
+      return @{
+        title = "Key research themes"
+        lead = "BPC-157 pages are often crowded with repeated claims, so the better references slow down and explain what the compound is actually being linked to in preclinical reading."
+        items = @(
+          "Tissue and barrier-focused research are usually the core themes worth explaining first.",
+          "Listings improve when they acknowledge the gap between heavy catalog visibility and limited human evidence.",
+          "Batch language matters more here because the same compound appears on so many supplier pages."
+        )
+      }
+    }
+    "tb-500" {
+      return @{
+        title = "Key research themes"
+        lead = "TB-500 pages read better when they define the shorthand and keep the repair-oriented context specific instead of broad."
+        items = @(
+          "Whether the page explains the thymosin-beta connection clearly.",
+          "How carefully the listing separates research language from generic recovery copy.",
+          "Whether the supporting notes make it easy to compare TB-500 with BPC-157 and nearby entries."
+        )
+      }
+    }
+    "ghk-cu" {
+      return @{
+        title = "Key research themes"
+        lead = "GHK-Cu pages are easier to trust when they stay grounded in copper-peptide context and keep the category fit more specific than appearance-focused buzzwords."
+        items = @(
+          "How clearly the page explains the copper-binding peptide context.",
+          "Whether skin, matrix, and hair-related research are described with enough restraint to stay useful.",
+          "How well the listing handles documentation alongside a category that is often packaged visually."
+        )
+      }
+    }
+    default { return $null }
+  }
+}
+
 function Get-CategoryMeta($key) {
   switch ($key) {
     "glp-metabolic" { return @{ title = "GLP and metabolic research compounds"; blurb = "Research compounds commonly referenced in metabolic and incretin science." } }
@@ -436,6 +497,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
   $evidenceStage = if ($peptide.evidence_stage) { [string]$peptide.evidence_stage } else { "" }
   $pubmedUrl = if ($peptide.pubmed_search_url) { [string]$peptide.pubmed_search_url } else { $null }
   $trialsUrl = if ($peptide.clinical_trials_search_url) { [string]$peptide.clinical_trials_search_url } else { $null }
+  $featuredInsights = Get-FeaturedInsightsData $peptide
   $heroSupplierLinks = foreach ($supplier in @($peptide.suppliers)) {
     if (-not $supplier) { continue }
     $percent = Get-DiscountPercent $supplier.name
@@ -635,6 +697,28 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
         </div>
       </div>
     </section>
+
+    $(if ($featuredInsights) {
+@"
+    <section>
+      <div class="shell resource-grid">
+        <article class="card reveal">
+          <div class="kicker">Research reading notes</div>
+          <h2>$([string](HtmlEncode($featuredInsights.title)))</h2>
+          <p>$([string](HtmlEncode($featuredInsights.lead)))</p>
+          <ul class="checklist">
+$((@($featuredInsights.items) | ForEach-Object { "            <li>$([string](HtmlEncode($_)))</li>" }) -join "`n")
+          </ul>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Comparison angle</div>
+          <h3>How this page becomes more useful</h3>
+          <p>Open this page beside related compounds and supplier listings, then compare how clearly each one handles naming, documentation access, and category context.</p>
+        </article>
+      </div>
+    </section>
+"@
+    })
 
     <section>
       <div class="shell science-grid">
