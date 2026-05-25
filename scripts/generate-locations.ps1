@@ -39,6 +39,70 @@ function Escape-RegexLiteral([string]$value) {
   return [regex]::Escape($value)
 }
 
+function Get-VariantIndex($row, [int]$count) {
+  $seed = Clean $row.slug
+  if (-not $seed) { $seed = Clean $row.city }
+  if (-not $seed) { return 0 }
+
+  $sum = 0
+  foreach ($char in $seed.ToCharArray()) {
+    $sum += [int][char]$char
+  }
+
+  return ($sum % $count)
+}
+
+function Get-VariantText($row, [string]$section) {
+  $city = Clean $row.city
+  $stateCode = Clean $row.state_code
+  $region = Clean $row.region
+  $focus = Clean $row.documentation_focus
+  $anchor = Clean $row.local_research_anchor
+  $index = Get-VariantIndex $row 4
+
+  switch ($section) {
+    "overview" {
+      $options = @(
+        "Use this page as a local reference when comparing research documentation, supplier-page clarity, and testing visibility in $city.",
+        "This guide is built to make supplier-page comparison easier in $city, especially when documentation quality and listing clarity matter more than marketing language.",
+        "Readers in $city can use this page to compare documentation standards, batch references, and policy clarity without jumping between unrelated national pages.",
+        "Start here for a city-specific read on supplier-page quality, documentation access, and research context in $city."
+      )
+      return $options[$index]
+    }
+    "research" {
+      $options = @(
+        "$anchor gives the page a local anchor, while the wider $region context helps explain how supplier pages are framed across the region.",
+        "The local angle matters here because supplier pages often read differently when they are viewed against $city's broader $region research context.",
+        "This section keeps the focus on how local context and regional research coverage shape the way documentation is presented on supplier pages.",
+        "A city guide works best when it connects local research context with the practical details visitors can actually compare on the page."
+      )
+      return $options[$index]
+    }
+    "supplier" {
+      $options = @(
+        "The clearest listings make $focus easy to review before a visitor has to dig through side pages or policy links.",
+        "Good supplier pages are usually the ones that surface $focus early and keep the supporting documents close to the listing.",
+        "When $focus is easy to verify, the rest of the supplier page tends to feel more readable and more useful.",
+        "This is the part of the page where $focus should become easy to compare, not something hidden behind vague claims."
+      )
+      return $options[$index]
+    }
+    "related" {
+      $options = @(
+        "Nearby guides help show how documentation habits change from one city page to the next.",
+        "Comparing nearby cities is one of the easiest ways to spot stronger supplier-page habits and clearer documentation language.",
+        "Use the related guides to compare local context, testing references, and policy language across the same region.",
+        "These related pages add another layer of comparison when one city page feels too narrow on its own."
+      )
+      return $options[$index]
+    }
+    default {
+      return ""
+    }
+  }
+}
+
 function Get-HeroIntro($row) {
   $intro = Clean $row.local_intro
   if ($intro) { return $intro }
@@ -266,6 +330,10 @@ function New-LocationPage($row, $lookup, $siteUrl) {
   $focusLine = "Start with $(Clean $row.documentation_focus), then compare COA access, batch details, research-use labeling, and policy consistency."
   $cityState = "$(Clean $row.city), $(Clean $row.state_code)"
   $supplierButtonLabel = "Browse suppliers in $cityState"
+  $overviewLead = Get-VariantText $row "overview"
+  $researchLead = Get-VariantText $row "research"
+  $supplierLead = Get-VariantText $row "supplier"
+  $relatedLead = Get-VariantText $row "related"
   $faqOneQuestion = if (Clean $row.faq_1_question) { Clean $row.faq_1_question } else { "Why use the $(Clean $row.city) guide?" }
   $faqTwoQuestion = if (Clean $row.faq_2_question) { Clean $row.faq_2_question } else { "Which documentation details are worth checking first?" }
   $faqThreeQuestion = if (Clean $row.faq_3_question) { Clean $row.faq_3_question } else { "What else is worth comparing in nearby city guides?" }
@@ -374,6 +442,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
           <div class="kicker">Local overview</div>
           <h2>$([string](HtmlEncode("How this guide frames $(Clean $row.city)")))</h2>
           <p>$([string](HtmlEncode($heroIntro)))</p>
+          <p>$([string](HtmlEncode($overviewLead)))</p>
           <p>$([string](HtmlEncode($overviewCopy)))</p>
         </article>
         <article class="card context-card reveal delay-1">
@@ -416,11 +485,13 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <article class="story-card reveal">
           <div class="kicker">Research context</div>
           <h2>$([string](HtmlEncode("What shapes the $(Clean $row.city) view")))</h2>
+          <p>$([string](HtmlEncode($researchLead)))</p>
           <p>$([string](HtmlEncode($researchContextCopy)))</p>
         </article>
         <article class="card reveal delay-1">
           <div class="kicker">Choosing a supplier page</div>
           <h3>What to compare first</h3>
+          <p>$([string](HtmlEncode($supplierLead)))</p>
           <p>$([string](HtmlEncode($supplierCopy)))</p>
           <p>$([string](HtmlEncode($logisticsCopy)))</p>
         </article>
@@ -473,7 +544,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <div class="section-head reveal">
           <div>
             <h2>Read other guides</h2>
-            <p>Use nearby guides to compare documentation standards and supplier-page differences across the region.</p>
+            <p>$([string](HtmlEncode($relatedLead)))</p>
           </div>
         </div>
         <div class="resource-grid">
