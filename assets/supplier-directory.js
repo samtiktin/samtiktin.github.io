@@ -92,7 +92,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "biostrategix",
     name: "Biostrategix",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/biostrategix/",
     supplierUrl: "https://biostrategix.com/",
     location: "US",
     priceTier: "budget",
@@ -110,7 +110,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "peptide-sciences",
     name: "Peptide Sciences",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/peptide-sciences/",
     supplierUrl: "https://www.peptidesciences.com/",
     location: "US",
     priceTier: "premium",
@@ -128,7 +128,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "core-peptides",
     name: "Core Peptides",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/core-peptides/",
     supplierUrl: "https://www.corepeptides.com/",
     location: "US",
     priceTier: "mid",
@@ -146,7 +146,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "noble-peptides",
     name: "Noble Peptides",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/noble-peptides/",
     supplierUrl: "https://noblepeptides.com/",
     location: "US",
     priceTier: "mid",
@@ -164,7 +164,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "peptide-foundry",
     name: "Peptide Foundry",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/peptide-foundry/",
     supplierUrl: "https://peptidefoundry.com/",
     location: "US",
     priceTier: "mid",
@@ -182,7 +182,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "bioinfinity-lab",
     name: "BioInfinity Lab",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/bioinfinity-lab/",
     supplierUrl: "https://bioinfinitylab.com/",
     location: "US",
     priceTier: "mid",
@@ -200,7 +200,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "aeterion-peptides",
     name: "Aeterion Peptides",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/aeterion-peptides/",
     supplierUrl: "https://aeterionpeptides.com/",
     location: "US",
     priceTier: "premium",
@@ -218,7 +218,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "peplabrx",
     name: "PepLabRx",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/peplabrx/",
     supplierUrl: "https://peplabrx.com/",
     location: "US",
     priceTier: "mid",
@@ -236,7 +236,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "solira-lab",
     name: "Solira Lab",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/solira-lab/",
     supplierUrl: "https://soliralab.com/",
     location: "US",
     priceTier: "mid",
@@ -254,7 +254,7 @@ window.SUPPLIER_DIRECTORY = [
   {
     slug: "evo-labs-research",
     name: "EVO Labs Research",
-    reviewUrl: "",
+    reviewUrl: "/suppliers/evo-labs-research/",
     supplierUrl: "https://evolabsresearch.co/",
     location: "US",
     priceTier: "mid",
