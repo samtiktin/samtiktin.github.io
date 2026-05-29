@@ -5,35 +5,35 @@
       <stop offset="1" stop-color="#F8FAFC"/>
     </linearGradient>
     <linearGradient id="edu-dark" x1="212" y1="154" x2="740" y2="608" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#7E22CE"/>
-      <stop offset="1" stop-color="#6B21A8"/>
+      <stop stop-color="#2563EB"/>
+      <stop offset="1" stop-color="#1D4ED8"/>
     </linearGradient>
     <linearGradient id="edu-accent" x1="250" y1="220" x2="694" y2="522" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#6EE7B7"/>
-      <stop offset="1" stop-color="#34D399"/>
+      <stop stop-color="#5EEAD4"/>
+      <stop offset="1" stop-color="#14B8A6"/>
     </linearGradient>
   </defs>
   <rect width="960" height="760" rx="44" fill="url(#edu-bg)"/>
-  <circle cx="780" cy="172" r="94" fill="#34D399" fill-opacity=".14"/>
-  <circle cx="166" cy="598" r="86" fill="#7E22CE" fill-opacity=".08"/>
+  <circle cx="780" cy="172" r="94" fill="#14B8A6" fill-opacity=".14"/>
+  <circle cx="166" cy="598" r="86" fill="#2563EB" fill-opacity=".08"/>
   <rect x="190" y="152" width="580" height="458" rx="40" fill="url(#edu-dark)"/>
   <rect x="232" y="194" width="496" height="84" rx="24" fill="#FFFFFF"/>
-  <rect x="262" y="224" width="204" height="14" rx="7" fill="#7E22CE"/>
-  <rect x="262" y="250" width="148" height="12" rx="6" fill="#C4B5FD"/>
-  <rect x="232" y="306" width="216" height="248" rx="26" fill="#F5F3FF"/>
+  <rect x="262" y="224" width="204" height="14" rx="7" fill="#2563EB"/>
+  <rect x="262" y="250" width="148" height="12" rx="6" fill="#BFDBFE"/>
+  <rect x="232" y="306" width="216" height="248" rx="26" fill="#EFF6FF"/>
   <rect x="474" y="306" width="254" height="248" rx="26" fill="#FFFFFF"/>
-  <rect x="264" y="340" width="110" height="14" rx="7" fill="#6B21A8"/>
-  <rect x="264" y="372" width="148" height="12" rx="6" fill="#C4B5FD"/>
-  <rect x="264" y="404" width="136" height="12" rx="6" fill="#C4B5FD"/>
-  <rect x="264" y="458" width="112" height="20" rx="10" fill="#7E22CE"/>
-  <rect x="506" y="338" width="176" height="16" rx="8" fill="#7E22CE"/>
-  <rect x="506" y="372" width="186" height="12" rx="6" fill="#A7F3D0"/>
-  <rect x="506" y="402" width="162" height="12" rx="6" fill="#A7F3D0"/>
+  <rect x="264" y="340" width="110" height="14" rx="7" fill="#1D4ED8"/>
+  <rect x="264" y="372" width="148" height="12" rx="6" fill="#BFDBFE"/>
+  <rect x="264" y="404" width="136" height="12" rx="6" fill="#BFDBFE"/>
+  <rect x="264" y="458" width="112" height="20" rx="10" fill="#2563EB"/>
+  <rect x="506" y="338" width="176" height="16" rx="8" fill="#2563EB"/>
+  <rect x="506" y="372" width="186" height="12" rx="6" fill="#99F6E4"/>
+  <rect x="506" y="402" width="162" height="12" rx="6" fill="#99F6E4"/>
   <path d="M520 474C558 430 603 408 654 408" stroke="url(#edu-accent)" stroke-width="12" stroke-linecap="round"/>
-  <path d="M520 512C556 536 596 548 640 548C659 548 677 546 694 541" stroke="#6EE7B7" stroke-width="10" stroke-linecap="round"/>
-  <circle cx="566" cy="438" r="11" fill="#A7F3D0"/>
-  <circle cx="640" cy="410" r="13" fill="#34D399"/>
-  <circle cx="694" cy="540" r="10" fill="#ECFDF5"/>
+  <path d="M520 512C556 536 596 548 640 548C659 548 677 546 694 541" stroke="#5EEAD4" stroke-width="10" stroke-linecap="round"/>
+  <circle cx="566" cy="438" r="11" fill="#99F6E4"/>
+  <circle cx="640" cy="410" r="13" fill="#14B8A6"/>
+  <circle cx="694" cy="540" r="10" fill="#F0FDFA"/>
   <text x="194" y="114" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Education, guides, and standards</text>
   <text x="194" y="668" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">COAs • comparison guides • methodology • policy pages</text>
 </svg>
