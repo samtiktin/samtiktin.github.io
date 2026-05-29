@@ -29,7 +29,7 @@ html {
 body {
   margin: 0;
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.6;
+  line-height: 1.8;
   color: var(--ink);
   background: var(--bg);
 }
@@ -59,6 +59,11 @@ h3,
 h4,
 p {
   margin-top: 0;
+}
+
+p,
+li {
+  line-height: 1.8;
 }
 
 .shell {
@@ -190,6 +195,26 @@ p {
 .hero,
 .page-hero {
   padding: 72px 0 32px;
+}
+
+section {
+  padding: 46px 0;
+}
+
+section:nth-of-type(odd) {
+  background: #ffffff;
+}
+
+section:nth-of-type(even) {
+  background: var(--bg);
+}
+
+article > p,
+article > ul,
+article > ol,
+article > blockquote,
+article > table {
+  max-width: 760px;
 }
 
 .hero-card,
@@ -576,10 +601,6 @@ h1 {
 .stat-block span {
   color: rgba(249, 243, 231, 0.8);
   font-size: 0.98rem;
-}
-
-section {
-  padding: 34px 0;
 }
 
 .section-head {
