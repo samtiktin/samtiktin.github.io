@@ -35,6 +35,31 @@ function Clean([object]$value) {
   return $value.ToString().Trim()
 }
 
+function HasMetaLocationCopy([object]$value) {
+  $text = Clean $value
+  if (-not $text) { return $false }
+
+  $patterns = @(
+    "has its own guide because",
+    "location pages should do more than",
+    "swap in a city name",
+    "this page ties",
+    "readers can actually compare",
+    "rather than repeating a generic city paragraph",
+    "use this section to connect the page",
+    "for .* readers, the main comparison angle is",
+    "this guide gives .* readers a local layer"
+  )
+
+  foreach ($pattern in $patterns) {
+    if ($text -match $pattern) {
+      return $true
+    }
+  }
+
+  return $false
+}
+
 function Escape-RegexLiteral([string]$value) {
   return [regex]::Escape($value)
 }
@@ -63,19 +88,19 @@ function Get-VariantText($row, [string]$section) {
   switch ($section) {
     "overview" {
       $options = @(
-        "Use this page as a local reference when comparing research documentation, supplier-page clarity, and testing visibility in $city.",
-        "This guide is built to make supplier-page comparison easier in $city, especially when documentation quality and listing clarity matter more than marketing language.",
-        "Readers in $city can use this page to compare documentation standards, batch references, and policy clarity without jumping between unrelated national pages.",
-        "Start here for a city-specific read on supplier-page quality, documentation access, and research context in $city."
+        "Use this page to compare research documentation, supplier-page clarity, and testing visibility in $city.",
+        "This guide highlights documentation quality, listing clarity, and laboratory references across supplier pages in $city.",
+        "In $city, the clearest supplier pages make documentation standards, batch references, and policy details easy to review.",
+        "Start here for a city-specific view of supplier-page quality, documentation access, and research context in $city."
       )
       return $options[$index]
     }
     "research" {
       $options = @(
-        "$anchor gives the page a local anchor, while the wider $region context helps explain how supplier pages are framed across the region.",
-        "The local angle matters here because supplier pages often read differently when they are viewed against $city's broader $region research context.",
-        "This section keeps the focus on how local context and regional research coverage shape the way documentation is presented on supplier pages.",
-        "A city guide works best when it connects local research context with the practical details visitors can actually compare on the page."
+        "$anchor helps place the page within the wider $region research landscape.",
+        "$city fits into a broader $region research picture, which helps explain how supplier pages frame testing records and laboratory paperwork.",
+        "Regional research context can make documentation standards and disclosure language easier to compare from one supplier page to the next.",
+        "Local context matters most when supplier pages are being compared for testing records, labeling, and laboratory documentation."
       )
       return $options[$index]
     }
@@ -90,10 +115,10 @@ function Get-VariantText($row, [string]$section) {
     }
     "related" {
       $options = @(
-        "Nearby guides help show how documentation habits change from one city page to the next.",
-        "Comparing nearby cities is one of the easiest ways to spot stronger supplier-page habits and clearer documentation language.",
+        "Nearby guides can make regional documentation patterns easier to compare.",
+        "Comparing nearby cities often makes differences in supplier-page quality and documentation language easier to spot.",
         "Use the related guides to compare local context, testing references, and policy language across the same region.",
-        "These related pages add another layer of comparison when one city page feels too narrow on its own."
+        "The related guides help widen the comparison beyond a single city page."
       )
       return $options[$index]
     }
@@ -105,35 +130,36 @@ function Get-VariantText($row, [string]$section) {
 
 function Get-HeroIntro($row) {
   $intro = Clean $row.local_intro
-  if ($intro) { return $intro }
+  if ($intro -and -not (HasMetaLocationCopy $intro)) { return $intro }
 
   $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
-  return "$anchor is one of the clearest local reference points for understanding how $city supplier pages present testing, documentation, and research-use labeling."
+  return "$city readers can use this guide to compare research documentation, shipping language, and laboratory paperwork across supplier pages."
 }
 
 function Get-OverviewCopy($row) {
   $copy = Clean $row.why_this_city_has_guide
-  if ($copy) { return $copy }
-
-  $anchor = Clean $row.local_research_anchor
-  $region = Clean $row.region
-  return "This guide uses $anchor and the broader $region context to compare documentation standards, testing visibility, and supplier-page language."
-}
-
-function Get-ResearchContextCopy($row) {
-  $copy = Clean $row.regional_research_context
-  if ($copy) { return $copy }
+  if ($copy -and -not (HasMetaLocationCopy $copy)) { return $copy }
 
   $city = Clean $row.city
   $anchor = Clean $row.local_research_anchor
   $region = Clean $row.region
-  return "In $city, $anchor helps explain why documentation standards and disclosure language may stand out more than generic catalog copy across the wider $region region."
+  return "$city sits within the broader $region research landscape, so this guide keeps the focus on documentation standards, testing visibility, and the supplier details that are easiest to verify."
+}
+
+function Get-ResearchContextCopy($row) {
+  $copy = Clean $row.regional_research_context
+  if ($copy -and -not (HasMetaLocationCopy $copy)) { return $copy }
+
+  $city = Clean $row.city
+  $anchor = Clean $row.local_research_anchor
+  $region = Clean $row.region
+  return "$anchor helps place $city within the wider $region research picture, especially when comparing how supplier pages present testing records, labeling, and laboratory paperwork."
 }
 
 function Get-SupplierCopy($row) {
   $copy = Clean $row.supplier_transparency_paragraph
-  if ($copy) { return $copy }
+  if ($copy -and -not (HasMetaLocationCopy $copy)) { return $copy }
 
   $city = Clean $row.city
   $focus = Clean $row.documentation_focus
