@@ -383,7 +383,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
         <span class="brand-mark">PS</span>
         <span class="brand-copy">
           <strong>PeptideSuppliers.org</strong>
-          <span>Research supplier discovery and education</span>
+          <span>Finding the right peptide supplier for you</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -672,7 +672,7 @@ $($cards -join "`n")
         <span class="brand-mark">PS</span>
         <span class="brand-copy">
           <strong>PeptideSuppliers.org</strong>
-          <span>Research supplier discovery and education</span>
+          <span>Finding the right peptide supplier for you</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -787,3 +787,4 @@ $hubHtml = New-LocationsHub -rows $rows -lookup $lookup -siteUrl $siteUrl
 Set-Content -Path (Join-Path $locationsRoot "index.html") -Value $hubHtml -Encoding UTF8
 
 Update-Sitemap -repoRoot $repoRoot -sitemapPath $sitemapPath
+

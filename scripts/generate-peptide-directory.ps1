@@ -363,7 +363,7 @@ $($cards -join "`n")
         <span class="brand-mark">PS</span>
         <span class="brand-copy">
           <strong>PeptideSuppliers.org</strong>
-          <span>Research supplier discovery and education</span>
+          <span>Finding the right peptide supplier for you</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -591,7 +591,7 @@ function New-PeptidePage($peptide, $lookup, $siteUrl) {
         <span class="brand-mark">PS</span>
         <span class="brand-copy">
           <strong>PeptideSuppliers.org</strong>
-          <span>Research supplier discovery and education</span>
+          <span>Finding the right peptide supplier for you</span>
         </span>
       </a>
       <nav class="nav" aria-label="Primary">
@@ -839,3 +839,4 @@ foreach ($peptide in $peptides) {
 
 $directoryHtml = New-DirectoryPage -peptides $peptides -lookup $lookup -siteUrl $siteUrl
 Set-Content -Path $directoryPath -Value $directoryHtml -Encoding UTF8
+
