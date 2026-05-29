@@ -48,7 +48,10 @@ function HasMetaLocationCopy([object]$value) {
     "rather than repeating a generic city paragraph",
     "use this section to connect the page",
     "for .* readers, the main comparison angle is",
-    "this guide gives .* readers a local layer"
+    "this guide gives .* readers a local layer",
+    "is treated as a",
+    "regional research reading",
+    "nearby-market navigation"
   )
 
   foreach ($pattern in $patterns) {
@@ -137,12 +140,21 @@ function Get-HeroIntro($row) {
   return "$city readers can use this guide to compare research documentation, shipping language, and laboratory paperwork across supplier pages."
 }
 
+function Get-AnchorCopy($row) {
+  $anchor = Clean $row.local_research_anchor
+  if ($anchor -and -not (HasMetaLocationCopy $anchor)) { return $anchor }
+
+  $city = Clean $row.city
+  $state = Clean $row.state
+  $region = Clean $row.region
+  return "$city, $state is part of the broader $region research landscape, with nearby markets helping shape how supplier pages present documentation and testing records."
+}
+
 function Get-OverviewCopy($row) {
   $copy = Clean $row.why_this_city_has_guide
   if ($copy -and -not (HasMetaLocationCopy $copy)) { return $copy }
 
   $city = Clean $row.city
-  $anchor = Clean $row.local_research_anchor
   $region = Clean $row.region
   return "$city sits within the broader $region research landscape, so this guide keeps the focus on documentation standards, testing visibility, and the supplier details that are easiest to verify."
 }
@@ -151,10 +163,8 @@ function Get-ResearchContextCopy($row) {
   $copy = Clean $row.regional_research_context
   if ($copy -and -not (HasMetaLocationCopy $copy)) { return $copy }
 
-  $city = Clean $row.city
-  $anchor = Clean $row.local_research_anchor
-  $region = Clean $row.region
-  return "$anchor helps place $city within the wider $region research picture, especially when comparing how supplier pages present testing records, labeling, and laboratory paperwork."
+  $anchor = Get-AnchorCopy $row
+  return $anchor
 }
 
 function Get-SupplierCopy($row) {
@@ -465,11 +475,11 @@ function New-LocationPage($row, $lookup, $siteUrl) {
     <section>
       <div class="shell location-grid">
         <article class="story-card reveal">
-          <div class="kicker">Local overview</div>
-          <h2>$([string](HtmlEncode("How this guide frames $(Clean $row.city)")))</h2>
+          <div class="kicker">Research context</div>
+          <h2>$([string](HtmlEncode("What shapes the $(Clean $row.city) view")))</h2>
           <p>$([string](HtmlEncode($heroIntro)))</p>
-          <p>$([string](HtmlEncode($overviewLead)))</p>
-          <p>$([string](HtmlEncode($overviewCopy)))</p>
+          <p>$([string](HtmlEncode($researchLead)))</p>
+          <p>$([string](HtmlEncode($researchContextCopy)))</p>
         </article>
         <article class="card context-card reveal delay-1">
           <div class="kicker">Local context</div>
@@ -490,7 +500,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
               </tr>
               <tr>
                 <th>Local research anchor</th>
-                <td>$([string](HtmlEncode((Clean $row.local_research_anchor))))</td>
+                <td>$([string](HtmlEncode((Get-AnchorCopy $row))))</td>
               </tr>
               <tr>
                 <th>Nearby cities</th>
@@ -508,13 +518,7 @@ function New-LocationPage($row, $lookup, $siteUrl) {
 
     <section>
       <div class="shell location-grid">
-        <article class="story-card reveal">
-          <div class="kicker">Research context</div>
-          <h2>$([string](HtmlEncode("What shapes the $(Clean $row.city) view")))</h2>
-          <p>$([string](HtmlEncode($researchLead)))</p>
-          <p>$([string](HtmlEncode($researchContextCopy)))</p>
-        </article>
-        <article class="card reveal delay-1">
+        <article class="card reveal">
           <div class="kicker">Choosing a supplier page</div>
           <h3>What to compare first</h3>
           <p>$([string](HtmlEncode($supplierLead)))</p>
