@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">EVO Labs Research supplier cover</title>
+  <desc id="desc">Local branded supplier image for EVO Labs Research.</desc>
+  <rect width="640" height="640" rx="36" fill="#232c33"/>
+  <path d="M-20 502c104-98 212-150 316-150 92 0 184 28 344 116v172H-20z" fill="#c4e2f3" opacity="0.13"/>
+  <rect x="54" y="60" width="532" height="520" rx="34" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.24"/>
+  <rect x="118" y="150" width="172" height="256" rx="24" fill="#f6fcff" opacity="0.16" stroke="#f6fcff" stroke-opacity="0.4"/>
+  <rect x="164" y="120" width="80" height="46" rx="16" fill="#c4e2f3"/>
+  <rect x="332" y="178" width="194" height="18" rx="9" fill="#c4e2f3"/>
+  <rect x="332" y="224" width="152" height="13" rx="6.5" fill="#ffffff" opacity="0.72"/>
+  <rect x="332" y="258" width="180" height="13" rx="6.5" fill="#ffffff" opacity="0.48"/>
+  <rect x="332" y="308" width="172" height="48" rx="18" fill="#c4e2f3"/>
+  <text x="418" y="339" fill="#232c33" font-size="15" font-family="Arial, sans-serif" text-anchor="middle">FAST FULFILL</text>
+  <text x="102" y="486" fill="#ffffff" font-size="44" font-family="Georgia, 'Times New Roman', serif">EVO Labs</text>
+  <text x="102" y="530" fill="#c4e2f3" font-size="28" font-family="Arial, sans-serif" letter-spacing="2.6">RESEARCH</text>
+</svg>
