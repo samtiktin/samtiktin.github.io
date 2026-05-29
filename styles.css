@@ -474,7 +474,7 @@ h1 {
 .brand-point strong {
   display: block;
   margin-bottom: 4px;
-  color: var(--forest);
+  color: var(--ink);
 }
 
 .award-strip,
@@ -626,7 +626,7 @@ section {
 .jump-nav strong {
   display: block;
   margin-bottom: 12px;
-  color: var(--forest);
+  color: var(--ink);
 }
 
 .jump-links {
@@ -955,7 +955,7 @@ h3 {
 }
 
 .directory-category-label {
-  color: var(--forest);
+  color: var(--ink);
   font-size: 0.92rem;
   font-weight: 700;
 }
@@ -979,7 +979,7 @@ h3 {
 
 .context-table th {
   width: 220px;
-  color: var(--forest);
+  color: var(--ink);
   font-size: 0.92rem;
 }
 
@@ -1188,7 +1188,7 @@ h3 {
 }
 
 .compare-table th {
-  color: var(--forest);
+  color: var(--ink);
   font-size: 0.92rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
@@ -1225,7 +1225,7 @@ h3 {
   display: grid;
   gap: 8px;
   font-weight: 700;
-  color: var(--forest);
+  color: var(--ink);
 }
 
 .filter-form input,
@@ -1268,7 +1268,7 @@ h3 {
 .finder-compounds strong {
   display: block;
   margin-bottom: 4px;
-  color: var(--forest);
+  color: var(--ink);
 }
 
 .finder-note {
@@ -1312,7 +1312,7 @@ h3 {
 .field-label {
   display: block;
   margin-bottom: 8px;
-  color: var(--forest);
+  color: var(--ink);
   font-weight: 700;
 }
 
