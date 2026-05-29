@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Pinnacle Peptide Labs supplier cover</title>
+  <desc id="desc">Local branded supplier image for Pinnacle Peptide Labs.</desc>
+  <rect width="640" height="640" rx="36" fill="#2b3341"/>
+  <rect x="50" y="54" width="540" height="532" rx="34" fill="#ffffff" opacity="0.09" stroke="#ffffff" stroke-opacity="0.28"/>
+  <path d="M76 470c74-94 132-150 244-246 34-28 88-32 126 8 40 42 72 102 118 182v118H76z" fill="#d7e5ff" opacity="0.16"/>
+  <rect x="108" y="132" width="178" height="250" rx="26" fill="#eef4ff" opacity="0.18" stroke="#eef4ff" stroke-opacity="0.4"/>
+  <rect x="154" y="102" width="86" height="44" rx="16" fill="#b7d0ff"/>
+  <rect x="332" y="162" width="206" height="18" rx="9" fill="#b7d0ff"/>
+  <rect x="332" y="206" width="166" height="13" rx="6.5" fill="#ffffff" opacity="0.7"/>
+  <rect x="332" y="238" width="190" height="13" rx="6.5" fill="#ffffff" opacity="0.52"/>
+  <rect x="332" y="288" width="152" height="48" rx="18" fill="#b7d0ff"/>
+  <text x="408" y="318" fill="#243248" font-size="17" font-family="Arial, sans-serif" text-anchor="middle">VALUE FOCUS</text>
+  <text x="104" y="484" fill="#ffffff" font-size="50" font-family="Georgia, 'Times New Roman', serif">Pinnacle</text>
+  <text x="104" y="528" fill="#b7d0ff" font-size="28" font-family="Arial, sans-serif" letter-spacing="2.8">PEPTIDE LABS</text>
+  <text x="104" y="90" fill="#ffffff" font-size="18" font-family="Arial, sans-serif" letter-spacing="2">RESEARCH SUPPLIER</text>
+</svg>

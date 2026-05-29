@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Iron Peptides supplier cover</title>
+  <desc id="desc">Local branded supplier image for Iron Peptides.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#19271d"/>
+      <stop offset="100%" stop-color="#41593f"/>
+    </linearGradient>
+    <linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="rgba(255,255,255,0.72)"/>
+      <stop offset="100%" stop-color="rgba(255,255,255,0.08)"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="640" rx="36" fill="url(#bg)"/>
+  <circle cx="128" cy="104" r="120" fill="#d9c07f" opacity="0.12"/>
+  <circle cx="546" cy="540" r="164" fill="#ffffff" opacity="0.08"/>
+  <rect x="62" y="72" width="516" height="496" rx="34" fill="#f7f1e6" opacity="0.1" stroke="#f7f1e6" stroke-opacity="0.26"/>
+  <rect x="112" y="154" width="168" height="272" rx="26" fill="#fffdfa" opacity="0.14" stroke="#fffdfa" stroke-opacity="0.45"/>
+  <rect x="154" y="120" width="84" height="54" rx="18" fill="#f1d79e" opacity="0.88"/>
+  <rect x="332" y="180" width="196" height="20" rx="10" fill="#f1d79e" opacity="0.82"/>
+  <rect x="332" y="226" width="154" height="14" rx="7" fill="#fffdfa" opacity="0.72"/>
+  <rect x="332" y="260" width="176" height="14" rx="7" fill="#fffdfa" opacity="0.52"/>
+  <rect x="332" y="310" width="132" height="48" rx="18" fill="#f1d79e"/>
+  <text x="398" y="340" fill="#253425" font-size="18" font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">COA READY</text>
+  <text x="112" y="486" fill="#fffdfa" font-size="56" font-family="Georgia, 'Times New Roman', serif">Iron</text>
+  <text x="112" y="536" fill="#f1d79e" font-size="32" font-family="Arial, sans-serif" letter-spacing="3">PEPTIDES</text>
+  <text x="112" y="92" fill="#fffdfa" font-size="18" font-family="Arial, sans-serif" letter-spacing="2">RESEARCH SUPPLIER</text>
+</svg>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Peptides Kingdom supplier cover</title>
+  <desc id="desc">Local branded supplier image for Peptides Kingdom.</desc>
+  <rect width="640" height="640" rx="36" fill="#3c2d1b"/>
+  <circle cx="148" cy="110" r="122" fill="#ffd486" opacity="0.14"/>
+  <circle cx="520" cy="536" r="164" fill="#ffffff" opacity="0.08"/>
+  <rect x="56" y="64" width="528" height="512" rx="34" fill="#ffffff" opacity="0.08" stroke="#ffffff" stroke-opacity="0.24"/>
+  <rect x="118" y="150" width="172" height="256" rx="24" fill="#fffaf1" opacity="0.16" stroke="#fffaf1" stroke-opacity="0.42"/>
+  <rect x="164" y="118" width="80" height="46" rx="16" fill="#ffd486"/>
+  <rect x="332" y="180" width="200" height="18" rx="9" fill="#ffd486"/>
+  <rect x="332" y="226" width="154" height="13" rx="6.5" fill="#ffffff" opacity="0.7"/>
+  <rect x="332" y="260" width="182" height="13" rx="6.5" fill="#ffffff" opacity="0.48"/>
+  <rect x="332" y="310" width="174" height="48" rx="18" fill="#ffd486"/>
+  <text x="419" y="341" fill="#3c2d1b" font-size="17" font-family="Arial, sans-serif" text-anchor="middle">WORLDWIDE</text>
+  <text x="102" y="486" fill="#ffffff" font-size="46" font-family="Georgia, 'Times New Roman', serif">Peptides</text>
+  <text x="102" y="530" fill="#ffd486" font-size="30" font-family="Arial, sans-serif" letter-spacing="2.6">KINGDOM</text>
+  <text x="102" y="88" fill="#ffffff" font-size="18" font-family="Arial, sans-serif" letter-spacing="2">RESEARCH SUPPLIER</text>
+</svg>
