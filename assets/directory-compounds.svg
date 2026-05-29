@@ -1,39 +1,41 @@
 <svg width="960" height="760" viewBox="0 0 960 760" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="dir-bg" x1="130" y1="88" x2="832" y2="680" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#F6FAF7"/>
-      <stop offset="1" stop-color="#E0EEE6"/>
+      <stop stop-color="#FFFFFF"/>
+      <stop offset="1" stop-color="#F8FAFC"/>
     </linearGradient>
     <linearGradient id="dir-dark" x1="196" y1="148" x2="764" y2="618" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#153328"/>
-      <stop offset="1" stop-color="#0C1F18"/>
+      <stop stop-color="#7E22CE"/>
+      <stop offset="1" stop-color="#6B21A8"/>
     </linearGradient>
     <linearGradient id="dir-accent" x1="236" y1="238" x2="704" y2="540" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#9BE2BC"/>
-      <stop offset="1" stop-color="#3EAA72"/>
+      <stop stop-color="#6EE7B7"/>
+      <stop offset="1" stop-color="#34D399"/>
     </linearGradient>
   </defs>
   <rect width="960" height="760" rx="44" fill="url(#dir-bg)"/>
+  <circle cx="770" cy="148" r="88" fill="#34D399" fill-opacity=".12"/>
+  <circle cx="196" cy="650" r="86" fill="#7E22CE" fill-opacity=".08"/>
   <rect x="164" y="146" width="632" height="474" rx="42" fill="url(#dir-dark)"/>
-  <rect x="214" y="198" width="188" height="116" rx="24" fill="#F8FBF9"/>
-  <rect x="430" y="198" width="188" height="116" rx="24" fill="#EFF8F2"/>
-  <rect x="646" y="198" width="100" height="116" rx="24" fill="#ECF6F0"/>
-  <rect x="214" y="344" width="100" height="100" rx="22" fill="#EFF8F2"/>
-  <rect x="338" y="344" width="100" height="100" rx="22" fill="#F8FBF9"/>
-  <rect x="462" y="344" width="100" height="100" rx="22" fill="#ECF6F0"/>
-  <rect x="586" y="344" width="160" height="100" rx="22" fill="#F8FBF9"/>
-  <rect x="214" y="472" width="532" height="98" rx="26" fill="#F2F9F4"/>
-  <path d="M266 252H350" stroke="#17362A" stroke-width="16" stroke-linecap="round"/>
-  <path d="M482 252H566" stroke="#4C9F73" stroke-width="16" stroke-linecap="round"/>
-  <path d="M682 252H710" stroke="#98CEAE" stroke-width="16" stroke-linecap="round"/>
+  <rect x="214" y="198" width="188" height="116" rx="24" fill="#FFFFFF"/>
+  <rect x="430" y="198" width="188" height="116" rx="24" fill="#F5F3FF"/>
+  <rect x="646" y="198" width="100" height="116" rx="24" fill="#ECFDF5"/>
+  <rect x="214" y="344" width="100" height="100" rx="22" fill="#F5F3FF"/>
+  <rect x="338" y="344" width="100" height="100" rx="22" fill="#FFFFFF"/>
+  <rect x="462" y="344" width="100" height="100" rx="22" fill="#ECFDF5"/>
+  <rect x="586" y="344" width="160" height="100" rx="22" fill="#FFFFFF"/>
+  <rect x="214" y="472" width="532" height="98" rx="26" fill="#F8FAFC"/>
+  <path d="M266 252H350" stroke="#7E22CE" stroke-width="16" stroke-linecap="round"/>
+  <path d="M482 252H566" stroke="#34D399" stroke-width="16" stroke-linecap="round"/>
+  <path d="M682 252H710" stroke="#A78BFA" stroke-width="16" stroke-linecap="round"/>
   <circle cx="264" cy="392" r="20" fill="url(#dir-accent)"/>
-  <circle cx="388" cy="392" r="20" fill="#2D7D56"/>
-  <circle cx="512" cy="392" r="20" fill="#A6DDBB"/>
-  <path d="M620 380H712" stroke="#17362A" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="388" cy="392" r="20" fill="#7E22CE"/>
+  <circle cx="512" cy="392" r="20" fill="#A7F3D0"/>
+  <path d="M620 380H712" stroke="#7E22CE" stroke-width="18" stroke-linecap="round"/>
   <path d="M246 520C298 486 360 470 432 470C505 470 571 489 628 528" stroke="url(#dir-accent)" stroke-width="12" stroke-linecap="round"/>
-  <circle cx="316" cy="492" r="11" fill="#A2DBB9"/>
-  <circle cx="430" cy="470" r="13" fill="#65BC89"/>
-  <circle cx="560" cy="502" r="11" fill="#E5F6EB"/>
-  <text x="170" y="108" fill="#153127" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Peptide directory by compound</text>
-  <text x="170" y="668" fill="#486957" font-family="Arial, Helvetica, sans-serif" font-size="24">Metabolic • recovery • GH • cognitive • specialty</text>
+  <circle cx="316" cy="492" r="11" fill="#A7F3D0"/>
+  <circle cx="430" cy="470" r="13" fill="#34D399"/>
+  <circle cx="560" cy="502" r="11" fill="#EDE9FE"/>
+  <text x="170" y="108" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Peptide directory by compound</text>
+  <text x="170" y="668" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">Metabolic • recovery • GH • cognitive • specialty</text>
 </svg>
