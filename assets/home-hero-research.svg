@@ -6,7 +6,7 @@
     </linearGradient>
     <linearGradient id="panel" x1="196" y1="124" x2="728" y2="610" gradientUnits="userSpaceOnUse">
       <stop stop-color="#4C1D95"/>
-      <stop offset="1" stop-color="#5B21B6"/>
+      <stop offset="1" stop-color="#4C1D95"/>
     </linearGradient>
     <linearGradient id="glass" x1="176" y1="166" x2="774" y2="612" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFFFFF" stop-opacity="0.18"/>
@@ -26,7 +26,7 @@
   <rect x="228" y="254" width="86" height="12" rx="6" fill="#EDE9FE"/>
   <rect x="228" y="292" width="148" height="18" rx="9" fill="#4C1D95"/>
   <rect x="228" y="326" width="132" height="12" rx="6" fill="#A7F3D0"/>
-  <rect x="442" y="196" width="274" height="258" rx="30" fill="#5B21B6"/>
+  <rect x="442" y="196" width="274" height="258" rx="30" fill="#4C1D95"/>
   <rect x="474" y="226" width="118" height="12" rx="6" fill="#A7F3D0"/>
   <rect x="602" y="226" width="72" height="12" rx="6" fill="#34D399"/>
   <path d="M486 324C520 276 564 252 618 252C657 252 692 267 724 294" stroke="url(#accent)" stroke-width="12" stroke-linecap="round"/>

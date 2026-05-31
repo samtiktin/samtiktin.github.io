@@ -6,7 +6,7 @@
     </linearGradient>
     <linearGradient id="dir-dark" x1="196" y1="148" x2="764" y2="618" gradientUnits="userSpaceOnUse">
       <stop stop-color="#4C1D95"/>
-      <stop offset="1" stop-color="#5B21B6"/>
+      <stop offset="1" stop-color="#4C1D95"/>
     </linearGradient>
     <linearGradient id="dir-accent" x1="236" y1="238" x2="704" y2="540" gradientUnits="userSpaceOnUse">
       <stop stop-color="#5EEAD4"/>
