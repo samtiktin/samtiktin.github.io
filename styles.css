@@ -1,15 +1,15 @@
 :root {
-  --bg: #f6fbf8;
+  --bg: #f8fafc;
   --surface: #ffffff;
   --surface-strong: #ffffff;
-  --surface-soft: #f3f0ff;
+  --surface-soft: #eef2ff;
   --ink: #111827;
   --muted: #4b5563;
   --line: #e5e7eb;
   --olive: #34d399;
-  --forest: #4c1d95;
+  --forest: #312e81;
   --clay: #6b7280;
-  --gold: #4c1d95;
+  --gold: #312e81;
   --cream: #ffffff;
   --accent: #34d399;
   --accent-strong: #10b981;
@@ -101,7 +101,7 @@ li {
   border-radius: 14px;
   display: grid;
   place-items: center;
-  background: linear-gradient(135deg, var(--forest), #5b21b6);
+  background: linear-gradient(135deg, var(--forest), #4338ca);
   color: #fff;
   font-size: 18px;
   font-weight: 700;
@@ -411,30 +411,30 @@ h1 {
 .nav a:focus-visible,
 .jump-links a:focus-visible,
 .card-link:focus-visible {
-  outline: 2px solid rgba(76, 29, 149, 0.45);
+  outline: 2px solid rgba(67, 56, 202, 0.4);
   outline-offset: 3px;
 }
 
 .button-primary {
   color: #ffffff;
-  background: #4c1d95;
+  background: #4338ca;
   box-shadow: var(--shadow);
 }
 
 .button-secondary {
-  color: #134e4a;
-  border: 1px solid rgba(20, 184, 166, 0.3);
-  background: #14b8a6;
+  color: #065f46;
+  border: 1px solid rgba(52, 211, 153, 0.32);
+  background: #34d399;
 }
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: #3b136f;
+  background: #3730a3;
 }
 
 .button-secondary:hover,
 .button-secondary:focus-visible {
-  background: #0f766e;
+  background: #10b981;
 }
 
 .button-ghost {
@@ -445,8 +445,8 @@ h1 {
 
 .button-ghost:hover,
 .button-ghost:focus-visible {
-  background: rgba(20, 184, 166, 0.08);
-  border-color: rgba(20, 184, 166, 0.34);
+  background: rgba(52, 211, 153, 0.08);
+  border-color: rgba(52, 211, 153, 0.32);
   color: var(--accent-strong);
 }
 
