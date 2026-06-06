@@ -494,6 +494,119 @@ h1 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.home-brand,
+.supplier-branding {
+  background: linear-gradient(180deg, #dce8e1 0%, #e7efea 100%);
+}
+
+.home-illustration,
+.supplier-nav-band {
+  background: #e2ebe6;
+}
+
+.home-motif,
+.supplier-shortlist {
+  background: #d7e3dc;
+}
+
+.home-intro,
+.supplier-hub-lists {
+  background: #edf3f0;
+}
+
+.home-signals,
+.supplier-compounds {
+  background: #e1e9e4;
+}
+
+.home-awards {
+  background: linear-gradient(180deg, #d2dfd8 0%, #dce8e1 100%);
+}
+
+.home-panels {
+  background: #e7efea;
+}
+
+.home-brand .brand-showcase,
+.supplier-branding .brand-showcase {
+  border-radius: 24px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at top left, rgba(35, 67, 52, 0.14), transparent 38%),
+    linear-gradient(145deg, rgba(255, 255, 255, 0.95), rgba(245, 249, 247, 0.95));
+}
+
+.home-illustration .hero-art,
+.home-motif .science-panel {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.home-intro .story-card,
+.supplier-hub-lists .notice {
+  border-radius: 22px;
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.12);
+}
+
+.home-intro .card,
+.supplier-shortlist .card,
+.supplier-hub-lists .card,
+.supplier-compounds .card {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(250, 252, 251, 0.98));
+}
+
+.home-signals .cards,
+.supplier-shortlist .supplier-grid,
+.supplier-hub-lists .supplier-grid,
+.supplier-compounds .supplier-grid {
+  gap: 22px;
+}
+
+.home-awards .award-card {
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top right, rgba(46, 139, 87, 0.12), transparent 34%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(247, 250, 248, 0.98));
+}
+
+.home-panels .science-grid {
+  gap: 22px;
+}
+
+.supplier-hero .page-hero-card {
+  background:
+    radial-gradient(circle at top left, rgba(35, 67, 52, 0.22), transparent 42%),
+    radial-gradient(circle at bottom right, rgba(46, 139, 87, 0.16), transparent 40%),
+    linear-gradient(180deg, #d7e3dc 0%, #dfeae4 100%);
+}
+
+.supplier-shortlist .section-head,
+.supplier-hub-lists .section-head,
+.supplier-compounds .section-head {
+  margin-bottom: 32px;
+}
+
+.supplier-nav-band .jump-nav {
+  border-radius: 22px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.98), rgba(243, 247, 245, 0.98));
+}
+
+.supplier-shortlist .card-link,
+.supplier-hub-lists .card-link,
+.supplier-compounds .card-link {
+  border-radius: 18px;
+}
+
+.supplier-shortlist .card-link:hover,
+.supplier-shortlist .card-link:focus-visible,
+.supplier-hub-lists .card-link:hover,
+.supplier-hub-lists .card-link:focus-visible,
+.supplier-compounds .card-link:hover,
+.supplier-compounds .card-link:focus-visible {
+  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.12);
+}
+
 .brand-row {
   display: grid;
   grid-template-columns: 1.2fr 0.8fr;
