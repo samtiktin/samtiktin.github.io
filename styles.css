@@ -1,19 +1,19 @@
 :root {
-  --bg: #f8fafc;
+  --bg: #f4f6fb;
   --surface: #ffffff;
   --surface-strong: #ffffff;
-  --surface-soft: #eef2ff;
+  --surface-soft: #ede9fe;
   --ink: #111827;
   --muted: #4b5563;
   --line: #e5e7eb;
   --olive: #34d399;
-  --forest: #312e81;
+  --forest: #2e1065;
   --clay: #6b7280;
-  --gold: #312e81;
+  --gold: #2e1065;
   --cream: #ffffff;
   --accent: #34d399;
   --accent-strong: #10b981;
-  --shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+  --shadow: 0 14px 34px rgba(15, 23, 42, 0.1);
   --radius: 16px;
   --max: 1180px;
 }
@@ -206,11 +206,11 @@ section:nth-of-type(odd) {
 }
 
 section:nth-of-type(even) {
-  background: #f3f4f6;
+  background: #f1f5f9;
 }
 
 section:nth-of-type(3n) {
-  background: #eef2ff;
+  background: #ede9fe;
 }
 
 article > p,
@@ -252,9 +252,9 @@ article > table {
   border: 1px solid var(--line);
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(49, 46, 129, 0.12), transparent 42%),
-    radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.1), transparent 40%),
-    #ffffff;
+    radial-gradient(circle at top left, rgba(109, 40, 217, 0.18), transparent 42%),
+    radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.12), transparent 40%),
+    #eef2ff;
 }
 
 .hero-card::before,
@@ -264,7 +264,7 @@ article > table {
   content: "";
   position: absolute;
   border-radius: 999px;
-  background: rgba(49, 46, 129, 0.06);
+  background: rgba(109, 40, 217, 0.08);
 }
 
 .hero-card::before,
@@ -421,7 +421,7 @@ h1 {
 
 .button-primary {
   color: #ffffff;
-  background: #4338ca;
+  background: #6d28d9;
   box-shadow: var(--shadow);
 }
 
@@ -433,7 +433,7 @@ h1 {
 
 .button-primary:hover,
 .button-primary:focus-visible {
-  background: #3730a3;
+  background: #5b21b6;
 }
 
 .button-secondary:hover,
@@ -458,7 +458,9 @@ h1 {
   padding: 28px;
   border: 1px solid var(--line);
   border-radius: 16px;
-  background: #ffffff;
+  background:
+    linear-gradient(135deg, rgba(109, 40, 217, 0.08), rgba(52, 211, 153, 0.06)),
+    #ffffff;
   box-shadow: var(--shadow);
 }
 
@@ -1523,7 +1525,7 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 16px;
   background:
-    linear-gradient(135deg, rgba(49, 46, 129, 0.06), rgba(52, 211, 153, 0.06)),
+    linear-gradient(135deg, rgba(109, 40, 217, 0.09), rgba(52, 211, 153, 0.07)),
     #ffffff;
 }
 
@@ -1538,9 +1540,9 @@ h3 {
   border: 1px solid var(--line);
   color: var(--ink);
   background:
-    radial-gradient(circle at top left, rgba(49, 46, 129, 0.13), transparent 42%),
-    radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.11), transparent 40%),
-    #eef2ff;
+    radial-gradient(circle at top left, rgba(109, 40, 217, 0.18), transparent 42%),
+    radial-gradient(circle at bottom right, rgba(52, 211, 153, 0.12), transparent 40%),
+    #ede9fe;
 }
 
 .cta-grid {
