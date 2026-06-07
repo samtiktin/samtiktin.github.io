@@ -1576,6 +1576,10 @@ h3 {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.contact-form-card {
+  grid-column: 1 / -1;
+}
+
 .story-card {
   padding: 30px;
   border: 1px solid var(--line);

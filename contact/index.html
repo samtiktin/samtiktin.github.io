@@ -51,10 +51,10 @@
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Contact the site</div>
-              <h1 class="page-title">Open for supplier submissions and research questions.</h1>
+              <h1 class="page-title">Submit a supplier or send a research question.</h1>
               <p>
-                This page gives you a clean place to accept inquiries, submissions, and partnership
-                requests with a direct contact method that is easy to find.
+                Use the form below for supplier submissions, directory updates, and research-focused
+                questions. General contact details are still available if you prefer email.
               </p>
             </div>
           </div>
@@ -65,6 +65,79 @@
     <section>
       <div class="shell">
         <div class="contact-layout">
+          <article class="contact-card contact-form-card reveal">
+            <div class="kicker">Supplier submission form</div>
+            <h3>Submit a supplier for directory review</h3>
+            <p>
+              Share the main site, product categories, testing links, and any other details that help
+              us review the supplier more efficiently.
+            </p>
+            <form class="form-stack" action="https://formsubmit.co/thepeptideforum@gmail.com" method="POST">
+              <input type="hidden" name="_subject" value="PeptideSuppliers.org supplier submission">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=1">
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="supplier-name">Supplier name</label>
+                  <input class="input" id="supplier-name" name="Supplier name" type="text" required>
+                </div>
+                <div>
+                  <label class="field-label" for="contact-name">Your name</label>
+                  <input class="input" id="contact-name" name="Your name" type="text" required>
+                </div>
+              </div>
+
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="supplier-url">Supplier website</label>
+                  <input class="input" id="supplier-url" name="Supplier website" type="url" placeholder="https://example.com" required>
+                </div>
+                <div>
+                  <label class="field-label" for="contact-email">Your email</label>
+                  <input class="input" id="contact-email" name="Your email" type="email" required>
+                </div>
+              </div>
+
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="categories">Main peptide categories</label>
+                  <input class="input" id="categories" name="Main peptide categories" type="text" placeholder="GLP-1, recovery, cognitive, GH-related">
+                </div>
+                <div>
+                  <label class="field-label" for="shipping">Primary shipping markets</label>
+                  <input class="input" id="shipping" name="Primary shipping markets" type="text" placeholder="US, Canada, UK, international">
+                </div>
+              </div>
+
+              <div>
+                <label class="field-label" for="testing-links">COA or testing links</label>
+                <input class="input" id="testing-links" name="COA or testing links" type="text" placeholder="Link to lab reports, testing hub, or documentation page">
+              </div>
+
+              <div>
+                <label class="field-label" for="reason">Why should this supplier be reviewed?</label>
+                <textarea class="textarea" id="reason" name="Why this supplier should be reviewed" required placeholder="Include what makes the supplier worth reviewing, any visible documentation, and anything else readers should know."></textarea>
+              </div>
+
+              <div>
+                <label class="field-label" for="notes">Additional notes</label>
+                <textarea class="textarea" id="notes" name="Additional notes" placeholder="Optional notes about catalog depth, pricing posture, visible policies, or review requests."></textarea>
+              </div>
+
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Submit supplier</button>
+                <a class="button button-ghost" href="mailto:thepeptideforum@gmail.com">Prefer email instead</a>
+              </div>
+            </form>
+            <p class="tiny muted">
+              This form uses a hosted email form handler for this static site. The first submission may
+              require inbox confirmation for activation.
+            </p>
+          </article>
+
           <article class="contact-card reveal">
             <div class="kicker">Primary contact</div>
             <h3>Email</h3>
@@ -81,8 +154,8 @@
             <div class="kicker">Submissions</div>
             <h3>Supplier review requests</h3>
             <p>
-              Ask suppliers to include site URL, product categories, testing documentation, and the
-              reason they believe they belong in the directory.
+              Include the main site URL, peptide categories, testing documentation, shipping markets,
+              and why the supplier belongs in the directory.
             </p>
           </article>
 
@@ -95,11 +168,11 @@
           </article>
 
           <article class="contact-card reveal delay-2">
-            <div class="kicker">Suggested next step</div>
-            <h3>Add a real form later</h3>
+            <div class="kicker">What happens next</div>
+            <h3>How submissions are reviewed</h3>
             <p>
-              When you are ready, this page can easily be upgraded with a hosted form service or a
-              custom backend while keeping the same design.
+              Submissions can be reviewed for documentation visibility, site clarity, category fit,
+              and whether the supplier adds something useful to the directory.
             </p>
           </article>
         </div>
