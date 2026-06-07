@@ -1218,6 +1218,39 @@ h3 {
   box-shadow: 0 24px 50px rgba(26, 36, 20, 0.18);
 }
 
+.site-image-card {
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  box-shadow: 0 18px 42px rgba(25, 56, 43, 0.1);
+  background: #fff;
+}
+
+.site-image-card img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  max-width: none;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+.hero-media {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  max-height: 520px;
+}
+
+.section-media {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+.image-muted {
+  filter: saturate(.85) contrast(.96);
+}
+
 .stars {
   display: inline-block;
   margin-left: 8px;
