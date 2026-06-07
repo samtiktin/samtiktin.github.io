@@ -2,40 +2,40 @@
   <defs>
     <linearGradient id="dir-bg" x1="130" y1="88" x2="832" y2="680" gradientUnits="userSpaceOnUse">
       <stop stop-color="#FFFFFF"/>
-      <stop offset="1" stop-color="#F8FAFC"/>
+      <stop offset="1" stop-color="#F4F6F3"/>
     </linearGradient>
     <linearGradient id="dir-dark" x1="196" y1="148" x2="764" y2="618" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#4C1D95"/>
-      <stop offset="1" stop-color="#4C1D95"/>
+      <stop stop-color="#19382B"/>
+      <stop offset="1" stop-color="#294C3B"/>
     </linearGradient>
     <linearGradient id="dir-accent" x1="236" y1="238" x2="704" y2="540" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#5EEAD4"/>
-      <stop offset="1" stop-color="#34D399"/>
+      <stop stop-color="#6F8A7D"/>
+      <stop offset="1" stop-color="#426B58"/>
     </linearGradient>
   </defs>
   <rect width="960" height="760" rx="44" fill="url(#dir-bg)"/>
-  <circle cx="770" cy="148" r="88" fill="#34D399" fill-opacity=".12"/>
-  <circle cx="196" cy="650" r="86" fill="#4C1D95" fill-opacity=".08"/>
+  <circle cx="770" cy="148" r="88" fill="#426B58" fill-opacity=".12"/>
+  <circle cx="196" cy="650" r="86" fill="#19382B" fill-opacity=".08"/>
   <rect x="164" y="146" width="632" height="474" rx="42" fill="url(#dir-dark)"/>
   <rect x="214" y="198" width="188" height="116" rx="24" fill="#FFFFFF"/>
-  <rect x="430" y="198" width="188" height="116" rx="24" fill="#F5F3FF"/>
-  <rect x="646" y="198" width="100" height="116" rx="24" fill="#ECFDF5"/>
-  <rect x="214" y="344" width="100" height="100" rx="22" fill="#F5F3FF"/>
+  <rect x="430" y="198" width="188" height="116" rx="24" fill="#E6ECE8"/>
+  <rect x="646" y="198" width="100" height="116" rx="24" fill="#F4F6F3"/>
+  <rect x="214" y="344" width="100" height="100" rx="22" fill="#E6ECE8"/>
   <rect x="338" y="344" width="100" height="100" rx="22" fill="#FFFFFF"/>
-  <rect x="462" y="344" width="100" height="100" rx="22" fill="#ECFDF5"/>
+  <rect x="462" y="344" width="100" height="100" rx="22" fill="#F4F6F3"/>
   <rect x="586" y="344" width="160" height="100" rx="22" fill="#FFFFFF"/>
   <rect x="214" y="472" width="532" height="98" rx="26" fill="#F8FAFC"/>
-  <path d="M266 252H350" stroke="#4C1D95" stroke-width="16" stroke-linecap="round"/>
-  <path d="M482 252H566" stroke="#34D399" stroke-width="16" stroke-linecap="round"/>
-  <path d="M682 252H710" stroke="#C4B5FD" stroke-width="16" stroke-linecap="round"/>
+  <path d="M266 252H350" stroke="#19382B" stroke-width="16" stroke-linecap="round"/>
+  <path d="M482 252H566" stroke="#426B58" stroke-width="16" stroke-linecap="round"/>
+  <path d="M682 252H710" stroke="#D5DED8" stroke-width="16" stroke-linecap="round"/>
   <circle cx="264" cy="392" r="20" fill="url(#dir-accent)"/>
-  <circle cx="388" cy="392" r="20" fill="#4C1D95"/>
-  <circle cx="512" cy="392" r="20" fill="#A7F3D0"/>
-  <path d="M620 380H712" stroke="#4C1D95" stroke-width="18" stroke-linecap="round"/>
+  <circle cx="388" cy="392" r="20" fill="#19382B"/>
+  <circle cx="512" cy="392" r="20" fill="#D5DED8"/>
+  <path d="M620 380H712" stroke="#19382B" stroke-width="18" stroke-linecap="round"/>
   <path d="M246 520C298 486 360 470 432 470C505 470 571 489 628 528" stroke="url(#dir-accent)" stroke-width="12" stroke-linecap="round"/>
-  <circle cx="316" cy="492" r="11" fill="#A7F3D0"/>
-  <circle cx="430" cy="470" r="13" fill="#34D399"/>
-  <circle cx="560" cy="502" r="11" fill="#EDE9FE"/>
+  <circle cx="316" cy="492" r="11" fill="#D5DED8"/>
+  <circle cx="430" cy="470" r="13" fill="#426B58"/>
+  <circle cx="560" cy="502" r="11" fill="#E6ECE8"/>
   <text x="170" y="108" fill="#111827" font-family="Georgia, 'Times New Roman', serif" font-size="34" font-weight="700">Peptide directory by compound</text>
   <text x="170" y="668" fill="#4B5563" font-family="Arial, Helvetica, sans-serif" font-size="24">Metabolic • recovery • GH • cognitive • specialty</text>
 </svg>
