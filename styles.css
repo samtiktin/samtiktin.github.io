@@ -214,16 +214,8 @@ section {
   padding-block: 96px;
 }
 
-section:nth-of-type(odd) {
+section {
   background: var(--bg);
-}
-
-section:nth-of-type(even) {
-  background: #ffffff;
-}
-
-section:nth-of-type(3n) {
-  background: var(--section-bg);
 }
 
 section + section {
@@ -326,6 +318,19 @@ article > table {
   background: rgba(255, 255, 255, 0.72);
   color: var(--accent);
   font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 14px;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
 }
@@ -512,31 +517,27 @@ h1 {
 }
 
 .home-illustration,
+.home-intro,
+.home-panels,
+.supplier-shortlist,
+.supplier-hub-lists,
+.supplier-compounds {
+  background: #ffffff;
+}
+
+.home-motif,
+.home-awards,
+.supplier-branding {
+  background: var(--section-bg);
+}
+
+.home-signals,
 .supplier-nav-band {
   background: var(--bg);
 }
 
-.home-motif,
-.supplier-shortlist {
-  background: var(--section-bg);
-}
-
-.home-intro,
-.supplier-hub-lists {
-  background: #ffffff;
-}
-
-.home-signals,
-.supplier-compounds {
+.home-brand {
   background: var(--bg);
-}
-
-.home-awards {
-  background: var(--section-bg);
-}
-
-.home-panels {
-  background: #ffffff;
 }
 
 .home-brand .brand-showcase,
@@ -581,6 +582,19 @@ h1 {
   gap: 22px;
 }
 
+.home-illustration,
+.home-motif,
+.supplier-nav-band {
+  padding-block: 64px;
+}
+
+.home-brand,
+.home-awards,
+.supplier-shortlist,
+.supplier-branding {
+  padding-block: 88px;
+}
+
 .supplier-hero .page-hero-card {
   background: var(--section-bg);
 }
@@ -599,7 +613,7 @@ h1 {
 .supplier-shortlist .card-link,
 .supplier-hub-lists .card-link,
 .supplier-compounds .card-link {
-  border-radius: 18px;
+  border-radius: var(--radius);
 }
 
 .supplier-shortlist .card-link:hover,
@@ -608,7 +622,7 @@ h1 {
 .supplier-hub-lists .card-link:focus-visible,
 .supplier-compounds .card-link:hover,
 .supplier-compounds .card-link:focus-visible {
-  box-shadow: 0 24px 52px rgba(15, 23, 42, 0.12);
+  box-shadow: var(--shadow-strong);
 }
 
 .brand-row {
