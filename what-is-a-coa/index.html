@@ -19,6 +19,46 @@
   <meta name="twitter:image" content="https://peptidesuppliers.org/og-image.svg">
   <link rel="icon" type="image/svg+xml" href="/favicon.svg">
   <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What does COA stand for?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "COA stands for certificate of analysis."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is a COA the same as third-party testing?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Not always. A COA is the report itself, while third-party testing describes who performed the work and how that claim is presented."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Why do supplier pages highlight COAs so often?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Because a visible COA is one of the easiest public-facing ways to support a testing claim."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can a supplier have a COA and still raise concerns?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. The file may still be outdated, generic, poorly matched to the listing, or unsupported by the rest of the site."
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="topbar">
@@ -34,9 +74,10 @@
         <a href="/">Home</a>
         <a href="/about/">About</a>
         <a href="/faq/">FAQ</a>
-        <a href="/education/">Education</a>
+        <a class="active" href="/education/">Education</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/reviews/">Reviews</a>
+        <a href="/peptide-directory/">Directory</a>
         <a href="/verify/">Verify</a>
         <a href="/contact/">Contact</a>
       </nav>
@@ -51,11 +92,7 @@
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Education page</div>
               <h1 class="page-title">What is a COA?</h1>
-              <p>
-                A COA is a certificate of analysis. On supplier sites, it is one of the main trust
-                signals visitors look for when comparing peptide listings, because it can show how a
-                batch was tested and what purity results were reported.
-              </p>
+              <p>A COA is a certificate of analysis. On peptide supplier pages, it is one of the clearest public-facing documents a site can provide when it wants to show how a batch was tested.</p><p>The value of a COA is not just the purity line. It also comes from the report structure, dates, identifiers, and how clearly the document connects back to the listing.</p>
             </div>
             <div class="hero-art reveal delay-1">
               <div class="site-image-card hero-media image-muted">
@@ -66,94 +103,77 @@
         </div>
       </div>
     </section>
-
     <section>
-      <div class="shell">
-        <div class="resource-grid">
-          <article class="card reveal">
-            <div class="kicker">Basic definition</div>
-            <h3>COA stands for certificate of analysis</h3>
-            <p>A COA is a document that usually summarizes lab results tied to a product or batch. On peptide supplier sites, visitors often use it as a first-pass signal that testing information is being surfaced at all.</p>
-          </article>
-          <article class="card reveal delay-1">
-            <div class="kicker">Why it matters</div>
-            <h3>It helps visitors ask better questions</h3>
-            <p>A visible COA does not prove everything, but it gives visitors more to work with than a page that only makes purity claims without showing supporting documentation.</p>
-          </article>
-        </div>
+      <div class="shell resource-grid">
+        <article class="card reveal">
+          <div class="kicker">Basic definition</div>
+          <h3>A COA summarizes testing information</h3>
+          <p>In plain terms, a certificate of analysis is a report that summarizes laboratory findings for a specific product, lot, or batch.</p><p>On research supplier pages, visitors use it as a starting point for comparing documentation habits rather than as a complete guarantee.</p><ul class="checklist"><li>Report number or file identity</li><li>Product or peptide name</li><li>Batch or lot reference</li><li>Date, method, and result fields</li></ul>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Why it matters</div>
+          <h3>It turns a claim into something inspectable</h3>
+          <p>A supplier can say a peptide was tested, but a COA gives visitors something they can actually open and inspect.</p><p>That matters because public documentation often reveals the difference between a strong page and a vague one.</p><ul class="checklist"><li>Lets visitors compare files side by side</li><li>Adds timing and batch context</li><li>Supports transparency claims with a document</li><li>Makes weak labeling easier to spot</li></ul>
+        </article>
       </div>
-    </section>
-
-    <section>
+    </section>    <section>
       <div class="shell">
-        <div class="resource-grid">
-          <article class="card reveal">
-            <div class="kicker">Example document</div>
-            <h3>A real COA example helps make the definition concrete</h3>
-            <p>
-              This example COA shows the kind of document readers often look for when a supplier says
-              batch testing is available.
-            </p>
-            <a href="https://ironpeptides.is/wp-content/uploads/2025/05/IRON2510230092.svg" target="_blank" rel="noopener noreferrer">
-              <img src="https://ironpeptides.is/wp-content/uploads/2025/05/IRON2510230092.svg" alt="Example peptide COA from Iron Peptides" loading="lazy">
-            </a>
-            <p class="tiny muted">Open the example in a new tab to inspect the full document more closely.</p>
-          </article>
-          <article class="card reveal delay-1">
-            <div class="kicker">How to read it</div>
-            <h3>Start with the identifiers before the headline purity result</h3>
-            <ul class="checklist">
-              <li>Look for the report or reference number so the file feels traceable.</li>
-              <li>Check whether the peptide name and batch details match the listing you came from.</li>
-              <li>Look for a test date so the document has timing context.</li>
-              <li>Read the method and result together instead of focusing only on one purity number.</li>
-              <li>Check whether the lab header, formatting, and signatures feel complete and readable.</li>
-            </ul>
-          </article>
-        </div>
+        <article class="story-card reveal">
+          <div class="kicker">Beginner walkthrough</div>
+          <h2>How to use a COA without overreading it</h2>
+          <p>A COA should be read as one part of a larger documentation picture. The supplier page, the product labeling, the date on the file, and the surrounding policy language all matter.</p><p>That is why beginners usually do better when they start with the definition page, then move to a fuller guide on how to read the file line by line.</p>
+          <div class="button-row">
+            <a class="button button-primary" href="/how-to-read-a-peptide-coa/">Read a COA step by step</a>
+            <a class="button button-ghost" href="/coa-vs-third-party-testing/">COA vs third-party testing</a>
+          </div>
+        </article>
       </div>
-    </section>
-
-    <section>
+    </section>    <section>
       <div class="shell">
-        <div class="score-grid">
-          <article class="score-box reveal">
-            <div class="kicker">Look for</div>
-            <h3>Batch detail</h3>
-            <strong>1</strong>
-            <p>Better COAs usually feel tied to specific products or batches rather than being dropped in as generic site-wide files.</p>
-          </article>
-          <article class="score-box reveal delay-1">
-            <div class="kicker">Look for</div>
-            <h3>Readable format</h3>
-            <strong>2</strong>
-            <p>A trust-building COA is easy to open, easy to read, and not hidden behind confusing navigation.</p>
-          </article>
-          <article class="score-box reveal delay-2">
-            <div class="kicker">Look for</div>
-            <h3>Recent timing</h3>
-            <strong>3</strong>
-            <p>Visitors usually feel better when documentation appears current rather than obviously old or disconnected from the products being sold.</p>
-          </article>
-          <article class="score-box reveal delay-3">
-            <div class="kicker">Look for</div>
-            <h3>Supporting context</h3>
-            <strong>4</strong>
-            <p>COAs are more useful when the surrounding product pages, testing language, and site clarity all support the same story.</p>
-          </article>
-        </div>
+        <article class="story-card reveal">
+          <div class="kicker">Real document</div>
+          <h2>A real COA example makes the definition concrete</h2>
+          <p>The Iron Peptides COA example is useful because it shows how a certificate looks in the wild rather than in theory.</p><p>Open the file and look first for the report header, the peptide name, and the date. Once those basics are visible, the rest of the document becomes much easier to interpret.</p>
+        </article>
       </div>
-    </section>
-
-    <section>
+    </section>    <section>
       <div class="shell">
         <div class="notice reveal">
-          <div class="kicker">Important note</div>
-          <h2>A visible COA is a trust signal, not a full guarantee.</h2>
-          <p>
-            It is useful because it gives visitors more information. It is limited because a PDF on a
-            site is not the same as independent confirmation of purity, quality, or fulfillment.
-          </p>
+          <div class="kicker">Related reading</div>
+          <h2>Read the full COA series</h2>
+          <p>If you are new to peptide documentation, these guides walk from basic definitions to deeper comparison work.</p>
+          <ul class="checklist">
+            <li><a href="/what-is-a-coa/">What is a COA?</a></li>
+            <li><a href="/how-to-read-a-peptide-coa/">How to read a peptide COA</a></li>
+            <li><a href="/how-to-compare-peptide-coas/">How to compare peptide COAs</a></li>
+            <li><a href="/coa-vs-third-party-testing/">COA vs third-party testing</a></li>
+            <li><a href="/third-party-tested-peptides/">Third-party tested peptides</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>    <section>
+      <div class="shell">
+        <div class="faq-grid">
+        <article class="card reveal">
+          <div class="kicker">Question</div>
+          <h3>What does COA stand for?</h3>
+          <p>COA stands for certificate of analysis.</p>
+        </article>
+        <article class="card reveal delay-1">
+          <div class="kicker">Question</div>
+          <h3>Is a COA the same as third-party testing?</h3>
+          <p>Not always. A COA is the report itself, while third-party testing describes who performed the work and how that claim is presented.</p>
+        </article>
+        <article class="card reveal delay-2">
+          <div class="kicker">Question</div>
+          <h3>Why do supplier pages highlight COAs so often?</h3>
+          <p>Because a visible COA is one of the easiest public-facing ways to support a testing claim.</p>
+        </article>
+        <article class="card reveal delay-3">
+          <div class="kicker">Question</div>
+          <h3>Can a supplier have a COA and still raise concerns?</h3>
+          <p>Yes. The file may still be outdated, generic, poorly matched to the listing, or unsupported by the rest of the site.</p>
+        </article>
         </div>
       </div>
     </section>
@@ -163,13 +183,11 @@
     <div class="shell footer-row">
       <span>&copy; 2026 PeptideSuppliers.org</span>
       <div class="footer-links">
-        <a href="/suppliers/">Suppliers</a>
+        <a href="/education/">Education</a>
         <a href="/disclosure/">Disclosure</a>
         <a href="/privacy/">Privacy</a>
       </div>
     </div>
   </footer>
-  </body>
+</body>
 </html>
-
-
