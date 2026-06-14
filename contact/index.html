@@ -51,10 +51,11 @@
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Contact the site</div>
-              <h1 class="page-title">Submit a supplier or send a research question.</h1>
+              <h1 class="page-title">Request a paid supplier review or send a general inquiry.</h1>
               <p>
-                Use the form below for supplier submissions, directory updates, and research-focused
-                questions. General contact details are still available if you prefer email.
+                Use the paid review form first if you want a supplier considered for editorial review.
+                General questions, directory corrections, and standard contact requests can use the
+                separate inquiry form below.
               </p>
             </div>
           </div>
@@ -66,17 +67,18 @@
       <div class="shell">
         <div class="contact-layout">
           <article class="contact-card contact-form-card reveal">
-            <div class="kicker">Supplier submission form</div>
-            <h3>Submit a supplier for directory review</h3>
+            <div class="kicker">Paid review request</div>
+            <h3>Submit a supplier and continue to payment</h3>
             <p>
               Share the main site, product categories, testing links, and any other details that help
-              us review the supplier more efficiently.
+              us review the supplier more efficiently. After you submit this form, you will be sent to
+              the secure Stripe checkout page for the one-off paid review.
             </p>
             <form class="form-stack" action="https://formsubmit.co/ab561dcaf4070ebf00a2b5fa91ed89e2" method="POST">
-              <input type="hidden" name="_subject" value="PeptideSuppliers.org supplier submission">
+              <input type="hidden" name="_subject" value="PeptideSuppliers.org paid supplier review request">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=1">
+              <input type="hidden" name="_next" value="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">
               <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
               <div class="two-column">
@@ -128,13 +130,13 @@
               </div>
 
               <div class="button-row">
-                <button class="button button-primary" type="submit">Submit supplier</button>
-                <a class="button button-ghost" href="mailto:thepeptideforum@gmail.com">Prefer email instead</a>
+                <button class="button button-primary" type="submit">Continue to paid review</button>
+                <a class="button button-ghost" href="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">Open payment link directly</a>
               </div>
             </form>
             <p class="tiny muted">
-              This form uses a hosted email form handler for this static site. The first submission may
-              require inbox confirmation for activation.
+              Payment covers review time and documentation analysis. It does not guarantee inclusion,
+              ranking, or a favorable review.
             </p>
           </article>
 
@@ -150,29 +152,55 @@
             </div>
           </article>
 
-          <article class="contact-card reveal delay-1">
-            <div class="kicker">Submissions</div>
-            <h3>Supplier review requests</h3>
+          <article class="contact-card contact-form-card reveal delay-1">
+            <div class="kicker">General inquiry</div>
+            <h3>Send a question or directory update</h3>
             <p>
-              Include the main site URL, peptide categories, testing documentation, shipping markets,
-              and why the supplier belongs in the directory.
+              Use this form for general questions, correction requests, partnership inquiries, or
+              non-paid directory communication.
             </p>
-          </article>
+            <form class="form-stack" action="https://formsubmit.co/ab561dcaf4070ebf00a2b5fa91ed89e2" method="POST">
+              <input type="hidden" name="_subject" value="PeptideSuppliers.org general inquiry">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=1">
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
-          <article class="contact-card reveal delay-1">
-            <div class="kicker">For researchers</div>
-            <h3>Question prompts</h3>
-            <p>Which categories are you comparing?</p>
-            <p>What quality signals matter most to you?</p>
-            <p>Are you looking for education, listings, or comparison guidance?</p>
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="inquiry-name">Your name</label>
+                  <input class="input" id="inquiry-name" name="Your name" type="text" required>
+                </div>
+                <div>
+                  <label class="field-label" for="inquiry-email">Your email</label>
+                  <input class="input" id="inquiry-email" name="Your email" type="email" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="field-label" for="inquiry-subject">Subject</label>
+                <input class="input" id="inquiry-subject" name="Subject" type="text" placeholder="General inquiry, correction request, partnership, directory update" required>
+              </div>
+
+              <div>
+                <label class="field-label" for="inquiry-message">Message</label>
+                <textarea class="textarea" id="inquiry-message" name="Message" required placeholder="Share your question, update, or request."></textarea>
+              </div>
+
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Send inquiry</button>
+                <a class="button button-ghost" href="mailto:thepeptideforum@gmail.com">Email instead</a>
+              </div>
+            </form>
           </article>
 
           <article class="contact-card reveal delay-2">
             <div class="kicker">What happens next</div>
-            <h3>How submissions are reviewed</h3>
+            <h3>How paid review requests are handled</h3>
             <p>
-              Submissions can be reviewed for documentation visibility, site clarity, category fit,
-              and whether the supplier adds something useful to the directory.
+              Paid review requests are screened for documentation visibility, site clarity, category fit,
+              and whether the supplier adds something useful to the directory. Payment covers review work,
+              not a guaranteed outcome.
             </p>
           </article>
         </div>
