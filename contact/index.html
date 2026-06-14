@@ -65,6 +65,30 @@
 
     <section>
       <div class="shell">
+        <div class="notice reveal" id="paid-review-success" style="display:none;">
+          <div class="kicker">Submission received</div>
+          <h2>Your supplier details were submitted.</h2>
+          <p>
+            Continue to the secure Stripe checkout to complete the paid review request. If you leave
+            this page now, your submission details have still been sent.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">Continue to payment</a>
+            <a class="button button-ghost" href="/contact/">Back to contact page</a>
+          </div>
+        </div>
+
+        <div class="notice reveal" id="general-inquiry-success" style="display:none;">
+          <div class="kicker">Message received</div>
+          <h2>Your inquiry was submitted successfully.</h2>
+          <p>
+            Thanks for reaching out. Your message has been sent to the site inbox for review.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="/contact/">Send another message</a>
+          </div>
+        </div>
+
         <div class="contact-layout">
           <article class="contact-card contact-form-card reveal">
             <div class="kicker">Paid review request</div>
@@ -78,7 +102,7 @@
               <input type="hidden" name="_subject" value="PeptideSuppliers.org paid supplier review request">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">
+              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=paid">
               <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
               <div class="two-column">
@@ -163,7 +187,7 @@
               <input type="hidden" name="_subject" value="PeptideSuppliers.org general inquiry">
               <input type="hidden" name="_captcha" value="false">
               <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=1">
+              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=inquiry">
               <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
 
               <div class="two-column">
@@ -217,6 +241,20 @@
       </div>
     </div>
   </footer>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const state = params.get('submitted');
+      if (state === 'paid') {
+        const notice = document.getElementById('paid-review-success');
+        if (notice) notice.style.display = 'block';
+      }
+      if (state === 'inquiry') {
+        const notice = document.getElementById('general-inquiry-success');
+        if (notice) notice.style.display = 'block';
+      }
+    })();
+  </script>
   </body>
 </html>
 
