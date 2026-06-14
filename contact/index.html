@@ -65,19 +65,6 @@
 
     <section>
       <div class="shell">
-        <div class="notice reveal" id="paid-review-success" style="display:none;">
-          <div class="kicker">Submission received</div>
-          <h2>Your supplier details were submitted.</h2>
-          <p>
-            Continue to the secure Stripe checkout to complete the paid review request. If you leave
-            this page now, your submission details have still been sent.
-          </p>
-          <div class="button-row">
-            <a class="button button-primary" href="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">Continue to payment</a>
-            <a class="button button-ghost" href="/contact/">Back to contact page</a>
-          </div>
-        </div>
-
         <div class="notice reveal" id="general-inquiry-success" style="display:none;">
           <div class="kicker">Message received</div>
           <h2>Your inquiry was submitted successfully.</h2>
@@ -92,76 +79,24 @@
         <div class="contact-layout">
           <article class="contact-card contact-form-card reveal">
             <div class="kicker">Paid review request</div>
-            <h3>Submit a supplier and continue to payment</h3>
+            <h3>Request a paid supplier review</h3>
             <p>
-              Share the main site, product categories, testing links, and any other details that help
-              us review the supplier more efficiently. After you submit this form, you will be sent to
-              the secure Stripe checkout page for the one-off paid review.
+              Use the secure Stripe checkout page to request a one-off paid supplier review. This is the
+              fastest path if you want the supplier considered for editorial review.
             </p>
-            <form class="form-stack" action="https://formsubmit.co/ab561dcaf4070ebf00a2b5fa91ed89e2" method="POST">
-              <input type="hidden" name="_subject" value="PeptideSuppliers.org paid supplier review request">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=paid">
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
-
-              <div class="two-column">
-                <div>
-                  <label class="field-label" for="supplier-name">Supplier name</label>
-                  <input class="input" id="supplier-name" name="Supplier name" type="text" required>
-                </div>
-                <div>
-                  <label class="field-label" for="contact-name">Your name</label>
-                  <input class="input" id="contact-name" name="Your name" type="text" required>
-                </div>
-              </div>
-
-              <div class="two-column">
-                <div>
-                  <label class="field-label" for="supplier-url">Supplier website</label>
-                  <input class="input" id="supplier-url" name="Supplier website" type="url" placeholder="https://example.com" required>
-                </div>
-                <div>
-                  <label class="field-label" for="contact-email">Your email</label>
-                  <input class="input" id="contact-email" name="Your email" type="email" required>
-                </div>
-              </div>
-
-              <div class="two-column">
-                <div>
-                  <label class="field-label" for="categories">Main peptide categories</label>
-                  <input class="input" id="categories" name="Main peptide categories" type="text" placeholder="GLP-1, recovery, cognitive, GH-related">
-                </div>
-                <div>
-                  <label class="field-label" for="shipping">Primary shipping markets</label>
-                  <input class="input" id="shipping" name="Primary shipping markets" type="text" placeholder="US, Canada, UK, international">
-                </div>
-              </div>
-
-              <div>
-                <label class="field-label" for="testing-links">COA or testing links</label>
-                <input class="input" id="testing-links" name="COA or testing links" type="text" placeholder="Link to lab reports, testing hub, or documentation page">
-              </div>
-
-              <div>
-                <label class="field-label" for="reason">Why should this supplier be reviewed?</label>
-                <textarea class="textarea" id="reason" name="Why this supplier should be reviewed" required placeholder="Include what makes the supplier worth reviewing, any visible documentation, and anything else readers should know."></textarea>
-              </div>
-
-              <div>
-                <label class="field-label" for="notes">Additional notes</label>
-                <textarea class="textarea" id="notes" name="Additional notes" placeholder="Optional notes about catalog depth, pricing posture, visible policies, or review requests."></textarea>
-              </div>
-
-              <div class="button-row">
-                <button class="button button-primary" type="submit">Continue to paid review</button>
-                <a class="button button-ghost" href="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">Open payment link directly</a>
-              </div>
-            </form>
+            <div class="button-row">
+              <a class="button button-primary" href="https://buy.stripe.com/3cIbJ14HQc1s9rl5V7ak000">Request paid review</a>
+              <a class="button button-ghost" href="#general-inquiry">General inquiry instead</a>
+            </div>
             <p class="tiny muted">
               Payment covers review time and documentation analysis. It does not guarantee inclusion,
               ranking, or a favorable review.
             </p>
+            <ul class="checklist">
+              <li>Use this for supplier review consideration</li>
+              <li>Best for suppliers seeking faster editorial review</li>
+              <li>General questions should use the inquiry form below</li>
+            </ul>
           </article>
 
           <article class="contact-card reveal">
@@ -176,7 +111,7 @@
             </div>
           </article>
 
-          <article class="contact-card contact-form-card reveal delay-1">
+          <article class="contact-card contact-form-card reveal delay-1" id="general-inquiry">
             <div class="kicker">General inquiry</div>
             <h3>Send a question or directory update</h3>
             <p>
@@ -245,10 +180,6 @@
     (function () {
       const params = new URLSearchParams(window.location.search);
       const state = params.get('submitted');
-      if (state === 'paid') {
-        const notice = document.getElementById('paid-review-success');
-        if (notice) notice.style.display = 'block';
-      }
       if (state === 'inquiry') {
         const notice = document.getElementById('general-inquiry-success');
         if (notice) notice.style.display = 'block';
