@@ -25,10 +25,10 @@
     <loc>https://peptidesuppliers.org/cheapest-peptide-suppliers/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/contact/</loc>
+    <loc>https://peptidesuppliers.org/coa-vs-third-party-testing/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/coa-vs-third-party-testing/</loc>
+    <loc>https://peptidesuppliers.org/contact/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/disclosure/</loc>
@@ -58,10 +58,10 @@
     <loc>https://peptidesuppliers.org/how-to-compare-peptide-suppliers/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/how-to-read-batch-testing/</loc>
+    <loc>https://peptidesuppliers.org/how-to-read-a-peptide-coa/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/how-to-read-a-peptide-coa/</loc>
+    <loc>https://peptidesuppliers.org/how-to-read-batch-testing/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/how-to-verify-third-party-testing/</loc>
@@ -847,6 +847,9 @@
     <loc>https://peptidesuppliers.org/peptide-directory/</loc>
   </url>
   <url>
+    <loc>https://peptidesuppliers.org/peptide-labeling-explained/</loc>
+  </url>
+  <url>
     <loc>https://peptidesuppliers.org/peptides/5-amino-mq/</loc>
   </url>
   <url>
@@ -967,16 +970,13 @@
     <loc>https://peptidesuppliers.org/peptides/tirz/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/peptide-supplier-red-flags/</loc>
+    <loc>https://peptidesuppliers.org/peptide-storage-guide/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/peptide-supplier-checklist/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/peptide-labeling-explained/</loc>
-  </url>
-  <url>
-    <loc>https://peptidesuppliers.org/peptide-storage-guide/</loc>
+    <loc>https://peptidesuppliers.org/peptide-supplier-red-flags/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/peptide-suppliers-australia/</loc>
@@ -1003,10 +1003,10 @@
     <loc>https://peptidesuppliers.org/suppliers/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/suppliers/amino-club/</loc>
+    <loc>https://peptidesuppliers.org/suppliers/aeterion-peptides/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/suppliers/aeterion-peptides/</loc>
+    <loc>https://peptidesuppliers.org/suppliers/amino-club/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/suppliers/ascension-peptides/</loc>
@@ -1030,7 +1030,7 @@
     <loc>https://peptidesuppliers.org/suppliers/noble-peptides/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/suppliers/peptides-kingdom/</loc>
+    <loc>https://peptidesuppliers.org/suppliers/peplabrx/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/suppliers/peptide-foundry/</loc>
@@ -1039,10 +1039,13 @@
     <loc>https://peptidesuppliers.org/suppliers/peptide-sciences/</loc>
   </url>
   <url>
-    <loc>https://peptidesuppliers.org/suppliers/peplabrx/</loc>
+    <loc>https://peptidesuppliers.org/suppliers/peptides-kingdom/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/suppliers/pinnacle-peptide-labs/</loc>
+  </url>
+  <url>
+    <loc>https://peptidesuppliers.org/suppliers/velo-pep-labs/</loc>
   </url>
   <url>
     <loc>https://peptidesuppliers.org/suppliers/solira-lab/</loc>

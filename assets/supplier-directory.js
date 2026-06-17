@@ -108,6 +108,24 @@ window.SUPPLIER_DIRECTORY = [
     notes: "A budget-oriented listing with visible lab report links, quick-shipping language, and a clear US-based storefront."
   },
   {
+    slug: "velo-pep-labs",
+    name: "Velo Pep Labs",
+    reviewUrl: "/suppliers/velo-pep-labs/",
+    supplierUrl: "https://researchpeptidehub.com/?ref=BONUS20",
+    location: "US",
+    priceTier: "premium",
+    priceLabel: "Premium leaning",
+    coaLevel: "strong",
+    coaLabel: "Public certificate database and top-seller COAs",
+    shippingLabel: "24-hour dispatch, tracked shipping, and free shipping over $250 are highlighted on the official site",
+    locationLabel: "Research Peptide Hub storefront",
+    shipsOutsideUS: true,
+    bestFor: "Documentation",
+    compounds: ["Tesamorelin", "MOTS-C", "GLP-3 RT"],
+    discountCode: "BONUS20",
+    notes: "A strong fit for researchers who want visible certificate access, broad catalog coverage, and a more polished storefront."
+  },
+  {
     slug: "peptide-sciences",
     name: "Peptide Sciences",
     reviewUrl: "/suppliers/peptide-sciences/",
