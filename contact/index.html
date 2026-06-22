@@ -51,14 +51,32 @@
           <div class="page-hero-grid">
             <div class="page-hero-copy reveal">
               <div class="eyebrow">Contact the site</div>
-              <h1 class="page-title">Request a paid supplier review or send a general inquiry.</h1>
+              <h1 class="page-title">Submit a supplier for free or request an extensive review.</h1>
               <p>
-                Use the paid review form first if you want a supplier considered for editorial review.
-                General questions, directory corrections, and standard contact requests can use the
-                separate inquiry form below.
+                Suppliers can be submitted for free if they mention PeptideSuppliers.org somewhere on
+                their site or in a blog post. Paid review remains available lower on the page for
+                brands that want a deeper editorial review and priority handling.
               </p>
+              <div class="button-row">
+                <a class="button button-primary" href="#free-submission">Submit supplier for free</a>
+                <a class="button button-ghost" href="#paid-review">View extensive review option</a>
+              </div>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
+        <div class="notice reveal">
+          <div class="section-label">Choose the right path</div>
+          <h3>Free submission comes first. Paid review is optional.</h3>
+          <p>
+            Use the free form if the supplier can link or mention PeptideSuppliers.org on its site or in
+            a blog post. Use the extensive review option if you want a deeper write-up, faster handling,
+            and broader editorial consideration.
+          </p>
         </div>
       </div>
     </section>
@@ -76,26 +94,75 @@
           </div>
         </div>
 
+        <div class="notice reveal" id="free-submission-success" style="display:none;">
+          <div class="kicker">Submission received</div>
+          <h2>Your supplier submission was sent successfully.</h2>
+          <p>
+            Thanks for sending it over. We will review the supplier details and the PeptideSuppliers.org
+            mention before considering it for the directory.
+          </p>
+          <div class="button-row">
+            <a class="button button-primary" href="/contact/">Submit another supplier</a>
+          </div>
+        </div>
+
         <div class="contact-layout">
-          <article class="contact-card contact-form-card reveal">
-            <div class="kicker">Paid review request</div>
-            <h3>Request a paid supplier review</h3>
+          <article class="contact-card contact-form-card reveal" id="free-submission">
+            <div class="kicker">Free supplier submission</div>
+            <h3>Submit a supplier for free</h3>
             <p>
-              Use the secure Stripe checkout page to request a one-off paid supplier review. This is the
-              fastest path if you want the supplier considered for editorial review.
+              Suppliers can be considered for free when they mention PeptideSuppliers.org somewhere on
+              their site, blog, or partner page. Use this form to send the supplier details and the link
+              where the mention appears.
             </p>
-            <div class="button-row">
-              <a class="button button-primary" href="https://buy.stripe.com/6oUeVd0rAghIbzt1ERak001">Request paid review</a>
-              <a class="button button-ghost" href="#general-inquiry">General inquiry instead</a>
-            </div>
-            <p class="tiny muted">
-              Payment covers review time and documentation analysis. It does not guarantee inclusion,
-              ranking, or a favorable review.
-            </p>
+            <form class="form-stack" action="https://formsubmit.co/ab561dcaf4070ebf00a2b5fa91ed89e2" method="POST">
+              <input type="hidden" name="_subject" value="PeptideSuppliers.org free supplier submission">
+              <input type="hidden" name="_captcha" value="false">
+              <input type="hidden" name="_template" value="table">
+              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=free-review">
+              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="free-name">Your name</label>
+                  <input class="input" id="free-name" name="Your name" type="text" required>
+                </div>
+                <div>
+                  <label class="field-label" for="free-email">Your email</label>
+                  <input class="input" id="free-email" name="Your email" type="email" required>
+                </div>
+              </div>
+
+              <div class="two-column">
+                <div>
+                  <label class="field-label" for="supplier-name">Supplier name</label>
+                  <input class="input" id="supplier-name" name="Supplier name" type="text" required>
+                </div>
+                <div>
+                  <label class="field-label" for="supplier-site">Supplier website</label>
+                  <input class="input" id="supplier-site" name="Supplier website" type="url" placeholder="https://example.com" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="field-label" for="mention-link">Page that mentions PeptideSuppliers.org</label>
+                <input class="input" id="mention-link" name="Mention link" type="url" placeholder="https://example.com/blog/post-or-partner-page" required>
+              </div>
+
+              <div>
+                <label class="field-label" for="supplier-notes">Notes</label>
+                <textarea class="textarea" id="supplier-notes" name="Notes" required placeholder="Share the supplier focus, key compounds, shipping region, and anything else worth reviewing."></textarea>
+              </div>
+
+              <div class="button-row">
+                <button class="button button-primary" type="submit">Submit supplier</button>
+                <a class="button button-ghost" href="#paid-review">Need a deeper review?</a>
+              </div>
+            </form>
             <ul class="checklist">
-              <li>Use this for supplier review consideration</li>
-              <li>Best for suppliers seeking faster editorial review</li>
-              <li>General questions should use the inquiry form below</li>
+              <li>Free submission requires a visible mention of PeptideSuppliers.org</li>
+              <li>Best for suppliers seeking standard directory consideration</li>
+              <li>Paid review is optional and not required for submission</li>
             </ul>
           </article>
 
@@ -154,13 +221,26 @@
           </article>
 
           <article class="contact-card reveal delay-2">
-            <div class="kicker">What happens next</div>
-            <h3>How paid review requests are handled</h3>
+            <div class="kicker">Extensive review option</div>
+            <h3 id="paid-review">Request an extensive review + added benefits</h3>
             <p>
-              Paid review requests are screened for documentation visibility, site clarity, category fit,
-              and whether the supplier adds something useful to the directory. Payment covers review work,
-              not a guaranteed outcome.
+              If you want a deeper editorial pass, the paid route includes more time spent on documentation
+              review, catalog evaluation, positioning notes, and overall page development. It is the better
+              fit for suppliers that want a more complete review process.
             </p>
+            <div class="button-row">
+              <a class="button button-primary" href="https://buy.stripe.com/6oUeVd0rAghIbzt1ERak001">Request extensive review</a>
+              <a class="button button-ghost" href="#free-submission">Use free submission instead</a>
+            </div>
+            <p class="tiny muted">
+              Payment covers review time and deeper editorial analysis. It does not guarantee inclusion,
+              ranking, or a favorable outcome.
+            </p>
+            <ul class="checklist">
+              <li>More in-depth review of documentation, catalog structure, and supplier positioning</li>
+              <li>Priority handling compared with standard free submissions</li>
+              <li>Better fit for suppliers that want a fuller editorial write-up</li>
+            </ul>
           </article>
         </div>
       </div>
@@ -180,6 +260,10 @@
     (function () {
       const params = new URLSearchParams(window.location.search);
       const state = params.get('submitted');
+      if (state === 'free-review') {
+        const notice = document.getElementById('free-submission-success');
+        if (notice) notice.style.display = 'block';
+      }
       if (state === 'inquiry') {
         const notice = document.getElementById('general-inquiry-success');
         if (notice) notice.style.display = 'block';
