@@ -126,6 +126,24 @@ window.SUPPLIER_DIRECTORY = [
     notes: "A strong fit for researchers who want visible certificate access, broad catalog coverage, and a more polished storefront."
   },
   {
+    slug: "titan-peptide-lab",
+    name: "Titan Peptide Lab",
+    reviewUrl: "/suppliers/titan-peptide-lab/",
+    supplierUrl: "https://www.titanpeptidelab.com/",
+    location: "US",
+    priceTier: "premium",
+    priceLabel: "Premium leaning",
+    coaLevel: "strong",
+    coaLabel: "Lot-matched release sheets and third-party COA workflow",
+    shippingLabel: "Worldwide tracked shipping, free US shipping over $150, and a 24-hour dispatch target are highlighted on the official site",
+    locationLabel: "Dispatch from Reno",
+    shipsOutsideUS: true,
+    bestFor: "Batch documentation",
+    compounds: ["BPC-157", "Retatrutide", "Semax"],
+    discountCode: "",
+    notes: "A strong fit for researchers who prioritize lot tracking, RUO labeling, and clearly explained crypto checkout."
+  },
+  {
     slug: "peptide-sciences",
     name: "Peptide Sciences",
     reviewUrl: "/suppliers/peptide-sciences/",
