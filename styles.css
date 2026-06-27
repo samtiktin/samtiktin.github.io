@@ -359,6 +359,31 @@ h1 {
   color: var(--muted);
 }
 
+.hero-points {
+  display: grid;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.hero-points li {
+  position: relative;
+  padding-left: 18px;
+  color: var(--muted);
+}
+
+.hero-points li::before {
+  content: "";
+  position: absolute;
+  top: 0.72em;
+  left: 0;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--accent);
+}
+
 .hero-actions,
 .button-row {
   display: flex;
@@ -819,6 +844,10 @@ h1 {
   color: var(--forest);
   font-size: 0.92rem;
   font-weight: 700;
+}
+
+#general-inquiry {
+  scroll-margin-top: 120px;
 }
 
 .jump-links a:hover,
@@ -1882,6 +1911,10 @@ h3 {
     padding-top: 32px;
   }
 
+  .jump-nav {
+    padding: 18px;
+  }
+
   .hero-actions,
   .button-row {
     flex-direction: column;
@@ -1898,6 +1931,10 @@ h3 {
   .contact-card,
   .review-card {
     padding: 22px;
+  }
+
+  .hero-points {
+    gap: 8px;
   }
 }
 
