@@ -1475,6 +1475,55 @@ h3 {
   gap: 18px;
 }
 
+.compare-panel {
+  margin-bottom: 24px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: var(--shadow);
+}
+
+.compare-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 16px 0 18px;
+}
+
+.compare-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(66, 107, 88, 0.18);
+  background: rgba(66, 107, 88, 0.08);
+  color: var(--ink);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.compare-actions {
+  margin-bottom: 18px;
+}
+
+.compare-toggle.is-selected {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: rgba(35, 67, 52, 0.2);
+}
+
+.compare-table tbody th {
+  color: var(--ink);
+  font-size: 0.92rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  background: rgba(66, 107, 88, 0.04);
+  border-bottom: 1px solid var(--line);
+}
+
 .finder-card h3 {
   margin-bottom: 10px;
 }

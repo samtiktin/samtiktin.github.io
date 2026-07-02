@@ -130,6 +130,28 @@
                 <p id="results-summary">Loading supplier directory...</p>
               </div>
             </div>
+            <section id="compare-panel" class="compare-panel reveal" hidden>
+              <div class="section-head">
+                <div>
+                  <h2>Compare suppliers side by side</h2>
+                  <p id="compare-summary">Choose up to 3 suppliers to compare documentation, shipping, buyer fit, and discount availability.</p>
+                </div>
+              </div>
+              <div id="compare-chips" class="compare-chip-row"></div>
+              <div class="button-row compare-actions">
+                <button id="clear-compare" class="button button-ghost" type="button">Clear comparison</button>
+              </div>
+              <div class="table-wrap">
+                <table class="compare-table" id="compare-table">
+                  <thead>
+                    <tr id="compare-head-row">
+                      <th>Category</th>
+                    </tr>
+                  </thead>
+                  <tbody id="compare-body"></tbody>
+                </table>
+              </div>
+            </section>
             <div id="supplier-results" class="finder-results-grid"></div>
           </div>
         </div>

@@ -107,7 +107,7 @@ window.SUPPLIER_DIRECTORY = [
     discountCode: "",
     notes: "A budget-oriented listing with visible lab report links, quick-shipping language, and a clear US-based storefront."
   },
-{
+  {
     slug: "titan-peptide-lab",
     name: "Titan Peptide Lab",
     reviewUrl: "/suppliers/titan-peptide-lab/",
