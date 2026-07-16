@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Kratos Research Labs supplier cover</title>
+  <desc id="desc">Local branded supplier image for Kratos Research Labs.</desc>
+  <rect width="640" height="640" rx="36" fill="#26232f"/>
+  <path d="M-10 158c98-58 192-78 294-38s200 34 356-24v154c-76 40-162 54-260 34-108-22-210-20-390 32z" fill="#8fd6ff" opacity="0.1"/>
+  <rect x="54" y="60" width="532" height="520" rx="34" fill="#ffffff" opacity="0.06" stroke="#ffffff" stroke-opacity="0.2"/>
+  <rect x="118" y="150" width="172" height="256" rx="24" fill="#eaf8ff" opacity="0.14" stroke="#eaf8ff" stroke-opacity="0.36"/>
+  <rect x="164" y="120" width="80" height="46" rx="16" fill="#8fd6ff"/>
+  <rect x="332" y="178" width="194" height="18" rx="9" fill="#8fd6ff"/>
+  <rect x="332" y="224" width="152" height="13" rx="6.5" fill="#ffffff" opacity="0.7"/>
+  <rect x="332" y="258" width="180" height="13" rx="6.5" fill="#ffffff" opacity="0.46"/>
+  <rect x="332" y="308" width="200" height="48" rx="18" fill="#8fd6ff"/>
+  <text x="432" y="339" fill="#26232f" font-size="15" font-family="Arial, sans-serif" text-anchor="middle">RUO GATED CATALOG</text>
+  <text x="102" y="486" fill="#ffffff" font-size="40" font-family="Georgia, 'Times New Roman', serif">Kratos</text>
+  <text x="102" y="524" fill="#8fd6ff" font-size="22" font-family="Arial, sans-serif" letter-spacing="2.2">RESEARCH LABS</text>
+</svg>

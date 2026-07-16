@@ -286,5 +286,23 @@ window.SUPPLIER_DIRECTORY = [
     compounds: ["BPC-157", "GHK-Cu", "Retatrutide"],
     discountCode: "",
     notes: "A useful addition for visitors who specifically want visible testing posture paired with same-day fulfillment language."
+  },
+  {
+    slug: "kratos-research-labs",
+    name: "Kratos Research Labs",
+    reviewUrl: "/suppliers/kratos-research-labs/",
+    supplierUrl: "https://kratosresearchlabs.com/",
+    location: "US",
+    priceTier: "unknown",
+    priceLabel: "Not shown until account created",
+    coaLevel: "gated",
+    coaLabel: "COAs gated behind account or available on request",
+    shippingLabel: "US-only USPS shipping from Round Rock, Texas; $15 flat under $150, free over $150",
+    locationLabel: "Round Rock, Texas",
+    shipsOutsideUS: false,
+    bestFor: "Less common RUO compounds",
+    compounds: ["BPC-157", "TB-500", "FOXO4-DRI"],
+    discountCode: "KRL10",
+    notes: "Broad RUO catalog behind a gated storefront; pricing is hidden until account creation and payment is Zelle/USDC-only after order review."
   }
 ];
