@@ -202,7 +202,7 @@ window.SUPPLIER_DIRECTORY = [
     slug: "bioinfinity-lab",
     name: "BioInfinity Lab",
     reviewUrl: "/suppliers/bioinfinity-lab/",
-    supplierUrl: "https://bioinfinitylab.com/",
+    supplierUrl: "https://www.bioinfinity.co/",
     location: "US",
     priceTier: "mid",
     priceLabel: "Mid-range",
