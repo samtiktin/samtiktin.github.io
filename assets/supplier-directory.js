@@ -305,5 +305,23 @@ window.SUPPLIER_DIRECTORY = [
     compounds: ["BPC-157", "TB-500", "FOXO4-DRI"],
     discountCode: "KRL10",
     notes: "Broad RUO catalog behind a gated storefront; pricing is hidden until account creation and payment is Zelle/USDC-only after order review."
+  },
+  {
+    slug: "peptides-com",
+    name: "Peptides.com",
+    reviewUrl: "/suppliers/peptides-com/",
+    supplierUrl: "https://peptides.com/",
+    location: "US",
+    priceTier: "mid",
+    priceLabel: "Publicly listed, from about $33",
+    coaLevel: "strong",
+    coaLabel: "Lot-specific COAs with analysis dates, published on every product page",
+    shippingLabel: "US-only via USPS/UPS, 3-6 business day processing; optional Route package protection at checkout",
+    locationLabel: "Cheyenne, Wyoming (registered address)",
+    shipsOutsideUS: false,
+    bestFor: "Multi-brand catalog with public pricing and batch COAs",
+    compounds: ["BPC-157", "GHK-Cu", "TB-500"],
+    discountCode: "",
+    notes: "Multi-brand marketplace (Real Peptides, Catalyst Compounds, Groov Bioscience, and others) with public pricing, per-batch COAs, and standard card checkout instead of crypto or manual review."
   }
 ];
