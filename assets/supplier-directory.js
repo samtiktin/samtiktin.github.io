@@ -21,7 +21,7 @@ window.SUPPLIER_DIRECTORY = [
     slug: "pinnacle-peptide-labs",
     name: "Pinnacle Peptide Labs",
     reviewUrl: "/suppliers/pinnacle-peptide-labs/",
-    supplierUrl: "https://pinnaclepeptidelabs.com/aff/3/",
+    supplierUrl: "https://pinnaclepeptidelabs.com/aff/9/",
     location: "US",
     priceTier: "mid",
     priceLabel: "Mid-range",
