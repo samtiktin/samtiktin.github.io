@@ -305,5 +305,41 @@ window.SUPPLIER_DIRECTORY = [
     compounds: ["BPC-157", "TB-500", "FOXO4-DRI"],
     discountCode: "KRL10",
     notes: "Broad RUO catalog behind a gated storefront; pricing is hidden until account creation and payment is Zelle/USDC-only after order review."
+  },
+  {
+    slug: "vorix-labs",
+    name: "Vorix Labs",
+    reviewUrl: "/suppliers/vorix-labs/",
+    supplierUrl: "https://www.vorixlabs.us/",
+    location: "US",
+    priceTier: "mid",
+    priceLabel: "Publicly listed",
+    coaLevel: "strong",
+    coaLabel: "Public CoA library with Janoshik verification links for most batches",
+    shippingLabel: "USA warehouse; standard ~1 week or express 2-3 business day shipping",
+    locationLabel: "United States",
+    shipsOutsideUS: false,
+    bestFor: "Independently verifiable batch documentation",
+    compounds: ["BPC-157", "TB-500", "GLP-3"],
+    discountCode: "BAC",
+    notes: "Brij Technologies LLC DBA Vorix Labs. Publishes batch-specific Janoshik CoAs with independent verification links, public pricing, and a documented (transit-damage-only) replacement policy."
+  },
+  {
+    slug: "ps-research-labs",
+    name: "PS Research Labs",
+    reviewUrl: "/suppliers/ps-research-labs/",
+    supplierUrl: "https://pslabs.uk/",
+    location: "UK",
+    priceTier: "budget",
+    priceLabel: "Publicly listed in GBP",
+    coaLevel: "none",
+    coaLabel: "No published COAs, purity figures, or named testing lab found",
+    shippingLabel: "UK dispatch in 1-3 business days; international shipping available",
+    locationLabel: "Kington, Herefordshire, UK",
+    shipsOutsideUS: true,
+    bestFor: "UK buyers who value a registered company over documentation",
+    compounds: ["BPC-157", "TB-500", "Retatrutide"],
+    discountCode: "",
+    notes: "PS Research Labs Ltd, UK registered company (registration number listed in Terms of Service). Small catalog with no published Certificates of Analysis or named third-party lab on any product page."
   }
 ];
