@@ -328,7 +328,7 @@ window.SUPPLIER_DIRECTORY = [
     slug: "ps-research-labs",
     name: "PS Research Labs",
     reviewUrl: "/suppliers/ps-research-labs/",
-    supplierUrl: "https://pslabs.uk/",
+    supplierUrl: "https://pslabs.uk/samuel",
     location: "UK",
     priceTier: "budget",
     priceLabel: "Publicly listed in GBP",
