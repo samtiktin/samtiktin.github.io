@@ -332,15 +332,15 @@ window.SUPPLIER_DIRECTORY = [
     location: "UK",
     priceTier: "budget",
     priceLabel: "Publicly listed in GBP",
-    coaLevel: "none",
-    coaLabel: "No published COAs, purity figures, or named testing lab found",
+    coaLevel: "strong",
+    coaLabel: "Per-product COA links now live, mostly Janoshik-verified",
     shippingLabel: "UK dispatch in 1-3 business days; international shipping available",
     locationLabel: "Kington, Herefordshire, UK",
     shipsOutsideUS: true,
-    bestFor: "UK buyers who value a registered company over documentation",
+    bestFor: "UK buyers who value a registered company and a checkable COA",
     compounds: ["BPC-157", "TB-500", "Retatrutide"],
     discountCode: "",
-    notes: "PS Research Labs Ltd, UK registered company (registration number listed in Terms of Service). Small catalog with no published Certificates of Analysis or named third-party lab on any product page."
+    notes: "PS Research Labs Ltd, UK registered company (registration number listed in Terms of Service). Product pages now carry a per-product Certificate of Analysis link, mostly via independent Janoshik verification, with one self-hosted PDF found. Specifications copy still says documentation is available \"where applicable,\" which is stale relative to the linked COAs."
   },
   {
     slug: "amino-science",
