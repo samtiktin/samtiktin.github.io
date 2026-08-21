@@ -341,5 +341,23 @@ window.SUPPLIER_DIRECTORY = [
     compounds: ["BPC-157", "TB-500", "Retatrutide"],
     discountCode: "",
     notes: "PS Research Labs Ltd, UK registered company (registration number listed in Terms of Service). Small catalog with no published Certificates of Analysis or named third-party lab on any product page."
+  },
+  {
+    slug: "amino-science",
+    name: "Amino Science",
+    reviewUrl: "/suppliers/amino-science/",
+    supplierUrl: "https://aminoscience.io?ref=BONUS20",
+    location: "US",
+    priceTier: "mid",
+    priceLabel: "Publicly listed",
+    coaLevel: "strong",
+    coaLabel: "Public CoA library (~30 listings) hosted on an independent lab domain",
+    shippingLabel: "Same-day shipping before 5pm CT; US-only",
+    locationLabel: "United States",
+    shipsOutsideUS: false,
+    bestFor: "Broad catalog with published documentation, for buyers comfortable with P2P-only payment",
+    compounds: ["BPC-157", "TB-500", "Semaglutide"],
+    discountCode: "BONUS20",
+    notes: "Amino Science Labs LLC. Large public COA library linking to an independent lab domain (Freedom Diagnostics Testing), but Terms of Service list Cash App, Venmo, and Zelle as the only accepted payment methods, with an all-sales-final policy."
   }
 ];
