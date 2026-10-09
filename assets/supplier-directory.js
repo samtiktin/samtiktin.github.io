@@ -359,5 +359,23 @@ window.SUPPLIER_DIRECTORY = [
     compounds: ["BPC-157", "TB-500", "Semaglutide"],
     discountCode: "BONUS20",
     notes: "Amino Science Labs LLC. Large public COA library linking to an independent lab domain (Freedom Diagnostics Testing), but Terms of Service list Cash App, Venmo, and Zelle as the only accepted payment methods, with an all-sales-final policy."
+  },
+  {
+    slug: "purely-peptides",
+    name: "Purely Peptides",
+    reviewUrl: "/suppliers/purely-peptides/",
+    supplierUrl: "https://purelypeptides.org/",
+    location: "US",
+    priceTier: "mid",
+    priceLabel: "Publicly listed",
+    coaLevel: "strong",
+    coaLabel: "Per-lot COAs for 14 tested lots, issued by Bioviridian Inc., with stated testing limits",
+    shippingLabel: "Ships from Phoenix, AZ; same-day before 2 PM MST",
+    locationLabel: "United States",
+    shipsOutsideUS: false,
+    bestFor: "Buyers who want to check a specific lot's certificate before ordering",
+    compounds: ["Semaglutide", "Tirzepatide", "Retatrutide", "BPC-157", "GHK-Cu"],
+    discountCode: "",
+    notes: "Purely Peptides LLC. Published lot-level COAs (identity, purity, content); testing covers only part of the catalog and no sterility or endotoxin results. Payment via crypto, Zelle, Venmo, Cash App, PayPal; cards coming soon. Shipping page says worldwide while submission says US only. Reviewed from public pages, not ordered."
   }
 ];
