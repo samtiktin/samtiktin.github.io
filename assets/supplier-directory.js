@@ -370,12 +370,12 @@ window.SUPPLIER_DIRECTORY = [
     priceLabel: "Publicly listed",
     coaLevel: "strong",
     coaLabel: "Per-lot COAs for 14 tested lots, issued by Bioviridian Inc., with stated testing limits",
-    shippingLabel: "Ships from Phoenix, AZ; same-day before 2 PM MST",
+    shippingLabel: "US only; ships from Phoenix, AZ, same-day before 2 PM MST",
     locationLabel: "United States",
     shipsOutsideUS: false,
     bestFor: "Buyers who want to check a specific lot's certificate before ordering",
     compounds: ["Semaglutide", "Tirzepatide", "Retatrutide", "BPC-157", "GHK-Cu"],
     discountCode: "",
-    notes: "Purely Peptides LLC. Published lot-level COAs (identity, purity, content); testing covers only part of the catalog and no sterility or endotoxin results. Payment via crypto, Zelle, Venmo, Cash App, PayPal; cards coming soon. Shipping page says worldwide while submission says US only. Reviewed from public pages, not ordered."
+    notes: "Purely Peptides LLC. Published lot-level COAs (identity, purity, content); testing covers only part of the catalog and no sterility or endotoxin results. Payment via crypto, Zelle, Venmo, Cash App, PayPal; cards coming soon. Ships US only (50 states, DC, PR, USVI); no international shipping. Reviewed from public pages, not ordered."
   }
 ];
