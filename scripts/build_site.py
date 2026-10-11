@@ -203,7 +203,7 @@ def database_page():
   <meta property="og:description" content="{esc(desc)}">
   <meta property="og:url" content="{SITE}/database/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
-  <meta property="og:image" content="{SITE}/og-image.svg">
+  <meta property="og:image" content="{SITE}/og-image.png">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{esc(title)}">
   <meta name="twitter:description" content="{esc(desc)}">
@@ -337,7 +337,7 @@ def home_page():
   <meta property="og:description" content="{esc(desc)}">
   <meta property="og:url" content="{SITE}/">
   <meta property="og:site_name" content="PeptideSuppliers.org">
-  <meta property="og:image" content="{SITE}/og-image.svg">
+  <meta property="og:image" content="{SITE}/og-image.png">
   <meta name="msvalidate.01" content="C8719FB191BECC97924097624E16EAE4">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="{esc(title)}">
@@ -353,8 +353,8 @@ def home_page():
     <section class="page-hero">
       <div class="shell">
         <div class="page-hero-card db-hero">
-          <div class="eyebrow">Supplier database</div>
-          <h1 class="page-title">The peptide supplier database</h1>
+          <div class="eyebrow">Independent reviews + hands-on orders</div>
+          <h1 class="page-title">Peptide Supplier Database: compare {n} suppliers</h1>
           <p>Search {n} research peptide suppliers by compound, published COAs, price, and shipping. Every listing has a review, and we place real orders to check what suppliers actually send.</p>
           <form class="db-search" action="/database/" method="get" role="search">
             <label class="sr-only" for="home-q">Search suppliers or compounds</label>
@@ -364,7 +364,7 @@ def home_page():
           <div class="db-stats">
             <div><strong>{n}</strong><span>suppliers listed</span></div>
             <div><strong>{strong}</strong><span>publish COAs</span></div>
-            <div><strong>{ordered_n}</strong><span>ordered &amp; received by us</span></div>
+            <div><strong>{ordered_n}</strong><span>orders we received</span></div>
           </div>
         </div>
       </div>
