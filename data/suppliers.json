@@ -698,7 +698,7 @@
       ],
       "bestFor": "Buyers who want to check a specific lot's certificate before ordering",
       "discountCode": "",
-      "summary": "Purely Peptides LLC. Published lot-level COAs (identity, purity, content); testing covers only part of the catalog and no sterility or endotoxin results. Payment via crypto, Zelle, Venmo, Cash App, PayPal; cards coming soon. Ships US only (50 states, DC, PR, USVI); no international shipping. Reviewed from public pages, not ordered.",
+      "summary": "Purely Peptides LLC. Published lot-level COAs (identity, purity, content); testing covers only part of the catalog and no sterility or endotoxin results. Payment via crypto, Zelle, Venmo, Cash App, PayPal; cards coming soon. Ships across the US and, after order review, to a listed set of countries. Reviewed from public pages, not ordered.",
       "payments": [
         "Crypto",
         "Zelle",
@@ -712,6 +712,56 @@
       "reviewed": "October 8, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-purely-peptides.svg"
+    },
+    {
+      "slug": "ageless-peptides",
+      "name": "Ageless Peptides",
+      "reviewUrl": "/suppliers/ageless-peptides/",
+      "website": "https://ageless-protocol.com/",
+      "affiliate": false,
+      "country": "US",
+      "locationLabel": "United States (Sheridan, WY mailing address)",
+      "price": "mid",
+      "priceLabel": "Publicly listed; bundles and free shipping over $75",
+      "coa": "visible",
+      "coaLabel": "One lab report found (GHK-Cu, issued to another company); none on five other product pages checked",
+      "shipping": "US only (all 50 states); ships within 24 hours; free over $75",
+      "shipsOutsideUS": false,
+      "compounds": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "Tesamorelin",
+        "GLOW blend",
+        "CJC-1295/Ipamorelin",
+        "Retatrutide",
+        "AOD-9604"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "Tesamorelin",
+        "GLOW blend",
+        "CJC-1295/Ipamorelin",
+        "AOD-9604",
+        "GLP-1"
+      ],
+      "bestFor": "Card-paying US buyers who like bundle pricing and will ask for a lot report first",
+      "discountCode": "",
+      "summary": "Vials, nasal sprays and sublingual strips; 29 products with public prices; 10% off 3+, 15% off 6+ and Buy 2 Get 1 Free trios. Visa, Mastercard and Amex listed. Documentation is thin: one third-party report found, addressed to another company, and none for the blends. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Visa",
+        "Mastercard",
+        "Amex",
+        "Apple Pay"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 3,
+      "reviewed": "October 13, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-ageless-peptides.svg"
     }
   ]
 }
