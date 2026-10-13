@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-11",
+  "updated": "2026-10-13",
   "suppliers": [
     {
       "slug": "iron-peptides",
@@ -682,8 +682,8 @@
       "priceLabel": "Publicly listed",
       "coa": "strong",
       "coaLabel": "Per-lot COAs for 14 tested lots, issued by Bioviridian Inc., with stated testing limits",
-      "shipping": "US only; ships from Phoenix, AZ, same-day before 2 PM MST",
-      "shipsOutsideUS": false,
+      "shipping": "US plus reviewed international orders to listed countries; ships from Phoenix, AZ, same-day before 2 PM MST",
+      "shipsOutsideUS": true,
       "compounds": [
         "Semaglutide",
         "Tirzepatide",
