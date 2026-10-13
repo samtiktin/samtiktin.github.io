@@ -307,7 +307,7 @@ def home_sponsored():
           </article>''' for s in paid)
     return f'''    <section class="db-sponsored">
       <div class="shell">
-        <div class="section-head reveal"><div><h2>Featured supplier</h2><p>Paid placement, labeled Sponsored. It does not change our ratings; see the <a href="/disclosure/">disclosure</a>.</p></div></div>
+        <div class="section-head reveal"><div><h2>Featured supplier</h2></div></div>
 {cards}
       </div>
     </section>
