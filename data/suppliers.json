@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-13",
+  "updated": "2026-10-17",
   "suppliers": [
     {
       "slug": "iron-peptides",
@@ -762,6 +762,44 @@
       "reviewed": "October 13, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-ageless-peptides.svg"
+    },
+    {
+      "slug": "portman-peptides",
+      "name": "Portman Peptides",
+      "reviewUrl": "/suppliers/portman-peptides/",
+      "website": "https://portmanpeptides.com/",
+      "affiliate": false,
+      "linkRel": "nofollow noopener noreferrer",
+      "country": "UK",
+      "locationLabel": "United Kingdom",
+      "price": "unknown",
+      "priceLabel": "By quotation",
+      "coa": "gated",
+      "coaLabel": "Lot records on request; none published",
+      "shipping": "UK enquiries (England, Scotland, Wales, Northern Ireland); terms in written quote",
+      "shipsOutsideUS": "unknown",
+      "compounds": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu"
+      ],
+      "bestFor": "UK lab buyers who will request a specification, lot records and a written quote first",
+      "discountCode": "",
+      "summary": "UK enquiry-led supplier of BPC-157, TB-500 and GHK-Cu for non-human laboratory research. No live checkout: written quote, then invoice paid by bank transfer. No lot reports published. Factual profile with no rating; reciprocal unpaid listing disclosed. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Bank transfer"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": null,
+      "reviewed": "October 17, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-portman-peptides.svg"
     }
   ]
 }

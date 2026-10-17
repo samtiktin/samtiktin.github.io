@@ -115,7 +115,7 @@ def card(s):
         badges.append(f'<span class="db-badge">Based in {esc(s["country"])}</span>')
     chips = "".join(f'<span class="pill">{esc(c)}</span>' for c in s["compounds"])
     code = f'<p class="db-code">Code: <strong>{esc(s["discountCode"])}</strong></p>' if s["discountCode"] else ""
-    rel = "sponsored nofollow noopener noreferrer" if (s.get("affiliate") or s.get("sponsored")) else "noopener noreferrer"
+    rel = s.get("linkRel") or ("sponsored nofollow noopener noreferrer" if (s.get("affiliate") or s.get("sponsored")) else "noopener noreferrer")
     pay = f'<p class="db-meta"><strong>Pays:</strong> {esc(", ".join(s["payments"]))}</p>' if s["payments"] else ""
     reviewed = f'<p class="db-meta"><strong>Reviewed:</strong> {esc(s["reviewed"])}</p>' if s["reviewed"] else ""
     rating = f'<span class="stars" aria-label="{s["rating"]} out of 5 stars">{stars(s["rating"])}</span>' if s["rating"] else ""
