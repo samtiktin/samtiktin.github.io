@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-17",
+  "updated": "2026-10-19",
   "suppliers": [
     {
       "slug": "iron-peptides",
@@ -800,6 +800,53 @@
       "reviewed": "October 17, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-portman-peptides.svg"
+    },
+    {
+      "slug": "aurelia-research",
+      "name": "Aurelia Research",
+      "reviewUrl": "/suppliers/aurelia-research/",
+      "website": "https://aureliaresearch.com/",
+      "affiliate": false,
+      "country": "UK",
+      "locationLabel": "UK and US stores (ARP Innovations Ltd, England and Wales)",
+      "price": "mid",
+      "priceLabel": "Publicly listed; varied between pages",
+      "coa": "strong",
+      "coaLabel": "14 batch COAs with lab, test date, measured content and a lab verification link",
+      "shipping": "UK and US stores with local stock; same-day dispatch before 12 noon ET on US orders; free tracked US delivery over $150",
+      "shipsOutsideUS": true,
+      "compounds": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "AHK-Cu",
+        "NAD+",
+        "Tesamorelin",
+        "MOTS-c",
+        "SS-31",
+        "Cagrilintide",
+        "GLOW blend"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "NAD+",
+        "Tesamorelin",
+        "MOTS-c",
+        "GLOW blend",
+        "CJC-1295/Ipamorelin"
+      ],
+      "bestFor": "Buyers who want to look up a batch record and check it with the lab before ordering",
+      "discountCode": "",
+      "summary": "Batch-level COA library with laboratory, test date, measured purity and content, and a fentanyl screen; verification link to the lab portal. Operated by ARP Innovations Ltd, incorporated July 2026. Two catalog items lack a COA and prices varied between pages. Payment methods not visible before checkout. Reviewed from public pages, not ordered.",
+      "payments": [],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 4,
+      "reviewed": "October 19, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-aurelia-research.svg"
     }
   ]
 }

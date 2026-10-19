@@ -2154,3 +2154,12 @@ h1{max-width:none}
 .footer-row{display:flex;flex-wrap:wrap;gap:12px 24px;justify-content:space-between;align-items:center}
 .footer span{color:#9fb3c8}
 .db-badge-sponsored{background:#fff4d6;color:#7a5400;font-weight:600}
+
+/* Blog posts */
+.post{max-width:720px;margin:0 auto;font-size:1.04rem;line-height:1.75}
+.post .lead{font-size:1.2rem;color:var(--heading);line-height:1.6}
+.post h2{margin-top:2.2em;font-size:1.5rem}
+.post ul,.post ol{padding-left:1.3em}
+.post li{margin:.45em 0}
+.post .button-row{margin-top:2em}
+.page-hero-card .byline{margin:10px 0 0}

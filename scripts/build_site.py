@@ -28,6 +28,7 @@ NAV = """      <nav class="nav" aria-label="Primary">
         <a href="/database/"{database}>Database</a>
         <a href="/suppliers/"{suppliers}>Suppliers</a>
         <a href="/reviews/"{reviews}>Reviews</a>
+        <a href="/blog/"{blog}>Blog</a>
         <a href="/contact/"{contact}>Contact</a>
       </nav>"""
 
@@ -38,6 +39,7 @@ FOOTER = """  <footer class="footer">
         <a href="/database/">Database</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/reviews/">Reviews</a>
+        <a href="/blog/">Blog</a>
         <a href="/how-we-review-suppliers/">Methodology</a>
         <a href="/about/">About</a>
         <a href="/disclosure/">Disclosure</a>
@@ -64,7 +66,7 @@ HEADER = """  <header class="topbar">
 
 
 def nav(active):
-    keys = ["home", "database", "suppliers", "reviews", "contact"]
+    keys = ["home", "database", "suppliers", "reviews", "blog", "contact"]
     return NAV.format(**{k: (' class="active"' if k == active else "") for k in keys})
 
 
@@ -530,10 +532,110 @@ def retrofit_nav_and_footer():
         p.write_text(s, encoding="utf-8")
 
 
+def blog_pages():
+    posts = json.loads((ROOT / "data" / "posts.json").read_text(encoding="utf-8"))["posts"]
+    posts = sorted(posts, key=lambda x: x["date"], reverse=True)
+    n = len(SUPPLIERS)
+    head = lambda title, desc, url, extra="": f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(desc)}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{SITE}{url}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(desc)}">
+  <meta property="og:url" content="{SITE}{url}">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="{SITE}/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:description" content="{esc(desc)}">
+  <meta name="twitter:image" content="{SITE}/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+{extra}</head>
+<body>
+{HEADER.format(nav=nav("blog"))}
+'''
+    tail = FOOTER + '\n  <script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
+    # index
+    items = "\n".join(
+        f'''        <a class="card card-link reveal" href="/blog/{x["slug"]}/">
+          <div class="kicker">{esc(x["dateLabel"])}</div>
+          <h3>{esc(x["title"])}</h3>
+          <p>{esc(x["description"])}</p>
+        </a>''' for x in posts)
+    idx = head("Peptide Supplier Blog: Guides and Updates | PeptideSuppliers.org",
+               "News, guides and updates from PeptideSuppliers.org on choosing a research peptide supplier, reading COAs, and how our database works.",
+               "/blog/") + f'''
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card db-hero">
+          <div class="eyebrow">Blog</div>
+          <h1 class="page-title">Notes on finding a peptide supplier</h1>
+          <p>Guides and updates from the team behind the {n}-supplier database: what we look for, how we rate, and what we learn from ordering.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="shell">
+        <div class="supplier-grid">
+{items}
+        </div>
+      </div>
+    </section>
+  </main>
+''' + tail
+    (ROOT / "blog").mkdir(exist_ok=True)
+    (ROOT / "blog" / "index.html").write_text(idx, encoding="utf-8")
+    for x in posts:
+        url = f"/blog/{x['slug']}/"
+        body = x["body"].replace("{n}", str(n))
+        ld = {"@context": "https://schema.org", "@type": "BlogPosting", "headline": x["title"], "description": x["description"],
+              "datePublished": x["date"], "dateModified": x.get("modified", x["date"]),
+              "mainEntityOfPage": SITE + url,
+              "author": {"@type": "Organization", "name": "PeptideSuppliers.org editorial team", "url": SITE + "/about/"},
+              "publisher": {"@type": "Organization", "name": "PeptideSuppliers.org", "url": SITE + "/"}}
+        bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Blog", "item": SITE + "/blog/"},
+            {"@type": "ListItem", "position": 3, "name": x["title"], "item": SITE + url}]}
+        extra = '  <script type="application/ld+json">' + json.dumps(ld) + '</script>\n  <script type="application/ld+json">' + json.dumps(bc) + '</script>\n'
+        page = head(x["title"] + " | PeptideSuppliers.org", x["description"], url, extra) + f'''
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card db-hero">
+          <div class="eyebrow"><a href="/blog/">Blog</a> &middot; {esc(x["dateLabel"])}</div>
+          <h1 class="page-title">{esc(x["h1"])}</h1>
+          <p class="byline tiny muted">By the PeptideSuppliers.org editorial team &middot; <a href="/how-we-review-suppliers/">How we review</a></p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="shell">
+        <article class="post">
+{body}
+        </article>
+      </div>
+    </section>
+  </main>
+''' + tail
+        (ROOT / "blog" / x["slug"]).mkdir(exist_ok=True)
+        (ROOT / "blog" / x["slug"] / "index.html").write_text(page, encoding="utf-8")
+    return posts
+
+
 if __name__ == "__main__":
     (ROOT / "database").mkdir(exist_ok=True)
     (ROOT / "database" / "index.html").write_text(database_page(), encoding="utf-8")
     (ROOT / "index.html").write_text(home_page(), encoding="utf-8")
     suppliers_hub()
+    blog_pages()
     retrofit_nav_and_footer()
     print("built database/index.html, index.html and refreshed nav/footer")
