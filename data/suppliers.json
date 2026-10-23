@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-19",
+  "updated": "2026-10-22",
   "suppliers": [
     {
       "slug": "iron-peptides",
@@ -847,6 +847,59 @@
       "reviewed": "October 19, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-aurelia-research.svg"
+    },
+    {
+      "slug": "disguised-alpha",
+      "name": "Disguised Alpha",
+      "reviewUrl": "/suppliers/disguised-alpha/",
+      "website": "https://disguisedalpha.com/",
+      "affiliate": false,
+      "country": "US",
+      "locationLabel": "United States (Irvine, CA)",
+      "price": "mid",
+      "priceLabel": "Publicly listed; frequent discounts",
+      "coa": "strong",
+      "coaLabel": "COA portal with 180 products and 407 lab reports; QR and access-code lab verification",
+      "shipping": "US same-day dispatch from Irvine, CA (2:30 PM PT weekdays); Canada, and Germany, France and the UK listed; free FedEx 2-Day over $250",
+      "shipsOutsideUS": true,
+      "compounds": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "Tesamorelin",
+        "CJC-1295/Ipamorelin",
+        "NAD+",
+        "MOTS-c",
+        "Cagrilintide",
+        "KLOW blend"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "Tesamorelin",
+        "CJC-1295/Ipamorelin",
+        "NAD+",
+        "MOTS-c",
+        "AOD-9604",
+        "Semax",
+        "GLP-1"
+      ],
+      "bestFor": "Buyers who want to match a batch to a lab report and have a reimbursed re-test option",
+      "discountCode": "",
+      "summary": "Large COA portal (180 products, 407 reports) from independent labs with lab verification links, plus a Verify Your Product program that reimburses re-testing as store credit. Testing and payment claims differ between pages; payment is mainly Zelle, Chime, bank transfer and crypto. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Zelle",
+        "Chime",
+        "Bank payment",
+        "Bitcoin / ETH"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 4,
+      "reviewed": "October 22, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-disguised-alpha.svg"
     }
   ]
 }
