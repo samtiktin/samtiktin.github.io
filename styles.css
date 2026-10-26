@@ -2177,3 +2177,6 @@ h1{max-width:none}
 .data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem}
 .data-table th,.data-table td{border-bottom:1px solid #d5dee8;padding:10px 12px;text-align:left;vertical-align:top}
 .data-table th{width:32%;color:#0f2742;font-weight:600;background:#f3f7fa}
+.post.post-wide{max-width:1040px}
+.post-wide p,.post-wide li{max-width:78ch}
+.post-wide .data-table,.post-wide .pep-figure{max-width:none}

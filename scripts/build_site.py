@@ -702,7 +702,7 @@ def peptides_pages():
         <div class="supplier-grid">
 {cards}
         </div>
-        <article class="post" id="checklist" style="margin-top:32px;">
+        <article class="post post-wide" id="checklist" style="margin-top:32px;">
           <h2>The batch-record checklist for any peptide</h2>
           <p>Whichever compound you are looking at, these are the documents worth having before you trust a vial:</p>
           <ul>
@@ -748,7 +748,7 @@ def peptides_pages():
     </section>
     <section>
       <div class="shell">
-        <article class="post">
+        <article class="post post-wide">
 {frag}
         </article>
       </div>
