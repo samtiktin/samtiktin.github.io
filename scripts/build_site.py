@@ -679,6 +679,7 @@ def peptides_pages():
     ready = [p for p in peps if (ROOT / "data" / "peptide-pages" / f"{p['slug']}.html").exists()]
     cards = "\n".join(
         f"""        <a class="card card-link reveal" href="/peptides/{p["slug"]}/">
+          <img class="pep-card-img" src="/assets/peptides/cover-{p["slug"]}.svg" alt="{esc(p["name"])} cover illustration" width="640" height="360" loading="lazy">
           <div class="kicker">{esc(p["type"])}</div>
           <h3>{esc(p["name"])}</h3>
           <p>{esc(p["summary"])}</p>
@@ -762,9 +763,14 @@ def peptides_pages():
     <section class="page-hero">
       <div class="shell">
         <div class="page-hero-card db-hero">
-          <div class="eyebrow"><a href="/peptides/">Peptides</a> &middot; {esc(p["type"])}</div>
-          <h1 class="page-title">{esc(p["h1"])}</h1>
-          <p>{esc(p["summary"])}</p>
+          <div class="pep-hero">
+            <div>
+              <div class="eyebrow"><a href="/peptides/">Peptides</a> &middot; {esc(p["type"])}</div>
+              <h1 class="page-title">{esc(p["h1"])}</h1>
+              <p>{esc(p["summary"])}</p>
+            </div>
+            <img class="pep-hero-img" src="/assets/peptides/cover-{p["slug"]}.svg" alt="{esc(p["name"])} cover illustration" width="640" height="360">
+          </div>
         </div>
       </div>
     </section>

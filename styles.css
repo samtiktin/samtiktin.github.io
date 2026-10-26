@@ -2221,3 +2221,9 @@ article > p,article > ul,article > ol,article > blockquote,article > table,
 .db-hero .page-title{max-width:30ch}
 .db-hero > p{max-width:80ch}
 @media (max-width:700px){.db-hero .page-title{max-width:none;font-size:clamp(1.8rem,7vw,2.3rem)}}
+
+/* peptide covers */
+.pep-card-img{display:block;width:100%;height:auto;aspect-ratio:16/9;border-radius:10px;margin-bottom:14px;background:#0f2742}
+.pep-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:40px;align-items:center}
+.pep-hero-img{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow-strong)}
+@media (max-width:900px){.pep-hero{grid-template-columns:1fr;gap:22px}.pep-hero-img{max-width:460px}}
