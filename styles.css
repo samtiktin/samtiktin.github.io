@@ -2169,3 +2169,11 @@ h1{max-width:none}
 .post-sponsored-grid img{width:100%;height:auto;border-radius:12px;background:#fff}
 .post-sponsored h3{margin:0 0 .4em}
 @media(max-width:640px){.post-sponsored-grid{grid-template-columns:1fr}.post-sponsored-grid img{max-width:220px}}
+
+/* peptide pages */
+.pep-figure{margin:22px 0;text-align:center}
+.pep-figure img{max-width:100%;height:auto;border-radius:14px}
+.pep-figure figcaption{font-size:.85rem;color:#51606f;margin-top:8px}
+.data-table{width:100%;border-collapse:collapse;margin:16px 0;font-size:.95rem}
+.data-table th,.data-table td{border-bottom:1px solid #d5dee8;padding:10px 12px;text-align:left;vertical-align:top}
+.data-table th{width:32%;color:#0f2742;font-weight:600;background:#f3f7fa}

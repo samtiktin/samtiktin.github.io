@@ -647,10 +647,10 @@ GENERIC_CHECKS = [
 
 
 def peptides_pages():
+    """Hub is generated; each compound page body is hand-written in data/peptide-pages/<slug>.html."""
     data = json.loads((ROOT / "data" / "peptides.json").read_text(encoding="utf-8"))
     sup, peps = data["suppliers"], data["peptides"]
-    byslug = {p["slug"]: p for p in peps}
-    head = lambda title, desc, url, extra="": f'''<!DOCTYPE html>
+    head = lambda title, desc, url, extra="": f"""<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -674,30 +674,26 @@ def peptides_pages():
 {extra}</head>
 <body>
 {HEADER.format(nav=nav("peptides"))}
-'''
+"""
     tail = FOOTER + '\n  <script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
-    disclosure = ('<p class="tiny muted">Disclosure: the supplier links on this page are affiliate links. '
-                  'If you buy through them PeptideSuppliers.org may earn a commission at no extra cost to you. '
-                  'Links do not affect our ratings or the order shown. All compounds are for laboratory research use only; '
-                  'nothing here is medical advice. See our <a href="/disclosure/">disclosure</a>.</p>')
-    # hub
+    ready = [p for p in peps if (ROOT / "data" / "peptide-pages" / f"{p['slug']}.html").exists()]
     cards = "\n".join(
-        f'''        <a class="card card-link reveal" href="/peptides/{p["slug"]}/">
+        f"""        <a class="card card-link reveal" href="/peptides/{p["slug"]}/">
           <div class="kicker">{esc(p["type"])}</div>
           <h3>{esc(p["name"])}</h3>
           <p>{esc(p["summary"])}</p>
-        </a>''' for p in peps)
+        </a>""" for p in ready)
+    checklist = "\n".join("            <li>" + esc(c) + "</li>" for c in GENERIC_CHECKS)
     hub = head("Research Peptide Directory: Overviews and Suppliers | PeptideSuppliers.org",
-               "A directory of commonly searched research peptides with plain-language overviews, batch-record checklists and supplier links. Research use only.",
-               "/peptides/") + f'''
+               "A directory of commonly searched research peptides with in-depth overviews, documentation guidance and supplier links. Research use only.",
+               "/peptides/") + f"""
   <main>
     <section class="page-hero">
       <div class="shell">
         <div class="page-hero-card db-hero">
           <div class="eyebrow">Peptide directory</div>
           <h1 class="page-title">Research peptides: what they are and where to find them</h1>
-          <p>{len(peps)} commonly searched compounds, each with a plain-language overview, what to look for on a certificate of analysis, and links to three suppliers we list. For laboratory research only.</p>
-          {disclosure}
+          <p>In-depth guides to commonly searched compounds: what each one is, what to look for on a certificate of analysis, and links to suppliers we list. For laboratory research only. Supplier links on these pages are affiliate links; see our <a href="/disclosure/">disclosure</a>.</p>
         </div>
       </div>
     </section>
@@ -706,41 +702,32 @@ def peptides_pages():
         <div class="supplier-grid">
 {cards}
         </div>
-        <p class="tiny muted" style="margin-top:20px;">Looking for more suppliers? Use the <a href="/database/">supplier database</a> and filter by compound.</p>
+        <article class="post" id="checklist" style="margin-top:32px;">
+          <h2>The batch-record checklist for any peptide</h2>
+          <p>Whichever compound you are looking at, these are the documents worth having before you trust a vial:</p>
+          <ul>
+{checklist}
+          </ul>
+          <p>More on our approach in <a href="/how-we-review-suppliers/">how we review suppliers</a>. Looking for more suppliers? Use the <a href="/database/">supplier database</a> and filter by compound.</p>
+        </article>
       </div>
     </section>
   </main>
-''' + tail
+""" + tail
     (ROOT / "peptides").mkdir(exist_ok=True)
     (ROOT / "peptides" / "index.html").write_text(hub, encoding="utf-8")
     urls = ["/peptides/"]
-    for p in peps:
+    for p in ready:
         url = f"/peptides/{p['slug']}/"
         urls.append(url)
-        facts = "".join(f"<li><strong>{esc(k)}:</strong> {esc(v)}</li>" for k, v in p["facts"])
-        paras = "\n".join(f"          <p>{esc(t)}</p>" for t in p["overview"])
-        rows = []
-        for key in ("iron", "ngp", "vortex"):
-            sp = sup[key]
-            href = sp["base"].format(h=p["suppliers"][key])
-            note = sp["codeNote"] or "No code needed"
-            if key == "vortex" and p.get("vortexNote"):
-                note = p["vortexNote"] + " " + note
-            rev = f'<a href="{sp["review"]}">Read our review</a>' if sp["review"] else "Review not yet published"
-            rows.append(f'''            <article class="card">
-              <div class="kicker">Sponsored link</div>
-              <h3>{esc(sp["name"])}</h3>
-              <p>{esc(note)}</p>
-              <p class="tiny muted">{rev}</p>
-              <div class="button-row"><a class="button button-primary" href="{esc(href)}" target="_blank" rel="{REL_SP}">View {esc(p["name"])} at {esc(sp["name"])}</a></div>
-            </article>''')
-        checks = "\n".join(f"            <li>{esc(c)}</li>" for c in p["checks"])
-        gen = "\n".join(f"            <li>{esc(c)}</li>" for c in GENERIC_CHECKS)
-        rel = " ".join(f'<a class="button button-ghost" href="/peptides/{r}/">{esc(byslug[r]["name"])}</a>' for r in p["related"])
-        post = f'<p><a href="{p["post"][0]}">{esc(p["post"][1])}</a>.</p>' if p.get("post") else ""
-        desc = f"{p['name']} overview for researchers: what it is, what to check on a certificate of analysis, and supplier links. Research use only."
-        ld = {"@context": "https://schema.org", "@type": "Article", "headline": f"{p['name']}: research overview and suppliers",
+        frag = (ROOT / "data" / "peptide-pages" / f"{p['slug']}.html").read_text(encoding="utf-8")
+        for key, tok in (("iron", "IRON"), ("ngp", "NGP"), ("vortex", "VORTEX")):
+            frag = frag.replace("{{" + tok + "}}", esc(sup[key]["base"].format(h=p["suppliers"][key])))
+        frag = frag.replace("{{REL}}", REL_SP)
+        desc = p["metaDesc"]
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": p["h1"],
               "description": desc, "mainEntityOfPage": SITE + url, "dateModified": "2026-10-25", "datePublished": "2026-10-25",
+              "image": f"{SITE}/assets/peptides/{p['slug']}.svg",
               "author": {"@type": "Organization", "name": "PeptideSuppliers.org editorial team", "url": SITE + "/about/"},
               "publisher": {"@type": "Organization", "name": "PeptideSuppliers.org", "url": SITE + "/"}}
         bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
@@ -748,55 +735,28 @@ def peptides_pages():
             {"@type": "ListItem", "position": 2, "name": "Peptides", "item": SITE + "/peptides/"},
             {"@type": "ListItem", "position": 3, "name": p["name"], "item": SITE + url}]}
         extra = '  <script type="application/ld+json">' + json.dumps(ld) + '</script>\n  <script type="application/ld+json">' + json.dumps(bc) + '</script>\n'
-        page = head(f"{p['name']}: Research Overview and Suppliers | PeptideSuppliers.org", desc, url, extra) + f'''
+        page = head(p["title"] + " | PeptideSuppliers.org", desc, url, extra) + f"""
   <main>
     <section class="page-hero">
       <div class="shell">
         <div class="page-hero-card db-hero">
           <div class="eyebrow"><a href="/peptides/">Peptides</a> &middot; {esc(p["type"])}</div>
-          <h1 class="page-title">{esc(p["name"])}: research overview and suppliers</h1>
+          <h1 class="page-title">{esc(p["h1"])}</h1>
           <p>{esc(p["summary"])}</p>
-          <p class="tiny muted">Also known as: {esc(p["also"])}. For laboratory research use only.</p>
         </div>
       </div>
     </section>
     <section>
       <div class="shell">
         <article class="post">
-          <h2>What it is</h2>
-          <ul>{facts}</ul>
-{paras}
-          <h2>Batch-record checklist</h2>
-          <p>Before relying on any vial, check the documentation. For {esc(p["name"])} specifically:</p>
-          <ul>
-{checks}
-          </ul>
-          <p>For every compound:</p>
-          <ul>
-{gen}
-          </ul>
-          <p>More detail in <a href="/how-we-review-suppliers/">how we review suppliers</a>.</p>
-          <h2>Where to find {esc(p["name"])}</h2>
-          <p>Three suppliers we list carry it. Compare their COAs for the specific batch before ordering.</p>
-          {disclosure}
-        </article>
-        <div class="supplier-grid" style="margin-top:20px;">
-{chr(10).join(rows)}
-        </div>
-        <article class="post" style="margin-top:28px;">
-          {post}
-          <h2>Related compounds</h2>
-          <div class="button-row">{rel}</div>
-          <p><a href="/database/">Browse every supplier in the database</a>.</p>
-          <p class="tiny muted">This page is informational and for research use only. It is not medical advice and makes no claims about safety, legality or fitness for any use. See the <a href="/medical-disclaimer/">medical disclaimer</a>.</p>
+{frag}
         </article>
       </div>
     </section>
   </main>
-''' + tail
+""" + tail
         (ROOT / "peptides" / p["slug"]).mkdir(exist_ok=True)
         (ROOT / "peptides" / p["slug"] / "index.html").write_text(page, encoding="utf-8")
-    # sitemap
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     for u in urls:
         if SITE + u not in sm:
