@@ -724,6 +724,28 @@ def peptides_pages():
         for key, tok in (("iron", "IRON"), ("ngp", "NGP"), ("vortex", "VORTEX")):
             frag = frag.replace("{{" + tok + "}}", esc(sup[key]["base"].format(h=p["suppliers"][key])))
         frag = frag.replace("{{REL}}", REL_SP)
+        toc_items = []
+        def _id(m):
+            title = re.sub(r"<[^>]+>", "", m.group(1))
+            sid = re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-")[:48]
+            toc_items.append((sid, title))
+            return f'<h2 id="{sid}">{m.group(1)}</h2>'
+        frag = re.sub(r"<h2>(.*?)</h2>", _id, frag)
+        toc = "".join(f'<li><a href="#{a}">{esc(t)}</a></li>' for a, t in toc_items)
+        buy = "".join(
+            f'<a class="button button-ghost" href="{esc(sup[k]["base"].format(h=p["suppliers"][k]))}" target="_blank" rel="{REL_SP}">{esc(sup[k]["name"])}</a>'
+            for k in ("iron", "ngp", "vortex"))
+        aside = f'''<aside class="pep-aside">
+          <div class="pep-aside-card">
+            <div class="kicker">On this page</div>
+            <ol class="pep-toc">{toc}</ol>
+          </div>
+          <div class="pep-aside-card">
+            <div class="kicker">Suppliers that list {esc(p["name"])}</div>
+            <div class="pep-buy">{buy}</div>
+            <p class="tiny muted">Affiliate links; we may earn a commission at no cost to you. <a href="/disclosure/">Disclosure</a>. Research use only.</p>
+          </div>
+        </aside>'''
         desc = p["metaDesc"]
         ld = {"@context": "https://schema.org", "@type": "Article", "headline": p["h1"],
               "description": desc, "mainEntityOfPage": SITE + url, "dateModified": "2026-10-25", "datePublished": "2026-10-25",
@@ -748,9 +770,12 @@ def peptides_pages():
     </section>
     <section>
       <div class="shell">
+        <div class="pep-layout">
         <article class="post post-wide">
 {frag}
         </article>
+        {aside}
+        </div>
       </div>
     </section>
   </main>
