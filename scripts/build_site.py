@@ -27,6 +27,7 @@ NAV = """      <nav class="nav" aria-label="Primary">
         <a href="/"{home}>Home</a>
         <a href="/database/"{database}>Database</a>
         <a href="/suppliers/"{suppliers}>Suppliers</a>
+        <a href="/peptides/"{peptides}>Peptides</a>
         <a href="/reviews/"{reviews}>Reviews</a>
         <a href="/blog/"{blog}>Blog</a>
         <a href="/contact/"{contact}>Contact</a>
@@ -38,6 +39,7 @@ FOOTER = """  <footer class="footer">
       <div class="footer-links">
         <a href="/database/">Database</a>
         <a href="/suppliers/">Suppliers</a>
+        <a href="/peptides/">Peptides</a>
         <a href="/reviews/">Reviews</a>
         <a href="/blog/">Blog</a>
         <a href="/how-we-review-suppliers/">Methodology</a>
@@ -66,7 +68,7 @@ HEADER = """  <header class="topbar">
 
 
 def nav(active):
-    keys = ["home", "database", "suppliers", "reviews", "blog", "contact"]
+    keys = ["home", "database", "suppliers", "peptides", "reviews", "blog", "contact"]
     return NAV.format(**{k: (' class="active"' if k == active else "") for k in keys})
 
 
@@ -519,7 +521,11 @@ def retrofit_nav_and_footer():
         "reviews/index.html": "reviews",
         "contact/index.html": "contact",
         "suppliers/index.html": "suppliers",
+        "blog/index.html": "blog",
     }
+    for d in (ROOT / "blog").iterdir():
+        if d.is_dir() and (d / "index.html").exists():
+            pages[f"blog/{d.name}/index.html"] = "blog"
     for d in (ROOT / "suppliers").iterdir():
         if d.is_dir() and (d / "index.html").exists():
             pages[f"suppliers/{d.name}/index.html"] = "suppliers"
@@ -631,11 +637,179 @@ def blog_pages():
     return posts
 
 
+REL_SP = "sponsored nofollow noopener noreferrer"
+GENERIC_CHECKS = [
+    "A COA dated and numbered for the batch printed on your vial, not a generic or reused file.",
+    "HPLC purity with the trace shown, and mass-spec confirming identity.",
+    "The testing lab's name and a way to verify the report independently.",
+    "Fill amount, counter-ion and storage guidance on the label or listing.",
+]
+
+
+def peptides_pages():
+    data = json.loads((ROOT / "data" / "peptides.json").read_text(encoding="utf-8"))
+    sup, peps = data["suppliers"], data["peptides"]
+    byslug = {p["slug"]: p for p in peps}
+    head = lambda title, desc, url, extra="": f'''<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(desc)}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{SITE}{url}">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(desc)}">
+  <meta property="og:url" content="{SITE}{url}">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="{SITE}/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{esc(title)}">
+  <meta name="twitter:description" content="{esc(desc)}">
+  <meta name="twitter:image" content="{SITE}/og-image.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+{extra}</head>
+<body>
+{HEADER.format(nav=nav("peptides"))}
+'''
+    tail = FOOTER + '\n  <script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
+    disclosure = ('<p class="tiny muted">Disclosure: the supplier links on this page are affiliate links. '
+                  'If you buy through them PeptideSuppliers.org may earn a commission at no extra cost to you. '
+                  'Links do not affect our ratings or the order shown. All compounds are for laboratory research use only; '
+                  'nothing here is medical advice. See our <a href="/disclosure/">disclosure</a>.</p>')
+    # hub
+    cards = "\n".join(
+        f'''        <a class="card card-link reveal" href="/peptides/{p["slug"]}/">
+          <div class="kicker">{esc(p["type"])}</div>
+          <h3>{esc(p["name"])}</h3>
+          <p>{esc(p["summary"])}</p>
+        </a>''' for p in peps)
+    hub = head("Research Peptide Directory: Overviews and Suppliers | PeptideSuppliers.org",
+               "A directory of commonly searched research peptides with plain-language overviews, batch-record checklists and supplier links. Research use only.",
+               "/peptides/") + f'''
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card db-hero">
+          <div class="eyebrow">Peptide directory</div>
+          <h1 class="page-title">Research peptides: what they are and where to find them</h1>
+          <p>{len(peps)} commonly searched compounds, each with a plain-language overview, what to look for on a certificate of analysis, and links to three suppliers we list. For laboratory research only.</p>
+          {disclosure}
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="shell">
+        <div class="supplier-grid">
+{cards}
+        </div>
+        <p class="tiny muted" style="margin-top:20px;">Looking for more suppliers? Use the <a href="/database/">supplier database</a> and filter by compound.</p>
+      </div>
+    </section>
+  </main>
+''' + tail
+    (ROOT / "peptides").mkdir(exist_ok=True)
+    (ROOT / "peptides" / "index.html").write_text(hub, encoding="utf-8")
+    urls = ["/peptides/"]
+    for p in peps:
+        url = f"/peptides/{p['slug']}/"
+        urls.append(url)
+        facts = "".join(f"<li><strong>{esc(k)}:</strong> {esc(v)}</li>" for k, v in p["facts"])
+        paras = "\n".join(f"          <p>{esc(t)}</p>" for t in p["overview"])
+        rows = []
+        for key in ("iron", "ngp", "vortex"):
+            sp = sup[key]
+            href = sp["base"].format(h=p["suppliers"][key])
+            note = sp["codeNote"] or "No code needed"
+            if key == "vortex" and p.get("vortexNote"):
+                note = p["vortexNote"] + " " + note
+            rev = f'<a href="{sp["review"]}">Read our review</a>' if sp["review"] else "Review not yet published"
+            rows.append(f'''            <article class="card">
+              <div class="kicker">Sponsored link</div>
+              <h3>{esc(sp["name"])}</h3>
+              <p>{esc(note)}</p>
+              <p class="tiny muted">{rev}</p>
+              <div class="button-row"><a class="button button-primary" href="{esc(href)}" target="_blank" rel="{REL_SP}">View {esc(p["name"])} at {esc(sp["name"])}</a></div>
+            </article>''')
+        checks = "\n".join(f"            <li>{esc(c)}</li>" for c in p["checks"])
+        gen = "\n".join(f"            <li>{esc(c)}</li>" for c in GENERIC_CHECKS)
+        rel = " ".join(f'<a class="button button-ghost" href="/peptides/{r}/">{esc(byslug[r]["name"])}</a>' for r in p["related"])
+        post = f'<p><a href="{p["post"][0]}">{esc(p["post"][1])}</a>.</p>' if p.get("post") else ""
+        desc = f"{p['name']} overview for researchers: what it is, what to check on a certificate of analysis, and supplier links. Research use only."
+        ld = {"@context": "https://schema.org", "@type": "Article", "headline": f"{p['name']}: research overview and suppliers",
+              "description": desc, "mainEntityOfPage": SITE + url, "dateModified": "2026-10-25", "datePublished": "2026-10-25",
+              "author": {"@type": "Organization", "name": "PeptideSuppliers.org editorial team", "url": SITE + "/about/"},
+              "publisher": {"@type": "Organization", "name": "PeptideSuppliers.org", "url": SITE + "/"}}
+        bc = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": SITE + "/"},
+            {"@type": "ListItem", "position": 2, "name": "Peptides", "item": SITE + "/peptides/"},
+            {"@type": "ListItem", "position": 3, "name": p["name"], "item": SITE + url}]}
+        extra = '  <script type="application/ld+json">' + json.dumps(ld) + '</script>\n  <script type="application/ld+json">' + json.dumps(bc) + '</script>\n'
+        page = head(f"{p['name']}: Research Overview and Suppliers | PeptideSuppliers.org", desc, url, extra) + f'''
+  <main>
+    <section class="page-hero">
+      <div class="shell">
+        <div class="page-hero-card db-hero">
+          <div class="eyebrow"><a href="/peptides/">Peptides</a> &middot; {esc(p["type"])}</div>
+          <h1 class="page-title">{esc(p["name"])}: research overview and suppliers</h1>
+          <p>{esc(p["summary"])}</p>
+          <p class="tiny muted">Also known as: {esc(p["also"])}. For laboratory research use only.</p>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="shell">
+        <article class="post">
+          <h2>What it is</h2>
+          <ul>{facts}</ul>
+{paras}
+          <h2>Batch-record checklist</h2>
+          <p>Before relying on any vial, check the documentation. For {esc(p["name"])} specifically:</p>
+          <ul>
+{checks}
+          </ul>
+          <p>For every compound:</p>
+          <ul>
+{gen}
+          </ul>
+          <p>More detail in <a href="/how-we-review-suppliers/">how we review suppliers</a>.</p>
+          <h2>Where to find {esc(p["name"])}</h2>
+          <p>Three suppliers we list carry it. Compare their COAs for the specific batch before ordering.</p>
+          {disclosure}
+        </article>
+        <div class="supplier-grid" style="margin-top:20px;">
+{chr(10).join(rows)}
+        </div>
+        <article class="post" style="margin-top:28px;">
+          {post}
+          <h2>Related compounds</h2>
+          <div class="button-row">{rel}</div>
+          <p><a href="/database/">Browse every supplier in the database</a>.</p>
+          <p class="tiny muted">This page is informational and for research use only. It is not medical advice and makes no claims about safety, legality or fitness for any use. See the <a href="/medical-disclaimer/">medical disclaimer</a>.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+''' + tail
+        (ROOT / "peptides" / p["slug"]).mkdir(exist_ok=True)
+        (ROOT / "peptides" / p["slug"] / "index.html").write_text(page, encoding="utf-8")
+    # sitemap
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    for u in urls:
+        if SITE + u not in sm:
+            sm = sm.replace("</urlset>", f"  <url>\n    <loc>{SITE}{u}</loc>\n    <lastmod>2026-10-25</lastmod>\n  </url>\n</urlset>")
+    (ROOT / "sitemap.xml").write_text(sm, encoding="utf-8")
+
+
 if __name__ == "__main__":
     (ROOT / "database").mkdir(exist_ok=True)
     (ROOT / "database" / "index.html").write_text(database_page(), encoding="utf-8")
     (ROOT / "index.html").write_text(home_page(), encoding="utf-8")
     suppliers_hub()
     blog_pages()
+    peptides_pages()
     retrofit_nav_and_footer()
     print("built database/index.html, index.html and refreshed nav/footer")

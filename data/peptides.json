@@ -1,0 +1,119 @@
+{
+  "suppliers": {
+    "iron": {"name": "Iron Peptides", "base": "https://ironpeptides.is/product/{h}/?ref=ironman", "code": "IRONMAN", "codeNote": "10% off with code IRONMAN", "review": "/suppliers/iron-peptides/"},
+    "ngp": {"name": "Next Gen Peps", "base": "https://nextgenpeps.com/shop/{h}?ref=GENBONUS", "code": "", "codeNote": "", "review": ""},
+    "vortex": {"name": "Vortex Research", "base": "https://vortexresearch.net/product/{h}/?ref=peppers", "code": "PEPPERS", "codeNote": "30% off with code PEPPERS at checkout", "review": ""}
+  },
+  "peptides": [
+    {
+      "slug": "bpc-157", "name": "BPC-157", "also": "Body Protection Compound-157, pentadecapeptide BPC 157",
+      "type": "Synthetic pentadecapeptide", "facts": [["Length", "15 amino acids"], ["Sequence", "GEPPPGKPADDAGLV"], ["Approx. mass", "about 1,419 Da"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A 15-amino-acid synthetic peptide derived from a sequence found in human gastric juice protein, studied almost entirely in rodent models.",
+      "overview": ["BPC-157 is a synthetic fragment modeled on part of a protein found in gastric juice. Nearly all published work comes from a small number of laboratories using rodent models, covering tissue-repair, gastrointestinal and vascular endpoints. Large, controlled human trials have not been published, and the compound is not an approved drug.", "For a buyer this matters in one practical way: you cannot lean on clinical-grade supply chains. Identity and purity depend entirely on the vendor's own testing, so the batch record is the product."],
+      "checks": ["Mass-spec identity should match roughly 1,419 Da for the free peptide.", "Confirm the COA names BPC-157 (the 15-mer), not a salt form or a longer variant, and states the net peptide content if given.", "Some vendors sell an arginate or acetate form; the label and COA should say which."],
+      "suppliers": {"iron": "bpc-157-10mg", "ngp": "bpc-157", "vortex": "bpc-157-2"},
+      "related": ["tb-500", "ghk-cu"]
+    },
+    {
+      "slug": "tb-500", "name": "TB-500", "also": "Thymosin beta-4 fragment",
+      "type": "Thymosin beta-4 related peptide", "facts": [["Parent protein", "Thymosin beta-4, 43 amino acids (about 4,963 Da)"], ["TB-500 usage", "Varies by vendor; often a short fragment"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A research peptide sold under the name of its parent protein, thymosin beta-4. What a vendor means by TB-500 is not standardized.",
+      "overview": ["Thymosin beta-4 is a 43-amino-acid protein studied in cell biology for its role in actin regulation. Vendors market TB-500 as a synthetic version, but the term is used loosely: some sell the full-length protein, others a short active-region fragment, and the two have very different molecular weights.", "That ambiguity is the main thing to resolve before buying. A COA that shows a mass should let you tell which one you have."],
+      "checks": ["Ask which sequence the vendor means by TB-500 and check the COA mass against it.", "A full-length thymosin beta-4 should read near 4,963 Da; a short fragment will be far lower.", "Compare vial size and listed peptide content when comparing prices across vendors."],
+      "suppliers": {"iron": "tb-500-10mg", "ngp": "tb500", "vortex": "tb-500"},
+      "related": ["bpc-157", "ghk-cu"]
+    },
+    {
+      "slug": "ghk-cu", "name": "GHK-Cu", "also": "Copper tripeptide-1, glycyl-L-histidyl-L-lysine copper",
+      "type": "Copper-binding tripeptide", "facts": [["Length", "3 amino acids (Gly-His-Lys)"], ["Form", "Copper(II) complex"], ["Approx. mass", "about 404 Da as the complex"], ["Appearance", "Blue powder"]],
+      "summary": "A naturally occurring tripeptide that binds copper, widely used in cosmetic ingredient research and studied in cell and tissue models.",
+      "overview": ["GHK was first isolated from human plasma in the 1970s and binds copper(II) with high affinity. It appears in a large body of in-vitro and cosmetic-science literature, and copper-peptide complexes are common cosmetic ingredients.", "Because the active species is a metal complex, quality questions differ from a plain peptide: copper content and color matter, and an off-color powder can indicate a problem."],
+      "checks": ["The powder should be a distinct blue; white or gray suggests missing copper.", "Look for a copper assay or ICP result in addition to HPLC purity.", "Check whether the vial is the copper complex or free GHK; they are different products."],
+      "suppliers": {"iron": "ghk-cu", "ngp": "ghk-cu", "vortex": "ghk-cu"},
+      "related": ["bpc-157", "kpv"]
+    },
+    {
+      "slug": "tesamorelin", "name": "Tesamorelin", "also": "TH9507",
+      "type": "GHRH analog", "facts": [["Length", "44 amino acids"], ["Modification", "N-terminal trans-3-hexenoyl group"], ["Class", "Growth hormone-releasing hormone analog"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A modified 44-amino-acid GHRH analog. A pharmaceutical version exists as a prescription drug; research-grade material is a separate, unregulated supply.",
+      "overview": ["Tesamorelin is a stabilized analog of growth hormone-releasing hormone and is the subject of published clinical trials. A prescription product exists for a specific medical indication, which sets it apart from most compounds in this directory.", "Research-chemical tesamorelin is not that product. It is sold for laboratory use only, and its quality can only be judged from the vendor's batch documentation. See our longer write-up for background."],
+      "checks": ["Identity should reflect the full 44-mer with the hexenoyl modification; ask whether the COA mass confirms it.", "Long peptides are harder to synthesize cleanly, so look closely at the HPLC trace for secondary peaks.", "Confirm vial size and the stated counter-ion on the COA."],
+      "suppliers": {"iron": "tesamorelin-10mg", "ngp": "tesamorelin", "vortex": "tesamorelin"},
+      "related": ["ipamorelin", "cjc-1295"],
+      "post": ["/blog/tesamorelin-research-guide/", "Read our tesamorelin research guide"]
+    },
+    {
+      "slug": "ipamorelin", "name": "Ipamorelin", "also": "NNC 26-0161",
+      "type": "Growth hormone secretagogue", "facts": [["Length", "5 amino acids"], ["Class", "Ghrelin receptor agonist (GHRP)"], ["Approx. mass", "about 712 Da"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A synthetic pentapeptide that acts on the ghrelin receptor, often described as more selective than older secretagogues in preclinical work.",
+      "overview": ["Ipamorelin is a pentapeptide containing non-natural amino acids, developed as a selective growth hormone secretagogue. It was studied in early clinical work but never became an approved product.", "As a short peptide it is straightforward to synthesize, so purity differences between vendors tend to show up in the details: residual solvents, counter-ion and fill accuracy."],
+      "checks": ["Mass-spec should show about 712 Da.", "Because it has non-natural residues, make sure the COA is for ipamorelin and not a related secretagogue.", "Check whether it is sold alone or as a blend with CJC-1295; the listing names should be clear."],
+      "suppliers": {"iron": "ipamorelin-5mg", "ngp": "ipamorelin", "vortex": "ipa"},
+      "related": ["cjc-1295", "tesamorelin"]
+    },
+    {
+      "slug": "cjc-1295", "name": "CJC-1295", "also": "With DAC; without DAC is Modified GRF (1-29)",
+      "type": "GHRH analog", "facts": [["Two forms", "With DAC and without DAC"], ["No-DAC form", "Modified GRF (1-29), 29 amino acids"], ["Class", "Growth hormone-releasing hormone analog"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A GHRH analog sold in two chemically different forms under similar names. Confirming which one you are buying is the main task.",
+      "overview": ["CJC-1295 is a growth hormone-releasing hormone analog. The name covers two products: a version with a drug affinity complex (DAC) that extends half-life, and a version without it, usually called Modified GRF (1-29) or CJC-1295 no DAC.", "Vendors use the names inconsistently, and some blends say only CJC-1295. The COA mass is the quickest way to tell the two forms apart."],
+      "checks": ["Check the product title for DAC or no DAC and match it to the COA mass.", "The no-DAC form is the shorter peptide; the DAC form carries an added linker and is heavier.", "For blends, confirm both components and their amounts are listed."],
+      "suppliers": {"iron": "cjc-1295-10mg", "ngp": "cjc-no-dac", "vortex": "cjc-ipa"},
+      "vortexNote": "Vortex lists CJC-1295 (no DAC) only as a blend with ipamorelin.",
+      "related": ["ipamorelin", "tesamorelin"]
+    },
+    {
+      "slug": "mots-c", "name": "MOTS-c", "also": "Mitochondrial open reading frame of the 12S rRNA-c",
+      "type": "Mitochondrial-derived peptide", "facts": [["Length", "16 amino acids"], ["Origin", "Encoded in mitochondrial DNA (12S rRNA)"], ["Approx. mass", "about 2,174 Da"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A 16-amino-acid peptide encoded in mitochondrial DNA, studied in metabolism and aging research in cell and animal models.",
+      "overview": ["MOTS-c belongs to a group of mitochondrial-derived peptides described in the 2010s. It has drawn interest in metabolic and exercise-physiology research, mostly in rodent and cell studies, with limited human data.", "It is a mid-sized peptide with a methionine-rich sequence, which makes it somewhat sensitive to oxidation. Handling and storage notes on the COA and label are worth reading."],
+      "checks": ["COA mass should be near 2,174 Da.", "Methionine residues oxidize; an oxidized peak in HPLC or MS is a quality flag.", "Look for storage guidance and a date of manufacture."],
+      "suppliers": {"iron": "mots-c-5mg", "ngp": "mots-c", "vortex": "mots-c"},
+      "related": ["ss-31", "nad"]
+    },
+    {
+      "slug": "nad", "name": "NAD+", "also": "Nicotinamide adenine dinucleotide",
+      "type": "Coenzyme (not a peptide)", "facts": [["Molecule type", "Dinucleotide coenzyme"], ["Approx. mass", "about 663 Da"], ["Role", "Cofactor in redox reactions"], ["Typical form", "Lyophilized powder"]],
+      "summary": "NAD+ is a coenzyme, not a peptide. It is listed alongside peptides by most vendors, so it appears in this directory for comparison.",
+      "overview": ["NAD+ is central to cellular redox chemistry and is among the most studied molecules in metabolism and aging research. Vendors group it with peptides for convenience, but it is a dinucleotide and is analyzed differently.", "It is relatively unstable in solution and sensitive to heat, so supply-chain handling and expiry information matter more than they do for many peptides."],
+      "checks": ["HPLC purity should be reported for NAD+ specifically, not a peptide method applied by default.", "Check the stated vial content, since NAD+ is sold in much larger milligram amounts than most peptides.", "Look for storage and shipping conditions on the listing."],
+      "suppliers": {"iron": "nad", "ngp": "nad", "vortex": "nad"},
+      "related": ["mots-c", "ss-31"]
+    },
+    {
+      "slug": "semax", "name": "Semax", "also": "Heptapeptide ACTH(4-10) analog",
+      "type": "ACTH-derived heptapeptide", "facts": [["Length", "7 amino acids"], ["Sequence", "Met-Glu-His-Phe-Pro-Gly-Pro"], ["Approx. mass", "about 813 Da"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A synthetic analog of an ACTH fragment with a stabilizing Pro-Gly-Pro tail, developed and studied mainly in Russia.",
+      "overview": ["Semax was developed in Russia as an analog of ACTH(4-10) with a Pro-Gly-Pro extension that slows breakdown. Much of the English-language research summary comes from a limited set of groups, and it is used as a registered drug in Russia but is not approved in the US.", "Research vendors may supply it as the base peptide or in a nasal-spray format. Those are different products, so the listing format matters."],
+      "checks": ["Mass-spec should show about 813 Da for the base peptide.", "Check whether the product is a lyophilized vial or a pre-mixed spray, and what the solution contains.", "N-acetyl variants exist; the COA should say which you are getting."],
+      "suppliers": {"iron": "semax", "ngp": "semax", "vortex": "semax"},
+      "related": ["selank", "kpv"]
+    },
+    {
+      "slug": "selank", "name": "Selank", "also": "Tuftsin analog",
+      "type": "Tuftsin-derived heptapeptide", "facts": [["Length", "7 amino acids"], ["Sequence", "Thr-Lys-Pro-Arg-Pro-Gly-Pro"], ["Parent", "Tuftsin (Thr-Lys-Pro-Arg)"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A synthetic analog of the immune peptide tuftsin with a stabilizing Pro-Gly-Pro tail, studied in Russian laboratories.",
+      "overview": ["Selank extends the four-amino-acid tuftsin sequence with Pro-Gly-Pro to improve stability. Published work is concentrated in a few Russian research groups, and it is not an approved drug in the US.", "As with Semax, vendors list both vials and sprays. For comparison shopping, make sure you are looking at the same format and content."],
+      "checks": ["COA mass should reflect the 7-mer, about 751 Da.", "Compare vial size across vendors, as listed amounts differ.", "Confirm whether any acetylated form is being sold."],
+      "suppliers": {"iron": "selank", "ngp": "selank", "vortex": "selank"},
+      "related": ["semax", "kpv"]
+    },
+    {
+      "slug": "kpv", "name": "KPV", "also": "Lys-Pro-Val, alpha-MSH (11-13)",
+      "type": "alpha-MSH fragment tripeptide", "facts": [["Length", "3 amino acids"], ["Sequence", "Lys-Pro-Val"], ["Origin", "C-terminal fragment of alpha-MSH"], ["Approx. mass", "about 342 Da"]],
+      "summary": "A tripeptide fragment of alpha-melanocyte-stimulating hormone, studied in cell and animal models of inflammation.",
+      "overview": ["KPV is the C-terminal tripeptide of alpha-MSH. Published work is mainly cell-culture and animal research on inflammatory signaling, including studies in intestinal and skin models.", "Its small size makes it easy to synthesize, so the useful comparisons between vendors are purity percentage, counter-ion and whether the COA is batch-specific."],
+      "checks": ["Mass-spec should be near 342 Da.", "For a tripeptide, a single clean HPLC peak should be easy to achieve; treat extra peaks as a flag.", "Check that the COA is dated and carries a batch number matching the vial."],
+      "suppliers": {"iron": "kpv", "ngp": "kpv", "vortex": "kpv"},
+      "related": ["ghk-cu", "semax"]
+    },
+    {
+      "slug": "ss-31", "name": "SS-31", "also": "Elamipretide, Bendavia",
+      "type": "Mitochondria-targeted tetrapeptide", "facts": [["Length", "4 amino acids"], ["Sequence", "D-Arg-Dmt-Lys-Phe-NH2"], ["Approx. mass", "about 640 Da"], ["Typical form", "Lyophilized powder"]],
+      "summary": "A small synthetic peptide that concentrates at the inner mitochondrial membrane. A pharmaceutical form, elamipretide, has been in clinical development.",
+      "overview": ["SS-31 (elamipretide) belongs to the Szeto-Schiller peptide family and has been studied in mitochondrial-dysfunction models and in clinical trials for rare mitochondrial conditions. That development history gives it more human data than most compounds in this directory.", "Research-grade SS-31 still comes from unregulated supply. It contains a non-natural dimethyltyrosine residue and D-amino acid, so it is worth confirming the COA is for this exact structure."],
+      "checks": ["Mass should be about 640 Da for the free peptide.", "Check the COA names the compound as SS-31 or elamipretide, with the structure stated.", "Look at the counter-ion; acetate and TFA salts have different net peptide content."],
+      "suppliers": {"iron": "ss-31", "ngp": "ss-31", "vortex": "ss-31"},
+      "related": ["mots-c", "nad"]
+    }
+  ]
+}
