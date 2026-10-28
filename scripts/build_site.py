@@ -154,7 +154,7 @@ def sponsored_slot():
     cards = []
     for s in paid:
         cards.append(f"""      <article class="db-sponsored-card">
-        <div class="db-sponsored-label">Sponsored</div>
+        <div class="db-sponsored-label">Featured &middot; Sponsored</div>
         <h3>{esc(s["name"])}</h3>
         <p>{esc(first_sentence(s["summary"]))}</p>
         <div class="button-row"><a class="button button-primary" href="{esc(s["website"])}" target="_blank" rel="sponsored nofollow noopener noreferrer">Visit site</a></div>
@@ -304,7 +304,7 @@ def home_sponsored():
         return ""
     cards = "\n".join(
         f'''          <article class="db-sponsored-card">
-            <div class="db-sponsored-label">Sponsored</div>
+            <div class="db-sponsored-label">Featured &middot; Sponsored</div>
             <h3>{esc(s["name"])}</h3>
             <p>{esc(first_sentence(s["summary"]))}</p>
             <div class="button-row"><a class="button button-primary" href="{esc(s["website"])}" target="_blank" rel="sponsored nofollow noopener noreferrer">Visit site</a><a class="button button-ghost" href="{esc(s["reviewUrl"])}">Read our review</a></div>
