@@ -15,8 +15,8 @@ DATA = json.loads((ROOT / "data" / "suppliers.json").read_text(encoding="utf-8")
 SUPPLIERS = DATA["suppliers"]
 SITE = "https://peptidesuppliers.org"
 
-PRICE_LABEL = {"budget": "Budget", "mid": "Mid-range", "premium": "Premium", "unknown": "Price not stated"}
-PRICE_ORDER = {"budget": 1, "mid": 2, "premium": 3, "unknown": 9}
+PRICE_LABEL = {"budget": "Budget", "mid": "Mid-range", "premium": "Premium", "listed": "Publicly listed", "unknown": "Price not stated"}
+PRICE_ORDER = {"budget": 1, "mid": 2, "premium": 3, "listed": 5, "unknown": 9}
 COA_LABEL = {
     "strong": "Published COAs",
     "visible": "Testing language visible",
@@ -115,7 +115,7 @@ def card(s):
     badges.append(f'<span class="db-badge">{esc(COA_LABEL.get(s["coa"], "COA info not stated"))}</span>')
     badges.append(f'<span class="db-badge">{esc(PRICE_LABEL.get(s["price"], "Price not stated"))}</span>')
     badges.append(f'<span class="db-badge">{esc(ships_label(s))}</span>')
-    if s["country"] in ("US", "UK"):
+    if s["country"] in ("US", "UK", "UAE"):
         badges.append(f'<span class="db-badge">Based in {esc(s["country"])}</span>')
     chips = "".join(f'<span class="pill">{esc(c)}</span>' for c in s["compounds"])
     code = f'<p class="db-code">Code: <strong>{esc(s["discountCode"])}</strong></p>' if s["discountCode"] else ""
@@ -259,7 +259,7 @@ def database_page():
             <select id="db-ships"><option value="">Any</option><option value="us">US shipping only</option><option value="intl">Ships outside the US</option></select>
           </label>
           <label>Based in
-            <select id="db-country"><option value="">Any</option><option value="US">United States</option><option value="UK">United Kingdom</option></select>
+            <select id="db-country"><option value="">Any</option><option value="US">United States</option><option value="UK">United Kingdom</option><option value="UAE">United Arab Emirates</option></select>
           </label>
           <label class="db-check"><input type="checkbox" id="db-ordered"> Ordered &amp; received by us</label>
           <label class="db-check"><input type="checkbox" id="db-code"> Has a discount code</label>

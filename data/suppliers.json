@@ -900,6 +900,57 @@
       "reviewed": "October 22, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-disguised-alpha.svg"
+    },
+    {
+      "slug": "remy-research",
+      "name": "Remy Research",
+      "reviewUrl": "/suppliers/remy-research/",
+      "website": "https://remyresearch.com/",
+      "affiliate": false,
+      "country": "UAE",
+      "locationLabel": "Dubai, United Arab Emirates (delivers within the UAE only)",
+      "price": "listed",
+      "priceLabel": "Publicly listed in AED; minimum order AED 400",
+      "coa": "strong",
+      "coaLabel": "11 published batches from Janoshik and METS Lab (20 reports); other products document purity on request",
+      "shipping": "UAE only; same-day Dubai delivery before 4 PM; next-day to other emirates before noon; cold-chain packed",
+      "shipsOutsideUS": true,
+      "compounds": [
+        "Retatrutide",
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "SS-31",
+        "MOTS-c",
+        "Tesamorelin",
+        "CJC-1295/Ipamorelin",
+        "PT-141",
+        "GLOW blend"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "MOTS-c",
+        "Tesamorelin",
+        "GLOW blend",
+        "CJC-1295/Ipamorelin",
+        "GLP-1"
+      ],
+      "bestFor": "UAE buyers who want same-day Dubai delivery and want to look up a published lab report for the batch they are buying",
+      "discountCode": "",
+      "summary": "Dubai-based supplier launched in 2026, selling pens and vials from four brands for delivery within the UAE. Publishes 11 third-party batch reports (Janoshik and METS Lab), but most of the catalog has no published report. Orders by WhatsApp, Telegram or the site; pays by card link, USDT, or cash on delivery in Dubai. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Card (payment link)",
+        "USDT",
+        "Cash on delivery (Dubai)"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": null,
+      "reviewed": "October 27, 2026",
+      "sponsored": true,
+      "cover": "/assets/supplier-remy-research.svg"
     }
   ]
 }

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" role="img" aria-labelledby="title desc">
+  <title id="title">Remy Research supplier cover</title>
+  <desc id="desc">Original cover image for Remy Research, a Dubai-based research peptide supplier.</desc>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2742"/><stop offset="1" stop-color="#0f766e"/></linearGradient></defs>
+  <rect width="640" height="640" rx="36" fill="url(#g)"/>
+  <circle cx="520" cy="130" r="150" fill="#fff" opacity="0.06"/>
+  <rect x="64" y="70" width="170" height="54" rx="27" fill="#fff" opacity="0.14"/>
+  <text x="149" y="105" text-anchor="middle" fill="#fff" font-size="20" font-family="Arial, sans-serif" font-weight="700" letter-spacing="1.5">DUBAI &middot; UAE</text>
+  <rect x="64" y="190" width="120" height="250" rx="22" fill="#fff" opacity="0.14" stroke="#fff" stroke-opacity="0.4"/>
+  <rect x="96" y="160" width="56" height="40" rx="12" fill="#fff" opacity="0.8"/>
+  <rect x="220" y="190" width="84" height="250" rx="22" fill="#fff" opacity="0.1" stroke="#fff" stroke-opacity="0.35"/>
+  <rect x="236" y="165" width="52" height="30" rx="10" fill="#fff" opacity="0.7"/>
+  <rect x="350" y="228" width="226" height="16" rx="8" fill="#fff" opacity="0.85"/>
+  <rect x="350" y="262" width="170" height="12" rx="6" fill="#fff" opacity="0.5"/>
+  <rect x="350" y="292" width="196" height="12" rx="6" fill="#fff" opacity="0.35"/>
+  <text x="64" y="520" fill="#fff" font-size="54" font-family="Georgia, serif" font-weight="700">Remy</text>
+  <text x="64" y="562" fill="#9fe3d6" font-size="24" font-family="Arial, sans-serif" letter-spacing="3">RESEARCH</text>
+</svg>
