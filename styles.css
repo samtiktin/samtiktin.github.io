@@ -2227,3 +2227,9 @@ article > p,article > ul,article > ol,article > blockquote,article > table,
 .pep-hero{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,440px);gap:40px;align-items:center}
 .pep-hero-img{width:100%;height:auto;border-radius:16px;box-shadow:var(--shadow-strong)}
 @media (max-width:900px){.pep-hero{grid-template-columns:1fr;gap:22px}.pep-hero-img{max-width:460px}}
+
+/* ---- Tighter side margins on large screens ---- */
+:root{--max:1800px}
+.shell{width:min(var(--max),calc(100% - clamp(20px,3vw,64px)))}
+.post{max-width:980px}
+@media (max-width:420px){.shell{width:calc(100% - 20px)}}
