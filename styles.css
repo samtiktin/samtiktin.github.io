@@ -2247,3 +2247,12 @@ section{padding-block:36px}
   .hero-grid,.page-hero-grid{padding:22px 18px}
   .page-hero-card.db-hero{padding:22px 18px}
 }
+
+/* ---- Content width: 1200px max, normal text size ---- */
+:root{--max:1200px}
+.shell{width:min(var(--max),calc(100% - clamp(24px,4vw,64px)))}
+@media (min-width:1500px){html{font-size:16.5px}}
+@media (min-width:1900px){html{font-size:16.5px}}
+.post{max-width:860px}
+.pep-layout{grid-template-columns:minmax(0,1fr) 300px;gap:36px}
+.pep-layout .post.post-wide{max-width:none;font-size:1.03rem}
