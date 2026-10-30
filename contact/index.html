@@ -30,7 +30,7 @@
           <span>The peptide supplier database</span>
         </span>
       </a>
-                                                                                                                                                                                                                                    <nav class="nav" aria-label="Primary">
+                                                                                                                                                                                                                                                <nav class="nav" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/database/">Database</a>
         <a href="/suppliers/">Suppliers</a>
@@ -122,36 +122,36 @@
               Use this form for general questions, correction requests, partnership inquiries, or
               directory updates.
             </p>
-            <form class="form-stack" action="https://formsubmit.co/ab561dcaf4070ebf00a2b5fa91ed89e2" method="POST">
-              <input type="hidden" name="_subject" value="PeptideSuppliers.org general inquiry">
-              <input type="hidden" name="_captcha" value="false">
-              <input type="hidden" name="_template" value="table">
-              <input type="hidden" name="_next" value="https://peptidesuppliers.org/contact/?submitted=inquiry">
-              <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="display:none">
+            <form class="form-stack" id="inquiry-form" action="https://api.web3forms.com/submit" method="POST">
+              <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY">
+              <input type="hidden" name="subject" value="PeptideSuppliers.org general inquiry">
+              <input type="hidden" name="from_name" value="PeptideSuppliers.org contact form">
+              <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" style="display:none">
 
               <div class="two-column">
                 <div>
                   <label class="field-label" for="inquiry-name">Your name</label>
-                  <input class="input" id="inquiry-name" name="Your name" type="text" required>
+                  <input class="input" id="inquiry-name" name="name" type="text" required>
                 </div>
                 <div>
                   <label class="field-label" for="inquiry-email">Your email</label>
-                  <input class="input" id="inquiry-email" name="Your email" type="email" required>
+                  <input class="input" id="inquiry-email" name="email" type="email" required>
                 </div>
               </div>
 
               <div>
                 <label class="field-label" for="inquiry-subject">Subject</label>
-                <input class="input" id="inquiry-subject" name="Subject" type="text" placeholder="General inquiry, correction request, partnership, directory update" required>
+                <input class="input" id="inquiry-subject" name="inquiry_subject" type="text" placeholder="General inquiry, correction request, partnership, directory update" required>
               </div>
 
               <div>
                 <label class="field-label" for="inquiry-message">Message</label>
-                <textarea class="textarea" id="inquiry-message" name="Message" required placeholder="Share your question, update, or request."></textarea>
+                <textarea class="textarea" id="inquiry-message" name="message" required placeholder="Share your question, update, or request."></textarea>
               </div>
 
+              <p class="tiny muted" id="inquiry-status" role="status" aria-live="polite"></p>
               <div class="button-row">
-                <button class="button button-primary" type="submit">Send inquiry</button>
+                <button class="button button-primary" type="submit" id="inquiry-submit">Send inquiry</button>
                 <a class="button button-ghost" href="mailto:thepeptideforum@gmail.com">Email instead</a>
               </div>
             </form>
@@ -196,12 +196,35 @@
   </footer>
   <script>
     (function () {
-      const params = new URLSearchParams(window.location.search);
-      const state = params.get('submitted');
-      if (state === 'inquiry') {
-        const notice = document.getElementById('general-inquiry-success');
-        if (notice) { notice.style.display = 'block'; notice.scrollIntoView(); }
+      var form = document.getElementById('inquiry-form');
+      if (!form) return;
+      var status = document.getElementById('inquiry-status');
+      var btn = document.getElementById('inquiry-submit');
+      var success = document.getElementById('general-inquiry-success');
+      var TO = 'thepeptideforum@gmail.com';
+      function mailtoFallback() {
+        var d = new FormData(form);
+        var body = 'Name: ' + d.get('name') + '\nEmail: ' + d.get('email') + '\n\n' + d.get('message');
+        window.location.href = 'mailto:' + TO + '?subject=' + encodeURIComponent(d.get('inquiry_subject') || 'PeptideSuppliers.org inquiry') + '&body=' + encodeURIComponent(body);
       }
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var key = form.elements.access_key.value;
+        if (!key || key.indexOf('YOUR_') === 0) { status.textContent = 'Opening your email app to send this message...'; mailtoFallback(); return; }
+        btn.disabled = true; status.textContent = 'Sending...';
+        fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: new FormData(form) })
+          .then(function (r) { return r.json(); })
+          .then(function (j) {
+            if (j && j.success) {
+              form.reset(); status.textContent = '';
+              if (success) { success.style.display = 'block'; success.scrollIntoView({ behavior: 'smooth' }); }
+            } else { throw new Error('failed'); }
+          })
+          .catch(function () {
+            status.innerHTML = 'Sorry, that did not send. Please email us at <a href="mailto:' + TO + '">' + TO + '</a>.';
+          })
+          .then(function () { btn.disabled = false; });
+      });
     })();
   </script>
   </body>
