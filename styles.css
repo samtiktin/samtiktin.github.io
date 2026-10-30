@@ -2256,3 +2256,93 @@ section{padding-block:36px}
 .post{max-width:860px}
 .pep-layout{grid-template-columns:minmax(0,1fr) 300px;gap:36px}
 .pep-layout .post.post-wide{max-width:none;font-size:1.03rem}
+
+/* COA mass checker */
+.mass-layout{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:20px;align-items:start}
+.mass-card{background:#fff;border:1px solid var(--border);border-radius:12px;padding:20px;box-shadow:var(--shadow)}
+.mass-card .field-label{display:block;margin:12px 0 6px;font-weight:600;font-size:.9rem}
+.mass-card .input{width:100%}
+.mass-card .button{margin-top:16px}
+.mass-badge{display:inline-block;padding:6px 12px;border-radius:999px;font-weight:700;font-size:.9rem;margin-bottom:10px}
+.mass-ok{background:#d9f3ec;color:#0b5e53}.mass-warn{background:#fff1cf;color:#7a5400}.mass-bad{background:#fde2de;color:#9b2c1f}
+.mass-list{padding-left:1.1em}.mass-list li{margin:.6em 0}
+@media (max-width:860px){.mass-layout{grid-template-columns:1fr}}
+
+/* =====================================================================
+   COMPACT THEME: denser, smaller type, tighter spacing (desktop + mobile)
+   ===================================================================== */
+:root{--max:1180px;--radius:10px;--shadow:0 1px 3px rgba(15,39,66,.06),0 4px 14px rgba(15,39,66,.05);--shadow-strong:0 2px 6px rgba(15,39,66,.08),0 8px 22px rgba(15,39,66,.07)}
+html{font-size:15px}
+@media (min-width:1500px){html{font-size:15px}}
+@media (min-width:1900px){html{font-size:15px}}
+body{font-size:1rem;line-height:1.55}
+p,li{line-height:1.55}
+.shell{width:min(var(--max),calc(100% - clamp(20px,3vw,40px)))}
+
+/* header */
+.topbar-inner{min-height:56px;gap:18px;padding:0}
+.brand{gap:10px}
+.brand-mark{width:32px;height:32px;border-radius:9px;font-size:14px;box-shadow:none}
+.brand-copy strong{font-size:.95rem}
+.brand-copy span{font-size:.72rem}
+.nav{gap:4px 18px}
+.nav a{font-size:.88rem;min-height:32px}
+
+/* headings */
+h1,.page-title{font-size:clamp(1.7rem,3vw,2.3rem);line-height:1.15;letter-spacing:-.02em;max-width:none}
+h2{font-size:1.35rem;line-height:1.25;letter-spacing:-.01em}
+h3{font-size:1.05rem;line-height:1.3}
+.db-hero .page-title{font-size:clamp(1.7rem,3vw,2.3rem);max-width:none}
+.hero-copy p,.page-hero-copy p,.db-hero > p{font-size:1rem;margin-top:10px;max-width:72ch}
+.eyebrow{margin-bottom:10px;padding:4px 10px;font-size:.68rem;letter-spacing:.12em}
+.kicker,.section-label{font-size:.68rem;letter-spacing:.1em;margin-bottom:6px}
+
+/* spacing */
+section{padding-block:22px}
+.hero,.page-hero{padding:20px 0 6px}
+.hero-grid,.page-hero-grid{padding:22px 26px;gap:20px}
+.page-hero-card.db-hero{padding:20px 24px}
+.hero-card,.page-hero-card{border-radius:14px}
+.section-head{margin-bottom:12px}
+.section-head p{margin-bottom:0}
+.footer{padding-block:16px;font-size:.85rem}
+.footer-links{gap:6px 14px}
+
+/* cards, grids, buttons */
+.card,.story-card,.list-card,.contact-card,.review-card,.notice,.db-card{padding:16px 18px;border-radius:var(--radius)}
+.card h3,.review-card h3{margin-bottom:6px}
+.card p,.review-card p{margin-bottom:8px}
+.supplier-grid,.resource-grid,.cards,.review-grid,.db-grid{gap:14px}
+.db-grid{grid-template-columns:repeat(auto-fill,minmax(300px,1fr))}
+.button{padding:8px 16px;font-size:.88rem;min-height:0;border-radius:8px}
+.button-row{gap:8px;margin-top:12px}
+.pill,.badge,.db-badge,.meta-chip{font-size:.72rem;padding:3px 9px}
+.input,.textarea,select{padding:9px 12px;font-size:.92rem;border-radius:8px}
+.review-media img{max-height:130px;object-fit:cover}
+
+/* article text */
+.post{font-size:1rem;line-height:1.65}
+.post h2{margin-top:1.6em;font-size:1.3rem}
+.pep-layout .post.post-wide{font-size:1rem}
+.pep-layout{gap:28px;grid-template-columns:minmax(0,1fr) 280px}
+.pep-hero{gap:24px;grid-template-columns:minmax(0,1fr) minmax(240px,340px)}
+.pep-aside{top:76px}
+.pep-aside-card{padding:14px 16px;border-radius:10px}
+.pep-figure{margin:14px 0}
+.data-table{font-size:.9rem}
+.data-table th,.data-table td{padding:8px 10px}
+.db-layout{grid-template-columns:250px 1fr;gap:20px}
+
+/* mobile */
+@media (max-width:700px){
+  html{font-size:15px}
+  .topbar-inner{padding:8px 0}
+  section{padding-block:16px}
+  .hero,.page-hero{padding:14px 0 4px}
+  .hero-grid,.page-hero-grid{padding:16px 14px}
+  .page-hero-card.db-hero{padding:16px 14px}
+  .card,.story-card,.review-card,.notice,.db-card{padding:14px}
+  h1,.page-title,.db-hero .page-title{font-size:1.55rem}
+  h2{font-size:1.2rem}
+  .shell{width:calc(100% - 20px)}
+}

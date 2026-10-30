@@ -28,6 +28,7 @@ NAV = """      <nav class="nav" aria-label="Primary">
         <a href="/database/"{database}>Database</a>
         <a href="/suppliers/"{suppliers}>Suppliers</a>
         <a href="/peptides/"{peptides}>Peptides</a>
+        <a href="/tools/"{tools}>Tools</a>
         <a href="/reviews/"{reviews}>Reviews</a>
         <a href="/blog/"{blog}>Blog</a>
         <a href="/contact/"{contact}>Contact</a>
@@ -40,6 +41,7 @@ FOOTER = """  <footer class="footer">
         <a href="/database/">Database</a>
         <a href="/suppliers/">Suppliers</a>
         <a href="/peptides/">Peptides</a>
+        <a href="/tools/">Tools</a>
         <a href="/reviews/">Reviews</a>
         <a href="/blog/">Blog</a>
         <a href="/how-we-review-suppliers/">Methodology</a>
@@ -68,7 +70,7 @@ HEADER = """  <header class="topbar">
 
 
 def nav(active):
-    keys = ["home", "database", "suppliers", "peptides", "reviews", "blog", "contact"]
+    keys = ["home", "database", "suppliers", "peptides", "tools", "reviews", "blog", "contact"]
     return NAV.format(**{k: (' class="active"' if k == active else "") for k in keys})
 
 
@@ -522,6 +524,8 @@ def retrofit_nav_and_footer():
         "contact/index.html": "contact",
         "suppliers/index.html": "suppliers",
         "blog/index.html": "blog",
+        "tools/index.html": "tools",
+        "tools/coa-mass-check/index.html": "tools",
     }
     for d in (ROOT / "blog").iterdir():
         if d.is_dir() and (d / "index.html").exists():
@@ -795,6 +799,156 @@ def peptides_pages():
     (ROOT / "sitemap.xml").write_text(sm, encoding="utf-8")
 
 
+def tools_pages():
+    masses = json.loads((ROOT / "data" / "tool-masses.json").read_text(encoding="utf-8"))
+    head = lambda title, desc, url, extra="": f"""<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{esc(title)}</title>
+  <meta name="description" content="{esc(desc)}">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="{SITE}{url}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{esc(title)}">
+  <meta property="og:description" content="{esc(desc)}">
+  <meta property="og:url" content="{SITE}{url}">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="{SITE}/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+{extra}</head>
+<body>
+{HEADER.format(nav=nav("tools"))}
+"""
+    tail = FOOTER + '\n  <script src="/assets/site.js" defer></script>\n</body>\n</html>\n'
+    (ROOT / "tools" / "coa-mass-check").mkdir(parents=True, exist_ok=True)
+    hub = head("Free Peptide Research Tools | PeptideSuppliers.org", "Free tools for reading peptide documentation, starting with a certificate-of-analysis mass checker. No dosing tools.", "/tools/") + """
+  <main>
+    <section class="page-hero"><div class="shell"><div class="page-hero-card db-hero">
+      <div class="eyebrow">Tools</div>
+      <h1 class="page-title">Tools for reading peptide documentation</h1>
+      <p>Free, no sign-up. These tools help you check supplier paperwork. We do not build dosing or reconstitution tools.</p>
+    </div></div></section>
+    <section><div class="shell"><div class="supplier-grid">
+      <a class="card card-link" href="/tools/coa-mass-check/">
+        <div class="kicker">COA tool</div>
+        <h3>COA mass checker</h3>
+        <p>Enter the mass from a certificate of analysis and see which compound it matches, including oxidation and look-alike forms.</p>
+      </a>
+    </div></div></section>
+  </main>
+""" + tail
+    (ROOT / "tools" / "index.html").write_text(hub, encoding="utf-8")
+    ld = {"@context": "https://schema.org", "@type": "WebApplication", "name": "COA Mass Checker", "url": SITE + "/tools/coa-mass-check/",
+          "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"},
+          "publisher": {"@type": "Organization", "name": "PeptideSuppliers.org", "url": SITE + "/"}}
+    extra = '  <script type="application/ld+json">' + json.dumps(ld) + '</script>\n'
+    data = json.dumps(masses["compounds"])
+    page = head("COA Mass Checker: Does the Mass on Your Certificate Match? | PeptideSuppliers.org",
+                "Free tool: enter the mass from a peptide certificate of analysis to see which compound it matches, spot oxidation (+16 Da) and catch look-alike forms such as CJC-1295 with and without DAC.",
+                "/tools/coa-mass-check/", extra) + """
+  <main>
+    <section class="page-hero"><div class="shell"><div class="page-hero-card db-hero">
+      <div class="eyebrow"><a href="/tools/">Tools</a> &middot; COA tool</div>
+      <h1 class="page-title">COA mass checker</h1>
+      <p>Type the mass printed on a certificate of analysis. The tool shows which compounds it matches, and flags oxidation and look-alike forms. It checks identity only; it says nothing about purity, sterility or safety.</p>
+    </div></div></section>
+    <section><div class="shell"><div class="mass-layout">
+      <form class="mass-card" id="mass-form" autocomplete="off">
+        <label class="field-label" for="mass-compound">Compound on the listing (optional)</label>
+        <select class="input" id="mass-compound"><option value="">Not sure / any</option></select>
+        <label class="field-label" for="mass-value">Mass on the COA (daltons)</label>
+        <input class="input" id="mass-value" type="number" step="any" min="1" inputmode="decimal" placeholder="e.g. 1419.5" required>
+        <label class="field-label" for="mass-type">What kind of number is it?</label>
+        <select class="input" id="mass-type">
+          <option value="neutral">Molecular weight / deconvoluted mass</option>
+          <option value="mh">[M+H]+ ion (singly protonated)</option>
+        </select>
+        <button class="button button-primary" type="submit">Check mass</button>
+        <p class="tiny muted">Spectra often show several charge states (for example [M+2H]2+). Use the deconvoluted or stated molecular mass where you can. Tolerance is about 1 Da, or 0.05% for large peptides.</p>
+      </form>
+      <div class="mass-card" id="mass-result" aria-live="polite"><p class="muted">Enter a mass to see matches.</p></div>
+    </div></div></section>
+    <section><div class="shell"><article class="post post-wide">
+      <h2>How to use the result</h2>
+      <p><strong>A match</strong> means the stated mass is consistent with that compound. It does not prove the batch is pure, correctly folded, sterile or the right stereoisomer: for example, a peptide with a D-amino acid has the same mass as its L-form. Use the chromatogram for those questions.</p>
+      <p><strong>An oxidation match</strong> (+16 Da per oxygen) suggests some methionine has oxidized, common in older or poorly stored batches of peptides such as MOTS-c, Semax and tesamorelin. A small amount is normal; a large share is a quality concern.</p>
+      <p><strong>A look-alike match</strong> means the mass fits a different form than the listing, such as CJC-1295 with DAC versus without, or tesamorelin versus unmodified GHRH(1-44). Ask the supplier which form they sell.</p>
+      <p>Masses are approximate averages and vendors round differently. Read our <a href="/how-we-review-suppliers/">review methodology</a> and the <a href="/peptides/">compound guides</a> for the full documentation checklist. For research use only; not medical advice.</p>
+    </article></div></section>
+  </main>
+  <script>
+  (function () {
+    var DATA = """ + data + """;
+    var form = document.getElementById('mass-form'), sel = document.getElementById('mass-compound'),
+        out = document.getElementById('mass-result');
+    DATA.forEach(function (c) { var o = document.createElement('option'); o.value = c.id; o.textContent = c.name; sel.appendChild(o); });
+    function tol(m) { return Math.max(1.0, m * 0.0005); }
+    function fmt(x) { return ((Math.round(x * 10) / 10) || 0).toLocaleString(); }
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    function matches(m) {
+      var res = [];
+      DATA.forEach(function (c) {
+        var variants = [{ label: '', mass: c.mass, kind: 'base' }];
+        for (var k = 1; k <= c.met; k++) variants.push({ label: ' + ' + k + ' oxidation' + (k > 1 ? 's' : ''), mass: c.mass + 15.995 * k, kind: 'ox' });
+        variants.forEach(function (v) {
+          var d = m - v.mass;
+          if (Math.abs(d) <= Math.max(tol(v.mass), 1.0)) res.push({ c: c, v: v, d: d });
+        });
+      });
+      res.sort(function (a, b) { return Math.abs(a.d) - Math.abs(b.d); });
+      return res;
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var m = parseFloat(document.getElementById('mass-value').value);
+      if (!(m > 0)) { out.innerHTML = '<p class="muted">Enter a valid mass.</p>'; return; }
+      if (document.getElementById('mass-type').value === 'mh') m = m - 1.007;
+      var want = sel.value, list = matches(m), html = '';
+      var closest = DATA.map(function (c) { return { c: c, d: m - c.mass }; }).sort(function (a, b) { return Math.abs(a.d) - Math.abs(b.d); })[0];
+      if (want) {
+        var w = DATA.filter(function (c) { return c.id === want; })[0];
+        var hit = list.filter(function (r) { return r.c.id === want; })[0];
+        if (hit && hit.v.kind === 'base') {
+          html += '<div class="mass-badge mass-ok">Consistent with ' + esc(w.name) + '</div><p>Observed ' + fmt(m) + ' Da versus expected ' + fmt(w.mass) + ' Da (difference ' + fmt(hit.d) + ').</p>';
+        } else if (hit) {
+          html += '<div class="mass-badge mass-warn">Matches ' + esc(w.name) + esc(hit.v.label) + '</div><p>Observed ' + fmt(m) + ' Da; expected ' + fmt(hit.v.mass) + ' Da. This pattern suggests partial oxidation. Check the chromatogram for an early-eluting satellite peak.</p>';
+        } else {
+          html += '<div class="mass-badge mass-bad">Does not match ' + esc(w.name) + '</div><p>Observed ' + fmt(m) + ' Da versus expected ' + fmt(w.mass) + ' Da (difference ' + fmt(m - w.mass) + ').</p>';
+          if (list.length) html += '<p>It does fit a different compound below. Ask the supplier which form they sell.</p>';
+          else html += '<p>It may be a multiply charged ion, a salt or adduct, a different form, or a different product. Ask the supplier for the full spectrum.</p>';
+        }
+        if (w.hint) html += '<p class="tiny muted">' + esc(w.hint) + ' <a href="' + w.page + '">Read the ' + esc(w.name.split(' (')[0]) + ' guide</a>.</p>';
+      }
+      if (!want) {
+        if (list.length) html += '<div class="mass-badge mass-ok">' + list.length + ' possible match' + (list.length > 1 ? 'es' : '') + '</div>';
+        else html += '<div class="mass-badge mass-bad">No match in our list</div><p>Closest: ' + esc(closest.c.name) + ' at ' + fmt(closest.c.mass) + ' Da (difference ' + fmt(closest.d) + '). It may be a charge state, an adduct, or a compound we do not cover.</p>';
+      }
+      var others = want ? list.filter(function (r) { return r.c.id !== want; }) : list;
+      if (others.length) {
+        html += '<h3>' + (want ? 'Also fits' : 'Matches') + '</h3><ul class="mass-list">';
+        others.forEach(function (r) {
+          html += '<li><strong>' + esc(r.c.name) + esc(r.v.label) + '</strong> <span class="muted">(' + esc(r.c.form) + '; expected ' + fmt(r.v.mass) + ', difference ' + fmt(r.d) + ')</span><br><span class="tiny muted">' + esc(r.c.hint) + '</span> <a class="tiny" href="' + r.c.page + '">Guide</a></li>';
+        });
+        html += '</ul>';
+      }
+      html += '<p class="tiny muted">Identity check only. Not a statement about purity, sterility or safety.</p>';
+      out.innerHTML = html;
+    });
+  })();
+  </script>
+""" + tail
+    (ROOT / "tools" / "coa-mass-check" / "index.html").write_text(page, encoding="utf-8")
+    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+    for u in ("/tools/", "/tools/coa-mass-check/"):
+        if SITE + u not in sm:
+            sm = sm.replace("</urlset>", f"  <url><loc>{SITE}{u}</loc><lastmod>2026-10-30</lastmod></url>\n</urlset>")
+    (ROOT / "sitemap.xml").write_text(sm, encoding="utf-8")
+
+
 if __name__ == "__main__":
     (ROOT / "database").mkdir(exist_ok=True)
     (ROOT / "database" / "index.html").write_text(database_page(), encoding="utf-8")
@@ -802,5 +956,6 @@ if __name__ == "__main__":
     suppliers_hub()
     blog_pages()
     peptides_pages()
+    tools_pages()
     retrofit_nav_and_footer()
     print("built database/index.html, index.html and refreshed nav/footer")

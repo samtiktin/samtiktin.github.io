@@ -1,0 +1,22 @@
+{
+  "note": "Average (molecular-weight) masses in daltons. Values are approximate; vendors and labs round differently.",
+  "compounds": [
+    {"id":"bpc-157","name":"BPC-157","form":"free peptide, 15 residues","mass":1419.5,"met":0,"page":"/peptides/bpc-157/","hint":"A mass near 1,419 matches. Arginate or other salt forms are different compounds."},
+    {"id":"tb500-frag","name":"TB-500 (Ac-LKKTETQ fragment)","form":"acetylated 17-23 fragment","mass":889.0,"met":0,"page":"/peptides/tb-500/","hint":"The short fragment most often meant by TB-500 in anti-doping literature."},
+    {"id":"tb4","name":"Thymosin beta-4 (full protein)","form":"43 residues","mass":4963.5,"met":0,"page":"/peptides/tb-500/","hint":"Some vendors sell the full-length protein under the TB-500 name."},
+    {"id":"ghk","name":"GHK (free tripeptide)","form":"no copper","mass":340.4,"met":0,"page":"/peptides/ghk-cu/","hint":"Free GHK without copper is colorless."},
+    {"id":"ghk-cu","name":"GHK-Cu (copper complex)","form":"copper(II) complex","mass":402.0,"met":0,"page":"/peptides/ghk-cu/","hint":"Some listings cite about 404; copper isotopes also give a split pattern. A copper assay is the better check."},
+    {"id":"tesa","name":"Tesamorelin","form":"44 residues + hexenoyl cap","mass":5135.9,"met":1,"page":"/peptides/tesamorelin/","hint":"The hexenoyl cap adds about 96 Da over unmodified GHRH(1-44)."},
+    {"id":"ghrh144","name":"GHRH(1-44), unmodified","form":"no cap","mass":5040.0,"met":1,"page":"/peptides/tesamorelin/","hint":"A listing titled tesamorelin that reads about 5,040 is missing the cap."},
+    {"id":"ipa","name":"Ipamorelin","form":"Aib-His-D-2Nal-D-Phe-Lys-NH2","mass":711.9,"met":0,"page":"/peptides/ipamorelin/","hint":"Mass cannot reveal D/L errors; check the chromatogram."},
+    {"id":"cjc-nodac","name":"CJC-1295 no DAC (Mod GRF 1-29)","form":"29 residues","mass":3367.9,"met":1,"page":"/peptides/cjc-1295/","hint":"Often listed simply as CJC-1295."},
+    {"id":"cjc-dac","name":"CJC-1295 with DAC","form":"29 residues + linker","mass":3647.2,"met":1,"page":"/peptides/cjc-1295/","hint":"About 279 Da heavier than the no-DAC form."},
+    {"id":"mots","name":"MOTS-c","form":"16 residues","mass":2174.6,"met":2,"page":"/peptides/mots-c/","hint":"Two methionines can oxidize: +16 per oxygen."},
+    {"id":"nad","name":"NAD+","form":"free acid, not a peptide","mass":663.4,"met":0,"page":"/peptides/nad/","hint":"Sodium salt forms weigh more; ask which form is sold."},
+    {"id":"semax","name":"Semax","form":"MEHFPGP","mass":813.9,"met":1,"page":"/peptides/semax/","hint":"One methionine can oxidize (+16)."},
+    {"id":"nasemax","name":"N-acetyl Semax amidate","form":"modified","mass":855.0,"met":1,"page":"/peptides/semax/","hint":"A different compound from base Semax."},
+    {"id":"selank","name":"Selank","form":"TKPRPGP","mass":751.9,"met":0,"page":"/peptides/selank/","hint":"Tuftsin alone would be about 500."},
+    {"id":"kpv","name":"KPV","form":"Lys-Pro-Val","mass":342.4,"met":0,"page":"/peptides/kpv/","hint":"A C-terminal amide weighs about 1 Da less."},
+    {"id":"ss31","name":"SS-31 (elamipretide)","form":"D-Arg-Dmt-Lys-Phe-NH2","mass":639.8,"met":0,"page":"/peptides/ss-31/","hint":"With ordinary tyrosine instead of Dmt it would be about 612."}
+  ]
+}

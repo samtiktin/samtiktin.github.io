@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>COA Mass Checker: Does the Mass on Your Certificate Match? | PeptideSuppliers.org</title>
+  <meta name="description" content="Free tool: enter the mass from a peptide certificate of analysis to see which compound it matches, spot oxidation (+16 Da) and catch look-alike forms such as CJC-1295 with and without DAC.">
+  <meta name="robots" content="index,follow">
+  <link rel="canonical" href="https://peptidesuppliers.org/tools/coa-mass-check/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="COA Mass Checker: Does the Mass on Your Certificate Match? | PeptideSuppliers.org">
+  <meta property="og:description" content="Free tool: enter the mass from a peptide certificate of analysis to see which compound it matches, spot oxidation (+16 Da) and catch look-alike forms such as CJC-1295 with and without DAC.">
+  <meta property="og:url" content="https://peptidesuppliers.org/tools/coa-mass-check/">
+  <meta property="og:site_name" content="PeptideSuppliers.org">
+  <meta property="og:image" content="https://peptidesuppliers.org/og-image.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="stylesheet" href="/styles.css">
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebApplication", "name": "COA Mass Checker", "url": "https://peptidesuppliers.org/tools/coa-mass-check/", "applicationCategory": "EducationalApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "publisher": {"@type": "Organization", "name": "PeptideSuppliers.org", "url": "https://peptidesuppliers.org/"}}</script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="shell topbar-inner">
+      <a class="brand" href="/">
+        <span class="brand-mark">PS</span>
+        <span class="brand-copy">
+          <strong>PeptideSuppliers.org</strong>
+          <span>The peptide supplier database</span>
+        </span>
+      </a>
+            <nav class="nav" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/database/">Database</a>
+        <a href="/suppliers/">Suppliers</a>
+        <a href="/peptides/">Peptides</a>
+        <a href="/tools/" class="active">Tools</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/blog/">Blog</a>
+        <a href="/contact/">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-hero"><div class="shell"><div class="page-hero-card db-hero">
+      <div class="eyebrow"><a href="/tools/">Tools</a> &middot; COA tool</div>
+      <h1 class="page-title">COA mass checker</h1>
+      <p>Type the mass printed on a certificate of analysis. The tool shows which compounds it matches, and flags oxidation and look-alike forms. It checks identity only; it says nothing about purity, sterility or safety.</p>
+    </div></div></section>
+    <section><div class="shell"><div class="mass-layout">
+      <form class="mass-card" id="mass-form" autocomplete="off">
+        <label class="field-label" for="mass-compound">Compound on the listing (optional)</label>
+        <select class="input" id="mass-compound"><option value="">Not sure / any</option></select>
+        <label class="field-label" for="mass-value">Mass on the COA (daltons)</label>
+        <input class="input" id="mass-value" type="number" step="any" min="1" inputmode="decimal" placeholder="e.g. 1419.5" required>
+        <label class="field-label" for="mass-type">What kind of number is it?</label>
+        <select class="input" id="mass-type">
+          <option value="neutral">Molecular weight / deconvoluted mass</option>
+          <option value="mh">[M+H]+ ion (singly protonated)</option>
+        </select>
+        <button class="button button-primary" type="submit">Check mass</button>
+        <p class="tiny muted">Spectra often show several charge states (for example [M+2H]2+). Use the deconvoluted or stated molecular mass where you can. Tolerance is about 1 Da, or 0.05% for large peptides.</p>
+      </form>
+      <div class="mass-card" id="mass-result" aria-live="polite"><p class="muted">Enter a mass to see matches.</p></div>
+    </div></div></section>
+    <section><div class="shell"><article class="post post-wide">
+      <h2>How to use the result</h2>
+      <p><strong>A match</strong> means the stated mass is consistent with that compound. It does not prove the batch is pure, correctly folded, sterile or the right stereoisomer: for example, a peptide with a D-amino acid has the same mass as its L-form. Use the chromatogram for those questions.</p>
+      <p><strong>An oxidation match</strong> (+16 Da per oxygen) suggests some methionine has oxidized, common in older or poorly stored batches of peptides such as MOTS-c, Semax and tesamorelin. A small amount is normal; a large share is a quality concern.</p>
+      <p><strong>A look-alike match</strong> means the mass fits a different form than the listing, such as CJC-1295 with DAC versus without, or tesamorelin versus unmodified GHRH(1-44). Ask the supplier which form they sell.</p>
+      <p>Masses are approximate averages and vendors round differently. Read our <a href="/how-we-review-suppliers/">review methodology</a> and the <a href="/peptides/">compound guides</a> for the full documentation checklist. For research use only; not medical advice.</p>
+    </article></div></section>
+  </main>
+  <script>
+  (function () {
+    var DATA = [{"id": "bpc-157", "name": "BPC-157", "form": "free peptide, 15 residues", "mass": 1419.5, "met": 0, "page": "/peptides/bpc-157/", "hint": "A mass near 1,419 matches. Arginate or other salt forms are different compounds."}, {"id": "tb500-frag", "name": "TB-500 (Ac-LKKTETQ fragment)", "form": "acetylated 17-23 fragment", "mass": 889.0, "met": 0, "page": "/peptides/tb-500/", "hint": "The short fragment most often meant by TB-500 in anti-doping literature."}, {"id": "tb4", "name": "Thymosin beta-4 (full protein)", "form": "43 residues", "mass": 4963.5, "met": 0, "page": "/peptides/tb-500/", "hint": "Some vendors sell the full-length protein under the TB-500 name."}, {"id": "ghk", "name": "GHK (free tripeptide)", "form": "no copper", "mass": 340.4, "met": 0, "page": "/peptides/ghk-cu/", "hint": "Free GHK without copper is colorless."}, {"id": "ghk-cu", "name": "GHK-Cu (copper complex)", "form": "copper(II) complex", "mass": 402.0, "met": 0, "page": "/peptides/ghk-cu/", "hint": "Some listings cite about 404; copper isotopes also give a split pattern. A copper assay is the better check."}, {"id": "tesa", "name": "Tesamorelin", "form": "44 residues + hexenoyl cap", "mass": 5135.9, "met": 1, "page": "/peptides/tesamorelin/", "hint": "The hexenoyl cap adds about 96 Da over unmodified GHRH(1-44)."}, {"id": "ghrh144", "name": "GHRH(1-44), unmodified", "form": "no cap", "mass": 5040.0, "met": 1, "page": "/peptides/tesamorelin/", "hint": "A listing titled tesamorelin that reads about 5,040 is missing the cap."}, {"id": "ipa", "name": "Ipamorelin", "form": "Aib-His-D-2Nal-D-Phe-Lys-NH2", "mass": 711.9, "met": 0, "page": "/peptides/ipamorelin/", "hint": "Mass cannot reveal D/L errors; check the chromatogram."}, {"id": "cjc-nodac", "name": "CJC-1295 no DAC (Mod GRF 1-29)", "form": "29 residues", "mass": 3367.9, "met": 1, "page": "/peptides/cjc-1295/", "hint": "Often listed simply as CJC-1295."}, {"id": "cjc-dac", "name": "CJC-1295 with DAC", "form": "29 residues + linker", "mass": 3647.2, "met": 1, "page": "/peptides/cjc-1295/", "hint": "About 279 Da heavier than the no-DAC form."}, {"id": "mots", "name": "MOTS-c", "form": "16 residues", "mass": 2174.6, "met": 2, "page": "/peptides/mots-c/", "hint": "Two methionines can oxidize: +16 per oxygen."}, {"id": "nad", "name": "NAD+", "form": "free acid, not a peptide", "mass": 663.4, "met": 0, "page": "/peptides/nad/", "hint": "Sodium salt forms weigh more; ask which form is sold."}, {"id": "semax", "name": "Semax", "form": "MEHFPGP", "mass": 813.9, "met": 1, "page": "/peptides/semax/", "hint": "One methionine can oxidize (+16)."}, {"id": "nasemax", "name": "N-acetyl Semax amidate", "form": "modified", "mass": 855.0, "met": 1, "page": "/peptides/semax/", "hint": "A different compound from base Semax."}, {"id": "selank", "name": "Selank", "form": "TKPRPGP", "mass": 751.9, "met": 0, "page": "/peptides/selank/", "hint": "Tuftsin alone would be about 500."}, {"id": "kpv", "name": "KPV", "form": "Lys-Pro-Val", "mass": 342.4, "met": 0, "page": "/peptides/kpv/", "hint": "A C-terminal amide weighs about 1 Da less."}, {"id": "ss31", "name": "SS-31 (elamipretide)", "form": "D-Arg-Dmt-Lys-Phe-NH2", "mass": 639.8, "met": 0, "page": "/peptides/ss-31/", "hint": "With ordinary tyrosine instead of Dmt it would be about 612."}];
+    var form = document.getElementById('mass-form'), sel = document.getElementById('mass-compound'),
+        out = document.getElementById('mass-result');
+    DATA.forEach(function (c) { var o = document.createElement('option'); o.value = c.id; o.textContent = c.name; sel.appendChild(o); });
+    function tol(m) { return Math.max(1.0, m * 0.0005); }
+    function fmt(x) { return ((Math.round(x * 10) / 10) || 0).toLocaleString(); }
+    function esc(t) { return String(t).replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+    function matches(m) {
+      var res = [];
+      DATA.forEach(function (c) {
+        var variants = [{ label: '', mass: c.mass, kind: 'base' }];
+        for (var k = 1; k <= c.met; k++) variants.push({ label: ' + ' + k + ' oxidation' + (k > 1 ? 's' : ''), mass: c.mass + 15.995 * k, kind: 'ox' });
+        variants.forEach(function (v) {
+          var d = m - v.mass;
+          if (Math.abs(d) <= Math.max(tol(v.mass), 1.0)) res.push({ c: c, v: v, d: d });
+        });
+      });
+      res.sort(function (a, b) { return Math.abs(a.d) - Math.abs(b.d); });
+      return res;
+    }
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var m = parseFloat(document.getElementById('mass-value').value);
+      if (!(m > 0)) { out.innerHTML = '<p class="muted">Enter a valid mass.</p>'; return; }
+      if (document.getElementById('mass-type').value === 'mh') m = m - 1.007;
+      var want = sel.value, list = matches(m), html = '';
+      var closest = DATA.map(function (c) { return { c: c, d: m - c.mass }; }).sort(function (a, b) { return Math.abs(a.d) - Math.abs(b.d); })[0];
+      if (want) {
+        var w = DATA.filter(function (c) { return c.id === want; })[0];
+        var hit = list.filter(function (r) { return r.c.id === want; })[0];
+        if (hit && hit.v.kind === 'base') {
+          html += '<div class="mass-badge mass-ok">Consistent with ' + esc(w.name) + '</div><p>Observed ' + fmt(m) + ' Da versus expected ' + fmt(w.mass) + ' Da (difference ' + fmt(hit.d) + ').</p>';
+        } else if (hit) {
+          html += '<div class="mass-badge mass-warn">Matches ' + esc(w.name) + esc(hit.v.label) + '</div><p>Observed ' + fmt(m) + ' Da; expected ' + fmt(hit.v.mass) + ' Da. This pattern suggests partial oxidation. Check the chromatogram for an early-eluting satellite peak.</p>';
+        } else {
+          html += '<div class="mass-badge mass-bad">Does not match ' + esc(w.name) + '</div><p>Observed ' + fmt(m) + ' Da versus expected ' + fmt(w.mass) + ' Da (difference ' + fmt(m - w.mass) + ').</p>';
+          if (list.length) html += '<p>It does fit a different compound below. Ask the supplier which form they sell.</p>';
+          else html += '<p>It may be a multiply charged ion, a salt or adduct, a different form, or a different product. Ask the supplier for the full spectrum.</p>';
+        }
+        if (w.hint) html += '<p class="tiny muted">' + esc(w.hint) + ' <a href="' + w.page + '">Read the ' + esc(w.name.split(' (')[0]) + ' guide</a>.</p>';
+      }
+      if (!want) {
+        if (list.length) html += '<div class="mass-badge mass-ok">' + list.length + ' possible match' + (list.length > 1 ? 'es' : '') + '</div>';
+        else html += '<div class="mass-badge mass-bad">No match in our list</div><p>Closest: ' + esc(closest.c.name) + ' at ' + fmt(closest.c.mass) + ' Da (difference ' + fmt(closest.d) + '). It may be a charge state, an adduct, or a compound we do not cover.</p>';
+      }
+      var others = want ? list.filter(function (r) { return r.c.id !== want; }) : list;
+      if (others.length) {
+        html += '<h3>' + (want ? 'Also fits' : 'Matches') + '</h3><ul class="mass-list">';
+        others.forEach(function (r) {
+          html += '<li><strong>' + esc(r.c.name) + esc(r.v.label) + '</strong> <span class="muted">(' + esc(r.c.form) + '; expected ' + fmt(r.v.mass) + ', difference ' + fmt(r.d) + ')</span><br><span class="tiny muted">' + esc(r.c.hint) + '</span> <a class="tiny" href="' + r.c.page + '">Guide</a></li>';
+        });
+        html += '</ul>';
+      }
+      html += '<p class="tiny muted">Identity check only. Not a statement about purity, sterility or safety.</p>';
+      out.innerHTML = html;
+    });
+  })();
+  </script>
+  <footer class="footer">
+    <div class="shell footer-row">
+      <span>&copy; 2026 PeptideSuppliers.org</span>
+      <div class="footer-links">
+        <a href="/database/">Database</a>
+        <a href="/suppliers/">Suppliers</a>
+        <a href="/peptides/">Peptides</a>
+        <a href="/tools/">Tools</a>
+        <a href="/reviews/">Reviews</a>
+        <a href="/blog/">Blog</a>
+        <a href="/how-we-review-suppliers/">Methodology</a>
+        <a href="/about/">About</a>
+        <a href="/disclosure/">Disclosure</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/medical-disclaimer/">Medical disclaimer</a>
+        <a href="/contact/">Contact</a>
+        <a href="https://peptideforumhub.com/" target="_blank" rel="noopener noreferrer">Partner: Peptide Forum Hub</a>
+      </div>
+    </div>
+  </footer>
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
