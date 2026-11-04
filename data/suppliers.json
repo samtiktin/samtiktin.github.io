@@ -951,6 +951,98 @@
       "reviewed": "October 27, 2026",
       "sponsored": true,
       "cover": "/assets/supplier-remy-research.svg"
+    },
+    {
+      "slug": "arctic-lab-supply",
+      "name": "Arctic Lab Supply",
+      "reviewUrl": "/suppliers/arctic-lab-supply/",
+      "website": "https://arcticlabsupply.com/?ref=SAMOOVIN",
+      "affiliate": true,
+      "country": "US",
+      "locationLabel": "Anchorage, Alaska, United States",
+      "price": "unknown",
+      "priceLabel": "See site; free Priority shipping over $149",
+      "coa": "strong",
+      "coaLabel": "12 lot-matched reports for 11 products (ILS Laboratories, Freedom Diagnostics)",
+      "shipping": "USPS from Anchorage; same-day dispatch if paid by midnight ET; ships-next-business-day guarantee",
+      "shipsOutsideUS": false,
+      "compounds": [
+        "Retatrutide",
+        "BPC-157",
+        "GHK-Cu",
+        "Tesamorelin",
+        "GLOW blend",
+        "KLOW blend",
+        "Melanotan II",
+        "Melanotan I"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "GHK-Cu",
+        "Tesamorelin",
+        "GLOW blend",
+        "GLP-1"
+      ],
+      "bestFor": "US buyers who want to match a lot number to a published laboratory report",
+      "discountCode": "SAMOOVIN",
+      "summary": "Anchorage, Alaska LLC publishing 12 lot-matched lab reports for 11 products, with LC-MS identity and endotoxin results on its newest. Clear shipping and 30-day refund terms; five older certificates were removed in September 2026. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Card",
+        "Apple Pay",
+        "Google Pay",
+        "Zelle"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 4,
+      "reviewed": "October 31, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-arctic-lab-supply.svg"
+    },
+    {
+      "slug": "form-laboratories",
+      "name": "Form Laboratories",
+      "reviewUrl": "/suppliers/form-laboratories/",
+      "website": "https://www.formlaboratories.com/",
+      "affiliate": false,
+      "country": "AU",
+      "locationLabel": "Perth, Western Australia (ships within Australia only)",
+      "price": "listed",
+      "priceLabel": "Publicly listed in AUD; free standard shipping from $250",
+      "coa": "visible",
+      "coaLabel": "Sample reports (mostly heavy metals); no current lot verified",
+      "shipping": "Australia only; Standard $10 (5-7 days), Express $20 (2-3 business days)",
+      "shipsOutsideUS": true,
+      "compounds": [
+        "Retatrutide",
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "MOTS-c",
+        "Semax",
+        "CJC-1295/Ipamorelin"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "GHK-Cu",
+        "MOTS-c",
+        "CJC-1295/Ipamorelin",
+        "GLP-1"
+      ],
+      "bestFor": "Australian buyers who want domestic dispatch and will ask for an exact-lot COA first",
+      "discountCode": "",
+      "summary": "Perth-based online supplier shipping within Australia, paid by bank transfer. Its certificate library holds sample reports, mostly heavy-metals screens, and marks every current lot as not verified. Reviewed from public pages, not ordered.",
+      "payments": [
+        "Bank transfer",
+        "PayID"
+      ],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 3,
+      "reviewed": "November 3, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-form-laboratories.svg"
     }
   ]
 }
