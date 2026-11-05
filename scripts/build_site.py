@@ -44,6 +44,7 @@ FOOTER = """  <footer class="footer">
         <a href="/tools/">Tools</a>
         <a href="/reviews/">Reviews</a>
         <a href="/blog/">Blog</a>
+        <a href="/business-services/">Business services</a>
         <a href="/how-we-review-suppliers/">Methodology</a>
         <a href="/about/">About</a>
         <a href="/disclosure/">Disclosure</a>
