@@ -1043,6 +1043,50 @@
       "reviewed": "November 3, 2026",
       "sponsored": false,
       "cover": "/assets/supplier-form-laboratories.svg"
+    },
+    {
+      "slug": "next-gen-peps",
+      "name": "Next Gen Peps",
+      "reviewUrl": "/suppliers/next-gen-peps/",
+      "website": "https://nextgenpeps.com/?ref=GENBONUS",
+      "affiliate": true,
+      "country": "US",
+      "locationLabel": "San Diego, California, United States (ships from California)",
+      "price": "budget",
+      "priceLabel": "Low listed prices; free shipping over $150",
+      "coa": "strong",
+      "coaLabel": "Searchable library of about 60 reports (Bioregen, Bioviridian, Janoshik); endotoxin on 21",
+      "shipping": "US only; USPS from California; 1-3 day processing; no returns",
+      "shipsOutsideUS": false,
+      "compounds": [
+        "BPC-157",
+        "TB-500",
+        "Tesamorelin",
+        "MOTS-c",
+        "KLOW blend",
+        "Retatrutide",
+        "Tirzepatide",
+        "Cagrilintide",
+        "HCG"
+      ],
+      "compoundTags": [
+        "BPC-157",
+        "TB-500",
+        "Tesamorelin",
+        "MOTS-c",
+        "KLOW blend",
+        "GLP-1"
+      ],
+      "bestFor": "US buyers who want to search a COA library before ordering and accept a no-returns policy",
+      "discountCode": "GENBONUS",
+      "summary": "San Diego-based US supplier with a searchable library of about 60 lab reports from three laboratories and endotoxin results on 21 entries. Ships by USPS from California; all sales final. Reviewed from public pages, not ordered.",
+      "payments": [],
+      "orderedByUs": false,
+      "orderedNote": "",
+      "rating": 4,
+      "reviewed": "November 16, 2026",
+      "sponsored": false,
+      "cover": "/assets/supplier-next-gen-peps.svg"
     }
   ]
 }
