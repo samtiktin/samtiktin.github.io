@@ -449,6 +449,19 @@ def home_page():
 
     <section>
       <div class="shell">
+        <div class="card reveal" style="display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between">
+          <div style="flex:1 1 420px">
+            <div class="kicker">Credibility benchmark &middot; Featured</div>
+            <h3>PepReviewPro: verified-purchase vendor reviews</h3>
+            <p>We use <a href="https://pepreviewpro.com/r/PEPFORUM" target="_blank" rel="sponsored nofollow noopener noreferrer">PepReviewPro</a> as an outside check on suppliers. It publishes reviews that it says are matched to real orders and that vendors cannot edit or delete. Use it alongside our documentation reviews, not instead of them. We have not audited its verification, and vendors can use its business tools. <strong>Referral code: PEPFORUM.</strong> This is a referral link and we may earn a commission. See our <a href="/disclosure/">disclosure</a>.</p>
+          </div>
+          <div class="button-row"><a class="button button-primary" href="https://pepreviewpro.com/r/PEPFORUM" target="_blank" rel="sponsored nofollow noopener noreferrer">Visit PepReviewPro</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="shell">
         <p class="tiny muted reveal" style="text-align:center;margin:8px 0 0">Running a research-peptide brand? See our <a href="/business-services/">business services</a> resource list (fulfillment and white-label).</p>
       </div>
     </section>
